@@ -14,10 +14,9 @@ require("dynamicTreeCut")
 require("bio3d")
 require("moduleColor")
 
-# paralellization of prediction machine #
+# paralellization of prediction machine and UI #
 require("foreach")
 require("doParallel")
-
 
 ####FUNCTIONS####
 
@@ -46,8 +45,8 @@ compareTheories <- function(matrix, cat){
   n <- 1 #counter for each dimension
   while(n <= dim(matrix)[2]){ #loops through dimensions
     database <- matrix[, 1:n] #slices dimensions
-    if(n == 1){dt <- cbind(database, 0)} #if it has only one dimension, then add a column of 0s to make cosineGen work
-    database <- cosineGen(dt) #produces a x by x matrix of cosines between each paper.
+    if(n == 1){database <- cbind(database, 0)} #if it has only one dimension, then add a column of 0s to make cosineGen work
+    database <- cosineGen(database) #produces a x by x matrix of cosines between each paper.
     database[is.na(database)] <- 0 #replaces NA with 0.
     meanMatrix <- crossprod(indexMatrix, database) #produces a matrix with the sum of cosines of each paper with each of the topics
     meanMatrix <- meanMatrix / docsByTop #produces a matrix with the mean cosine of each paper with each of the topics
@@ -65,11 +64,11 @@ compareTheories <- function(matrix, cat){
 
 plotTopicDiff <- function(topic, resultsList){
   workTable <- as.data.frame(melt(resultsList[[1]][[topic]], varnames = c("topic", "dimension"), value.name = "cosine")) #long form for ggplot
-  plot <- ggplot(data = workTable, aes(x = dimension, y = cosine, color = topic, group = topic)) + theme_solarized(base_size = 14) + theme(axis.text = element_text(colour = "#586e75")) + labs(title = paste("Mean cosine of", x, "papers with other theories and itself across dimensions")) + geom_line() + scale_colour_solarized("red") + geom_point(size = 0.7, shape = 3) + guides(colour = guide_legend(override.aes = list(size=3)))
+  plot <- ggplot(data = workTable, aes(x = dimension, y = cosine, color = topic, group = topic)) + theme_solarized(base_size = 14) + theme(axis.text = element_text(colour = "#586e75")) + labs(title = paste("Mean cosine of", topic, "papers with other theories and itself across dimensions")) + geom_line() + scale_colour_solarized("red") + geom_point(size = 0.7, shape = 3) + guides(colour = guide_legend(override.aes = list(size=3)))
   print(plot)
   } #function for plotting the mean distance of every topic with all other topics. "topic" is one of the topics of topicList; "resultsList" is the object that compareTheories() returns.
 
-####RAW DATA AND WORD FREQUENCY####
+####DATA AND BASIC CLEANUP####
 
 ##ORIGINAL##
 
@@ -80,7 +79,7 @@ row.names(freqMatrix) <- c(1:nrow(freqMatrix)) #row names with docID
 freqMatrix <- freqMatrix[, apply(freqMatrix, 2, function(x){sum(x==0) < 1047})] #removes columns with words that appear in fewer than 5 documents.
 
 freqMatrix <- freqMatrix[which(rowSums(freqMatrix) > 0), ] #eliminates documents with 0 terms after cleanup of terminology
-catalog <- read.table('catalog.txt', stringsAsFactors = F, sep = '\t', fill = T) #loads catalog
+catalog <- read.table('catalog.txt', stringsAsFactors = F, sep = '\t', fill = T, quote = "") #loads catalog
 catalog <- catalog[row.names(freqMatrix), ] #catalog also has row names as docID
 colnames(catalog) = c('id','topic','year','authors','title','journal','abstract') #variable names for catalog
 topicList <- unique(catalog$topic) #list of theories for analysis.
@@ -156,6 +155,8 @@ source <- "original" #"original" or "replication", "cross".
 
 ##OBJECTS##
 
+# Loads the different objects depending on the parameter "source" on line 155.
+
 if(source == "original"){
   my_catalog <- catalog
   my_svd <- wholeMacaroni$u
@@ -168,23 +169,26 @@ if(source == "cross"){
   my_catalog <- catalog
   cross_catalog <- repCatalog
   my_svd <- wholeMacaroni$u
-  #create matrix for projection and populate#
-  replicationProjection <- matrix(0, nrow = 964, ncol = 3611)
-  row.names(replicationProjection) <- row.names(repFreqMatrix)
-  colnames(replicationProjection) <- colnames(freqMatrix)
-  sharedWords <- colnames(repFreqMatrix)[which(colnames(repFreqMatrix) %in% colnames(freqMatrix))]
-  replicationProjection[,sharedWords] <- repFreqMatrix[,sharedWords]
-  #project replica matrix onto previous svd space#
-  cross_svd <- replicationProjection %*% ginv(diag(wholeMacaroni$d[1:150]) %*% t(wholeMacaroni$v))
-}
 
+  replicationProjection <- matrix(0, nrow = 964, ncol = 3611)   #create matrix for projection and populate#
+  row.names(replicationProjection) <- row.names(repFreqMatrix) #set row names as wholeMacaroni
+  colnames(replicationProjection) <- colnames(freqMatrix)
+  sharedWords <- colnames(repFreqMatrix)[which(colnames(repFreqMatrix) %in% colnames(freqMatrix))] # obtain all the shared words between original data and replication data.
+  replicationProjection[,sharedWords] <- repFreqMatrix[,sharedWords] #build a new DbT that has the documents in replication as rows and the shared words between both datasets as columns.
+  
+  cross_svd <- replicationProjection %*% ginv(diag(wholeMacaroni$d[1:150]) %*% t(wholeMacaroni$v)) #projects the replication data into the SV  space of the original dataset..
+}
 
 ### TOPIC BEST PREDICTORS ###
 
+## At first, the dimensions that differentiate the papers of a theory when compared to the other ones are selected. The first 80 of them are stored. #
+
 ##FREE FOR ALL##
 
+#for each topic, fill the "best predictors" matrix with the dimensions that most differentiate that theory from the other 8 theories.
+
 bestPredictors <- c()
-for (topic in topicList) {
+for (topic in topicList) { 
   glmOutput = glm(my_catalog$topic==topic~.,data=data.frame(my_svd[,1:80]),family=binomial)
   bestPredictors = rbind(bestPredictors,data.frame(topic,(t(sort(glmOutput$coefficients,ind=T,decreasing=T)$ix[1:maxNumberOfDimensions]))))
 }
@@ -192,14 +196,16 @@ row.names(bestPredictors) <- topicList
 
 ##STRATIFIED SAMPLING##
 
-topicListClassic <- c(topicList[1], topicList[2], topicList[8]) # topic list of traditional approaches (comp, bayes, conn)
-topicListAlt <- setdiff(topicList, topicListClassic)
-catalogClassic <- my_catalog[which(my_catalog$topic %in% topicListClassic),]
+#for each topic, fill the "best predictors" matrix with the dimensions that most differentiate that theory from the other theories in the cluster. Cluster 1 is "Classic" with computational, bayesian and connectionist. Cluster 2 is "alt" with ecological, embodied, dynamical, distributed, enactive.
 
-catalogAlt <- my_catalog[which(my_catalog$topic %in% topicListAlt),]
+topicListClassic <- c(topicList[1], topicList[2], topicList[8]) # topic list of classical cluster.
+topicListAlt <- setdiff(topicList, topicListClassic) #topic list of alt cluster.
+catalogClassic <- my_catalog[which(my_catalog$topic %in% topicListClassic),] #catalog of classic papers
+catalogAlt <- my_catalog[which(my_catalog$topic %in% topicListAlt),] #catalog of alt papers
+
+#then, same procedure as above but using these clusters#
 
 bestPredictorsClusters <- c()
-
 for (topic in topicListClassic) {
   glmOutput = glm(catalogClassic$topic==topic~.,data=data.frame(my_svd[which(my_catalog$topic %in% topicListClassic, arr.ind = T),1:80]),family=binomial)
   bestPredictorsClusters = rbind(bestPredictorsClusters,data.frame(topic,(t(sort(glmOutput$coefficients,ind=T,decreasing=T)$ix[1:maxNumberOfDimensions]))))
@@ -209,162 +215,167 @@ for (topic in topicListAlt) {
   glmOutput = glm(catalogAlt$topic==topic~.,data=data.frame(my_svd[which(my_catalog$topic %in% topicListAlt, arr.ind = T),1:80]),family=binomial)
   bestPredictorsClusters = rbind(bestPredictorsClusters,data.frame(topic,(t(sort(glmOutput$coefficients,ind=T,decreasing=T)$ix[1:maxNumberOfDimensions]))))
 }
-
 row.names(bestPredictorsClusters) <- c(topicListClassic, topicListAlt)
 
-
 ### EXECUTION OF MODEL ###
+
+# Each theory has a model built and trained using the dimensions specified in minNumberOfDimensions and maxNumberOfDimensions. Each model is of the theories is a GLM. In each iteration, a random training set of 600 papers is selected i (random theory belonging if "free", 60 per theory if "cluster"). The remaining papers are presented to each GLM model and the probability returned by the model that the paper belongs to that theory is collected. The highest prediction value is selected as the "predicted" theory and stored. The results of this prediction are collected in each iteration. The number of iterations is specified in parameters above. The function is parallelized using the "foreach" and "doparallel" packages. "cl" controls the number of parallel processes; change to fit the number of cores in CPU. Each parallel iteration is one of the dimensions between minNumberOfDimensions and maxNumberOfDimensions # 
 
 dimensionVec <- c(minNumberOfDimensions:maxNumberOfDimensions)
 
 cl <- makeCluster(8)
 registerDoParallel(cl)
 
-listResults <- foreach(dimension=dimensionVec, .verbose = T) %dopar% { #dirty for loop for evaluating self identification by number of dimensionsx
-  resultsListModel <- lapply(c(1:repeats), matrix, nrow = 8, ncol = 8)
-  s = 1
-  while(s <= repeats){
-    #training and test set#
+
+listResults <- foreach(dimension=dimensionVec, .verbose = T) %dopar% { #parallelized foreach loop with each dimension. Stored in a list object containing the aggregate matrices of iterations controlled in repeat, for each number of dimensions used.
+  
+  resultsListModel <- lapply(c(1:repeats), matrix, nrow = 8, ncol = 8) #pre allocate the result list with the number of iterations selected in parameters.
+  s = 1 #controller for the number of iterations.
+  
+  while(s <= repeats){ # repeats the process of training-prediction as specified in parameters.
+
     if(method == "free") {
       trainingSet = sample(1:nrow(my_svd),600) #not controlled training
       predictors <- bestPredictors
     }
     if(method == "cluster"){
-      trainingSet <- c() # controlled training set for equal representation of each topic. Stratified sampling.
+      trainingSet <- c() # controlled training set for equal representation of each topic. 
       for(topic in topicList){
-        trainingSet <- c(trainingSet, sample(which(my_catalog$topic==topic), 60)) #takes indices of each topic
+        trainingSet <- c(trainingSet, sample(which(my_catalog$topic==topic), 60))
       }
       predictors <- bestPredictorsClusters    }
-    if(source == "original" | source == "replication"){
+    if(source == "original" | source == "replication"){ #if the procedure is either predicting original for predicting original, or replication for predicting replication, set the trainingset as the rest of the papers.
     testSet = setdiff(1:nrow(my_svd),trainingSet)
     }
-    if(source == "cross"){
+    if(source == "cross"){ #if using original to predict replication, trainingset is original dataset, and testset is replication set.
       trainingSet <- c(1:(nrow(my_svd)))
       testSet <- c(1:(nrow(cross_svd)))
     }
-    
-    #GLM model with predictors, and prediction of every paper in testdata by each model of each topic#
-    
+
     predictionResults = c()
-    for (topic in topicList) {
-      trainingdata <- data.frame(my_svd[trainingSet,unlist(predictors[topic,2:dimension])])
-      glmTopic = glm(my_catalog$topic[trainingSet]==topic~., data=trainingdata, family=binomial)
-      #glmTopic = glm(my_catalog$topic[trainingSet]==topic~., data=data.frame(my_svd[trainingSet,unlist(predictors[topic,2:dimension])]), family=binomial)
-      if(source == "original" | source == "replication"){
-      testdata = data.frame(my_svd[testSet,unlist(predictors[topic,2:dimension])])
-      
-      predicted = predict.glm(glmTopic,newdata=testdata,type="response")
-      #predicted = predict.glm(glmTopic,newdata=data.frame(my_svd[testSet,unlist(predictors[topic,2:dimension])]),type="response")
-      predictionResults = cbind(predictionResults,scale(predicted))
+    
+    for (topic in topicList) { #loop through the models of each theory
+      trainingdata <- data.frame(my_svd[trainingSet,unlist(predictors[topic,2:dimension])]) # prepare training data of model by using the dimensions selected as the best predictors for each topic and the documents selected to be training.
+      glmTopic = glm(my_catalog$topic[trainingSet]==topic~., data=trainingdata, family=binomial) #build the model of the topic.
+
+      if(source == "original" | source == "replication"){ #if predicting inside the dataset
+      testdata = data.frame(my_svd[testSet,unlist(predictors[topic,2:dimension])]) #prepare the data to be predicted
+      predicted = predict.glm(glmTopic,newdata=testdata,type="response") #store the probability that the paper belongs to the theory being tested
+      predictionResults = cbind(predictionResults,scale(predicted)) #add to a matrix and scale
       }
-      if(source == "cross"){
+      if(source == "cross"){ #modify procedure above to account for original data being training and replication being test
         predicted = predict.glm(glmTopic,newdata=data.frame(cross_svd[testSet,unlist(predictors[topic,2:dimension])]),type="response")
         predictionResults = cbind(predictionResults,scale(predicted))
       }
     }
-    
-    #aggregate predictions for each topic into a table#
+    # the predictions of each theory are aggregated in a matrix. each row of matrix is a document, each column is the probability that it belongs to that theory.
     
     predictionResults = data.frame(predictionResults)
     colnames(predictionResults) = topicList
+    
     if(source == "original" | source == "replication"){
-    predictionResults$topic = my_catalog$topic[testSet]
-    predictionResults$predicted_topic = topicList[max.col(predictionResults[,1:8])]
-    resultTable <- t(t(table(predictionResults$topic,predictionResults$predicted_topic) / as.vector(table(my_catalog$topic[testSet])))*100)
+    predictionResults$topic = my_catalog$topic[testSet] #add a column with the correct theory of each of the papers in the testset
+    predictionResults$predicted_topic = topicList[max.col(predictionResults[,1:8])] #add a column with the highest prediction of the models for that paper.
+    resultTable <- (table(predictionResults$topic,predictionResults$predicted_topic) / as.vector(table(my_catalog$topic[testSet])))*100 #generates a frequency table of how many times each topic was predicted as each other topic. then, transforms into percentages.
+    
     }
-    if(source == "cross") {
+    
+    if(source == "cross") { #same procedure, but for cross prediction.
       predictionResults$topic = cross_catalog$topic[testSet]
       predictionResults$predicted_topic = topicList[max.col(predictionResults[,1:8])]
-      resultTable <- t(t(table(predictionResults$topic,predictionResults$predicted_topic) / as.vector(table(cross_catalog$topic[testSet])))*100)
+      resultTable <- (table(predictionResults$topic,predictionResults$predicted_topic) / as.vector(table(cross_catalog$topic[testSet])))*100
     }
     
-    #allocate aggregate data of prediction (mean effectiveness by topic)#
-    
-    finalRunTable <- matrix(0, nrow = 8, ncol = 8) ## to avoid dimension errors when summing, when topic is not predicted
-    row.names(finalRunTable) <- topicList
-    colnames(finalRunTable) <- topicList
-    for(topic in colnames(resultTable)){finalRunTable[, topic] = resultTable[, topic]}
-    resultsListModel[[s]] <- finalRunTable
-    if(s %% 100 == 0) {print(paste("repetition number", s))}
-    s = s + 1
+    resultsListModel[[s]] <- resultTable # store this iteration for final aggregation in list.
     }
-  finalPredictionTable <- matrix(0, nrow = 8, ncol = 8)
+  
+  #aggregate the results of the iterations#
+  
+  finalPredictionTable <- matrix(0, nrow = 8, ncol = 8) #pre-allocate final table
   
   #iterate through list of predictions to aggregate the results#
   
-  for(matrix in resultsListModel) {
-    finalPredictionTable <- finalPredictionTable + matrix
-    }
-    finalPredictionTable <- finalPredictionTable / length(resultsListModel)
-    #for(topic in topicList){#populate results looping through topics
-      #predResultsxDim[topic,dimension - 2] <- finalPredictionTable[topic,topic]
-    #}
-  return(finalPredictionTable)
-} #for loop for evaluating multiple dimensions etc. needs to be cleaned up.
+  for(matrix in resultsListModel) { # sums every result table resulting from the iterations.
+    finalPredictionTable <- finalPredictionTable + matrix 
+  }
+  
+  finalPredictionTable <- finalPredictionTable / length(resultsListModel) #divide by total number of iterations to aggregate
+  return(finalPredictionTable) #return this table to be added to the list that foreach is constructing,
+}
 
 stopCluster(cl)
 
-names(listResults) <- dimensionVec
+names(listResults) <- dimensionVec #name the objects in the list with the dimensions used in calculating them
 
-###LOADING SAVED RESULTS###
+dimEvMat <- matrix (0, nrow = length(dimensionVec), ncol = 9) # pre-allocate matrix for the evaluation of the effectiveness of models for each dimension
+row.names(dimEvMat) <- as.character(dimensionVec) # name rows by dimension
+colnames(dimEvMat) <- c(topicList, "mean") # name columns by each theory and designate a column to store the mean effectiveness
+for(dimension in dimensionVec) { dimEvMat[as.character(dimension),] <- c(diag(listResults[[as.character(dimension)]]), mean(diag(listResults[[as.character(dimension)]])))} #fill list with the values of the diagonal of confusability matrices and its mean effectiveness.
 
-#LOAD ONE AT A TIME. LOADS AS OBJECT "LISTRESULTS", WITH A LIST OF 50 DIMENSIONS WITH MATRIX AGGREGATING 1000 PASSES FOR EACH.#
+###Plotting###
 
-#load(file = "PredictionResultsOriginal50D.RData")
-#load(file = "PredictionResultsReplication50D.RData")
-#load(file = "PredictionResultsCross50D.RData")
-load(file = "PredictionResultsOriginal50DNullHypothesis.RData")
+# scripts for producing the prediction related plots using ggplot2 #
 
-dimEvMat <- matrix (0, nrow = length(dimensionVec), ncol = 9) # matrix for the evaluation of mean effectiveness of each dimension
-row.names(dimEvMat) <- as.character(dimensionVec)
-colnames(dimEvMat) <- c(topicList, "mean")
+## confusability matrix by dimension ##
 
-pdf(file = "confmatrixD20NH.pdf", width = 10, height = 8)
+dimension = 10 # parameter for choosing the number of dimensions to be used in the plot
 
-for(dimension in dimensionVec){
-  topicMatrix <- listResults[[as.character(dimension)]]
-  dimEvMat[as.character(dimension),] <- c(diag(topicMatrix), mean(diag(topicMatrix)))
-  #plot confusability matrix each dimension#
-  meltedResults <- melt(topicMatrix, varnames = c("Topic1", "Topic2"), value.name = "Percentage.Predicted")
-  heatmap <- ggplot(meltedResults, aes(y = Topic1, x = ordered(Topic2, levels = rev(sort(unique(Topic2)))))) + geom_tile(aes(fill = Percentage.Predicted)) + coord_equal() + scale_fill_gradient(limits = c(0, 100), low="white", high="seagreen", guide =  guide_colorbar(title = paste("% Predicted", "\n"))) + xlab("") + ylab("") + theme(axis.text = element_text(size = 14), axis.text.x = element_text(angle=330, hjust=0.4, vjust = 0.7, size = 14)) + geom_text(aes(label = paste(round(Percentage.Predicted, 1), "%", sep = "")), colour = "gray25", size = 5)
-  print(heatmap)
-}
-dev.off()
+topicMatrix <- listResults[[as.character(dimension)]] #extract the matrix of the chosen value of D
+meltedResults <- melt(topicMatrix, varnames = c("Topic1", "Topic2"), value.name = "Percentage.Predicted")
+heatmap <- ggplot(meltedResults, aes(y = Topic1, x = ordered(Topic2, levels = rev(sort(unique(Topic2)))))) + geom_tile(aes(fill = Percentage.Predicted)) + coord_equal() + scale_fill_gradient(limits = c(0, 100), low="white", high="seagreen", guide =  guide_colorbar(title = paste("% Predicted", "\n"))) + xlab("") + ylab("") + theme(axis.text = element_text(size = 14), axis.text.x = element_text(angle=330, hjust=0.4, vjust = 0.7, size = 14)) + geom_text(aes(label = paste(round(Percentage.Predicted, 1), "%", sep = "")), colour = "gray25", size = 5)
+print(heatmap)
 
-meltedDimEv <- melt(dimEvMat[, 1:8], varnames = c("D", "topic"), value.name = "Effectiveness")
+
+## horizontal heatmap of effectiveness of each dimension by topic and mean #
+
+meltedDimEv <- melt(dimEvMat[, 1:9], varnames = c("D", "topic"), value.name = "Effectiveness") #melted effectiveness for ggplot2
 heatmap <- ggplot(meltedDimEv, aes(y = topic, x = ordered(D))) + geom_tile(aes(fill = Effectiveness), color = "white") + coord_equal() + scale_fill_gradient(limits = c(0, 100), low="white", high="seagreen") + xlab("") + ylab("") + theme(axis.text = element_text(size = 12)) + geom_text(aes(label = paste(round(Effectiveness, 0))), size = 4, colour = "gray25")
 print(heatmap)
-ggsave(filename = "effectivenessheatmap50DOGNH.pdf", device = "pdf", width = 35, height = 7.5, units = "in", dpi = 1200)
+
+# panel of effectiveness for each theory including mean #
 
 meanResultsTable <- as.data.frame(meltedDimEv) #long form for ggplot
-plot <- ggplot(data = meanResultsTable, aes(x = D, y = Effectiveness, color = topic, group = topic)) + ylim (0, 50) + theme_gray() + geom_line(size = 1) + scale_colour_brewer(type = "qual", palette = "Set2", guide = F) + geom_point(size = 0.5, shape = 3) + facet_wrap(~topic, ncol = 2, nrow = 5)
+plot <- ggplot(data = meanResultsTable, aes(x = D, y = Effectiveness, color = topic, group = topic)) + ylim (0, 100) + theme_gray() + geom_line(size = 1) + scale_colour_brewer(type = "qual", palette = "Paired", guide = F) + geom_point(size = 0.5, shape = 3) + facet_wrap(~topic, ncol = 2, nrow = 5)
 print(plot)
-ggsave(filename = "effectivenesslineplotallD-OG-NullHyp.pdf", device = "pdf", width = 174, height = 174, units = "mm", dpi = 1200)
 
-meanPerf <- data.frame("Mean.Effectiveness" = rowMeans(dimEvMat), "D" = dimensionVec) #mean performance
+# line plot of only mean effectiveness #
+
+meanPerf <- data.frame("Mean.Effectiveness" = rowMeans(dimEvMat), "D" = dimensionVec) #mean performance melted dataframe
 plot <- ggplot(data = meanPerf, aes(y = Mean.Effectiveness, x = D)) + theme_gray() + geom_line(size = 1.5, color = "seagreen") + geom_point(size = 1.5, shape = 3, color = "seagreen") + scale_y_continuous(limits = c(0, 100)) + labs(y = "Mean Effectiveness (%)")
 print(plot)
-ggsave(filename = "meaneffectiveness50D-OG-NullHyp.pdf", device = "pdf", width = 174, height = 70, units = "mm", dpi = 1200)
 
+####LINEAR MODELS WITH COSINE MATRICES####
 
-####linear models with cosine matrix single dimension####
+## this section generates a comparison of the similarity between and within theories by using the cosine generated by pairs of abstracts in as a vector space representation in the space of the SVD. Similarity data is then used to measure self similarity and other-similarity with linear models. ##
 
-##ALL OBJECTS##
+## Cosine matrices ##
 
-originalCosines <- compareTheories(wholeMacaroni$u, catalog) # has two elements: all theories (1), averages (2)
-originalAverages <- originalCosines[[2]]
-replicationCosines <- compareTheoriesVect(repofWholeMacaroni$u, repCatalog)  # has two elements: all theories (1), averages (2)
+originalCosines <- compareTheories(wholeMacaroni$u, catalog) # has two elements: [[1]] list of a 8 matrices, one for each theory, with mean distance of that theory with each other theory. (2) list of one matrix for each dimension with theories as rows and all papers as column. cells show the mean distance of that theory with that paper.
+originalAverages <- originalCosines[[2]] #extracts the average distance of theory by paper.
+replicationCosines <- compareTheories(repofWholeMacaroni$u, repCatalog) #same procedure for replication
 replicationAverages <- replicationCosines[[2]]
+
+#plots of mean distance of theories with other theories for dimension
 
 plotTopicDiff("bayesian", originalCosines)
 plotTopicDiff("symbolic", originalCosines)
+plotTopicDiff("connectionism", originalCosines)
+plotTopicDiff("embodied", originalCosines)
+plotTopicDiff("distributed", originalCosines)
+plotTopicDiff("enactive", originalCosines)
+plotTopicDiff("dynamical", originalCosines)
+plotTopicDiff("ecological", originalCosines)
 
 ##PARAMETERS##
 
+# these parameters control the models of self-similarity and other-similarity. "testingSelf" defines the source to be used (original data or replication data). "dimensionToTest" controls the number of dimensions used in the analysis (D) #
+
 testingSelf <- "original" #original or replication
-dimensionToTest <- 10 #specify the dimension to be tested
+dimension <- 10 #specify the dimension to be tested
 
 ##OBJECTS##
+
+#loads the data based on the parameters provided#
 
 if(testingSelf == "original"){
   avgList <- originalAverages
@@ -377,61 +388,61 @@ if(testingSelf == "replication"){
 
 ### SELF-SIMILARITY ###
 
+# measure of self-similarity of each theory. takes the average distance of each theory with each paper of that same theory and then models that relation with linear model #
+
 allDat = c()
-#data collection from averages#
-for (topic in topicList) {
-  dat = avgList[[dimensionToTest]][which(topic==topicList),my_cat$topic==topic]
+
+for (topic in topicList) { #populate the mean cosine of theory with papers of that theory data
+  dat = avgList[[dimension]][which(topic==topicList),my_cat$topic==topic]
   allDat = rbind(allDat,data.frame(topic=topic,cosine=dat))
 }
-#model#
+
+#build a linear model of mean distance of theory with papers of that theory and the theory#
+
 lmObject = lm(cosine~topic,data=allDat)
 summary(lmObject)
-#plot#
-boxplot <- ggplot(allDat, aes(x = topic, y = cosine)) + geom_boxplot(fill = "#fdf6e3", colour = "#2aa198", outlier.color = "#2aa198") + scale_x_discrete(name = "Theory") + scale_y_continuous(name = "Mean self-cosine", breaks = seq(-0.1, 1, .10), limits = c(-0.1, 1)) + theme_solarized(base_size = 14) + theme(axis.text = element_text(colour = "#586e75")) + labs(title = paste("Self-similarity of different theories of dimension number", dimensionToTest), subtitle = "Cosines of members of a theory with other members of that theory as predicted by theory membership")
+
+#visualize with boxplot#
+
+boxplot <- ggplot(allDat, aes(x = topic, y = cosine)) + geom_boxplot(fill = "#fdf6e3", colour = "#2aa198", outlier.color = "#2aa198") + scale_x_discrete(name = "Theory") + scale_y_continuous(name = "Mean self-cosine", breaks = seq(-0.1, 1, .10), limits = c(-0.1, 1)) + theme_solarized(base_size = 14) + theme(axis.text = element_text(colour = "#586e75")) + labs(title = paste("Self-similarity of different theories of dimension number", dimension), subtitle = "Cosines of members of a theory with other members of that theory as predicted by theory membership")
 boxplot
-ggsave(filename = "BoxplotSelfSimilarityD10NullHyp.pdf", device = "pdf", width = 174, height = 70, units = "mm", dpi = 1200)
 
 ##EXTERNAL DIFFERENCE##
 
-allDatMax = c() # closest neighbor
-allDatMean = c() # mean distance
+# measure of the similarity between the theory and the difference of similarity between the mean distance with its own papers, and the mean distance with papers of the most similar theory other than itself ("closest neighbor"). higher values indicate more difference between the theory and the most similar theory to it.#
 
-for (topic in topicList) {
-  selfdat = avgList[[10]][which(topic==topicList),my_cat$topic==topic]
-  # the AVERAGE across category similarity for this topic
-  otherdat = avgList[[10]][which(topic != topicList),my_cat$topic==topic]
-  maxdat = apply(otherdat,2,function(x) { return(max(x))})
-  maxdat = selfdat - maxdat
-  meandat = apply(otherdat,2,function(x) { return(mean(x))})
-  meandat = selfdat - meandat
-  allDatMax = rbind(allDatMax,data.frame(topic=topic,cosine=maxdat)) #matrix of what the maximum distance for each paper of each topic is from the most similar theory (another measure of self similarity). If higher, topic is farther from nearest theory.
-  allDatMean = rbind(allDatMean, data.frame(topic=topic, cosine=meandat))
+allDatMax = c() # data of similarity with closest neighbor
+
+for (topic in topicList) { 
+  selfdat = avgList[[dimension]][which(topic==topicList),my_cat$topic==topic] #collect the data of similarity with its own papers
+  otherdat = avgList[[dimension]][which(topic != topicList),my_cat$topic==topic] #collect the mean distance of other theories with each of the papers of the theory being looped in the for loop
+  maxdat = apply(otherdat,2,function(x) { return(max(x))}) #collect the highest value
+  maxdat = selfdat - maxdat #store the difference between the theory the paper belongs to and the most similar other theory
+  allDatMax = rbind(allDatMax,data.frame(topic=topic,cosine=maxdat)) #matrix with the differences for each theory.
 }
-lmObjectMax = lm(cosine~topic,data=allDatMax) #linear model for max
-summary(lmObjectMax) #summary
-lmObjectMean = lm(cosine~topic,data=allDatMean) #linear model for mean
-summary(lmObjectMean)
 
-#boxplot of max
+lmObjectMax = lm(cosine~topic,data=allDatMax) #linear model for other-similarity
+summary(lmObjectMax) #summary
+
+#visualize with boxplot#
+
 boxplotMax <- ggplot(allDatMax, aes(x = topic, y = cosine)) + geom_boxplot(fill = "#fdf6e3", colour = "#2aa198", outlier.color = "#2aa198") + scale_x_discrete(name = "Theory") + scale_y_continuous(name = "Mean distance") + labs(title = paste("Distance from nearest theory of different theories", testingSelf), subtitle = paste("Difference between mean distance for own theory and mean distance from the theory with the highest cosine predicted by theory of", testingSelf)) + theme_solarized(base_size = 14) + theme(axis.text = element_text(colour = "#586e75")) 
 print(boxplotMax)
-ggsave(filename = "BoxplotMaxOtherSimD10NullHyp.pdf", device = "pdf", width = 174, height = 70, units = "mm", dpi = 1200)
 
+####CLUSTER ANALYSIS USING COSINE DATA####
 
-#boxplot of mean
-boxplotMean <- ggplot(allDatMean, aes(x = topic, y = cosine)) + geom_boxplot(fill = "#fdf6e3", colour = "#2aa198", outlier.color = "#2aa198") + scale_x_discrete(name = "Theory") + scale_y_continuous(name = "Mean distance", labels = comma) + labs(title = paste("Mean distance from different theories", testingSelf), subtitle = paste("Difference between mean distance for own theory and mean distance from mean distance from other theories predicted by theory of"), testingSelf) + theme_solarized(base_size = 14) + theme(axis.text = element_text(colour = "#586e75")) 
-print(boxplotMean)
-ggsave(filename = "BoxplotMeanOtherD10NullHyp.pdf", device = "pdf", width = 174, height = 70, units = "mm", dpi = 1200)
-
-
-
-####DENDROGRAMS####
+#this section uses the similarity data of cosines gathered in the previous section to visualize the clustering of each theories with a heatmap of the similarity matrix and a hierarchical cluster analysis#
 
 ##PARAMETERS##
+
+#parameters that control the value of D ("dimension") and the source of the data ("dendrogramMode")#
+
 dimension <- 10 #change dimension being considered
 dendrogramMode <- "original" #original or replication
 
 ##OBJECTS##
+
+#loads objects based on parameters#
 
 if(dendrogramMode == "original"){
   avgMatrix <- originalCosines[[2]][[dimension]]
@@ -445,33 +456,35 @@ if(dendrogramMode == "replication"){
   my_svd <- repofWholeMacaroni$u
 }
 
-##TOPICS##
-#uses matrices of AVERAGE cosine of each topic with respective paper.
+## similarity matrix of theories. higher value is less distance. ##
 
-topicListReordered = c("bayesian", "connectionism", "symbolic", "distributed", "dynamical", "enactive", "ecological", "embodied")
+#generates a similarity matrix of cosine data to visualize in a heatmap #
 
-dists = matrix(0,nrow=8,ncol=8) #allocates dist matrix
-row.names(dists) = topicListReordered
-colnames(dists) = topicListReordered
+topicListReordered = c("bayesian", "connectionism", "symbolic", "distributed", "dynamical", "enactive", "ecological", "embodied") #reorder topics to better visualize if intuitive cluster shows
 
-for (topic in topicListReordered) { #loops through topics. topic1 in comments
-  for(i in 1:8){ #second loop through topics. topic2 in comments
-    dists[topic,topicListReordered[i]] = mean(avgMatrix[topic, which(my_cat$topic==topicListReordered[i])]) #mean avg of topic 1 with every topic2 spits out avg cosine topicxtopic matrix.
+simMatrix = matrix(0,nrow=8,ncol=8) #allocates similarity matrix 
+row.names(simMatrix) = topicListReordered #name dimensions of similarity matrix (theory x theory)
+colnames(simMatrix) = topicListReordered
+
+for (topic in topicListReordered) { #loops through first topic (row)
+  for(i in 1:8){ #loops through second topic (column)
+    simMatrix[topic,topicListReordered[i]] = mean(avgMatrix[topic, which(my_cat$topic==topicListReordered[i])]) #gather the mean similarity between theory 1 and the papers of theory 2
   }
 }
 
-topic_hclust <- hclust(dist(dists, upper = T), method = "average" ) #hclust algorithm application.
 
-#topicxtopic heatmap#
-meltedDists <- melt(dists, varnames = c("Topic1", "Topic2"), value.name = "Closeness")
-heatmap <- ggplot(meltedDists, aes(x = Topic1, y = ordered(Topic2, levels = rev(sort(unique(Topic2)))))) + geom_tile(aes(fill = Closeness), colour = "white") + coord_equal() +  scale_fill_gradient(low="white", high="seagreen", limits = c(0, 1), guide =  guide_colorbar(title = paste("Cosine", "\n"))) + xlab("") + ylab("") + theme(axis.text = element_text(size = 12), axis.text.x = element_text(angle = 330, hjust = 0.4, vjust = 0.7))
+# visualize similarity matrix with a heatmap #
+
+meltedDistMatrix <- melt(simMatrix, varnames = c("Topic1", "Topic2"), value.name = "Closeness") #long form of simMatrix for ggplot
+heatmap <- ggplot(meltedDistMatrix, aes(x = Topic1, y = ordered(Topic2, levels = rev(sort(unique(Topic2)))))) + geom_tile(aes(fill = Closeness), colour = "white") + coord_equal() +  scale_fill_gradient(low="white", high="seagreen", limits = c(0, 1), guide =  guide_colorbar(title = paste("Cosine", "\n"))) + xlab("") + ylab("") + theme(axis.text = element_text(size = 12), axis.text.x = element_text(angle = 330, hjust = 0.4, vjust = 0.7))
 print(heatmap)
-ggsave(filename = "similarity-heatmap.pdf", device = "pdf", width = 174, height = 130, units = "mm", dpi = 1200)
 
 
-#hclustplot(topic_hclust, colors = labels2colors(cutreeDynamic(topic_hclust, minClusterSize = 1, method = "hybrid", deepSplit = 0, distM = as.matrix(dist(dists)), pamStage = F)), fillbox = T, main = paste("Dendrogram of topics for dimensions 1 to", dimension))
-pdf(file = "dendrogramD10NH.pdf", width = 10, height = 7)
-par(lwd = 2, cex.axis = 1.2, las = 1)
-print(hclustplot(topic_hclust, colors = labels2colors(cutreeDynamic(topic_hclust, minClusterSize = 1, method = "hybrid", deepSplit = 0, distM = as.matrix(dist(dists)), pamStage = F), colorSeq = c("#2E8B57", "#FF2052", 	"#8b2e62")), fillbox = T, las = 0, cex = 1.2, mar = c(3, 3, 2, 0.5), font = 2))
+# hierarchical cluster analysis of the distance matrix #
 
-dev.off()
+topic_hclust <- hclust(dist(simMatrix, upper = T), method = "average" ) #applies hclust algorithm to the similarity matrix
+
+#visualize topic_hclust with a dendrogram and mark clusters using cutreedynamic package (https://www.rdocumentation.org/packages/dynamicTreeCut/versions/1.63-1/topics/cutreeDynamic)#
+
+par(lwd = 2, cex.axis = 1.2, las = 1) #graphical parameters for the axes and lines of dendrogram
+print(hclustplot(topic_hclust, colors = labels2colors(cutreeDynamic(topic_hclust, minClusterSize = 1, method = "hybrid", deepSplit = 0, distM = as.matrix(dist(simMatrix)), pamStage = T), colorSeq = c("#2E8B57", "#FF2052", "#8b2e62")), fillbox = T, las = 0, cex = 1.2, mar = c(3, 3, 2, 0.5), font = 2)) #produces a dendrogram and marks the clusters with dynamictreecut. the minimum cluster size is set to 1, the parameter controlling the stringency of the clustering is set to the default (0). we used the "hybrid" method which takes both the dendrogram and a distance matrix to generate clusters. PAM was not used. We provided the colors (colorSeq) of the fillbox marking the clusters for up to 3 clusters.   
