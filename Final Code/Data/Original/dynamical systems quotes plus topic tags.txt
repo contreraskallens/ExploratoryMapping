@@ -1,0 +1,2228 @@
+﻿FN Thomson Reuters Web of Science™
+VR 1.0
+PT J
+AU Thelen, E
+   Schoner, G
+   Scheier, C
+   Smith, LB
+AF Thelen, E
+   Schoner, G
+   Scheier, C
+   Smith, LB
+TI The dynamics of embodiment: A field theory of infant perseverative
+   reaching
+SO BEHAVIORAL AND BRAIN SCIENCES
+AB The overall goal of this target article is to demonstrate a mechanism for an embodied cognition. The particular vehicle is a much-studied, but still widely debated phenomenon seen in 7-12 month-old-infants. In Piaget's classic "A-not-B error," infants who have successfully uncovered a toy at location "A" continue to reach to that location even after they watch the toy hidden in a nearby location "B." Here, we question the traditional explanations of the error as an indicator of infants' concepts of objects or other static mental structures. Instead, we demonstrate that the A-not-B error and its previously puzzling contextual variations can be understood by the coupled dynamics of the ordinary processes of goal-directed actions: looking, planning, reaching, and remembering. We offer a formal dynamic theory and model based on cognitive embodiment that both simulates the known A-not-B effects and offers novel predictions that match new experimental results. The demonstration supports an embodied view by casting the mental events involved in perception, planning, deciding, and remembering in the same analogic dynamic language as that used to describe bodily movement, so that they may be continuously meshed. We maintain that this mesh is a pre-eminently cognitive act of "knowing" not only in infancy but also in everyday activities throughout the life span.
+RI X, Simon/F-4678-2011
+SN 0140-525X
+PD FEB
+PY 2001
+VL 24
+IS 1
+BP 1
+EP +
+DI 10.1017/S0140525X01003910
+UT WOS:000170177700001
+PM 11515285
+ER
+
+PT J
+AU Tsuda, I
+AF Tsuda, I
+TI Toward an interpretation of dynamic neural activity in terms of chaotic
+   dynamical systems
+SO BEHAVIORAL AND BRAIN SCIENCES
+AB Using the concepts of chaotic dynamical systems, we present an interpretation of dynamic neural activity found in cortical and subcortical areas. The discovery of chaotic itinerancy in high-dimensional dynamical systems with and without a noise term has motivated a new interpretation of this dynamic neural activity, cast in terms of the high-dimensional transitory dynamics among "exotic" attractors. This interpretation is quite different from the conventional one, cast in terms of simple behavior on low-dimensional attractors. Skarda and Freeman (1987) presented evidence in support of the conclusion that animals cannot memorize odor without chaotic activity of neuron populations. Following their work, we study the role of chaotic dynamics in biological information processing, perception, and memory. We propose a new coding scheme of information in chaos-driven contracting systems we refer to as Cantor coding. Since these systems are found in the hippocampal formation and also in the olfactory system, the proposed coding scheme should be of biological significance. Based on these intensive studies, a hypothesis regarding the formation of episodic memory is given.
+SN 0140-525X
+PD OCT
+PY 2001
+VL 24
+IS 5
+BP 793
+EP +
+UT WOS:000178722800001
+PM 12239890
+ER
+
+PT J
+AU Warren, WH
+AF Warren, WH
+TI The dynamics of perception and action
+SO PSYCHOLOGICAL REVIEW
+AB How might one account for the organization in behavior without attributing it to an internal control structure? The present article develops a theoretical framework called behavioral dynamics that integrates an information-based approach to perception with a dynamical systems approach to action. For a given task, the agent and its environment are treated as a pair of dynamical systems that are coupled mechanically and informationally. Their interactions give rise to the behavioral dynamics, a vector field with attractors that correspond to stable task solutions, repellers that correspond to avoided states, and bifurcations that correspond to behavioral transitions. The framework is used to develop theories of several tasks in which a human agent interacts with the physical environment, including bouncing a ball on a racquet, balancing an object, braking a vehicle, and guiding locomotion. Stable, adaptive behavior emerges from the dynamics of the interaction between a structured environment and an agent with simple control laws, under physical and informational constraints.
+RI Kato, Takaaki/A-6492-2010
+OI Kato, Takaaki/0000-0002-7610-3853
+SN 0033-295X
+EI 1939-1471
+PD APR
+PY 2006
+VL 113
+IS 2
+BP 358
+EP 389
+DI 10.1037/0033-295X.113.2.358
+UT WOS:000237328200006
+PM 16637765
+ER
+
+PT J
+AU van Gelder, T
+AF van Gelder, T
+TI The dynamical hypothesis in cognitive science
+SO BEHAVIORAL AND BRAIN SCIENCES
+AB According to the dominant computational approach in cognitive science, cognitive agents are digital computers; according to the alternative approach, they are dynamical systems. This target article attempts to articulate and support the dynamical hypothesis. The dynamical hypothesis has two major components: the nature hypothesis (cognitive agents are dynamical systems) and the knowledge hypothesis (cognitive agents can be understood dynamically). A wide range of objections to this hypothesis can be rebutted. The conclusion is that cognitive systems may well be dynamical systems, and only sustained empirical research in cognitive science will determine the extent to which that is true.
+OI Chrisley, Ron/0000-0002-1177-1789; Davids, Keith/0000-0003-1398-6123
+SN 0140-525X
+PD OCT
+PY 1998
+VL 21
+IS 5
+BP 615
+EP +
+UT WOS:000078225700001
+PM 10097022
+ER
+
+PT J
+AU Beer, RD
+AF Beer, RD
+TI The dynamics of active categorical perception in an evolved model agent
+SO ADAPTIVE BEHAVIOR
+CT 4th International Conference on Simulation of Adaptive Behavior
+CY SEP 09-13, 1996
+CL Cape Cod, MA
+AB Notions of embodiment, situatedness, and dynamics are increasingly being debated in cognitive science. However, these debates are often carried out in the absence of concrete examples. In order to build intuition, this paper explores a model agent to illustrate how the perspective and tools of dynamical systems theory can be applied to the analysis of situated, embodied agents capable of minimally cognitive behavior. Specifically, we study a model agent whose "nervous system" was evolved using a genetic algorithm to catch circular objects and to avoid diamond-shaped ones. After characterizing the performance, behavioral strategy and psychophysics of the best-evolved agent, its dynamics are analyzed in some detail at three different levels: (1) the entire coupled brain/body/environment system; (2) the interaction between agent and environment that generates the observed coupled dynamics; (3) the underlying neuronal properties responsible for the agent dynamics. This analysis offers both explanatory insight and testable predictions. The paper concludes with discussions of the overall picture that emerges from this analysis, the challenges this picture poses to traditional notions of representation, and the utility of a research methodology involving the analysis of simpler idealized models of complete brain/body/environment systems.
+RI X, Simon/F-4678-2011
+SN 1059-7123
+PY 2003
+VL 11
+IS 4
+BP 209
+EP 243
+DI 10.1177/1059712303114001
+UT WOS:000220921000001
+ER
+
+PT J
+AU van der Maas, HLJ
+   Dolan, CV
+   Grasman, RPPP
+   Wicherts, JM
+   Huizenga, HM
+   Raijmakers, MEJ
+AF van der Maas, Han L. J.
+   Dolan, Conor V.
+   Grasman, Raoul P. P. P.
+   Wicherts, Jelte M.
+   Huizenga, Hilde M.
+   Raijmakers, Maartje E. J.
+TI A dynamical model of general intelligence: The positive manifold of
+   intelligence by mutualism
+SO PSYCHOLOGICAL REVIEW
+AB Scores on cognitive tasks used in intelligence tests correlate positively with each other, that is, they display a positive manifold of correlations. The positive manifold is often explained by positing a dominant latent variable, the g factor, associated with a single quantitative cognitive or biological process or capacity. In this article, a new explanation of the positive manifold based on a dynamical model is proposed, in which reciprocal causation or mutualism plays a central role. It is shown that the positive manifold emerges purely by positive beneficial interactions between cognitive processes during development. A single underlying g factor plays no role in the model. The model offers explanations of important findings in intelligence research, such as the hierarchical factor structure of intelligence, the low predictability of intelligence from early childhood performance, the integration/differentiation effect, the increase in heritability of g, and the Jensen effect, and is consistent with current explanations of the Flynn effect.
+RI Wicherts, Jelte/A-2664-2008
+OI Wicherts, Jelte/0000-0003-2415-2933
+SN 0033-295X
+PD OCT
+PY 2006
+VL 113
+IS 4
+BP 842
+EP 861
+DI 10.1037/0033-295X.113.4.842
+UT WOS:000241047400006
+PM 17014305
+ER
+
+PT J
+AU Newell, KM
+   Liu, YT
+   Mayer-Kress, G
+AF Newell, KM
+   Liu, YT
+   Mayer-Kress, G
+TI Time scales in motor learning and development
+SO PSYCHOLOGICAL REVIEW
+AB A theoretical framework based on the concepts and tools of nonlinear dynamical systems is advanced to account for both the persistent and transitory changes traditionally shown for the learning and development of motor skills. The multiple lime scales of change in task outcome over time are interpreted as originating from the system's trajectory on an evolving attractor landscape. Different bifurcations between attractor organizations and transient phenomena can lead to exponential, power law, or S-shaped learning curves. This unified dynamical account of the Functions and time scales in motor learning and development offers several new hypotheses for future research on the nature of change in learning theory.
+SN 0033-295X
+PD JAN
+PY 2001
+VL 108
+IS 1
+BP 57
+EP 82
+DI 10.1037//0033-295X.108.1.57
+UT WOS:000166731900004
+PM 11212633
+ER
+
+PT J
+AU Araujo, D
+   Davids, K
+   Hristovski, R
+AF Araujo, Duarte
+   Davids, Keith
+   Hristovski, Robert
+TI The ecological dynamics of decision making in sport
+SO PSYCHOLOGY OF SPORT AND EXERCISE
+AB Objectives: The aim of this position paper is to consider the decision-making process as an integral part of goal-directed behaviour influenced by functional constraints at the scale of the environment-athlete relationship. To achieve this aim we discuss relevant theoretical ideas from ecological psychology, focusing particularly on ecological dynamics, as a contrast to more traditional perspectives on decision-making behaviour. To support the argumentation we briefly describe some recent empirical data from studies of sports that emphasise this alternative. perspective on decision making. We conclude that traditional approaches analyse decisions as if they were not grounded, i.e., expressed behaviourally through actions in performance contexts. It is argued that an ecological approach should analyse affordances or action possibilities, when studying cognition in sport, demanding an integration of theories and ideas from the natural sciences in order to understand concepts like information and intentionality.
+   Conclusion: Decision-making behaviour is best considered at the level of the performer-environment relationship and viewed as emerging from the interactions of individuals with environmental constraints over time towards specific functional goals. (C) 2006 Elsevier Ltd. All rights reserved.
+RI Kato, Takaaki/A-6492-2010; Davids, Keith/J-1095-2012; Araujo,
+   Duarte/F-4161-2011; 
+OI Davids, Keith/0000-0003-1398-6123; Kato, Takaaki/0000-0002-7610-3853;
+   Araujo, Duarte/0000-0001-7932-3192; Araujo, Fernando/0000-0001-6471-5564
+SN 1469-0292
+PD NOV
+PY 2006
+VL 7
+IS 6
+BP 653
+EP 676
+DI 10.1016/j.psychsport.2006.07.002
+UT WOS:000241925700008
+ER
+
+PT J
+AU GUIARD, Y
+AF GUIARD, Y
+TI ON FITT AND HOOKE LAWS - SIMPLE HARMONIC MOVEMENT IN UPPER-LIMB CYCLICAL
+   AIMING
+SO ACTA PSYCHOLOGICA
+CT 5TH HANDWRITING CONF
+CY OCT, 1991
+CL ARIZONA STATE UNIV, TEMPE, AZ
+HO ARIZONA STATE UNIV
+AB Can discrete, single-shot movements and continuous, cyclical movements be reduced to a single concept? In the classical, computational approach to human motor behaviour, cyclical aimed movement has generally been considered to derive from discrete primitives through a concatenation mechanism. Much importance, accordingly, has been attached to discrete-movement paradigms and to techniques allowing the segmentation of continuous data. An alternative approach, suggested by the nonlinear dynamical systems theory, views discreteness as a limiting case of cyclicity. Although attempts have been made recently to account for discrete movements in dynamical terms, cyclical paradigms have been favoured.
+   The concatenation interpretation of cyclical aimed movement is criticized on the ground that it implies a complete waste of mechanical energy once in every half-cycle. Some kinematic data from a one-dimensional reciprocal (i.e., cyclical) aiming experiment are reported, suggesting that human subjects do save muscular efforts from one movement to the next in upper-limb cyclical aiming. The experiment demonstrated convergence on simple harmonic motion as aiming tolerance was increased, an outcome interpreted with reference to Hooke's law, in terms of the muscles' capability of storing potential, elastic energy across movement reversals.
+   Not only is the concatenation concept problematic for understanding cyclical aimed movements, but the very reality of discrete movements is questionable too. It is pointed out that discrete motor acts of real life are composed of complete cycles, rather than half-cycles.
+SN 0001-6918
+PD MAR
+PY 1993
+VL 82
+IS 1-3
+BP 139
+EP 159
+DI 10.1016/0001-6918(93)90009-G
+UT WOS:A1993KV36000008
+PM 8475763
+ER
+
+PT J
+AU Large, EW
+   Palmer, C
+AF Large, EW
+   Palmer, C
+TI Perceiving temporal regularity in music
+SO COGNITIVE SCIENCE
+AB We address how listeners perceive temporal regularity in music performances, which are rich in temporal irregularities. A computational model is described in which a small system of internal self-sustained oscillations, operating at different periods with specific phase and period relations, entrains to the rhythms of music performances. Based on temporal expectancies embodied by the oscillations, the model predicts the categorization of temporally changing event intervals into discrete metrical categories, as well as the perceptual salience of deviations from these categories. The model's predictions are tested in two experiments using piano performances of the same music with different phrase structure interpretations (Experiment 1) or different melodic interpretations (Experiment 2). The model successfully tracked temporal regularity amidst the temporal fluctuations found in the performances. The model's sensitivity to performed deviations from its temporal expectations compared favorably with the per-formers' structural (phrasal and melodic) intentions. Furthermore, the model tracked normal performances (with increased temporal variability) better than performances in which temporal fluctuations associated with individual voices were removed (with decreased variability). The small, systematic temporal irregularities characteristic of human performances (chord asynchronies) improved tracking, but randomly generated temporal irregularities did not. These findings suggest that perception of temporal regularity in complex musical sequences is based on temporal expectancies that adapt in response to temporally fluctuating input. (C) 2002 Cognitive Science Society, Inc. All rights reserved.
+SN 0364-0213
+PD JAN-FEB
+PY 2002
+VL 26
+IS 1
+BP 1
+EP 37
+UT WOS:000173730000001
+ER
+
+PT J
+AU COLE, BJ
+AF COLE, BJ
+TI FRACTAL TIME IN ANIMAL BEHAVIOR - THE MOVEMENT ACTIVITY OF DROSOPHILA
+SO ANIMAL BEHAVIOUR
+AB The organization of episodes of activity and inactivity of Drosophila melanogaster has a complex structure. Episodes of apparently continuous activity have shorter episodes of inactivity embedded within them. This pattern of activity has a self-similar structure; the activity record appears the same regardless of the time scale used. There is a power law dependence of the rate 'constants' that describes how the activity of flies turns on and off. As a consequence no natural time scale for the measurement of the activity level exists, and the amount of activity depends on the time scale of measurement. The observation of fractal time variability in animal behaviour may illuminate the processes that produce activity. Fractal time variation in movement activity can lead to Levy flight patterns of movement, which produce efficient searches. (C) 1995 The Association for the Study of Animal Behaviour
+SN 0003-3472
+PD NOV
+PY 1995
+VL 50
+BP 1317
+EP 1324
+DI 10.1016/0003-3472(95)80047-6
+PN 5
+UT WOS:A1995TE32500018
+ER
+
+PT J
+AU Barsalou, LW
+AF Barsalou, Lawrence W.
+TI Grounded Cognition: Past, Present, and Future
+SO TOPICS IN COGNITIVE SCIENCE
+AB Thirty years ago, grounded cognition had roots in philosophy, perception, cognitive linguistics, psycholinguistics, cognitive psychology, and cognitive neuropsychology. During the next 20 years, grounded cognition continued developing in these areas, and it also took new forms in robotics, cognitive ecology, cognitive neuroscience, and developmental psychology. In the past 10 years, research on grounded cognition has grown rapidly, especially in cognitive neuroscience, social neuroscience, cognitive psychology, social psychology, and developmental psychology. Currently, grounded cognition appears to be achieving increased acceptance throughout cognitive science, shifting from relatively minor status to increasing importance. Nevertheless, researchers wonder whether grounded mechanisms lie at the heart of the cognitive system or are peripheral to classic symbolic mechanisms. Although grounded cognition is currently dominated by demonstration experiments in the absence of well-developed theories, the area is likely to become increasingly theory driven over the next 30 years. Another likely development is the increased incorporation of grounding mechanisms into cognitive architectures and into accounts of classic cognitive phenomena. As this incorporation occurs, much functionality of these architectures and phenomena is likely to remain, along with many original mechanisms. Future theories of grounded cognition are likely to be heavily influenced by both cognitive neuroscience and social neuroscience, and also by developmental science and robotics. Aspects from the three major perspectives in cognitive science-classic symbolic architectures, statistical/dynamical systems, and grounded cognition-will probably be integrated increasingly in future theories, each capturing indispensable aspects of intelligence.
+SN 1756-8757
+PD OCT
+PY 2010
+VL 2
+IS 4
+BP 716
+EP 724
+DI 10.1111/j.1756-8765.2010.01115.x
+UT WOS:000283870400009
+PM 25164052
+ER
+
+PT J
+AU McClelland, JL
+   Botvinick, MM
+   Noelle, DC
+   Plaut, DC
+   Rogers, TT
+   Seidenberg, MS
+   Smith, LB
+AF McClelland, James L.
+   Botvinick, Matthew M.
+   Noelle, David C.
+   Plaut, David C.
+   Rogers, Timothy T.
+   Seidenberg, Mark S.
+   Smith, Linda B.
+TI Letting structure emerge: connectionist and dynamical systems approaches
+   to cognition
+SO TRENDS IN COGNITIVE SCIENCES
+AB Connectionist and dynamical systems approaches explain human thought, language and behavior in terms of the emergent consequences of a large number of simple noncognitive processes. We view the entities that serve as the basis for structured probabilistic approaches as abstractions that are occasionally useful but often misleading: they have no real basis in the actual processes that give rise to linguistic and cognitive abilities or to the development of these abilities. Although structured probabilistic approaches can be useful in determining what would be optimal under certain assumptions, we propose that connectionist, dynamical systems, and related approaches, which focus on explaining the mechanisms that give rise to cognition, will be essential in achieving a full understanding of cognition and development.
+RI McClelland, James/F-6004-2011; 
+OI McClelland, James/0000-0002-8217-405X
+SN 1364-6613
+PD AUG
+PY 2010
+VL 14
+IS 8
+BP 348
+EP 356
+DI 10.1016/j.tics.2010.06.002
+UT WOS:000281099600009
+PM 20598626
+ER
+
+PT J
+AU Freeman, JB
+   Ambady, N
+AF Freeman, Jonathan B.
+   Ambady, Nalini
+TI A Dynamic Interactive Theory of Person Construal
+SO PSYCHOLOGICAL REVIEW
+AB A dynamic interactive theory of person construal is proposed. It assumes that the perception of other people is accomplished by a dynamical. system involving continuous interaction between social categories, stereotypes, high-level cognitive states, and the low-level processing of facial, vocal, and bodily cues. This system permits lower-level sensory perception and higher-order social cognition to dynamically coordinate across multiple interactive levels of processing to give rise to stable person construals. A recurrent connectionist model of this system is described, which accounts for major findings on (a) partial parallel activation and dynamic competition in categorization and stereotyping, (b) top-down influences of high-level cognitive stales and stereotype activations on categorization, (c) bottom-up category interactions due to shared perceptual features, and (d) contextual and cross-modal effects on categorization. The system's probabilistic and continuously evolving activation states permit multiple construals to be flexibly active in parallel. These activation states are also able to be tightly yoked to ongoing changes in external perceptual cues and to ongoing changes in high-level cognitive states. The implications of a rapidly adaptive, dynamic, and interactive person construal system are discussed.
+SN 0033-295X
+EI 1939-1471
+PD APR
+PY 2011
+VL 118
+IS 2
+BP 247
+EP 279
+DI 10.1037/a0022327
+UT WOS:000289326900004
+PM 21355661
+ER
+
+PT J
+AU Marsh, KL
+   Richardson, MJ
+   Baron, RM
+   Schmidt, RC
+AF Marsh, KL
+   Richardson, MJ
+   Baron, RM
+   Schmidt, RC
+TI Contrasting approaches to perceiving and acting with others
+SO ECOLOGICAL PSYCHOLOGY
+AB How and why the presence of a person directly affects the perception and action of another person is a phenomenon that has been approached in a limited and piecemeal fashion within psychology. This kind of diffuse strategy has failed to capture the jointness of perception and action within and between people. In contradistinction, the authors offer a perspective that retains both integrally social features (e.g., involves interaction) and yet adequately exploits the current state of knowledge regarding the ecological properties of perception-action, while at the same time drawing on aspects of dynamic systems theory. In this article the authors review the best attempts to examine how one individual affects another's perceptions and actions in the emergence of a social unit of action. Two important approaches, the individual-level and cognitive dynamics approaches, have yielded insights that derive in significant degree from principles of ecological psychology and/or dynamical systems theory. Prototypic of the individual-level approach is a focus on what can be perceived by coactors with the aim of uncovering how the dispositional qualities (affordances) of another person are informationally specified during social interaction. In contrast, the cognitive dynamics approach simulates dynamical characteristics of cognition and psychological influence with the aim of uncovering how cooperative interaction emerges out of its component parts. The authors argue that these approaches involve, respectively, insufficient mutuality and insufficient embodiment. Consequently, a social synergy perspective is discussed that approaches the problem of socially cooperative interaction at the relational, nonreductive level, using novel methods to examine how social perception and action emerge through self-organizing processes.
+RI Richardson, Michael/A-1277-2011
+SN 1040-7413
+PY 2006
+VL 18
+IS 1
+BP 1
+EP 38
+DI 10.1207/s15326969eco1801_1
+UT WOS:000236135100001
+ER
+
+PT J
+AU Tabor, W
+   Juliano, C
+   Tanenhaus, MK
+AF Tabor, W
+   Juliano, C
+   Tanenhaus, MK
+TI Parsing in a dynamical system: An attractor-based account of the
+   interaction of lexical and structural constraints in sentence processing
+SO LANGUAGE AND COGNITIVE PROCESSES
+AB A dynamical systems approach to parsing is proposed in which syntactic hypotheses are associated with attractors in a metric space. These attractors have many of the properties of traditional syntactic categories, while at the same time encoding context-dependent, lexically specific distinctions. Hypotheses motivated by the dynamical system theory were tested in four reading time experiments examining the interaction of simple lexical frequencies, frequencies that are contingent on an environment defined by syntactic categories, and frequencies contingent on verb argument structure. The experiments documented a variety of contingent frequency effects that cut across traditional linguistic grains, each of which was predicted by the dynamical systems model. These effects were simulated in an implementation of the theory, employing a recurrent network trained from a corpus to construct metric representations and an algorithm implementing a gravitational dynamical system to model reading time as time to gravitate to an attractor.
+SN 0169-0965
+PD APR-JUN
+PY 1997
+VL 12
+IS 2-3
+BP 211
+EP 271
+UT WOS:A1997XM06700004
+ER
+
+PT J
+AU BEEK, PJ
+   PEPER, CE
+   STEGEMAN, DF
+AF BEEK, PJ
+   PEPER, CE
+   STEGEMAN, DF
+TI DYNAMICAL MODELS OF MOVEMENT COORDINATION
+SO HUMAN MOVEMENT SCIENCE
+CT 2nd World Congress of Biomechanics
+CY JUL 10-15, 1994
+CL AMSTERDAM, NETHERLANDS
+AB This article examines the status of dynamical models of movement coordination qua phenomenological models. After a brief outline of the aims, methods and strategic assumptions of the dynamical systems approach, a survey is provided of the theoretical and empirical progress it has made in identifying general principles of coordination. Although dynamical models are constructed for phenomena at a particular level of analysis for which they provide descriptive explanations, their dynamics can sometimes be linked to or associated with the dynamics of processes at other levels of analysis. The article concludes with a tentative scheme to clarify the position of the dynamical approach relative to other extant approaches in movement science.
+SN 0167-9457
+PD NOV
+PY 1995
+VL 14
+IS 4-5
+BP 573
+EP 608
+DI 10.1016/0167-9457(95)00028-5
+UT WOS:A1995TK34100008
+ER
+
+PT J
+AU Large, EW
+AF Large, EW
+TI On synchronizing movements to music
+SO HUMAN MOVEMENT SCIENCE
+AB How do people synchronize movement patterns with music? Most likely, when people listen to a musical rhythm, they perceive a bear and a metrical structure in the rhythm, and these perceived patterns enable coordination with the music. Here, a model of meter perception is proposed in which a musical stimulus provides input to a pattern-forming dynamical system. Under rhythmic stimulation, the system undergoes bifurcations that correspond to the birth of self-sustained oscillations and the formation of temporally structured patterns of oscillations. The resulting patterns dynamically embody the perception of beat and meter, and they are stable in the sense that they can persist in the in the face of rhythmic conflict. The performance of the model is compared with the results of a recent beat induction study (J. Snyder, C.L. Krumhansl, Tapping to ragtime: Cues to pulse-finding. Music Perception, 2000 (under review)) in which musicians tapped along with musical rhythms. The network closely matched human performance for natural musical signals and showed a similar pattern of breakdowns as the input degraded. The theoretical implications of these findings are considered. (C) 2000 Elsevier Science B.V. All rights reserved.
+SN 0167-9457
+PD OCT
+PY 2000
+VL 19
+IS 4
+BP 527
+EP 566
+DI 10.1016/S0167-9457(00)00026-9
+UT WOS:000167688200006
+ER
+
+PT J
+AU Shockley, K
+   Richardson, DC
+   Dale, R
+AF Shockley, Kevin
+   Richardson, Daniel C.
+   Dale, Rick
+TI Conversation and Coordinative Structures
+SO TOPICS IN COGNITIVE SCIENCE
+AB People coordinate body postures and gaze patterns during conversation. We review literature showing that (1) action embodies cognition, (2) postural coordination emerges spontaneously when two people converse, (3) gaze patterns influence postural coordination, (4) gaze coordination is a function of common ground knowledge and visual information that conversants believe they share, and (5) gaze coordination is causally related to mutual understanding. We then consider how coordination, generally, can be understood as temporarily coupled neuromuscular components that function as a collective unit known as a coordinative structure in the motor control literature. We speculate that the coordination of gaze and body sway found in conversation may be understood as a cross-person coordinative structure that embodies the goals of the joint action system.
+RI Dale, Rick/F-4660-2010
+OI Dale, Rick/0000-0001-7865-474X
+SN 1756-8757
+PD APR
+PY 2009
+VL 1
+IS 2
+BP 305
+EP 319
+DI 10.1111/j.1756-8765.2009.01021.x
+UT WOS:000283864100009
+PM 25164935
+ER
+
+PT J
+AU Clark, A
+   Grush, R
+AF Clark, A
+   Grush, R
+TI Towards a cognitive robotics
+SO ADAPTIVE BEHAVIOR
+AB There is a definite challenge in the air regarding the pivotal notion of internal representation. This challenge is explicit in, e.g., van Gelder, 1995; Beer, 1995; Thelen & Smith, 1994; Wheeler, 1994; and elsewhere. We think it is a challenge that can be met and that (importantly) can be met by arguing from within a general framework that accepts many of the basic premises of the work tin new robotics and in dynamical systems theory) that motivates such scepticism in the first place. Our strategy will be as follows. We begin (Section 1) by offering an account (an example and something dose to a definition) of what we shall term Minimal Robust Representationalism (MRR). Sections 2 & 3 address some likely worries and questions about this notion. We end (Section 4) by making explicit the conditions under which, on our account, a science (e.g., robotics) may claim to be addressing cognitive phenomena.
+SN 1059-7123
+PD WIN
+PY 1999
+VL 7
+IS 1
+BP 5
+EP 16
+DI 10.1177/105971239900700101
+UT WOS:000080413000001
+ER
+
+PT J
+AU Wilson, PH
+AF Wilson, PH
+TI Practitioner review: Approaches to assessment and treatment of children
+   with DCD: an evaluative review
+SO JOURNAL OF CHILD PSYCHOLOGY AND PSYCHIATRY
+AB Movement clumsiness (or Developmental Coordination Disorder - DCD) has gained increasing recognition as a significant condition of childhood. However, some uncertainty still exists about diagnosis. Accordingly, approaches to assessment and treatment are varied, each drawing on distinct theoretical assumptions about the aetiology of the condition and its developmental course. This review evaluates the current status of different approaches to motor assessment and treatment for children with DCD. These approaches are divided according to their broad conceptual origin (or explanatory framework): Normative Functional Skill Approach, General Abilities Approach, Neurodevelopmental Theory, Dynamical Systems Theory, and the Cognitive Neuroscientific Approach. Each conceptual framework is shown to support assessment and treatment methods with varying degrees of conceptual and psychometric integrity. The normative functional skill approach supports the major screening devices for DCD and cognitive (or top-down) approaches to intervention. The general abilities approach and traditional neurodevelopmental theory are not well supported by recent research. The dynamical systems approach supports promising trends in biomechanical or kinematic analysis of movement, ecological task analysis, and task-specific intervention. Finally, and more recently, the cognitive neuroscientific approach has generated some examples of process-oriented assessment and treatment based on validated (brain-behaviour) models of motor control and learning. A multi-level approach to movement assessment and treatment is recommended for DCD, providing a more complete representation of motor development at different levels of function - behavioural, neurocognitive, and emotional.
+OI Wilson, Peter/0000-0003-3747-0287
+SN 0021-9630
+PD AUG
+PY 2005
+VL 46
+IS 8
+BP 806
+EP 823
+DI 10.1111/j.1469-7610.2005.01409
+UT WOS:000230337800002
+PM 16033630
+ER
+
+PT J
+AU Schmidt, RA
+AF Schmidt, RA
+TI Motor schema theory after 27 years: Reflections and implications for a
+   new theory
+SO RESEARCH QUARTERLY FOR EXERCISE AND SPORT
+AB The schema theory for discrete motor skill learning (Schmidt, 1975), originally published in 1975, has generated considerable interest and received strong challenges over its lifetime. In this paper, I focus on the findings generated since 1975 that bear on the theory and highlight those that produce difficulties for it and will be motivators for differing theoretical viewpoints in the future. At the same time, I examine other lines of evidence that seem to bolster the original lines of thinking. Finally, I provide some suggestions for a much needed new generation of motor learning theory, pointing out particular features from the schema theory that could be included and suggesting gaps and omissions that will need additional data and theorizing in future attempts.
+SN 0270-1367
+PD DEC
+PY 2003
+VL 74
+IS 4
+BP 366
+EP 375
+UT WOS:000188733500001
+PM 14768837
+ER
+
+PT J
+AU Bechtel, W
+AF Bechtel, W
+TI Representations and cognitive explanations: Assessing the dynamicist's
+   challenge in cognitive science
+SO COGNITIVE SCIENCE
+AB Advocates of dynamical systems theory (DST) sometimes employ revolutionary rhetoric. In an attempt to clarify how DST models differ from others in cognitive science, I focus on two issues raised by DST: the role for representations in mental models and the conception of explanation invoked. Two features of representations ore their role in standing-in for features external to the system and their format. DST advocates sometimes claim to have repudiated the need for stand-ins in DST models, but I argue that they are mistaken. Nonetheless, DST does offer new ideas as to the format of representations employed in cognitive systems. With respect to explanation, I argue that some DST models are better seen as conforming to the covering-raw conception of explanation than to the mechanistic conception of explanation implicit in most cognitive science research. But even here, I argue, DST models are a valuable complement to more mechanistic cognitive explanations.
+SN 0364-0213
+PD JUL-SEP
+PY 1998
+VL 22
+IS 3
+BP 295
+EP 317
+DI 10.1016/S0364-0213(99)80042-1
+UT WOS:000076519000002
+ER
+
+PT J
+AU CAMRAS, LA
+AF CAMRAS, LA
+TI EXPRESSIVE DEVELOPMENT AND BASIC EMOTIONS
+SO COGNITION & EMOTION
+AB One important emotion theory currently postulates an innate tie between specific infant facial expressions and a set of discrete basic emotions. The arguments and evidence relevant to this assertion are reviewed. New data are presented from a naturalistic study of one infant's early expressive development and a judgement study of infant facial, vocal, and body activity. These data challenge the innate tie hypothesis. Based on dynamical systems systems theory, an alternate conceptual framework is presented that may allow us to usefully retain the concept of basic emotions while accommodating the data on infant expressive development.
+SN 0269-9931
+PD MAY-JUL
+PY 1992
+VL 6
+IS 3-4
+BP 269
+EP 283
+DI 10.1080/02699939208411072
+UT WOS:A1992JD26200006
+ER
+
+PT J
+AU Ferrer, E
+   McArdle, JJ
+AF Ferrer, Emilio
+   McArdle, John J.
+TI Longitudinal Modeling of Developmental Changes in Psychological Research
+SO CURRENT DIRECTIONS IN PSYCHOLOGICAL SCIENCE
+AB In this article we provide a review of recent advances in longitudinal models for multivariate change. We first claim the need for dynamic modeling approaches as a way to evaluate psychological theories. We then describe one such approach, latent change score (LCS) models, and illustrate their utility with a summary of research findings in various areas of psychological science. We then highlight the most prominent features of LCS models. We conclude the article with suggestions for future research on multivariate models of change that can enhance our understanding of psychological science.
+SN 0963-7214
+PD JUN
+PY 2010
+VL 19
+IS 3
+BP 149
+EP 154
+DI 10.1177/0963721410370300
+UT WOS:000279430200004
+ER
+
+PT J
+AU Spivey, MJ
+   Dale, R
+AF Spivey, Michael J.
+   Dale, Rick
+TI Continuous dynamics in real-time cognition
+SO CURRENT DIRECTIONS IN PSYCHOLOGICAL SCIENCE
+AB Real-time cognition is best described not as a sequence of logical operations performed on discrete symbols but as a continuously changing pattern of neuronal activity. The continuity in these dynamics indicates that, in between describable states of mind, mental activity does not lend itself to the linguistic labels relied on by much of psychology. We discuss eye-tracking and mouse-tracking evidence for this temporal continuity and provide geometric visualizations of mental activity, depicting it as a continuous trajectory through a state space (a multidimensional space in which locations correspond to mental states). When the state of the system travels toward a frequently visited region of that space, the destination may constitute recognition of a particular word or a particular object; but on the way there, the majority of the mental trajectory is in intermediate regions of that space, revealing graded mixtures of mental states.
+RI Dale, Rick/F-4660-2010
+OI Dale, Rick/0000-0001-7865-474X
+SN 0963-7214
+PD OCT
+PY 2006
+VL 15
+IS 5
+BP 207
+EP 211
+DI 10.1111/j.1467-8721.2006.00437.x
+UT WOS:000242197300001
+ER
+
+PT J
+AU Wagemans, J
+   Feldman, J
+   Gepshtein, S
+   Kimchi, R
+   Pomerantz, JR
+   van der Helm, PA
+   van Leeuwen, C
+AF Wagemans, Johan
+   Feldman, Jacob
+   Gepshtein, Sergei
+   Kimchi, Ruth
+   Pomerantz, James R.
+   van der Helm, Peter A.
+   van Leeuwen, Cees
+TI A Century of Gestalt Psychology in Visual Perception: II. Conceptual and
+   Theoretical Foundations
+SO PSYCHOLOGICAL BULLETIN
+AB Our first review article (Wagemans et al., 2012) on the occasion of the centennial anniversary of Gestalt psychology focused on perceptual grouping and figure ground organization. It concluded that further progress requires a reconsideration of the conceptual and theoretical foundations of the Gestalt approach, which is provided here. In particular, we review contemporary formulations of holism within an information-processing framework, allowing for operational definitions (e.g., integral dimensions, emergent features, configural superiority, global precedence, primacy of holistic/configural properties) and a refined understanding of its psychological implications (e.g., at the level of attention, perception, and decision). We also review 4 lines of theoretical progress regarding the law of Pragnanz-the brain's tendency of being attracted towards states corresponding to the simplest possible organization, given the available stimulation. The first considers the brain as a complex adaptive system and explains how self-organization solves the conundrum of trading between robustness and flexibility of perceptual states. The second specifies the economy principle in terms of optimization of neural resources, showing that elementary sensors working independently to minimize uncertainty can respond optimally at the system level. The third considers how Gestalt percepts (e.g., groups, objects) are optimal given the available stimulation, with optimality specified in Bayesian terms. Fourth, structural information theory explains how a Gestaltist visual system that focuses on internal coding efficiency yields external veridicality as a side effect. To answer the fundamental question of why things look as they do, a further synthesis of these complementary perspectives is required.
+RI van der Helm, Peter/B-3822-2008; Gepshtein, Sergei/D-8245-2016; 
+OI van der Helm, Peter/0000-0003-0428-1439; Gepshtein,
+   Sergei/0000-0002-6328-7972; van Leeuwen, Cees/0000-0002-4441-2440
+SN 0033-2909
+EI 1939-1455
+PD NOV
+PY 2012
+VL 138
+IS 6
+BP 1218
+EP 1252
+DI 10.1037/a0029334
+UT WOS:000310116600008
+PM 22845750
+ER
+
+PT J
+AU Wilson, AD
+   Golonka, S
+AF Wilson, Andrew D.
+   Golonka, Sabrina
+TI Embodied cognition is not what you think it is
+SO FRONTIERS IN PSYCHOLOGY
+AB The most exciting hypothesis in cognitive science right now is the theory that cognition is embodied. Like all good ideas in cognitive science, however, embodiment immediately came to mean six different things. The most common definitions involve the straightforward claim that "states of the body modify states of the mind." However, the implications of embodiment are actually much more radical than this. If cognition can span the brain, body, and the environment, then the "states of mind" of disembodied cognitive science won't exist to be modified. Cognition will instead be an extended system assembled from a broad array of resources. Taking embodiment seriously therefore requires both new methods and theory. Here we outline four key steps that research programs should follow in order to fully engage with the implications of embodiment. The first step is to conduct a task analysis, which characterizes from a first person perspective the specific task that a perceiving-acting cognitive agent is faced with. The second step is to identify the task-relevant resources the agent has access to in order to solve the task. These resources can span brain, body, and environment. The third step is to identify how the agent can assemble these resources into a system capable of solving the problem at hand. The last step is to test the agent's performance to confirm that agent is actually using the solution identified in step 3. We explore these steps in more detail with reference to two useful examples (the outfielder problem and the A-not-B error), and introduce how to apply this analysis to the thorny question of language use. Embodied cognition is more than we think it is, and we have the tools we need to realize its full potential.
+SN 1664-1078
+PD FEB 12
+PY 2013
+VL 4
+AR 58
+DI 10.3389/fpsyg.2013.00058
+UT WOS:000330782000001
+PM 23408669
+ER
+
+PT J
+AU Elman, JL
+AF Elman, Jeffrey L.
+TI On the Meaning of Words and Dinosaur Bones: Lexical Knowledge Without a
+   Lexicon
+SO COGNITIVE SCIENCE
+AB Although for many years a sharp distinction has been made in language research between rules and words-with primary interest on rules-this distinction is now blurred in many theories. If anything, the focus of attention has shifted in recent years in favor of words. Results from many different areas of language research suggest that the lexicon is representationally rich, that it is the source of much productive behavior, and that lexically specific information plays a critical and early role in the interpretation of grammatical structure. But how much information can or should be placed in the lexicon? This is the question I address here. I review a set of studies whose results indicate that event knowledge plays a significant role in early stages of sentence processing and structural analysis. This poses a conundrum for traditional views of the lexicon. Either the lexicon must be expanded to include factors that do not plausibly seem to belong there; or else virtually all information about word meaning is removed, leaving the lexicon impoverished. I suggest a third alternative, which provides a way to account for lexical knowledge without a mental lexicon.
+RI Elman, Jeffrey/A-9858-2008
+OI Elman, Jeffrey/0000-0002-8072-2294
+SN 0364-0213
+PD JUN
+PY 2009
+VL 33
+IS 4
+BP 547
+EP 582
+DI 10.1111/j.1551-6709.2009.01023.x
+UT WOS:000266589900002
+PM 19662108
+ER
+
+PT J
+AU Vallacher, RR
+   Nowak, A
+AF Vallacher, RR
+   Nowak, A
+TI The emergence of dynamical social psychology
+SO PSYCHOLOGICAL INQUIRY
+AB Interpersonal thought and action represent highly dynamic and complex phenomena. Because of these defining qualities, social psychology has proven resistant to integrative understanding and unqualified prediction within traditional theoretical and empirical approaches. These same qualities, however, make social psychology highly amenable to understanding and investigation within the framework of dynamical systems theory (DST). In the target article, we establish the relevance of this emerging scientific metatheory for theory construction and research in social psychology. We introduce key insights, theoretical notions, and paradigmatic features of the dynamical perspective, map these ideas onto established social psychological phenomena, and suggest new areas of investigation that reflect these ideas. In so doing, we outline the means by which complex interpersonal phenomena can be understood in terms of simple models involving principles and mechanisms common to a wide variety of dynamical systems. We conclude by indicating how DST resolves the implicit trade-off between insight and scientific rigor in social psychology, provides a heuristic for theory construction and hypothesis generation, and holds potential for establishing theoretical coherence within a fragmented field and for integrating the field as a whole with other areas of science.
+SN 1047-840X
+PY 1997
+VL 8
+IS 2
+BP 73
+EP 99
+DI 10.1207/s15327965pli0802_1
+UT WOS:A1997WN15500001
+ER
+
+PT J
+AU WAGENAAR, RC
+   VANEMMERIK, REA
+AF WAGENAAR, RC
+   VANEMMERIK, REA
+TI DYNAMICS OF PATHOLOGICAL GAIT
+SO HUMAN MOVEMENT SCIENCE
+AB This paper is aimed at applying tools of dynamical systems theory to the evaluation and treatment of movement disorders. A key notion in this approach is that qualitative changes in movement coordination emerge spontaneously as a result of unspecific and continuous changes in control parameters. Our research on the dynamics of gait indicates that gradually varying walking velocity as a control parameter results in systematic changes in the frequency and phase relations of arm and leg movements as well as in the phase relation of pelvic and thoracic rotation within the bipedal walking mode. Identification of these intrinsic dynamics of gait enables the classification of pathological coordination patterns. Stability and the ability to make transitions between patterns (adaptability) are important issues in the evaluation of movement disorders. For exercise therapy this implies that the patient must learn to tap the appropriate control parameter in order to facilitate spontaneous emergence of the desired coordination pattern. The use of perceptual information in the form of external auditory and visual rhythms can have positive influences on hemiplegic and Parkinsonian gait by synchronizing the movements of the body segments. The effects of rhythmic exercises are, however, very sensitive to the nature and magnitude of the rhythms manipulated. It is concluded that a systematic investigation of the role of perceptual control variables is a necessary prerequisite to understand and treat movement disorders.
+SN 0167-9457
+PD AUG
+PY 1994
+VL 13
+IS 3-4
+BP 441
+EP 471
+DI 10.1016/0167-9457(94)90049-3
+UT WOS:A1994PJ14100008
+ER
+
+PT J
+AU Freeman, JB
+   Ambady, N
+   Rule, NO
+   Johnson, KL
+AF Freeman, Jonathan B.
+   Ambady, Nalini
+   Rule, Nicholas O.
+   Johnson, Kerri L.
+TI Will a Category Cue Attract You? Motor Output Reveals Dynamic
+   Competition Across Person Construal
+SO JOURNAL OF EXPERIMENTAL PSYCHOLOGY-GENERAL
+AB People use social categories to perceive others. extracting category cues to glean membership. Growing evidence for continuous dynamics in real-time cognition suggests. contrary to prevailing social psychological accounts. that person construal may involve dynamic competition between simultaneously active representations. To test this, the authors examined social categorization in real-time by streaming the x, y coordinates of hand movements as participants categorized typical and atypical faces by sex. Though judgments of atypical targets were largely accurate. online motor Output exhibited l Continuous spatial attraction toward the opposite sex category. indicating dynamic competition between multiple social category alternatives. The authors offer a dynamic continuity account of social categorization and provide converging evidence across categorizations of real male and female faces (containing a typical or in atypical sex-specifying cue) and categorizations of computer-generated male and female faces (with Subtly morphed sex-typical or sex-atypical features). In 3 studies, online motor Output revealed continuous dynamics underlying Person construal. ill which multiple simultaneously and partially active category representations gradually cascade into social categorical judgments. Such evidence is challenging for discrete stage-based accounts.
+SN 0096-3445
+EI 1939-2222
+PD NOV
+PY 2008
+VL 137
+IS 4
+BP 673
+EP 690
+DI 10.1037/a0013875
+UT WOS:000260664600006
+PM 18999360
+ER
+
+PT J
+AU FITZPATRICK, P
+   CARELLO, C
+   SCHMIDT, RC
+   COREY, D
+AF FITZPATRICK, P
+   CARELLO, C
+   SCHMIDT, RC
+   COREY, D
+TI HAPTIC AND VISUAL-PERCEPTION OF AN AFFORDANCE FOR UPRIGHT POSTURE
+SO ECOLOGICAL PSYCHOLOGY
+AB Perception of whether a slanted surface supports upright stance was evaluated visually and haptically.  Observers stood approximately 1 m from a 1 m x 1 m plywood board whose angle of inclination varied randomly among seven settings (12-degrees, 17-degrees, 22-degrees, 27-degrees, 33-degrees, 39-degrees, and 45-degrees).  For visual trials, observers looked at the surface.  For haptic trials, the observers were blindfolded and explored the surface with a hand-held wooden dowel.  The perceived behavioral category boundary (i.e., the slope that received 50% yes responses) did not differ for visual and haptic judgments.  Although the two perceptual systems did not differ in the mean, participants took longer to make haptic judgments and were less confident in doing so.  For both perceptual systems, response time increased and confidence decreased at the category boundary.  A second experiment used ascending and descending methods of limits and found both enhanced contrast and hysteresis effects for both perceptual systems.  Differences between perceptual systems were discussed in the context of efficiency of perception and attunement.  Similarities between perceptual systems were considered in the context of amodal invariants and dynamical systems.
+SN 1040-7413
+PY 1994
+VL 6
+IS 4
+BP 265
+EP 287
+DI 10.1207/s15326969eco0604_2
+UT WOS:A1994PW53700002
+ER
+
+PT J
+AU Mitra, S
+   Amazeen, PG
+   Turvey, MT
+AF Mitra, S
+   Amazeen, PG
+   Turvey, MT
+TI Intermediate motor learning as decreasing active (dynamical) degrees of
+   freedom
+SO HUMAN MOVEMENT SCIENCE
+AB A classical view is that motor learning has distinguishable early, intermediate, and late phases. A recent view is that motor learning is the acquisition of an abstract equation of motion that specifies the time evolution of a pattern of coordination. The pattern is expressed by a collective variable that enslaves or orders component subsystems that, in turn, act on and generate the collective variable. In these latter terms, early learning resolves the collective variable and its motion equation, intermediate learning stabilizes and standardizes the subsystems or active degrees of freedom (DFs) producing the collective variable's dynamics. The preceding ideas, and the phase-space reconstruction methods required to determine active DFs, are developed in tutorial fashion in the context of an experimental investigation of learning a bimanual rhythmic coordination. Results show that intermediate learning reduces the dimensionality of the learned coordination's dynamics and renders those dynamics more deterministic. The tutorial development relates the preceding concepts, results and methods of analyses to (a) the contrast between Poincarean and Newtonian dynamics, (b) contemporary interpretations of random processes, (c) definitions of DFs in respect to Bernstein's problem, (d) the potential contribution of chaos to the adaptability of a learned coordination, and (e) possible links between active (dynamical) DFs and the control variables r, c, and mu identified by the lambda hypothesis. (C) 1998 Elsevier Science B.V.
+OI Mitra, Suvobrata/0000-0001-7620-4809
+SN 0167-9457
+PD JAN
+PY 1998
+VL 17
+IS 1
+BP 17
+EP 65
+DI 10.1016/S0167-9457(97)00023-7
+UT WOS:000071519500002
+ER
+
+PT J
+AU Sugita, Y
+   Tani, J
+AF Sugita, Y
+   Tani, J
+TI Learning semantic combinatoriality from the interaction between
+   linguistic and behavioral processes
+SO ADAPTIVE BEHAVIOR
+AB We present a novel connectionist model for acquiring the semantics of a simple language through the behavioral experiences of a real robot. We focus on the "compositionality" of semantics and examine how it can be generated through experiments. Our experimental results showed that the essential structures for situated semantics can self-organize themselves through dense interactions between linguistic and behavioral processes whereby a certain generalization in learning is achieved. Our analysis of the acquired dynamical structures indicates that an equivalence of compositionality appears in the combinatorial mechanics self-organized in the neuronal nonlinear dynamics. The manner in which this mechanism of compositionality, based on dynamical systems, differs from that considered in conventional linguistics and other synthetic computational models, is discussed in this paper.
+SN 1059-7123
+PY 2005
+VL 13
+IS 1
+BP 33
+EP 52
+DI 10.1177/105971230501300102
+UT WOS:000227500800002
+ER
+
+PT J
+AU Thayer, JF
+   Friedman, BH
+AF Thayer, JF
+   Friedman, BH
+TI Stop that! Inhibition, sensitization, and their neurovisceral
+   concomitants
+SO SCANDINAVIAN JOURNAL OF PSYCHOLOGY
+AB There is increasing evidence that the behavior of living systems can be conceptualized as a self-organizing dynamical system. Moreover, evidence suggests that inhibitory processes give these systems the flexibility that is necessary for efficient functioning in the face of changing environmental demands, The process of sensitization can be conceived as a breakdown of inhibitory neural processes that can lead to maladaptive, perseverative behavior. In this paper we describe a model of inhibition and sensitization from a dynamical systems perspective. We show that inhibition is important for adaptive behavior across a number of levels of system functioning. Using our work on attention, emotion, and anxiety disorders we show the importance of both central - for example gamma-aminobutyric acid (GABA)-ergic - and peripheral - for example heart rate variability (HRV) - inhibitory processes and how they may be linked by a network of neural structures that guide the organism from one state of relative stability to another.
+SN 0036-5564
+PD APR
+PY 2002
+VL 43
+IS 2
+BP 123
+EP 130
+DI 10.1111/1467-9450.00277
+UT WOS:000175114700005
+PM 12004949
+ER
+
+PT J
+AU Schoner, G
+AF Schoner, G
+TI Timing, clocks, and dynamical systems
+SO BRAIN AND COGNITION
+AB Theoretical and experimental issues for our understanding of the timing of motor acts are reviewed, contrasting stochastic and dynamic timing models. It is argued that the theory of dynamical systems and, in particular, of limit cycle attractors, provides a unified framework within which these issues can be appreciated. The strength of stochastic timing models in the domain of absolute timing is contrasted with the strength of dynamic timing models in the domain of relative timing, the unification of the two domains being currently under way. It is further argued that accounts of timing must examine the interrelation between timing and other levels of processing involved in movement generation. in particular, the representation of spatial aspects of movement and the control of movement. The emergence of discrete event structure in timing skills is discussed from a dynamical systems perspective. Finally, the understanding of the timing structure of discrete movement is raised as a further challenge for future work. (C) 2001 Elsevier Science.
+SN 0278-2626
+EI 1090-2147
+PD FEB
+PY 2002
+VL 48
+IS 1
+BP 31
+EP 51
+DI 10.1006/brcg.2001.1302
+UT WOS:000173407300003
+PM 11812031
+ER
+
+PT J
+AU Wagenmakers, EJ
+   Farrell, S
+   Ratcliff, R
+AF Wagenmakers, EJ
+   Farrell, S
+   Ratcliff, R
+TI Human cognition and a pile of sand: A discussion on serial correlations
+   and self-organized criticality
+SO JOURNAL OF EXPERIMENTAL PSYCHOLOGY-GENERAL
+AB Recently, G. C. Van Orden, J. G. Holden, and M. T. Turvey (2003) proposed to abandon the conventional framework of cognitive psychology in favor of the framework of nonlinear dynamical systems theory. Van Orden et al. presented evidence that "purposive behavior originates in self-organized criticality" (p. 333). Here, the authors show that Van Orden et al.'s analyses do not test their hypotheses. Further, the authors argue that a confirmation of Van Orden et al.'s hypotheses would not have constituted firm evidence in support of their framework. Finally, the absence of a specific model for how self-organized criticality produces the observed behavior makes it very difficult to derive testable predictions. The authors conclude that the proposed paradigm shift is presently unwarranted.
+RI Farrell, Simon/H-3266-2011
+OI Farrell, Simon/0000-0001-7452-8789
+SN 0096-3445
+PD FEB
+PY 2005
+VL 134
+IS 1
+BP 108
+EP 116
+DI 10.1037/0096-3445.134.1.108
+UT WOS:000226758600008
+PM 15702966
+ER
+
+PT J
+AU Tabor, W
+   Tanenhaus, MK
+AF Tabor, W
+   Tanenhaus, MK
+TI Dynamical models of sentence processing
+SO COGNITIVE SCIENCE
+AB We suggest that the theory of dynamical systems provides a revealing general framework for modeling the representations and mechanism underlying syntactic processing. We show how a particular dynamical model, the Visitation Set Gravitation model of Tabor, Juliano, and Tanenhaus (1997), develops syntactic representations and models a set of contingent frequency effects in parsing that ore problematic for other models. We also present new simulations showing how the model accounts for semantic effects in parsing, and propose a new account of the distinction between syntactic and semantic incongruity. The results show how symbolic structures useful in parsing arise as emergent properties of connectionist dynamical systems.
+SN 0364-0213
+PD OCT-DEC
+PY 1999
+VL 23
+IS 4
+BP 491
+EP 515
+UT WOS:000084349600005
+ER
+
+PT J
+AU McClelland, JL
+AF McClelland, James L.
+TI The Place of Modeling in Cognitive Science
+SO TOPICS IN COGNITIVE SCIENCE
+AB I consider the role of cognitive modeling in cognitive science. Modeling, and the computers that enable it, are central to the field, but the role of modeling is often misunderstood. Models are not intended to capture fully the processes they attempt to elucidate. Rather, they are explorations of ideas about the nature of cognitive processes. In these explorations, simplification is essential-through simplification, the implications of the central ideas become more transparent. This is not to say that simplification has no downsides; it does, and these are discussed. I then consider several contemporary frameworks for cognitive modeling, stressing the idea that each framework is useful in its own particular ways. Increases in computer power (by a factor of about 4 million) since 1958 have enabled new modeling paradigms to emerge, but these also depend on new ways of thinking. Will new paradigms emerge again with the next 1,000-fold increase?
+RI McClelland, James/F-6004-2011; 
+OI McClelland, James/0000-0002-8217-405X
+SN 1756-8757
+PD JAN
+PY 2009
+VL 1
+IS 1
+BP 11
+EP 38
+DI 10.1111/j.1756-8765.2008.01003.x
+UT WOS:000283862000002
+PM 25164798
+ER
+
+PT J
+AU Stepp, N
+   Turvey, MT
+AF Stepp, N.
+   Turvey, M. T.
+TI On strong anticipation
+SO COGNITIVE SYSTEMS RESEARCH
+AB We examine Dubois's [Dubois,D., 2003. Mathematical foundations of discrete and functional systems with strong and weak anticipations. Lecture Notes in Computer Science 2684, 110-132.] distinction between weak anticipation and strong anticipation. Anticipation is weak if it arises from a model of the system via internal simulations. Anticipation is strong if it arises from the system itself via lawful regularities embedded in the system's ordinary mode of functioning. The assumption of weak anticipation dominates cognitive science and neuroscience and in particular the study of perception and action. The assumption of strong anticipation, however, seems to be required by anticipation's ubiquity. It is, for example, characteristic of homeostatic processes at the level of the organism, organs, and cells. We develop the formal distinction between strong and weak anticipation by elaboration of anticipating synchronization, a phenomenon arising from time delays in appropriately coupled dynamical systems. The elaboration is conducted in respect to (a) strictly physical systems, (b) the de. ning features of circadian rhythms, often viewed as paradigmatic of biological behavior based in internal models, (c) Pavlovian learning, and (d) forward models in motor control. We identify the common thread of strongly anticipatory systems and argue for its significance in furthering understanding of notions such as "internal", "model" and "prediction". (C) 2009 Elsevier B.V. All rights reserved.
+SN 1389-0417
+PD JUN
+PY 2010
+VL 11
+IS 2
+BP 148
+EP 164
+DI 10.1016/j.cogsys.2009.03.003
+UT WOS:000273954600002
+PM 20191086
+ER
+
+PT J
+AU Paine, RW
+   Tani, J
+AF Paine, RW
+   Tani, J
+TI How hierarchical control self-organizes in artificial adaptive systems
+SO ADAPTIVE BEHAVIOR
+AB Diverse, complex, and adaptive animal behaviors are achieved by organizing hierarchically structured controllers in motor systems. The levels of control progress from simple spinal reflexes and central pattern generators through to executive cognitive control in the frontal cortex. Various types of hierarchical control structures have been introduced and shown to be effective in past artificial agent models, but few studies have shown how such structures can self-organize. This study describes how such hierarchical control may evolve in a simple recurrent neural network model implemented in a mobile robot. Topological constraints on information flow are found to improve system performance by decreasing interference between different parts of the network. One part becomes responsible for generating lower behavior primitives while another part evolves top-down sequencing of the primitives for achieving global goals. Fast and slow neuronal response dynamics are automatically generated in specific neurons of the lower and the higher levels, respectively. A hierarchical neural network is shown to outperform a comparable single-level network in controlling a mobile robot.
+RI Tani, Go/M-8676-2016
+SN 1059-7123
+PY 2005
+VL 13
+IS 3
+BP 211
+EP 225
+DI 10.1177/105971230501300303
+UT WOS:000231878400003
+ER
+
+PT J
+AU Shanahan, M
+AF Shanahan, Murray
+TI A cognitive architecture that combines internal simulation with a global
+   workspace
+SO CONSCIOUSNESS AND COGNITION
+AB This paper proposes a brain-inspired cognitive architecture that incorporates approximations to the concepts of consciousness, imagination, and emotion. To emulate the empirically established cognitive efficacy of conscious as opposed to non-conscious information processing in the mammalian brain, the architecture adopts a model of information flow from global workspace theory. Cognitive functions such as anticipation and planning are realised through internal simulation of interaction with the environment. Action selection, in both actual and internally simulated interaction with the environment, is mediated by affect. An implementation of the architecture is described which is based on weightless neurons and is used to control a simulated robot. (c) 2005 Elsevier Inc. All rights reserved.
+SN 1053-8100
+PD JUN
+PY 2006
+VL 15
+IS 2
+BP 433
+EP 449
+DI 10.1016/j.concog.2005.11.005
+UT WOS:000238308900016
+PM 16384715
+ER
+
+PT J
+AU Markman, AB
+   Dietrich, E
+AF Markman, AB
+   Dietrich, E
+TI Extending the classical view of representation
+SO TRENDS IN COGNITIVE SCIENCES
+AB Representation has always been a central part of models in cognitive science, but this idea has come under attack. Researchers advocating the alternative approaches of perceptual symbol systems, situated action, embodied cognition, and dynamical systems have argued against central assumptions of the classical representational approach to mind. We review the core assumptions of the representational view and these four suggested alternatives. We argue that representation should remain a core part of cognitive science, but that the insights from these alternative approaches must incorporated into models of cognitive processing.
+RI Markman, Arthur/A-7657-2009
+SN 1364-6613
+PD DEC
+PY 2000
+VL 4
+IS 12
+BP 470
+EP 475
+DI 10.1016/S1364-6613(00)01559-X
+UT WOS:000165861200007
+ER
+
+PT J
+AU Clark, A
+AF Clark, Andy
+TI The dynamical challenge
+SO COGNITIVE SCIENCE
+AB Recent studies such as Thelen and Smith (1994), Kelso, (1995), Van Gelder, (1995), Beer, (1995), and others have presented a forceful case for a dynamical systems approach to understanding cognition and adaptive behavior. These studies call into question some foundational assumptions concerning the nature of cognitive scientific explanation and (in particular) the role of notions such as internal representation and computation. These are exciting and important challenges. But they must be handled with care. It is all too easy, in this debate, to lose sight of the explanatorily important issues and to talk at cross-purposes, courtesy of the (surprisingly) various ways in which different theorists often conceive the key terms. The primary goal of the present paper is thus a modest one: to begin to clarify just what is at issue and to highlight some of the most central and pressing concerns. In so doing, we may hope to develop a constructive framework for future debate. In addition, I try to open up a space of intermediate options-ways in which dynamical and representational/computational understandings may sometimes afford complementary (rather than competing) perspectives on adaptive success.
+SN 0364-0213
+PY 1997
+VL 21
+IS 4
+BP 461
+EP 481
+DI 10.1207/s15516709cog2104_3
+UT WOS:000202957500003
+ER
+
+PT J
+AU VEREIJKEN, B
+   WHITING, HTA
+   BEEK, WJ
+AF VEREIJKEN, B
+   WHITING, HTA
+   BEEK, WJ
+TI A DYNAMIC-SYSTEMS APPROACH TO SKILL ACQUISITION
+SO QUARTERLY JOURNAL OF EXPERIMENTAL PSYCHOLOGY SECTION A-HUMAN
+   EXPERIMENTAL PSYCHOLOGY
+AB This paper argues that the answer to the question, what has to be learned, needs to be established before the question, how is it learned, can be meaningfully addressed. Based on this conviction, some of the limitations of current and past research on skill acquisition are discussed. Motivated by the dynamical systems approach, the question of "what has to be learned" was tackled by setting up a non-linear mathematical model of the task (i.e. learning to make sideways movements on a ski apparatus). On the basis of this model, the phase lag between movements of the platform of the apparatus and the actions of the subject was isolated as an ensemble variable reflecting the timing of the subject in relation to the dynamics of the apparatus. This variable was subsequently used to study "how" the task was learned in a discovery learning experiment, in which predictions stemming from the model were tested and confirmed. Overall, these findings provided support for the hypothesis, formulated by Bernstein (1967), that one of the important effects of practice is learning to make use of reactive forces, thereby reducing the need for active muscular forces.
+   In addition, the data from a previous learning experiment on the ski apparatus-the results of which had been equivocal-were reconsidered. The use of phase lag as a dependent variable provided a resolution of those findings.
+   On the basis of the confirmatory testing of predictions stemming from the model and the clarification of findings from a previous experiment, it is argued that the dynamical systems approach put forward here provides a powerful method for pursuing issues in skill acquisition. Suggestions are made as to how this approach can be used to systematically pursue the questions that arise as a natural outcome of the experimental evidence presented here.
+SN 0272-4987
+PD AUG
+PY 1992
+VL 45
+IS 2
+BP 323
+EP 344
+UT WOS:A1992JK11300007
+PM 1410559
+ER
+
+PT J
+AU Schoner, G
+AF Schoener, Gregor
+BE Sun, R
+TI Dynamical Systems Approaches to Cognition
+SO CAMBRIDGE HANDBOOK OF COMPUTATIONAL PSYCHOLOGY
+SE Cambridge Handbooks in Psychology
+BN 978-0-521-67410-2
+PY 2008
+BP 101
+EP 126
+D2 10.1017/CBO9780511816772
+UT WOS:000304675100005
+ER
+
+PT J
+AU Saltzman, E
+   Byrd, D
+AF Saltzman, E
+   Byrd, D
+TI Task-dynamics of gestural timing: Phase windows and multifrequency
+   rhythms
+SO HUMAN MOVEMENT SCIENCE
+AB In this paper, we explore the hypothesis that intergestural phasing relations are implemented via coupling terms in a nonlinear dynamical systems model. Specifically. we describe recent computational developments of the task-dynamic model of gestural patterning (e.g., E. Saltzman, J. A. S. Kelso, Psychological Review 94 (1987) 84-106; E. Saltzman, K. G. Munhall, Ecological Psychology 1 (1989) 333-382) that are focused on modeling the timing of rhythmic action units. First, we explore the possibility of attractor states for intergestural phasing that are characterized as ranges or phase windows (D. Byrd, Phonology 13 (1996) 139-169), and contrast this behavior with standard models that display punctate relative phasing. It is argued that the phase window approach can provide flexible control of the relative timing of articulatory gestures, allowing constrained variability in intergestural timing as a function of linguistic and para-linguistic factors. Second, we discuss how this extension of the task-dynamic model has been adapted for modeling the production of multifrequency rhythms (speech or bimanual). This work explores the control of the frequency- and phase-locking characteristics of coupled limit cycle oscillators by examining how desired frequency ratio, intrinsic frequency detuning, and coupling asymmetries interact in creating observed rhythmic patterns. Using this method, details of the resultant transient and steady-state trajectories of phase and amplitude are generated that are not available using models derived with averaging techniques. (C) 2000 Elsevier Science B.V. All rights reserved.
+SN 0167-9457
+PD OCT
+PY 2000
+VL 19
+IS 4
+BP 499
+EP 526
+DI 10.1016/S0167-9457(00)00030-0
+UT WOS:000167688200005
+ER
+
+PT J
+AU Sternad, D
+   Dean, WJ
+   Schaal, S
+AF Sternad, D
+   Dean, WJ
+   Schaal, S
+TI Interaction of rhythmic and discrete pattern generators in single-joint
+   movements
+SO HUMAN MOVEMENT SCIENCE
+CT 10th International Conference on Perception and Action
+CY AUG 08-13, 1999
+CL EDINBURGH, SCOTLAND
+AB The study investigates a single-joint movement task that combines a translatory and cyclic component with the objective to investigate the interaction of discrete and rhythmic movement elements. Participants performed an elbow movement in the horizontal plane, oscillating at a prescribed frequency around one target and shifting to a second target upon a trigger signal, without stopping the oscillation. Analyses focused on extracting the mutual influences of the rhythmic and the discrete component of the task. Major findings are: (1) The onset of the discrete movement was confined to a limited phase window in the rhythmic cycle. (2) Its duration was influenced by the period of oscillation. (3) The rhythmic oscillation was "perturbed" by the discrete movement as indicated by phase resetting. On the basis of these results we propose a model for the coordination of discrete and rhythmic actions (K. Matsuoka, Sustained oscillations generated by mutually inhibiting neurons with adaptations, Biological Cybernetics 52 (1985) 367-376; Mechanisms of frequency and pattern control in the neural rhythm generators, Biological Cybernetics 56 (1987) 345-353). For rhythmic movements an oscillatory pattern generator is developed following models of half-center oscillations (D. Bullock, S. Grossberg, The VITE model: a neural command circuit for generating arm and articulated trajectories, in: J.A.S. Kelso, A.J. Mandel, M. F. Shlesinger (Eds.), Dynamic Patterns in Complex Systems. World Scientific. Singapore. 1988. pp. 305-326). For discrete movements a point attractor dynamics is developed close to the VITE model For each joint degree of freedom both pattern generators co-exist but exert mutual inhibition onto each other. The suggested modeling framework provides a unified account for both discrete and rhythmic movements on the basis of neuronal circuitry. Simulation results demonstrated that the effects observed in human performance can be replicated using the two pattern generators with a mutually inhibiting coupling. (C) 2001 Elsevier Science B.V. All rights reserved.
+RI Sternad, Dagmar/D-8341-2013
+SN 0167-9457
+PD OCT
+PY 2000
+VL 19
+IS 4
+BP 627
+EP 664
+DI 10.1016/S0167-9457(00)00028-2
+UT WOS:000167688200009
+ER
+
+PT J
+AU GLOBUS, GG
+AF GLOBUS, GG
+TI TOWARD A NONCOMPUTATIONAL COGNITIVE NEUROSCIENCE
+SO JOURNAL OF COGNITIVE NEUROSCIENCE
+AB The near universally accepted theory that the brain processes information persists in current neural network theory where there is "subsymbolic" computation (Smolensky, 1988) on distributed representations. This theory of brain information processing may suffice for simplifying models simulated in silicon but not for living neural nets where there is ongoing chemical tuning of the input/output transfer function at the nodes, connection weights, network parameters, and connectivity. Here the brain continually changes itself as it intersects with information from the outside. An alternative theory to information processing is developed in which the brain permits and supports "participation" of self and other as constraints on the dynamically evolving, self-organizing whole. The noncomputational process of "differing and deferring" in nonlinear dynamic neural systems is contrasted with Black's (1991) account of molecular information processing. State hyperspace for the noncomputational process of nonlinear dynamical systems, unlike classical systems, has a fractal dimension. The noncomputational model is supported by suggestive evidence for fractal properties of the brain.
+SN 0898-929X
+PD FAL
+PY 1992
+VL 4
+IS 4
+BP 299
+EP 310
+DI 10.1162/jocn.1992.4.4.299
+UT WOS:A1992JU78900001
+PM 23968124
+ER
+
+PT J
+AU Busemeyer, JR
+   Wang, Z
+   Lambert-Mogiliansky, A
+AF Busemeyer, Jerome R.
+   Wang, Zheng
+   Lambert-Mogiliansky, Ariane
+TI Empirical comparison of Markov and quantum models of decision making
+SO JOURNAL OF MATHEMATICAL PSYCHOLOGY
+AB There are at least two general theories for building probabilistic-dynamical systems: one is Markov theory and another is quantum theory. These two mathematical frameworks share many fundamental ideas, but they also differ in some key properties. On the one hand, Markov theory obeys the law of total probability, but quantum theory does not: on the other hand, quantum theory obeys the doubly stochastic law, but Markov theory does not. Therefore, the decision about whether to use a Markov or a quantum system depends on which of these laws are empirically obeyed in an application. This article derives two general methods for testing these theories that are parameter free, and presents a new experimental test. The article concludes with a review of experimental findings from cognitive psychology that evaluate these two properties. (C) 2009 Elsevier Inc. All rights reserved.
+RI Wang, Zheng/D-6781-2011
+SN 0022-2496
+PD OCT
+PY 2009
+VL 53
+IS 5
+BP 423
+EP 433
+DI 10.1016/j.jmp.2009.03.002
+UT WOS:000271731500011
+ER
+
+PT J
+AU Passos, P
+   Araujo, D
+   Davids, K
+   Gouveia, L
+   Serpa, S
+   Milho, J
+   Fonseca, S
+AF Passos, Pedro
+   Araujo, Duarte
+   Davids, Keith
+   Gouveia, Luis
+   Serpa, Sidonio
+   Milho, Joao
+   Fonseca, Sofia
+TI Interpersonal Pattern Dynamics and Adaptive Behavior in Multiagent
+   Neurobiological Systems: Conceptual Model and Data
+SO JOURNAL OF MOTOR BEHAVIOR
+AB Ecological dynamics characterizes adaptive behavior as an emergent, self-organizing property of interpersonal interactions in complex social systems. The authors conceptualize and investigate constraints on dynamics of decisions and actions in the multiagent system of team sports. They studied coadaptive interpersonal dynamics in rugby union to model potential control parameter and collective variable relations in attacker-defender dyads. A videogrammetry analysis revealed how some agents generated fluctuations by adapting displacement velocity to create phase transitions and destabilize dyadic subsystems near the try line. Agent interpersonal dynamics exhibited characteristics of chaotic attractors and informational constraints of rugby union boxed dyadic systems into a low dimensional attractor. Data suggests that decisions and actions of agents in sports teams may be characterized as emergent, self-organizing properties, governed by laws of dynamical systems at the ecological scale. Further research needs to generalize this conceptual model of adaptive behavior in performance to other multiagent populations.
+RI Passos, Pedro /H-1521-2012; Gouveia, Luis/J-7208-2012; Davids,
+   Keith/J-1095-2012; iMed.ULisboa, IPnpDS/B-4831-2014; iMed.ULisboa,
+   iMed.ULisboa/C-6292-2014; Araujo, Duarte/F-4161-2011; Milho,
+   Joao/I-4669-2015; 
+OI Davids, Keith/0000-0003-1398-6123; Passos, Pedro /0000-0002-2080-1660;
+   Gouveia, Luis/0000-0001-5611-0047; Araujo, Duarte/0000-0001-7932-3192;
+   Milho, Joao/0000-0002-3302-0935; Araujo, Fernando/0000-0001-6471-5564
+SN 0022-2895
+PD OCT
+PY 2009
+VL 41
+IS 5
+BP 445
+EP 459
+UT WOS:000271043000009
+PM 19482724
+ER
+
+PT J
+AU Petersson, KM
+   Folia, V
+   Hagoort, P
+AF Petersson, Karl-Magnus
+   Folia, Vasiliki
+   Hagoort, Peter
+TI What artificial grammar learning reveals about the neurobiology of
+   syntax
+SO BRAIN AND LANGUAGE
+AB In this paper we examine the neurobiological correlates of syntax, the processing of structured sequences, by comparing FMRI results on artificial and natural language syntax. We discuss these and similar findings in the context of formal language and computability theory. We used a simple right-linear unification grammar in an implicit artificial grammar learning paradigm in 32 healthy Dutch university students (natural language FMRI data were already acquired for these participants). We predicted that artificial syntax processing would engage the left inferior frontal region (BA 44/45) and that this activation would overlap with syntax-related variability observed in the natural language experiment. The main findings of this study show that the left inferior frontal region centered on BA 44/45 is active during artificial syntax processing of well-formed (grammatical) sequence independent of local subsequence familiarity. The same region is engaged to a greater extent when a syntactic violation is present and structural unification becomes difficult or impossible. The effects related to artificial syntax in the left inferior frontal region (BA 44/45) were essentially identical when we masked these with activity related to natural syntax in the same subjects. Finally, the medial temporal lobe was deactivated during this operation, consistent with the view that implicit processing does not rely on declarative memory mechanisms that engage the medial temporal lobe. In the context of recent FMRI findings, we raise the question whether Broca's region (or subregions) is specifically related to syntactic movement operations or the processing of hierarchically nested non-adjacent dependencies in the discussion section. We conclude that this is not the case. Instead, we argue that the left inferior frontal region is a generic on-line sequence processor that unifies information from various sources in an incremental and recursive manner, independent of whether there are any processing requirements related to syntactic movement or hierarchically nested structures. In addition, we argue that the Chomsky hierarchy is not directly relevant for neurobiological systems. (C) 2010 Elsevier Inc. All rights reserved.
+RI Petersson, Karl Magnus/E-8188-2012; Hagoort, Peter/B-7417-2012; GNC,
+   GNC/B-5716-2013
+OI Petersson, Karl Magnus/0000-0002-8245-0392; 
+SN 0093-934X
+EI 1090-2155
+PD FEB
+PY 2012
+VL 120
+IS 2
+SI SI
+BP 83
+EP 95
+DI 10.1016/j.bandl.2010.08.003
+UT WOS:000300478600002
+PM 20943261
+ER
+
+PT J
+AU Schmittmann, VD
+   Cramer, AOJ
+   Waldorp, LJ
+   Epskamp, S
+   Kievit, RA
+   Borsboom, D
+AF Schmittmann, Verena D.
+   Cramer, Angelique O. J.
+   Waldorp, Lourens J.
+   Epskamp, Sacha
+   Kievit, Rogier A.
+   Borsboom, Denny
+TI Deconstructing the construct: A network perspective on psychological
+   phenomena
+SO NEW IDEAS IN PSYCHOLOGY
+AB In psychological measurement, two interpretations of measurement systems have been developed: the reflective interpretation, in which the measured attribute is conceptualized as the common cause of the observables, and the formative interpretation, in which the measured attribute is seen as the common effect of the observables. We advocate a third interpretation, in which attributes are conceptualized as systems of causally coupled (observable) variables. In such a view, a construct like 'depression' is not seen as a latent variable that underlies symptoms like 'lack of sleep' or 'fatigue', and neither as a composite constructed out of these symptoms, but as a system of causal relations between the symptoms themselves (e.g., lack of sleep -> fatigue, etc.). We discuss methodological strategies to investigate such systems as well as theoretical consequences that bear on the question in which sense such a construct could be interpreted as real. (C) 2012 Elsevier Ltd. All rights reserved.
+OI Kievit, Rogier/0000-0003-0700-4568
+SN 0732-118X
+PD APR
+PY 2013
+VL 31
+IS 1
+SI SI
+BP 43
+EP 53
+DI 10.1016/j.newideapsych.2011.02.007
+UT WOS:000310104700006
+ER
+
+PT J
+AU Ito, M
+   Tani, J
+AF Ito, M
+   Tani, J
+TI On-line imitative interaction with a humanoid robot using a dynamic
+   neural network model of a mirror system
+SO ADAPTIVE BEHAVIOR
+AB This study presents experiments on the imitative interactions between a small humanoid robot and a user. A dynamic neural network model of a mirror system was implemented in a humanoid robot, based on the recurrent neural network model with parametric bias (RNNPB). The experiments showed that after the robot learns multiple cyclic movement patterns as embedded in the RNNPB, it can regenerate each pattern synchronously with the movements of a human who is demonstrating the corresponding movement pattern in front of the robot. Further, the robot exhibits diverse interactive responses when the user demonstrates novel cyclic movement patterns. Those responses were analyzed and categorized. We propose that the dynamics of coherence and incoherence between the robot's and the user's movements could enhance close interactions between them, and that they could also explain the essential psychological mechanism of joint attention.
+SN 1059-7123
+EI 1741-2633
+PY 2004
+VL 12
+IS 2
+BP 93
+EP 115
+DI 10.1177/105971230401200202
+UT WOS:000225170400002
+ER
+
+PT J
+AU Li, L
+   van den Bogert, ECH
+   Caldwell, GE
+   van Emmerik, REA
+   Hamill, J
+AF Li, L
+   van den Bogert, ECH
+   Caldwell, GE
+   van Emmerik, REA
+   Hamill, J
+TI Coordination patterns of walking and running at similar speed and stride
+   frequency
+SO HUMAN MOVEMENT SCIENCE
+AB The present study compared walking and running constrained to one speed (2.24 m/s) and the average of preferred walking and running stride frequency. Lower extremity coordination was assessed, using phase plots, relative phase and variability analysis. Angular excursions, phase plots, patterns of relative phase and variability analysis illustrated similar segmental and joint coordination patterns for walking and running. Under the speed and stride frequency constraints, we observed topological similarity in coordination patterns between the thigh and leg in walking and running, which co-existed with functional differences throughout the gait cycle, especially in the transition from stance to swing phase. (C) 1999 Elsevier Science B.V. All rights reserved.
+RI Li, Li/B-8030-2008
+SN 0167-9457
+PD FEB
+PY 1999
+VL 18
+IS 1
+BP 67
+EP 85
+DI 10.1016/S0167-9457(98)00034-7
+UT WOS:000079561700004
+ER
+
+PT J
+AU Boker, SM
+   Graham, J
+AF Boker, SM
+   Graham, J
+TI A dynamical systems analysis of adolescent substance abuse
+SO MULTIVARIATE BEHAVIORAL RESEARCH
+AB Models from dynamical systems theory were fit to the intraindividual variability in adolescent self-reported cigarette and alcohol use. A dampened linear oscillator model (potentially like a pendulum with friction) and a nonlinear oscillator model with two attractors were compared. The nonlinear oscillator model and two coupled oscillators for cigarette and alcohol use were rejected. Independent dampened linear oscillators for smoking and drinking provided high internal R-2, but were unable to account for a substantial correlation between the acceleration in cigarette usage and alcohol usage; thus evidence was found for an intrinsic self-regulation mechanism in both smoking and drinking behavior, but the hypothesis was rejected that the intrinsic mechanism leading to increases in use in one substance directly predicted increased use in the other substance. Given the hypothesis of in dependent linear oscillators; the sign of the dampening parameter was found to be positive, indicating a system with dynamic instability; a self-regulation mechanism in which small changes in substance use lead to amplified changes after a short period of time.
+SN 0027-3171
+PY 1998
+VL 33
+IS 4
+BP 479
+EP 507
+DI 10.1207/s15327906mbr3304_3
+UT WOS:000078567200004
+PM 26753826
+ER
+
+PT J
+AU Gibbs, RW
+AF Gibbs, Raymond W., Jr.
+TI Evaluating Conceptual Metaphor Theory
+SO DISCOURSE PROCESSES
+AB A major revolution in the study of metaphor occurred 30 years ago with the introduction of "conceptual metaphor theory" (CMT). Unlike previous theories of metaphor and metaphorical meaning, CMT proposed that metaphor is not just an aspect of language, but a fundamental part of human thought. Indeed, most metaphorical language arises from preexisting patterns of metaphorical thought or conceptual metaphors. This article provides an evaluation of the linguistic and psychological evidence supporting CMT, and responds to some of the criticisms of CMT offered by scholars within cognitive science. Some new ways of thinking of conceptual metaphors from the perspective of embodied simulations and dynamical systems theory are also presented.
+SN 0163-853X
+EI 1532-6950
+PY 2011
+VL 48
+IS 8
+BP 529
+EP 562
+DI 10.1080/0163853X.2011.606103
+UT WOS:000299042800001
+ER
+
+PT J
+AU Travassos, B
+   Araujo, D
+   Vilar, L
+   McGarry, T
+AF Travassos, B.
+   Araujo, D.
+   Vilar, L.
+   McGarry, T.
+TI Interpersonal coordination and ball dynamics in futsal (indoor football)
+SO HUMAN MOVEMENT SCIENCE
+AB Here, we report an investigation of the patterned movement behavior of players for a specific sub-phase of the game of futsal, namely when the goalkeeper for the attacking team is substituted with an extra outfield player. The movement trajectories of the ball and players were recorded in both lateral and longitudinal directions and investigated using relative phase analysis. Some differences in phase relations between different playing dyads were noted, indicating specificity of phase attractions, or otherwise, for certain players. In general terms, the defenders demonstrated strong in-phase attractions with the ball and with each other, whereas weaker phase attractions, indicated by increased relative phase variability, were observed for the attackers and ball, as well as between attackers themselves. These results demonstrate different coordination dynamics for the defending and attacking dyads, from which we interpret evidence for different playing sub-systems consistent with different team objectives linked together in an overarching game structure. In keeping with dynamical systems theory for complex systems, we view this sub-phase of futsal as being characterized by coordinated behavior patterns that emerge as a result of self-organizing processes. These dynamic patterns are generated within functional constraints, with players and teams exerting mutual influence on each other. (C) 2011 Elsevier B.V. All rights reserved.
+RI Travassos, Bruno/G-4478-2013; Vilar, Luis/E-6970-2013; Araujo,
+   Duarte/F-4161-2011; 
+OI Travassos, Bruno/0000-0002-2165-2687; Vilar, Luis/0000-0002-1397-0933;
+   Araujo, Duarte/0000-0001-7932-3192; Araujo, Fernando/0000-0001-6471-5564
+SN 0167-9457
+PD DEC
+PY 2011
+VL 30
+IS 6
+BP 1245
+EP 1259
+DI 10.1016/j.humov.2011.04.003
+UT WOS:000297886700018
+PM 21683464
+ER
+
+PT J
+AU Monno, A
+   Temprado, JJ
+   Zanone, PG
+   Laurent, M
+AF Monno, A
+   Temprado, JJ
+   Zanone, PG
+   Laurent, M
+TI The interplay of attention and bimanual coordination dynamics
+SO ACTA PSYCHOLOGICA
+AB Despite their common origin, studies on motor coordination and on attentional load have developed into separate fields of investigation, bringing out findings, methods, and theories which are diverse if not mutually exclusive. Sitting at the intersection of these two fields, this article addresses the issue of behavioral flexibility by investigating how intention modifies the stability of existing patterns of coordination between moving limbs. It addresses the issue, largely ignored until now, of the attentional cost incurred by the central nervous system (CNS) in maintaining a coordination pattern at a given level of stability, ill particular under different attentional priority requirements. The experimental paradigm adopted in these studies provides an original mix of a classical measure of attentional load, namely, reaction time, and of a dynamic approach to coordination, most suitable for characterizing the dynamic properties of coordinated behavior and behavioral change. Findings showed that central cost and pattern stability covary, suggesting that bimanual coordination and the attentional activity of the CNS involved in maintaining such a coordination bear on the same underlying dynamics. Such a conclusion provides a strong support to a unified approach to coordination encompassing a conceptualization in terms of information processing and another, more recent framework rooted in self-organization theories and dynamical systems models (C) 2002 Published by Elsevier Science B.V.
+RI Zanone, Pier-Giorgio/B-7165-2011
+OI Zanone, Pier-Giorgio/0000-0002-6744-9772
+SN 0001-6918
+EI 1873-6297
+PD JUN
+PY 2002
+VL 110
+IS 2-3
+BP 187
+EP 211
+AR PII S0001-6918(02)00033-1
+DI 10.1016/S0001-6918(02)00033-1
+UT WOS:000176590200004
+PM 12102105
+ER
+
+PT J
+AU Singer, RN
+AF Singer, RN
+TI Performance and human factors: considerations about cognition and
+   attention for self-paced and externally-paced events
+SO ERGONOMICS
+CT 4th International Conference on Sport, Leisure and Ergonomics
+CY NOV, 1999
+CL BURTON MANOR COLL, WIRRAL, ENGLAND
+SP Ergon Soc, World Commiss Sport Biomech, Int Soc Advancement Kinanthropometry, British Assoc Sport & Exercise Sci
+HO BURTON MANOR COLL
+AB The cognitive psychology school of thought has spawned models of sequential stages or phases of information processing associated with various tasks. It has encouraged the study of cognitions and attention as related to learning, performance and high levels of achievement in goal-directed complex activities in which movement is the medium of expression. Although more recently proposed dynamical systems models challenge the simplicity of this approach, there is little doubt that the ability to learn as well as to excel in performing movement skills depends to a great degree on the effective self-regulation of cognitive processes in a variety of situations. What to think about (or not think about) prior to, during and even after an event can have great consequences on present and subsequent performance. Relevant externally-provided and self-generated strategies should enable these processes to function at an optimal level, and are the subject of an increasing amount of research. For such purposes, it is convenient to categorize events as self-paced (closed) and externally-paced (open). Examples of both types of events exist in sport as well as in various occupations and recreational activities, with different information processing demands associated with each one. Any breakdown in a particular stage of processing will potentially lead to poorer performance. Special training techniques and strategies are evolving from the cognitive and psychophysiological research literature that might improve the level of functioning at each stage for either self-paced or externally-paced skills.
+SN 0014-0139
+EI 1366-5847
+PD OCT
+PY 2000
+VL 43
+IS 10
+BP 1661
+EP 1680
+DI 10.1080/001401300750004078
+UT WOS:000089952000020
+PM 11083145
+ER
+
+PT J
+AU Araujo, D
+   Davids, K
+AF Araujo, Duarte
+   Davids, Keith
+TI Ecological approaches to cognition and action in sport and exercise: Ask
+   not only what you do, but where you do it
+SO INTERNATIONAL JOURNAL OF SPORT PSYCHOLOGY
+AB In recent decades, concepts and ideas from James J. Gibson's theory of direct perception in ecological psychology have been applied to the study of how perception and action regulate sport performance. This article examines the influence of different streams of thought in ecological psychology for studying cognition and action in The diverse behavioural contexts of sport and exercise. In discussing the origins of ecological psychology, it can be concluded that psychologists Such as Lewin, and to some extent Heider, provided the initial impetus for the development of key ideas. We argue that The papers in this special issue clarify, that the different schools of thinking in ecological psychology have much to contribute to theoretical and practical developments in sport and exercise psychology For example, Gibson emphasized and formalized how the individual is coupled with the environment, Brunswik raised the issue of the ontology of probability in human behaviour and the problem of representative design for experimental task constraints; Barker looked carefully into extra-individual behavioural contexts and Bronfenbrenner presented insights pertinent to the relations between behaviour contexts, and macro influences on behaviour In this overview, we highlight essential issues from the main schools of thought of relevance to the contexts of sport and exercise, and we consider some potential theoretical linkages with dynamical systems theory.
+RI Davids, Keith/J-1095-2012; Araujo, Duarte/F-4161-2011; 
+OI Araujo, Duarte/0000-0001-7932-3192; Araujo,
+   Fernando/0000-0001-6471-5564; Davids, Keith/0000-0003-1398-6123
+SN 0047-0767
+PD JAN-MAR
+PY 2009
+VL 40
+IS 1
+SI SI
+BP 5
+EP 37
+UT WOS:000263754500002
+ER
+
+PT J
+AU Donker, SF
+   Beek, PJ
+AF Donker, SF
+   Beek, PJ
+TI Interlimb coordination in prosthetic walking: effects of asymmetry and
+   walking velocity
+SO ACTA PSYCHOLOGICA
+AB The present study focuses on interlimb coordination in walking with an above-knee prosthesis using concepts and tools of dynamical systems theory (DST). Prosthetic walkers are an interesting group to investigate from this theory because their locomotory system is inherently asymmetric, while, according to DST, coordinative stability may be expected to be reduced as a function of the asymmetry of the oscillating components. Furthermore, previous work on locomotion motivated from DST has shown that the stability of interlimb coordination increases with walking velocity, leading to the additional expectation that the anticipated destabilizing effect of the prosthesis-induced asymmetry may be diminished at higher walking velocities. To examine these expectations, an experiment was conducted aimed at comparing interlimb coordination during treadmill walking between seven participants with an above-knee prosthesis and seven controls across a range of walking velocities. The observed gait patterns were analyzed in terms of standard gait measures (i.e., absolute and relative swing, stance and step times) and interlimb coordination measures (i.e., relative phase and frequency locking). As expected, the asymmetry brought about by the prosthesis led to a decrease in the stability of the coordination between the legs as compared to the control group, while coordinative stability increased with increasing walking velocity in both groups in the absence of a significant interaction. In addition, the 2:1 frequency coordination between arm and leg movements that is generally observed in healthy walkers at low walking velocities was absent in the prosthetic walkers. Collectively, these results suggest that both stability and adaptability of coordination are reduced in prosthetic walkers but may be enhanced by training them to walk at higher velocities. (C) 2002 Elsevier Science B.V. All rights reserved.
+SN 0001-6918
+PD JUN
+PY 2002
+VL 110
+IS 2-3
+BP 265
+EP 288
+AR PII S0001-6918(02)00037-9
+DI 10.1016/S0001-6918(02)00037-9
+UT WOS:000176590200008
+PM 12102109
+ER
+
+PT J
+AU Temprado, JJ
+   Laurent, M
+AF Temprado, JJ
+   Laurent, M
+TI Attentional load associated with performing and stabilizing a
+   between-persons coordination of rhythmic limb movements
+SO ACTA PSYCHOLOGICA
+AB This study addressed the issue of intentional stabilization of between-persons coordination patterns (in-phase/isodirectional and anti-phase/non-isodirectional) and the attentional cost incurred by the nervous system in maintaining and further stabilizing these coordination patterns. Five pairs of participants performed in-phase and anti-phase interpersonal coordination patterns in dual-task conditions (coordination + RT task). Results showed that: (1) isodirectional pattern (in-phase) was more stable than non-isodirectional pattern (anti-phase), (2) both iso-and non-isodirectional pattern were stabilized intentionally, (3) RT was lower for the isodirectional pattern (i.e., the most stable), and (4) attentional manipulation led to a trade-off between pattern stability and RT performance. These results suggest that performing between-persons coordination patterns incurs a central cost that depends on the coupling strength between the limbs. These findings are consistent with the previous studies in intrapersonal coordination. (C) 2003 Elsevier B.V. All rights reserved.
+SN 0001-6918
+PD JAN
+PY 2004
+VL 115
+IS 1
+BP 1
+EP 16
+DI 10.1016/j.actpsy.2003.09.002
+UT WOS:000188602700001
+PM 14734238
+ER
+
+PT J
+AU Zanone, PG
+   Monno, A
+   Temprado, JJ
+   Laurent, M
+AF Zanone, PG
+   Monno, A
+   Temprado, JJ
+   Laurent, M
+TI Shared dynamics of attentional cost and pattern stability
+SO HUMAN MOVEMENT SCIENCE
+AB This paper examines the informational activity devoted by the CNS to couple oscillating limbs in order to sustain and stabilize bimanual coordination patterns. Through a double-task paradigm associating a bimanual coordination task and a reaction time (RT) task, we investigated the relation between the stability of preferred bimanual coordination patterns and the central cost expended by the CNS for their stabilization. Ten participants performed in-phase and anti-phase coordination patterns in a dual task condition (coordination + RT) at several frequencies (0.5, 0.75, 1.0, 1.5, and 2.0 Hz), thereby decreasing the stability of the bimanual patterns. Results showed a U-shaped evolution of pattern stability and attentional cost, as a function of oscillation frequency, exhibiting a minimum value at the same frequency. These findings indicate that central cost and pattern stability covary and may share common, high order dynamics. Moreover, the attentional focus given to the bimanual coordination and the RT task was also manipulated by requiring either shared attention or priority to the coordination task. Such a manipulation led to a tradeoff between pattern stability and RT performance: The more stable the pattern, the more costly it is to stabilize. This suggests that stabilizing a coordination pattern incurs a central cost that depends on its intrinsic stability. Conceptual consequences of these results for understanding the relationship between attention and coordination are drawn, and the mechanisms putatively at work in dual tasks are discussed. (C) 2001 Elsevier Science B.V. All rights reserved.
+RI Zanone, Pier-Giorgio/B-7165-2011
+OI Zanone, Pier-Giorgio/0000-0002-6744-9772
+SN 0167-9457
+PD DEC
+PY 2001
+VL 20
+IS 6
+BP 765
+EP 789
+DI 10.1016/S0167-9457(01)00055-0
+UT WOS:000173776200003
+PM 11792439
+ER
+
+PT J
+AU Eliasmith, C
+AF Eliasmith, C
+TI The third contender: A critical examination of the dynamicist theory of
+   cognition
+SO PHILOSOPHICAL PSYCHOLOGY
+AB In a recent series of publications, dynamicist researchers have proposed a new conception of cognitive functioning. This conception is intended to replace the currently dominant theories of connectionism and symbolicism. The dynamicist approach to cognitive modeling employs concepts developed in the mathematical field of dynamical systems theory. They claim that cognitive models should be embedded, low-dimensional, complex, described by coupled differential equations, and non-representational. In this paper I begin with a short description of the dynamicist project and its role as a cognitive theory. Subsequently, I determine the theoretical commitments of dynamicists, critically examine those commitments and discuss current examples of dynamicist models. In conclusion, I determine dynamicism's relation to symbolicism and connectionism and find that the dynamicist goal to establish a new paradigm has yet to be realized.
+SN 0951-5089
+PD DEC
+PY 1996
+VL 9
+IS 4
+BP 441
+EP 463
+DI 10.1080/09515089608573194
+UT WOS:A1996WB70700002
+ER
+
+PT J
+AU Vallacher, RR
+   Coleman, PT
+   Nowak, A
+   Bui-Wrzosinska, L
+AF Vallacher, Robin R.
+   Coleman, Peter T.
+   Nowak, Andrzej
+   Bui-Wrzosinska, Lan
+TI Rethinking Intractable Conflict The Perspective of Dynamical Systems
+SO AMERICAN PSYCHOLOGIST
+AB Intractable conflicts are demoralizing. Beyond destabilizing the families, communities, or international regions in which they occur, they tend to perpetuate the very conditions of misery and hate that contributed to them in the first place. Although the common factors and processes associated with intractable conflicts have been identified through research, they represent an embarrassment of riches for theory construction. Thus, the current task in this area is integrating these diverse factors into an account that provides a coherent perspective yet allows for prediction and a basis for conflict resolution in specific conflict settings. We suggest that the perspective of dynamical systems provides such an account. This article outlines the key concepts and hypotheses associated with this approach. It is organized around a set of basic questions concerning intractable conflict for which the dynamical perspective offers fresh insight and testable propositions. The questions and answers are intended to provide readers with basic concepts and principles of complexity and dynamical systems that are useful for rethinking the nature of intractable conflict and the means by which such conflict can be transformed.
+SN 0003-066X
+PD MAY-JUN
+PY 2010
+VL 65
+IS 4
+BP 262
+EP 278
+DI 10.1037/a0019290
+UT WOS:000277654300003
+PM 20455620
+ER
+
+PT J
+AU Hufford, MR
+   Witkiewitz, K
+   Shields, AL
+   Kodya, S
+   Caruso, JC
+AF Hufford, MR
+   Witkiewitz, K
+   Shields, AL
+   Kodya, S
+   Caruso, JC
+TI Relapse as a nonlinear dynamic system: Application to patients with
+   alcohol use disorders
+SO JOURNAL OF ABNORMAL PSYCHOLOGY
+AB Understanding the relapse process is one of the most important issues in addictive behaviors research. To date, most studies have taken a linear approach toward predicting relapse based on risk factors. Nonlinear dynamical systems theory can be used to describe processes that are not adequately modeled using a linear approach. In particular, the authors propose that catastrophe theory, a subset of nonlinear dynamical systems theory, can be used to describe the relapse process in addictive behaviors. Two small prospective studies using 6-month follow-ups of patients with alcohol use disorders (inpatient, n = 51; outpatient, n = 43) illustrate how cusp catastrophe theory may be used to predict relapse. Results from these preliminary studies indicate that a cusp catastrophe model has more predictive utility than traditional linear models.
+SN 0021-843X
+PD MAY
+PY 2003
+VL 112
+IS 2
+BP 219
+EP 227
+DI 10.1037/0021-843X.112.2.219
+UT WOS:000182925000005
+PM 12784831
+ER
+
+PT J
+AU Rueger, A
+AF Rueger, A
+TI Physical emergence, diachronic and synchronic
+SO SYNTHESE
+AB This paper explicates two notions of emergence which are based on two ways of distinguishing levels of properties for dynamical systems. Once the levels are defined, the strategies of characterizing the relation of higher level to lower level properties as diachronic and synchronic emergence are the same. In each case, the higher level properties are said to be emergent if they are 'novel' or 'irreducible' with respect to the lower level properties. Novelty and irreducibility are given precise meanings in terms of the effects that the change of a bifurcation or perturbation parameter in the system has. (The same strategy can be applied to other ways of separating levels of properties, like the micro/macro distinction.)
+   The notions of emergence developed here are notions of emergence in a weak sense: the higher level emergent properties we capture are always structural properties (or are realized in such properties), that is, they are defined in terms of the lower level properties and their relations. Diachronic and synchronic emergent properties are distinctions within the category of structural properties.
+SN 0039-7857
+PD SEP
+PY 2000
+VL 124
+IS 3
+BP 297
+EP 322
+DI 10.1023/A:1005249907425
+UT WOS:000089149400001
+ER
+
+PT J
+AU Cooke, NJ
+   Gorman, JC
+   Myers, CW
+   Duran, JL
+AF Cooke, Nancy J.
+   Gorman, Jamie C.
+   Myers, Christopher W.
+   Duran, Jasmine L.
+TI Interactive Team Cognition
+SO COGNITIVE SCIENCE
+AB Cognition in work teams has been predominantly understood and explained in terms of shared cognition with a focus on the similarity of static knowledge structures across individual team members. Inspired by the current zeitgeist in cognitive science, as well as by empirical data and pragmatic concerns, we offer an alternative theory of team cognition. Interactive Team Cognition (ITC) theory posits that (1) team cognition is an activity, not a property or a product; (2) team cognition should be measured and studied at the team level; and (3) team cognition is inextricably tied to context. There are implications of ITC for theory building, modeling, measurement, and applications that make teams more effective performers.
+SN 0364-0213
+PD MAR
+PY 2013
+VL 37
+IS 2
+BP 255
+EP 285
+DI 10.1111/cogs.12009
+UT WOS:000316697500002
+PM 23167661
+ER
+
+PT J
+AU Chow, JY
+   Davids, K
+   Hristovski, R
+   Araujo, D
+   Passos, P
+AF Chow, Jia Yi
+   Davids, Keith
+   Hristovski, Robert
+   Araujo, Duarte
+   Passos, Pedro
+TI Nonlinear pedagogy: Learning design for self-organizing neurobiological
+   systems
+SO NEW IDEAS IN PSYCHOLOGY
+AB In this paper, key concepts in ecological psychology and nonlinear dynamics exemplify how learning design can be shaped by ideas of self-organization, meta-stability and self-organized criticality in complex neurobiological systems. Through interactions with specific ecological constraints in learning environments, cognition, decision making and action emerge. An important design strategy is the use of different types of noise to channel the learning process into meta-stable regions of the "learner-learning environment" system to encourage adaptive behaviors. Here learners can be exposed to many functional and creative performance solutions during training. Data from studies in the performance context of sports are used to illustrate how these theoretical ideas can underpin learning design. Based on these insights a nonlinear pedagogy is proposed in which the role of coaches or trainers alters from a more traditional, prescriptive stance to the mode of manipulating key interacting task constraints including information, space and equipment to facilitate learning. (C) 2010 Elsevier Ltd. All rights reserved.
+RI Passos, Pedro /H-1521-2012; Davids, Keith/J-1095-2012; Araujo,
+   Duarte/F-4161-2011; 
+OI Passos, Pedro /0000-0002-2080-1660; Araujo, Duarte/0000-0001-7932-3192;
+   Araujo, Fernando/0000-0001-6471-5564; Davids, Keith/0000-0003-1398-6123
+SN 0732-118X
+EI 1873-3522
+PD AUG
+PY 2011
+VL 29
+IS 2
+BP 189
+EP 200
+DI 10.1016/j.newideapsych.2010.10.001
+UT WOS:000288312800012
+ER
+
+PT J
+AU Diamond, LM
+AF Diamond, Lisa M.
+TI A Dynamical Systems Approach to the Development and Expression of Female
+   Same-Sex Sexuality
+SO PERSPECTIVES ON PSYCHOLOGICAL SCIENCE
+AB Researchers have documented substantial variability in the development and expression of same-sex sexuality, especially among women, posing challenges to traditional linear developmental models. In this article, I argue for a new approach to conceptualizing the development and expression of female same-sex sexuality over the life course, based in dynamical systems theory. Dynamical systems models seek to explain how complex patterns emerge, stabilize, change, and restabilize over time. Although originally developed by mathematicians and physicists to model complex physical phenomena in the natural world, they have increasingly been applied to social-behavioral phenomena, ranging from motor development to cognition to language. I demonstrate the utility of this approach for modeling change over time in female same-sex sexuality, reviewing extant published research and also introducing data collected from an ongoing, 10-year longitudinal study of young nonheterosexual women. I provide evidence that female same-sex sexuality demonstrates the emblematic features of a dynamical system: nonlinear change over time, spontaneous emergence of novel forms, and periodic reorganizations and phase transitions within the overall system. I highlight the specific contribution of a dynamical systems perspective for understanding such phenomena and suggest directions for future study.
+SN 1745-6916
+PD JUN
+PY 2007
+VL 2
+IS 2
+BP 142
+EP 161
+DI 10.1111/j.1745-6916.2007.00034.x
+UT WOS:000207450400003
+PM 26151957
+ER
+
+PT J
+AU Barela, JA
+   Whitall, J
+   Black, P
+   Clark, JE
+AF Barela, JA
+   Whitall, J
+   Black, P
+   Clark, JE
+TI An examination of constraints affecting the intralimb coordination of
+   hemiparetic gait
+SO HUMAN MOVEMENT SCIENCE
+CT American-Physical-Therapy-Association Scientific Meeting and Exposition
+   (Physical Therapy 97)
+CY MAY 30-JUN 02, 1997
+CL SAN DIEGO, CA
+SP Amer Phys Therapy Assoc
+AB A dynamical systems approach to the study of locomotor intralimb coordination in those with hemiparesis led to an examination of the utility of the shank-thigh relative phase (RP) as a collective variable and the identification of potential constraints that may shape this coordination. Eighteen non-disabled individuals formed three groups matched to the age and gender of six participants with chronic right hemiparesis. The three groups differed in the constraints imposed on their walking: (1) walking at their preferred walking speed; (2) walking as slowly as those with hemiparesis; and, (3) walking slowly with a right ankle-foot orthosis (AFO). The results revealed an asymmetry in intralimb coordination between the unaffected and affected leg of those with hemiparesis localized to the latter third of the gait cycle when the limb is advanced from the end of stance to the reestablishment of a new stance. Walking slowly with or without an AFO resulted in no measureable effect in the non-disabled, but accounts for 22% of the variance in the intralimb coordination of the hemiplegic's affected limb and 16% in the unaffected limb. The AFO offered little additional contribution. These results derive from shank-thigh RP that is shown to provide more information about intralimb coordination than knee angle displacement. Implications for these results and the use of RP for rehabilitation are discussed. (C) 2000 Elsevier Science B.V. All rights reserved. PsycINFO classification. 3297. 2330.
+RI Barela, Jose/F-4284-2012
+SN 0167-9457
+PD JUL
+PY 2000
+VL 19
+IS 2
+BP 251
+EP 273
+DI 10.1016/S0167-9457(00)00014-2
+UT WOS:000089373300006
+ER
+
+PT J
+AU Sawyer, RK
+AF Sawyer, RK
+TI The emergence of creativity
+SO PHILOSOPHICAL PSYCHOLOGY
+AB This paper is an extended exploration of Mead's phrase "the emergence of the novel." I describe and characterize emergent systems-complex dynamical systems that display behavior that cannot be predicted from a full and complete description of the component units of the system. Emergence has become an influential concept in contemporary, cognitive science [A. Clark (1997) Being there, Cambridge: MIT Press], complexity theory [W. Bechtel & R.C. Richardson (1993) Discovering complexity, Princeton, NJ: Princeton University Press], artificial life [R.A. Brooks & P. Maes (Eds) (1994) Artificial life IV, Cambridge: MIT Press; C.G. Langton (d.) (1994) Artificial life III, Reading, MA: Addison-Wesley; C. G. Langton e: al. (Eds) (1991) Artificial life II, Reading, IMA: Addison-Wesley), and robotics [S. Fewest (1991) Emergent computation, Cambridge: MIT Press]. I propose that novelty is a necessary property of emergent systems, and I'll explore a specific kind of emergent system: an improvisational theater ensemble. This is an example of emergence in a small social group, which I call collaborative emergence to emphasize several important contrasts with other complex systems that manifest emergence, such as connectionist networks and Alife simulations.
+SN 0951-5089
+PD DEC
+PY 1999
+VL 12
+IS 4
+BP 447
+EP 469
+DI 10.1080/095150899105684
+UT WOS:000084755700005
+ER
+
+PT S
+AU Dale, R
+   Fusaroli, R
+   Duran, ND
+   Richardson, DC
+AF Dale, Rick
+   Fusaroli, Riccardo
+   Duran, Nicholas D.
+   Richardson, Daniel C.
+BE Ross, BH
+TI The Self-Organization of Human Interaction
+SO PSYCHOLOGY OF LEARNING AND MOTIVATION, VOL 59
+SE Psychology of Learning and Motivation
+AB We describe a "centipede's dilemma" that faces the sciences of human interaction. Research on human interaction has been involved in extensive theoretical debate, although the vast majority of research tends to focus on a small set of human behaviors, cognitive processes, and interactive contexts. The problem is that naturalistic human interaction must integrate all of these factors simultaneously, and grander theoretical mitigation cannot come only from focused experimental or computational agendas. We look to dynamical systems theory as a framework for thinking about how these multiple behaviors, processes, and contexts can be integrated into a broader account of human interaction. By introducing and utilizing basic concepts of self-organization and synergy, we review empirical work that shows how human interaction is flexible and adaptive and structures itself incrementally during unfolding interactive tasks, such as conversation, or more focused goal-based contexts. We end on acknowledging that dynamical systems accounts are very short on concrete models, and we briefly describe ways that theoretical frameworks could be integrated, rather than endlessly disputed, to achieve some success on the centipede's dilemma of human interaction.
+RI Fusaroli, Riccardo/A-8892-2010
+OI Fusaroli, Riccardo/0000-0003-4775-5219
+SN 0079-7421
+BN 978-0-12-407187-2
+PY 2013
+VL 59
+BP 43
+EP 95
+DI 10.1016/B978-0-12-407187-2.00002-2
+UT WOS:000321592400002
+ER
+
+PT J
+AU Barandiaran, X
+   Moreno, A
+AF Barandiaran, X
+   Moreno, A
+TI On what makes certain dynamical systems cognitive: A minimally cognitive
+   organization program
+SO ADAPTIVE BEHAVIOR
+CT 8th European Conference on Artificial Life
+CY SEP 05-09, 2005
+CL Canterbury, ENGLAND
+AB Dynamicism has provided cognitive science with important tools to understand some aspects of "how cognitive agents work" but the issue of "what makes something cognitive" has not been sufficiently addressed yet and, we argue, the former will never be complete without the latter. Behavioristic characterizations of cognitive properties are criticized in favor of an organizational approach focused on the internal dynamic relationships that constitute cognitive systems. A definition of cognition as adaptive-autonomy in the embodied and situated neurodynamic domain is provided: the compensatory regulation of a web of stability dependencies between sensorimotor structures is created and preserved during a historical/developmental process. We highlight the functional role of emotional embodiment: internal bioregulatory processes coupled to the formation and adaptive regulation of neurodynamic autonomy. Finally, we discuss a "minimally cognitive behavior program" in evolutionary simulation modeling suggesting that much is to be learned from a complementary "minimally cognitive organization program".
+RI X, Simon/F-4678-2011; Barandiaran, Xabier /A-6172-2011; Moreno,
+   Alvaro/L-3323-2014; 
+OI Barandiaran, Xabier/0000-0002-4763-6845
+SN 1059-7123
+PY 2006
+VL 14
+IS 2
+BP 171
+EP 185
+DI 10.1177/105971230601400208
+UT WOS:000237890200008
+ER
+
+PT J
+AU Froese, T
+   Fuchs, T
+AF Froese, Tom
+   Fuchs, Thomas
+TI The extended body: a case study in the neurophenomenology of social
+   interaction
+SO PHENOMENOLOGY AND THE COGNITIVE SCIENCES
+AB There is a growing realization in cognitive science that a theory of embodied intersubjectivity is needed to better account for social cognition. We highlight some challenges that must be addressed by attempts to interpret 'simulation theory' in terms of embodiment, and argue for an alternative approach that integrates phenomenology and dynamical systems theory in a mutually informing manner. Instead of 'simulation' we put forward the concept of the 'extended body', an enactive and phenomenological notion that emphasizes the socially mediated nature of embodiment. To illustrate the explanatory potential of this approach, we replicate an agent-based model of embodied social interaction. An analysis of the model demonstrates that the extended body can be explained in terms of mutual dynamical entanglement: inter-bodily resonance between individuals can give rise to self-sustaining interaction patterns that go beyond the behavioral capacities of isolated individuals by modulating their intra-bodily conditions of behavior generation.
+RI Froese, Tom/B-3301-2012
+OI Froese, Tom/0000-0002-9899-5274
+SN 1568-7759
+PD JUN
+PY 2012
+VL 11
+IS 2
+SI SI
+BP 205
+EP 235
+DI 10.1007/s11097-012-9254-2
+UT WOS:000305007600005
+ER
+
+PT J
+AU Chow, SM
+   Ferrer, E
+   Nesselroade, JR
+AF Chow, Sy-Miin
+   Ferrer, Emilio
+   Nesselroade, John R.
+TI An unscented Kalman filter approach to the estimation of nonlinear
+   dynamical systems models
+SO MULTIVARIATE BEHAVIORAL RESEARCH
+AB In the past several decades, methodologies used to estimate nonlinear relationships among latent variables have been developed almost exclusively to fit cross-sectional models. We present a relatively new estimation approach, the unscented Kalman filter (UKF), and illustrate its potential as a tool for fitting nonlinear dynamic models in two ways: (1) as a building block for approximating the log-likelihood of nonlinear state-space models and (2) to fit time-varying dynamic models wherein parameters are represented and estimated online as other latent variables. Furthermore, the substantive utility of the UKF is demonstrated using simulated examples of (1) the classical predator-prey model with time series and multiple-subject data, (2) the chaotic Lorenz system and (3) an empirical example of dyadic interaction.
+SN 0027-3171
+EI 1532-7906
+PY 2007
+VL 42
+IS 2
+BP 283
+EP 321
+UT WOS:000248088400003
+PM 26765489
+ER
+
+PT J
+AU Gernigon, C
+   d'Arripe-Longueville, F
+   Delignieres, D
+   Ninot, G
+AF Gernigon, C
+   d'Arripe-Longueville, F
+   Delignieres, D
+   Ninot, G
+TI A dynamical systems perspective on goal involvement states in sport
+SO JOURNAL OF SPORT & EXERCISE PSYCHOLOGY
+AB Based on the dynamical systems perspective, the present study aimed to explore how states of involvement toward mastery, performance-approach, and performance-avoidance goals (Elliot & Church, 1997) flow, are interrelated, and are activated during a practice judo combat. Using a retrospective video recall method, two male national level judo competitors expressed on a computer their moment-to-moment level of involvement toward each goal. Self-confrontation interviews also based on the video were immediately conducted. Analyses of variance revealed differences in levels of each goal between periods of the combat. Windowed cross-correlation analyses showed that the patterns of relationships between the time series of the different goals considered two-by-two included either high positive, high negative, or zero correlations, depending on the moment. Qualitative data analyses supported these findings and suggested that goal involvement states emerged and fluctuated according to the ecological constraints of the situation, such as the initial contextual conditions and the course of action.
+RI Ninot, Gregory/D-2994-2011
+SN 0895-2779
+PD DEC
+PY 2004
+VL 26
+IS 4
+BP 572
+EP 596
+UT WOS:000225796100005
+ER
+
+PT J
+AU Freeman, WJ
+   Ahlfors, SP
+   Menon, V
+AF Freeman, Walter J.
+   Ahlfors, Seppo P.
+   Menon, Vinod
+TI Combining fMRI with EEG and MEG in order to relate patterns of brain
+   activity to cognition
+SO INTERNATIONAL JOURNAL OF PSYCHOPHYSIOLOGY
+AB The common factor that underlies several types of functional brain imaging is the electric current of masses of dendrites. The prodigious demands for the energy that is required to drive the dendritic currents are met by hemodynamic and metabolic responses that are visualized with fMRI and PET techniques. The high current densities in parallel dendritic shafts and the broad distributions of the loop currents outside the dendrites generate both the scalp EEG and the magnetic fields seen in the MEG. The measurements of image intensities and potential fields provide state variables for modeling. The relationships between the intensities of current density and the electric, magnetic, and hemodynamic state variables are complex and far from proportionate. The state variables are complementary, because the information they convey comes from differing albeit overlapping neural populations, so that efforts to cross-validate localization of neural activity relating to specified cognitive behaviors have not always been successful. We propose an alternative way to use the three methods in combination through studies of hemisphere-wide, high-resolution spatiotemporal patterns of neural activity recorded non-invasively and analyzed with multivariate statistics. Success in this proposed endeavor requires specification of what patterns to look for. At the present level of understanding, an appropriate pattern is any significant departure from random noise in the spectral, temporal and spatial domains that can be scaled into the coarse-graining of time by fMRI/BOLD and the coarse-graining of space by EEG and MEG. Here the requisite patterns are predicted to be large-scale spatial amplitude modulation (AM) of synchronized neuronal signals in the beta and gamma ranges that are coordinated but not correlated with fMRI intensities. (c) 2009 Elsevier B.V. All rights reserved.
+RI Ahlfors, Seppo/P-3644-2016; Menon, Vinod/J-6402-2013
+OI Menon, Vinod/0000-0003-1622-9857
+SN 0167-8760
+PD JUL
+PY 2009
+VL 73
+IS 1
+BP 43
+EP 52
+DI 10.1016/j.ijpsycho.2008.12.019
+UT WOS:000267456200008
+PM 19233235
+ER
+
+PT J
+AU Holt, KG
+   Obusek, JP
+   Fonseca, ST
+AF Holt, KG
+   Obusek, JP
+   Fonseca, ST
+TI Constraints on disordered locomotion. A dynamical systems perspective on
+   spastic cerebral palsy
+SO HUMAN MOVEMENT SCIENCE
+AB Upper motor neuron disorders (UMN) result in abnormal movement patterns that are due to spasticity, weakness, cocontraction of muscles, inappropriate timing of muscle activations in relation to maximal mechanical advantage, and changes in the mechanical properties of muscles and connective tissues, Since many of the patterns observed in gait are reminiscent of immature patterns in non-disabled toddlers, prolonged abnormal patterns are often viewed as a failure of normal neural maturation. Since the 1960's the emphasis of therapeutic interventions has been to 'normalize' the movement pattern through a variety of neurotherapeutic techniques. The efforts have met with limited success. Recently there have been a number of publications that have emphasized the possibility that the observed patterns may develop or be functional adaptations to a neural system that is not 'normal', and that the observed movement patterns in pathological populations may be normal and optimal for that system (Fetters, 1991; Holt, 1993; Latash and Anson, in press; Winter et al., 1990). Some authors have emphasized that alternative patterns develop and are facilitated by redundancy in the motor system (Latash and Anson, in press). Our emphasis has been to pursue the notion that pattern development and functional adaptations in locomotion are driven by the underlying dynamics of the task and the dynamic resources available to the individual. We use a model developed within the dynamical systems framework, the force-driven, pendulum-spring model of locomotion, to parse out the energy forms that are needed for continued oscillations, and relate the energy forms to the dynamics that are available to a disordered system, specifically, spastic cerebral palsy (CP). We then attempt to relate the available dynamics to the observed gait patterns. In this way. we seek to understand ordered and disordered gaits as alternative functional solutions to the dynamical requirements for continued cycling of a periodically forced oscillator. The implications of the theoretical model and experimental findings are discussed with respect to therapeutic intervention, and the dynamical systems approach.
+RI Fonseca, Sergio/C-5408-2013
+OI Fonseca, Sergio/0000-0002-2979-8744
+SN 0167-9457
+PD APR
+PY 1996
+VL 15
+IS 2
+BP 177
+EP 202
+DI 10.1016/0167-9457(95)00043-7
+UT WOS:A1996VD45200003
+ER
+
+PT J
+AU Boker, SM
+AF Boker, SM
+TI Consequences of continuity: The hunt for intrinsic properties within
+   parameters of dynamics in psychological processes
+SO MULTIVARIATE BEHAVIORAL RESEARCH
+AB A little over three hundred years ago Sir Isaac Newton wrote of a simple set of relations that could be used to predict the motions of objects relative to one another. The main advantage of this insight was that the relationship between the movements of the planets and stars could be predicted much more simply than with the accurate, but cumbersome Ptolemaic calculations. But perhaps the most important consequence of the acceptance of Newton's insight was that intrinsic properties such as mass could be distinguished from measurements such as weight. The success of Newtonian mechanics led directly to the widespread use of parameters such as force, relative speed, and momentum as a way of understanding the dynamics of moving objects. A similar revolution in thinking appears to be underway in the behavioral sciences. It is likely that intensive longitudinal measurement coupled with dynamical systems analyses will lead to simplified but powerful models of the evolution of psychological processes. In this case, it is reasonable to expect that a set of intrinsic psychological properties may be able to be extracted from the parameters of successful dynamical systems models. The purpose of this article is to issue an invitation to the hunt, to provide a tentative map as to where the game might likely be found, and blow a call on the hunting horn.
+SN 0027-3171
+PY 2002
+VL 37
+IS 3
+BP 405
+EP 422
+DI 10.1207/S15327906MBR3703_5
+UT WOS:000178733000005
+PM 26751295
+ER
+
+PT J
+AU Maes, PJ
+   Leman, M
+   Palmer, C
+   Wanderley, MM
+AF Maes, Pieter-Jan
+   Leman, Marc
+   Palmer, Caroline
+   Wanderley, Marcelo M.
+TI Action-based effects on music perception
+SO FRONTIERS IN PSYCHOLOGY
+AB The classical, disembodied approach to music cognition conceptualizes action and perception as separate, peripheral processes. In contrast, embodied accounts of music cognition emphasize the central role of the close coupling of action and perception. It is a commonly established fact that perception spurs action tendencies. We present a theoretical framework that captures the ways in which the human motor system and its actions can reciprocally influence the perception of music. The cornerstone of this framework is the common coding theory, postulating a representational overlap in the brain between the planning, the execution, and the perception of movement. The integration of action and perception in so-called internal models is explained as a result of associative learning processes. Characteristic of internal models is that they allow intended or perceived sensory states to be transferred into corresponding motor commands (inverse modeling), and vice versa, to predict the sensory outcomes of planned actions (forward modeling). Embodied accounts typically refer to inverse modeling to explain action effects on music perception (Leman, 2007). We extend this account by pinpointing forward modeling as an alternative mechanism by which action can modulate perception. We provide an extensive overview of recent empirical evidence in support of this idea. Additionally, we demonstrate that motor dysfunctions can cause perceptual disabilities, supporting the main idea of the paper that the human motor system plays a functional role in auditory perception. The finding that music perception is shaped by the human motor system and its actions suggests that the musical mind is highly embodied. However, we advocate for a more radical approach to embodied (music) cognition in the sense that it needs to be considered as a dynamical process, in which aspects of action, perception, introspection, and social interaction are of crucial importance.
+OI Wanderley, Marcelo/0000-0002-9169-4313
+SN 1664-1078
+PD JAN 3
+PY 2014
+VL 4
+AR 1008
+DI 10.3389/fpsyg.2013.01008
+UT WOS:000331263000001
+PM 24454299
+ER
+
+PT J
+AU Lopresti-Goodman, SM
+   Richardson, MJ
+   Silva, PL
+   Schmidt, RC
+AF Lopresti-Goodman, Stacy M.
+   Richardson, Michael J.
+   Silva, Paula L.
+   Schmidt, R. C.
+TI Period basin of entrainment for unintentional visual coordination
+SO JOURNAL OF MOTOR BEHAVIOR
+AB Researchers have demonstrated that a person's rhythmic movements can become unintentionally entrained to another person's rhythmic movements or an environmental event. There are indications, however, that in both cases the likelihood of entrainment depends on the difference between the uncoupled periods of the two rhythms. The authors examined the range of period differences over which unintentional visual coordination might occur in 16 participants (Experiment 1) and 15 participants (Experiment 2). Cross-spectral coherence analysis and the distribution of continuous relative phase revealed that visual entrainment decreased as the difference between participants' preferred period and the experimenter-determined period of the environmental stimulus increased. The present findings extend the dynamical systems perspective on person-environment coupling and highlight the significance of period difference to the emergence of unintentional coordination.
+RI Richardson, Michael/A-1277-2011; Silva, Paula/N-1793-2013
+OI Silva, Paula/0000-0002-3749-5575
+SN 0022-2895
+PD JAN
+PY 2008
+VL 40
+IS 1
+BP 3
+EP 10
+DI 10.3200/JMBR.40.1.3-10
+UT WOS:000253202700001
+PM 18316292
+ER
+
+PT J
+AU vanEmmerik, REA
+   Wagenaar, RC
+AF vanEmmerik, REA
+   Wagenaar, RC
+TI Dynamics of movement coordination and tremor during gait in Parkinson's
+   disease
+SO HUMAN MOVEMENT SCIENCE
+AB Movement coordination, transition and stability aspects of gait in individuals with Parkinson's disease were investigated. Changes in movement coordination were evaluated by means of relative phase changes between upper and lower extremities and stability of patterns by means of the standard deviation of relative phase. Spectroscopic analysis of individual limb oscillators and of the relative phase between these oscillators was used to assess the contribution of lower and higher (e.g., tremor) frequency components on the coordination dynamics. Coordination changes in five patients and five age-matched controls were evaluated by means of accelerometry while movement velocity was manipulated as a control parameter on a motor-driven treadmill. Relative phase changes and stability features showed gradual changes in upper and lower extremity oscillations with walking velocity, a finding consistent with model predictions by Schoner et al. (1990) regarding gait changes in the quadrupedal walking mode. Parkinson's disease patients showed overall less adaptations in relative phase than the control group, especially those involving the upper extremities. Frequency analyses of relative phase also demonstrated that (a) systematic scaling of walking velocity can affect the dominant frequency of Parkinsonian tremor, (b) higher order frequency components in relative phase can play a functional, stabilizing role, and (c) 1/f scaling properties of the relative phase power spectrum can identify the higher degree of constraint on the coordination dynamics in Parkinson's disease.
+SN 0167-9457
+PD APR
+PY 1996
+VL 15
+IS 2
+BP 203
+EP 235
+DI 10.1016/0167-9457(95)00044-5
+UT WOS:A1996VD45200004
+ER
+
+PT J
+AU Raczaszek-Leonardi, J
+   Kelso, JAS
+AF Raczaszek-Leonardi, Joanna
+   Kelso, J. A. Scott
+TI Reconciling symbolic and dynamic aspects of language: Toward a dynamic
+   psycholinguistics
+SO NEW IDEAS IN PSYCHOLOGY
+AB The present paper examines natural language as a dynamical system. The oft-expressed view of language as "a static system of symbols" is here seen as an element of a larger system that embraces the mutuality of symbols and dynamics. Following along the lines of the theoretical biologist H.H. Pattee, the relation between symbolic and dynamic aspects of language is expressed within a more general framework that deals with the role of information in biological systems. In this framework, symbols are seen as information-bearing entities that emerge under pressures of communicative needs and that serve as concrete constraints on development and communication. In an attempt to identify relevant dynamic aspects of such a system, one has to take into account events that happen on different time scales: evolutionary language change (i.e., a diachronic aspect), processes of communication (language use) and language acquisition. Acknowledging the role of dynamic processes in shaping and sustaining the structures of natural language calls for a change in methodology. In particular, a purely synchronic analysis of a system of symbols as "meaning-containing entities" is not sufficient to obtain answers to certain recurring problems in linguistics and the philosophy of language. A more encompassing research framework may be the one designed specifically for studying informationally based coupled dynamical systems (coordination dynamics) in which processes of self-organization take place over different time scales. (c) 2007 Elsevier Ltd. All rights reserved.
+SN 0732-118X
+EI 1873-3522
+PD AUG
+PY 2008
+VL 26
+IS 2
+BP 193
+EP 207
+DI 10.1016/j.newideapsych.2007.07.003
+UT WOS:000258018600005
+PM 19173014
+ER
+
+PT J
+AU Passos, P
+   Araujo, D
+   Davids, K
+   Gouveia, L
+   Serpa, S
+AF Passos, Pedro
+   Araujo, Duarte
+   Davids, Keith
+   Gouveia, Luis
+   Serpa, Sidonio
+TI Interpersonal dynamics in sport: The role of artificial neural networks
+   and 3-D analysis
+SO BEHAVIOR RESEARCH METHODS
+AB In previous attempts to identify dynamical systems properties in patterns of play in team sports, only 2-D analysis methods have been used, implying that the plane of motion must be preselected and that movements out of the chosen plane are ignored. In the present study, we examined the usefulness of 3-D methods of analysis for establishing the presence of dynamical systems properties, such as phase transitions and symmetry-breaking processes in the team sport of rugby. Artificial neural networks (ANNs) were employed to reconstruct the 3-D performance space in a typical one-versus-one subphase of rugby. Results confirm that ANNs are reliable tools for reconstructing a 3-D performance space and may be instrumental in identifying pattern formation in team sports generally.
+RI Passos, Pedro /H-1521-2012; Gouveia, Luis/J-7208-2012; iMed.ULisboa,
+   IPnpDS/B-4831-2014; iMed.ULisboa, iMed.ULisboa/C-6292-2014; Araujo,
+   Duarte/F-4161-2011; 
+OI Passos, Pedro /0000-0002-2080-1660; Gouveia, Luis/0000-0001-5611-0047;
+   Araujo, Duarte/0000-0001-7932-3192; Araujo,
+   Fernando/0000-0001-6471-5564; Davids, Keith/0000-0003-1398-6123
+SN 1554-351X
+PD NOV
+PY 2006
+VL 38
+IS 4
+BP 683
+EP 691
+DI 10.3758/BF03193901
+UT WOS:000244579600018
+PM 17393840
+ER
+
+PT J
+AU ROUSSELLE, C
+   WOLFF, PH
+AF ROUSSELLE, C
+   WOLFF, PH
+TI THE DYNAMICS OF BIMANUAL COORDINATION IN DEVELOPMENTAL DYSLEXIA
+SO NEUROPSYCHOLOGIA
+AB The temporal organization of symmetric and asymmetric bimanual coordination tasks was compared between dyslexic adults and normally reading controls by means of a dynamical systems research strategy. Both groups demonstrated the influence of the intrinsic dynamics of rhythmic motor behavior on the performance of asymmetric bimanual tasks. In normal readers, manual asymmetries of motor control had a significant effect on the relative phasing of finger movements; no such effects were observed in dyslexic subjects. Group differences are discussed in terms of the interaction between neurological constraints and dynamic principles of spontaneous pattern formation.
+SN 0028-3932
+PY 1991
+VL 29
+IS 9
+BP 907
+EP 924
+DI 10.1016/0028-3932(91)90055-D
+UT WOS:A1991GK87500007
+PM 1944885
+ER
+
+PT J
+AU Stepp, N
+   Chemero, A
+   Turvey, MT
+AF Stepp, Nigel
+   Chemero, Anthony
+   Turvey, Michael T.
+TI Philosophy for the Rest of Cognitive Science
+SO TOPICS IN COGNITIVE SCIENCE
+AB Cognitive science has always included multiple methodologies and theoretical commitments. The philosophy of cognitive science should embrace, or at least acknowledge, this diversity. <link rid="b6">Bechtel's (2009a) proposed philosophy of cognitive science, however, applies only to representationalist and mechanist cognitive science, ignoring the substantial minority of dynamically oriented cognitive scientists. As an example of nonrepresentational, dynamical cognitive science, we describe strong anticipation as a model for circadian systems (<link rid="b54">Stepp & Turvey, 2009). We then propose a philosophy of science appropriate to nonrepresentational, dynamical cognitive science.
+SN 1756-8757
+EI 1756-8765
+PD APR
+PY 2011
+VL 3
+IS 2
+BP 425
+EP 437
+DI 10.1111/j.1756-8765.2011.01143.x
+UT WOS:000289250000020
+PM 25164302
+ER
+
+PT J
+AU Camras, LA
+   Shutter, JM
+AF Camras, Linda A.
+   Shutter, Jennifer M.
+TI Emotional Facial Expressions in Infancy
+SO EMOTION REVIEW
+AB In this article, we review empirical evidence regarding the relationship between facial expression and emotion during infancy. We focus on differential emotions theory's view of this relationship because of its theoretical and methodological prominence. We conclude that current evidence fails to support its proposal regarding a set of pre-specified facial expressions that invariably reflect a corresponding set of discrete emotions in infants. Instead, the relationship between facial expression and emotion appears to be more complex. Some facial expressions may have different meanings in infants than in children and adults. In addition, nonemotion factors may sometimes lead to the production of "emotional" facial expressions. We consider alternative perspectives on the nature of emotion and emotional expression in infancy with particular focus on differentiation and dynamical systems approaches.
+SN 1754-0739
+PD APR
+PY 2010
+VL 2
+IS 2
+BP 120
+EP 129
+DI 10.1177/1754073909352529
+UT WOS:000208388200009
+ER
+
+PT J
+AU Chemero, A
+   Turvey, MT
+AF Chemero, Anthony
+   Turvey, Michael T.
+TI Gibsonian affordances for roboticists
+SO ADAPTIVE BEHAVIOR
+AB Using hypersets as an analytic tool, we compare traditionally Gibsonian (Chemero 2003; Turvey 1992) and representationalist (Sahin et al. this issue) understandings of the notion 'affordance'. We show that representationalist understandings are incompatible with direct perception and erect barriers between animal and environment. They are, therefore, scarcely recognizable as understandings of 'affordance'. In contrast, Gibsonian understandings are shown to treat animal-environment systems as unified complex systems and to be compatible with direct perception. We discuss the fruitful connections between Gibsonian affordances and dynamical systems explanation in the behavioral sciences and point to prior fruitful application of Gibsonian affordances in robotics. We conclude that it is unnecessary to re-imagine affordances as representations in order to make them useful for researchers in robotics.
+SN 1059-7123
+PY 2007
+VL 15
+IS 4
+BP 473
+EP 480
+DI 10.1177/1059712307085098
+UT WOS:000251368600006
+ER
+
+PT J
+AU Nourrit, D
+   Delignieres, D
+   Caillou, N
+   Deschamps, T
+   Lauriot, B
+AF Nourrit, D
+   Delignieres, D
+   Caillou, N
+   Deschamps, T
+   Lauriot, B
+TI On discontinuities in motor learning: A longitudinal study of complex
+   skill acquisition on a ski-simulator
+SO JOURNAL OF MOTOR BEHAVIOR
+AB The qualitative behavioral reorganizations that occurred during the acquisition of a complex motor skill were examined. Five novice participants practiced for 39 sessions of ten 1-min trials on a modified version of the ski-simulator. Analyses focused on the motion of the apparatus platform, modeled as a self-sustained oscillator. At the beginning of the experiment, all participants adopted a behavior that could be modeled with a highly nonlinear stiffness function and a Rayleigh damping function. The behavior in the final part of the experiment was captured by a qualitatively different model, with a linear stiffness function and a van der Pol damping behavior. The transition from the initial to the final model was gradual and was marked in most cases by an abrupt increase of oscillation frequency. During the transition stage, the 2 damping behaviors seemed alternately exploited within each trial. The results are discussed in the framework of the dynamical systems approach to motor coordination and learning, considering motor skill acquisition as a phase transition.
+SN 0022-2895
+PD JUN
+PY 2003
+VL 35
+IS 2
+BP 151
+EP 170
+UT WOS:000182544300006
+PM 12711586
+ER
+
+PT J
+AU Meehan, TP
+   Bressler, SL
+AF Meehan, Timothy P.
+   Bressler, Steven L.
+TI Neurocognitive networks: Findings, models, and theory
+SO NEUROSCIENCE AND BIOBEHAVIORAL REVIEWS
+AB Through its early history, cognitive neuroscience largely followed a modular paradigm wherein high-level cognitive functions were mapped onto locally segregated brain regions. However, recent evidence drives a continuing shift away from modular theories of cognitive brain function, and toward theories which hold that cognition arises from the integrated activity of large-scale, distributed networks of brain regions. A growing consensus favors the fundamental concept of this new paradigm: the large-scale cognitive brain network, or neurocognitive network. This consensus was the motivation for Neurocognitive Networks 2010 (NCN 2010), a conference sponsored by the Cognitive Neuroscience Program of the National Science Foundation, organized by Drs. Steven Bressler and Craig Richter of Florida Atlantic University (FAU), and held at FAU in Boca Raton, FL on January 29-30, 2010. NCN 2010 gathered together some of today's leading investigators of neurocognitive networks. This paper serves to review their presentations as they relate to the paradigm of neurocognitive networks, as well as to compile the emergent themes, questions, and possible future research directions that arose from the conference. (C) 2012 Elsevier Ltd. All rights reserved.
+SN 0149-7634
+PD NOV
+PY 2012
+VL 36
+IS 10
+BP 2232
+EP 2247
+DI 10.1016/j.neubiorev.2012.08.002
+UT WOS:000313613500006
+PM 22921284
+ER
+
+PT J
+AU Fell, J
+AF Fell, J
+TI Identifying neural correlates of consciousness: The state space approach
+SO CONSCIOUSNESS AND COGNITION
+AB This article sketches an idealized strategy for the identification of neural correlates of consciousness. The proposed strategy is based on a state space approach originating from the analysis of dynamical systems. The article then focuses on one constituent of consciousness, phenomenal awareness. Several rudimentary requirements for the identification of neural correlates of phenomenal awareness are suggested. These requirements are related to empirical data on selective attention, on completely intrinsic selection and on globally unconscious states. As an example, neuroscientific findings on synchronized gamma activity are categorized according to these requirements. (C) 2004 Elsevier Inc. All rights reserved.
+SN 1053-8100
+PD DEC
+PY 2004
+VL 13
+IS 4
+BP 709
+EP 729
+DI 10.1016/j.concog.2004.07.001
+UT WOS:000225244000003
+PM 15522628
+ER
+
+PT J
+AU van Rooij, I
+   Bongers, RM
+   Haselager, WFG
+AF van Rooij, I
+   Bongers, RM
+   Haselager, WFG
+TI A non-representational approach to imagined action
+SO COGNITIVE SCIENCE
+AB This study addresses the dynamical nature of a "representation-hungry" cognitive task involving an imagined action. In our experiment, participants were handed rods that systematically increased or decreased in length on subsequent trials. Participants were asked to judge whether or not they thought they could reach for a distant object with the hand-held rod. The results are in agreement with a dynamical model, extended from Tuller, Case, Ding, and Kelso (1994). The dynamical effects observed in this study suggest that predictive judgments regarding the possibility or impossibility of a certain action can be understood in terms of dynamically evolving basins of attraction instead of as depending on representational structures. (C) 2002 Cognitive Science Society, Inc. All rights reserved.
+RI van Rooij, Iris/E-5236-2012; Haselager, Pim/B-3910-2010
+OI Haselager, Pim/0000-0002-4077-9560
+SN 0364-0213
+EI 1551-6709
+PD MAY-JUN
+PY 2002
+VL 26
+IS 3
+BP 345
+EP 375
+AR PII S0364-0213(02)00065-4
+UT WOS:000177297000007
+ER
+
+PT J
+AU Faith, M
+   Thayer, JF
+AF Faith, M
+   Thayer, JF
+TI A dynamical systems interpretation of a dimensional model of emotion
+SO SCANDINAVIAN JOURNAL OF PSYCHOLOGY
+AB The dimensional structure of emotion was investigated using self reports of induced mood and idiographic and nomothetic analyses. Subjects attended four experimental sessions during which an array of affective states was induced via auditory, visual, and imaginal channels. For each of 118 stimulus events, subjects self-rated their response. Factor analysis yielded the predicted bipolar factors of valence and arousal: these were obtained in group-aggregated analysis and subsequently confirmed as change dimensions at the intraindividual level. Controversy over the fundamental dimensions of affective space was considered with respect to methodological issues such as factor rotation and sampling of data space. Valence and arousal are discussed as motivational, driving parameters of affective experience and a dynamical systems conceptualization of emotion is proposed.
+SN 0036-5564
+PD APR
+PY 2001
+VL 42
+IS 2
+BP 121
+EP 133
+DI 10.1111/1467-9450.00221
+UT WOS:000167992500005
+PM 11321635
+ER
+
+PT B
+AU Boker, SM
+AF Boker, SM
+BE Collins, LM
+   Sayer, AG
+TI Differential structural equation modeling of intraindividual variability
+SO NEW METHODS FOR THE ANALYSIS OF CHANGE
+SE DECADE OF BEHAVIOR
+CT Conference on New Methods for the Analysis of Change
+CY 1998
+CL PENN STATE UNIV, PHILADELPHIA, PA
+SP Amer Psychol Assoc Sci Directorate
+HO PENN STATE UNIV
+BN 1-55798-754-8
+PY 2001
+BP 5
+EP 27
+DI 10.1037/10409-001
+UT WOS:000184352500001
+ER
+
+PT J
+AU Seifert, L
+   Leblanc, H
+   Herault, R
+   Komar, J
+   Button, C
+   Chollet, D
+AF Seifert, L.
+   Leblanc, H.
+   Herault, R.
+   Komar, J.
+   Button, C.
+   Chollet, D.
+TI Inter-individual variability in the upper-lower limb breaststroke
+   coordination
+SO HUMAN MOVEMENT SCIENCE
+AB The aim of the present study was to examine inter-individual variability in upper-lower limb breaststroke coordination. First, inter-individual variability was compared between recreational and comparative swimmers. Second, as recreational swimmers revealed more variable inter-limb coordination than competitive swimmers, inter-individual variability was assessed among recreational swimmers to identify coordination profiles. The elbow-knee continuous relative phase (CRP) was used to analyze upper-lower limbs coupling during a breaststroke cycle. Twenty-four recreational and twenty-four competitive swimmers swam 25 m at 80% of their maximal speed. Underwater and aerial side views were mixed and genlocked. Angular position, velocity and CRP were calculated for the knee and elbow joints by digitizing body markers from the side view. The kinematics of three cycles were filtered, averaged and normalized in terms of percentage of total cycle duration. The topography of the mean CRP curve of the recreational swimmers resembled a W-shape', whereas an 'inverse U-shape' was seen in the competitive swimmers. However, higher inter-individual variability was observed among the recreational swimmers than among the competitive swimmers (38.1 degrees vs. 19.4 degrees; p < .05), suggesting that several profiles of inter-limb coordination may exist in recreational swimmers. Coordination profiling showed that three clusters could classify the recreational swimmers. (C) 2010 Elsevier B.V. All rights reserved.
+RI Button, Chris/A-5366-2009
+OI Button, Chris/0000-0003-1158-8244
+SN 0167-9457
+PD JUN
+PY 2011
+VL 30
+IS 3
+BP 550
+EP 565
+DI 10.1016/j.humov.2010.12.003
+UT WOS:000291453600010
+PM 21439666
+ER
+
+PT J
+AU Pincus, D
+   Metten, A
+AF Pincus, David
+   Metten, Annette
+TI Nonlinear Dynamics in Biopsychosocial Resilience
+SO NONLINEAR DYNAMICS PSYCHOLOGY AND LIFE SCIENCES
+AB Theory and methodology from nonlinear dynamical systems (AIDS) may provide considerable advantage to health scientists as well as health care professionals. For instance, NDS methodologies and topics in health care share a focus upon the potentially complex interactions of biological, psychological and social factors over time. Nevertheless, a number of challenges remain in creating the necessary bridges in understanding to allow researchers to apply NDS techniques and to enable practitioners to use the resulting evidence to improve patient care. This article aims to provide such a bridge. First, common concepts pertaining to self-organizing complex adaptive systems are outlined as a general approach to understanding resilience across biological, psychological, and social scales. Next, four data analytic techniques from NDS are compared and contrasted with respect to the information they may provide about some common processes underlying resilience. These techniques are: time-series analysis, state-space grids, catastrophe modeling, and network modeling. Implications for health scientists and practitioners are discussed.
+SN 1090-0578
+PD OCT
+PY 2010
+VL 14
+IS 4
+SI SI
+BP 353
+EP 380
+UT WOS:000288914400002
+PM 20887686
+ER
+
+PT J
+AU Tilsen, S
+AF Tilsen, Sam
+TI Multitimescale Dynamical Interactions Between Speech Rhythm and Gesture
+SO COGNITIVE SCIENCE
+AB Temporal patterns in human movement, and in speech in particular, occur on multiple timescales. Regularities in such patterns have been observed between speech gestures, which are relatively quick movements of articulators (e.g., tongue fronting and lip protrusion), and also between rhythmic units (e.g., syllables and metrical feet), which occur more slowly. Previous work has shown that patterns in both domains can be usefully modeled with oscillatory dynamical systems. To investigate how rhythmic and gestural domains interact, an experiment was conducted in which speakers performed a phrase repetition task, and gestural kinematics were recorded using electromagnetic articulometry. Variance in relative timing of gestural movements was correlated with variance in rhythmic timing, indicating that gestural and rhythmic systems interact in the process of planning and producing speech. A model of rhythmic and gestural planning oscillators with multifrequency coupling is presented, which can simulate the observed covariability between rhythmic and gestural timing.
+SN 0364-0213
+EI 1551-6709
+PD JUL
+PY 2009
+VL 33
+IS 5
+BP 839
+EP 879
+DI 10.1111/j.1551-6709.2009.01037.x
+UT WOS:000268216000006
+PM 21585488
+ER
+
+EF

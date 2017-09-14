@@ -1,0 +1,11 @@
+bayesian	bayesian cognition.txt
+connectionism	connectionism plus topic tags.txt
+connectionism	parallel distributed processing.txt
+distributed	distributed cognition quotes.txt
+dynamical	dynamical systems cognition.txt
+dynamical	dynamical systems quotes plus topic tags.txt
+ecological	ecological psychology quotes.txt
+embodied	embodied cognition quotes.txt
+enactive	enactive cognition.txt
+symbolic	act-r cognition.txt
+symbolic	computational cognitive model.txt

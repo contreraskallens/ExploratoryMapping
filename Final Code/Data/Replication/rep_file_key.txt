@@ -1,0 +1,11 @@
+bayesian	bayesian_cognition_101_200.txt
+connectionism	connectionism_101_200.txt
+connectionism	PDP_101_200.txt
+distributed	distributed_cognition_101_200.txt
+dynamical	dynamical_systems_cognition_101_200.txt
+dynamical	dynamical_systems_quotes_tag_101_200.txt
+ecological	ecological_psychology_101_200.txt
+embodied	embodied_cognition_101_200.txt
+enactive	enactive_cognition_101_200.txt
+symbolic	actr_cognition_101_113.txt
+symbolic	computational_cognitive_model_101_200.txt
