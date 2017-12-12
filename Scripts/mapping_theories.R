@@ -15,6 +15,7 @@ require("bio3d")
 require("moduleColor")
 
 # paralellization of prediction machine and UI #
+require("log4r")
 require("foreach")
 require("doParallel")
 
@@ -74,9 +75,9 @@ plotTopicDiff <- function(topic, resultsList){
 
 #loads files and catalog for original#
 
-freqMatrix <- as.matrix(read.table('document_by_term.txt', sep='\t', header = T))[, -1] #loads the DBT minus one column. 
+freqMatrix <- as.matrix(read.table('document_by_term.txt', sep='\t', header = T))[, -1] #loads the DBT minus one column, the identifier in the text file. 
 row.names(freqMatrix) <- c(1:nrow(freqMatrix)) #row names with docID
-freqMatrix <- freqMatrix[, apply(freqMatrix, 2, function(x){sum(x==0) < 1047})] #removes columns with words that appear in fewer than 5 documents.
+freqMatrix <- freqMatrix[, apply(freqMatrix, 2, function(x){sum(x==0) < 995})] #removes columns with words that appear in fewer than 5 documents.
 
 freqMatrix <- freqMatrix[which(rowSums(freqMatrix) > 0), ] #eliminates documents with 0 terms after cleanup of terminology
 catalog <- read.table('catalog.txt', stringsAsFactors = F, sep = '\t', fill = T, quote = "") #loads catalog
@@ -90,7 +91,7 @@ topicList <- unique(catalog$topic) #list of theories for analysis.
 
 repFreqMatrix <- as.matrix(read.table('rep_document_by_term.txt', sep='\t', header = T, quote = ""))[, -1] 
 row.names(repFreqMatrix) <- c(1:nrow(repFreqMatrix))
-repFreqMatrix <- repFreqMatrix[, apply(repFreqMatrix, 2, function(x){sum(x==0) < 1009})] #removes columns with words that appear in fewer than 5 documents.
+repFreqMatrix <- repFreqMatrix[, apply(repFreqMatrix, 2, function(x){sum(x==0) < 962})] #removes columns with words that appear in fewer than 5 documents.
 repFreqMatrix <- repFreqMatrix[which(rowSums(repFreqMatrix) > 0), ]
 repCatalog <- read.table('rep_catalog.txt', stringsAsFactors = F, sep = '\t', fill = T, quote = "")
 repCatalog <- repCatalog[row.names(repFreqMatrix), ]
@@ -149,7 +150,7 @@ row.names(repofWholeMacaroni$v) <- colnames(repCleanData)
 
 minNumberOfDimensions <- 3 #lower boundary of D
 maxNumberOfDimensions <- 50 # upper boundary of D
-repeats <- 1000 # how many repetitions of prediction should be averaged?
+repeats <- 10000 # how many repetitions of prediction should be averaged?
 method <- "cluster" # "cluster" or "free".
 source <- "original" #"original" or "replication", "cross".
 
@@ -170,7 +171,7 @@ if(source == "cross"){
   cross_catalog <- repCatalog
   my_svd <- wholeMacaroni$u
 
-  replicationProjection <- matrix(0, nrow = 964, ncol = 3611)   #create matrix for projection and populate#
+  replicationProjection <- matrix(0, nrow = nrow(repFreqMatrix), ncol = ncol(freqMatrix))   #create matrix for projection and populate#
   row.names(replicationProjection) <- row.names(repFreqMatrix) #set row names as wholeMacaroni
   colnames(replicationProjection) <- colnames(freqMatrix)
   sharedWords <- colnames(repFreqMatrix)[which(colnames(repFreqMatrix) %in% colnames(freqMatrix))] # obtain all the shared words between original data and replication data.
@@ -223,17 +224,23 @@ row.names(bestPredictorsClusters) <- c(topicListClassic, topicListAlt)
 
 dimensionVec <- c(minNumberOfDimensions:maxNumberOfDimensions)
 
+# text file to monitor the parallel foreach #
+
+logger = create.logger()
+logfile(logger) = 'monitor.log'
+level(logger) = 'INFO'
+
+
 cl <- makeCluster(8)
 registerDoParallel(cl)
 
 
-listResults <- foreach(dimension=dimensionVec, .verbose = T) %dopar% { #parallelized foreach loop with each dimension. Stored in a list object containing the aggregate matrices of iterations controlled in repeat, for each number of dimensions used.
+listResults <- foreach(dimension=dimensionVec, .verbose = T, .packages = "log4r") %dopar% { #parallelized foreach loop with each dimension. Stored in a list object containing the aggregate matrices of iterations controlled in repeat, for each number of dimensions used.
   
   resultsListModel <- lapply(c(1:repeats), matrix, nrow = 8, ncol = 8) #pre allocate the result list with the number of iterations selected in parameters.
   s = 1 #controller for the number of iterations.
   
   while(s <= repeats){ # repeats the process of training-prediction as specified in parameters.
-
     if(method == "free") {
       trainingSet = sample(1:nrow(my_svd),600) #not controlled training
       predictors <- bestPredictors
@@ -241,7 +248,7 @@ listResults <- foreach(dimension=dimensionVec, .verbose = T) %dopar% { #parallel
     if(method == "cluster"){
       trainingSet <- c() # controlled training set for equal representation of each topic. 
       for(topic in topicList){
-        trainingSet <- c(trainingSet, sample(which(my_catalog$topic==topic), 60))
+        trainingSet <- c(trainingSet, sample(which(my_catalog$topic==topic), round(length(which(my_catalog$topic==topic)) * 0.7)))
       }
       predictors <- bestPredictorsClusters    }
     if(source == "original" | source == "replication"){ #if the procedure is either predicting original for predicting original, or replication for predicting replication, set the trainingset as the rest of the papers.
@@ -287,7 +294,12 @@ listResults <- foreach(dimension=dimensionVec, .verbose = T) %dopar% { #parallel
     }
     
     resultsListModel[[s]] <- resultTable # store this iteration for final aggregation in list.
+    s = s + 1
+    if(s %% (round(repeats * 0.2
+                   )) == 0){
+      info(logger, paste("dimension ", dimension, ", ", "iteration number", s))
     }
+  }
   
   #aggregate the results of the iterations#
   
@@ -298,7 +310,6 @@ listResults <- foreach(dimension=dimensionVec, .verbose = T) %dopar% { #parallel
   for(matrix in resultsListModel) { # sums every result table resulting from the iterations.
     finalPredictionTable <- finalPredictionTable + matrix 
   }
-  
   finalPredictionTable <- finalPredictionTable / length(resultsListModel) #divide by total number of iterations to aggregate
   return(finalPredictionTable) #return this table to be added to the list that foreach is constructing,
 }
@@ -318,13 +329,12 @@ for(dimension in dimensionVec) { dimEvMat[as.character(dimension),] <- c(diag(li
 
 ## confusability matrix by dimension ##
 
-dimension = 10 # parameter for choosing the number of dimensions to be used in the plot
+dimension = 20 # parameter for choosing the number of dimensions to be used in the plot
 
 topicMatrix <- listResults[[as.character(dimension)]] #extract the matrix of the chosen value of D
 meltedResults <- melt(topicMatrix, varnames = c("Topic1", "Topic2"), value.name = "Percentage.Predicted")
 heatmap <- ggplot(meltedResults, aes(y = Topic1, x = ordered(Topic2, levels = rev(sort(unique(Topic2)))))) + geom_tile(aes(fill = Percentage.Predicted)) + coord_equal() + scale_fill_gradient(limits = c(0, 100), low="white", high="seagreen", guide =  guide_colorbar(title = paste("% Predicted", "\n"))) + xlab("") + ylab("") + theme(axis.text = element_text(size = 14), axis.text.x = element_text(angle=330, hjust=0.4, vjust = 0.7, size = 14)) + geom_text(aes(label = paste(round(Percentage.Predicted, 1), "%", sep = "")), colour = "gray25", size = 5)
 print(heatmap)
-
 
 ## horizontal heatmap of effectiveness of each dimension by topic and mean #
 
@@ -332,16 +342,18 @@ meltedDimEv <- melt(dimEvMat[, 1:9], varnames = c("D", "topic"), value.name = "E
 heatmap <- ggplot(meltedDimEv, aes(y = topic, x = ordered(D))) + geom_tile(aes(fill = Effectiveness), color = "white") + coord_equal() + scale_fill_gradient(limits = c(0, 100), low="white", high="seagreen") + xlab("") + ylab("") + theme(axis.text = element_text(size = 12)) + geom_text(aes(label = paste(round(Effectiveness, 0))), size = 4, colour = "gray25")
 print(heatmap)
 
+
 # panel of effectiveness for each theory including mean #
 
-meanResultsTable <- as.data.frame(meltedDimEv) #long form for ggplot
-plot <- ggplot(data = meanResultsTable, aes(x = D, y = Effectiveness, color = topic, group = topic)) + ylim (0, 100) + theme_gray() + geom_line(size = 1) + scale_colour_brewer(type = "qual", palette = "Paired", guide = F) + geom_point(size = 0.5, shape = 3) + facet_wrap(~topic, ncol = 2, nrow = 5)
+meanResultsTable <- meltedDimEv[which(meltedDimEv$topic != "mean"),] #get mean out of data to generate panel of 8 theories
+meanResultsTable <- as.data.frame(meanResultsTable) #long form for ggplot
+plot <- ggplot(data = meanResultsTable, aes(x = D, y = Effectiveness, color = topic, group = topic)) + ylim (0, 100) + theme_gray() + geom_line(size = 1) + ylab("Mean Performance") + scale_colour_brewer(type = "qual", palette = "Paired", guide = F) + geom_point(size = 1, shape = 3) + facet_wrap(~topic, ncol = 2, nrow = 5)
 print(plot)
 
 # line plot of only mean effectiveness #
 
 meanPerf <- data.frame("Mean.Effectiveness" = rowMeans(dimEvMat), "D" = dimensionVec) #mean performance melted dataframe
-plot <- ggplot(data = meanPerf, aes(y = Mean.Effectiveness, x = D)) + theme_gray() + geom_line(size = 1.5, color = "seagreen") + geom_point(size = 1.5, shape = 3, color = "seagreen") + scale_y_continuous(limits = c(0, 100)) + labs(y = "Mean Effectiveness (%)")
+plot <- ggplot(data = meanPerf, aes(y = Mean.Effectiveness, x = D)) + theme_gray() + geom_line(size = 1.5, color = "seagreen") + geom_point(size = 1.5, shape = 3, color = "seagreen") + scale_y_continuous(limits = c(0, 100)) + labs(y = "Mean Performance (%)")
 print(plot)
 
 ####LINEAR MODELS WITH COSINE MATRICES####
@@ -371,7 +383,7 @@ plotTopicDiff("ecological", originalCosines)
 # these parameters control the models of self-similarity and other-similarity. "testingSelf" defines the source to be used (original data or replication data). "dimensionToTest" controls the number of dimensions used in the analysis (D) #
 
 testingSelf <- "original" #original or replication
-dimension <- 10 #specify the dimension to be tested
+dimension <- 5  #specify the dimension to be tested
 
 ##OBJECTS##
 
@@ -437,7 +449,7 @@ print(boxplotMax)
 
 #parameters that control the value of D ("dimension") and the source of the data ("dendrogramMode")#
 
-dimension <- 10 #change dimension being considered
+dimension <- 32 #change dimension being considered
 dendrogramMode <- "original" #original or replication
 
 ##OBJECTS##
@@ -479,7 +491,6 @@ meltedDistMatrix <- melt(simMatrix, varnames = c("Topic1", "Topic2"), value.name
 heatmap <- ggplot(meltedDistMatrix, aes(x = Topic1, y = ordered(Topic2, levels = rev(sort(unique(Topic2)))))) + geom_tile(aes(fill = Closeness), colour = "white") + coord_equal() +  scale_fill_gradient(low="white", high="seagreen", limits = c(0, 1), guide =  guide_colorbar(title = paste("Cosine", "\n"))) + xlab("") + ylab("") + theme(axis.text = element_text(size = 12), axis.text.x = element_text(angle = 330, hjust = 0.4, vjust = 0.7))
 print(heatmap)
 
-
 # hierarchical cluster analysis of the distance matrix #
 
 topic_hclust <- hclust(dist(simMatrix, upper = T), method = "average" ) #applies hclust algorithm to the similarity matrix
@@ -488,3 +499,4 @@ topic_hclust <- hclust(dist(simMatrix, upper = T), method = "average" ) #applies
 
 par(lwd = 2, cex.axis = 1.2, las = 1) #graphical parameters for the axes and lines of dendrogram
 print(hclustplot(topic_hclust, colors = labels2colors(cutreeDynamic(topic_hclust, minClusterSize = 1, method = "hybrid", deepSplit = 0, distM = as.matrix(dist(simMatrix)), pamStage = T), colorSeq = c("#2E8B57", "#FF2052", "#8b2e62")), fillbox = T, las = 0, cex = 1.2, mar = c(3, 3, 2, 0.5), font = 2)) #produces a dendrogram and marks the clusters with dynamictreecut. the minimum cluster size is set to 1, the parameter controlling the stringency of the clustering is set to the default (0). we used the "hybrid" method which takes both the dendrogram and a distance matrix to generate clusters. PAM was not used. We provided the colors (colorSeq) of the fillbox marking the clusters for up to 3 clusters.   
+

@@ -1,0 +1,1349 @@
+﻿FN Clarivate Analytics Web of Science
+VR 1.0
+PT J
+AU Roesch, EB
+   Nasuto, SJ
+   Bishop, JM
+AF Roesch, Etienne B.
+   Nasuto, Slawomir J.
+   Bishop, J. Mark
+TI Emotion and anticipation in an enactive framework for cognition
+   (response to Andy Clark)
+SO FRONTIERS IN PSYCHOLOGY
+OI Nasuto, Slawomir/0000-0001-9414-9049; Roesch,
+   Etienne/0000-0002-8913-4173
+SN 1664-1078
+PY 2012
+VL 3
+AR 398
+DI 10.3389/fpsyg.2012.00398
+UT WOS:000208864000114
+PM 23087660
+ER
+
+PT J
+AU Vakarelov, O
+AF Vakarelov, Orlin
+TI The cognitive agent: Overcoming informational limits
+SO ADAPTIVE BEHAVIOR
+AB This article provides an answer to the question: What is the function of cognition? By answering this question it becomes possible to investigate what are the simplest cognitive systems. It addresses the question by treating cognition as a solution to a design problem. It defines a nested sequence of design problems: (1) How can a system persist? (2) How can a system affect its environment to improve its persistence? (3) How can a system utilize better information from the environment to select better actions? And, (4) How can a system reduce its inherent informational limitations to achieve more successful behavior? This provides a corresponding nested sequence of system classes: (1) autonomous systems, (2) (re) active autonomous systems, (3) informationally controlled autonomous systems (autonomous agents), and (4) cognitive systems.
+   This article provides the following characterization of cognition: The cognitive system is the set of mechanisms of an autonomous agent that (1) allow increase of the correlation and integration between the environment and the information system of the agent, so that (2) the agent can improve the selection of actions and thereby produce more successful behavior.
+   Finally, it shows that common cognitive capacities satisfy the characterization: learning, memory, representation, decision making, reasoning, attention, and communication.
+SN 1059-7123
+PD APR
+PY 2011
+VL 19
+IS 2
+BP 83
+EP 100
+DI 10.1177/1059712311404090
+UT WOS:000289714900001
+ER
+
+PT J
+AU Cabral, MDC
+   Kastrup, V
+AF Carvalho Cabral, Maria do Carmo
+   Kastrup, Virginia
+TI Receptive Reading: An Experience of Becoming Aware
+SO PSICOLOGIA-REFLEXAO E CRITICA
+AB This work discusses the experience of reading literature in silence and solitude, focusing its effects oil the reader. The starting point is the enlargement of cognition as presented in Varela's enactive approach and the concept of inventive cognition as formulated by Kastrup. Then. it proposes the reading as an experience of becoming aware. The work is also based on Chartier's ideas about reading practices and uses the theory of Larrosa regarding. the transformative aspect of reading as well. The idea that reading literature provides a meeting with otherness is developed. It may constitute an opening for the unknown and an opportunity of inventing oneself.
+SN 0102-7972
+PD MAY-AUG
+PY 2009
+VL 22
+IS 2
+BP 286
+EP 293
+UT WOS:000270048600016
+ER
+
+PT J
+AU Martinez, IC
+   Anta, JF
+AF Martinez, Isabel-Cechja
+   Anta, J. Fernando
+TI Enactive cognition and music pedagogy: Embodied reading and declarative
+   analysis of musical structure in an instrumental lesson
+SO ESTUDIOS DE PSICOLOGIA
+AB There exists agreement in the field of cognitive science on the fact that the study of mind encompasses the whole human body, including the interpersonal and social world, Accordingly, it is assumed that the a development of an individual's consciousness is empathic in nature, involving the cognition of oneself with respect to others and of others with respect to oneself In the present article, the embodied activity of the music teacher is analysed in the context of an instrumental lesson. It is assumed that embodied imagination, understood as a transmodal process of mapping between different experiential domains, allows the teacher to perform an embodied reading of the student's music performance, which becomes a pedagogic tool in the verbal interaction to teach instrumental performance.
+SN 0210-9395
+PD MAR
+PY 2008
+VL 29
+IS 1
+BP 71
+EP 80
+DI 10.1174/021093908783781383
+UT WOS:000256746300005
+ER
+
+PT J
+AU Martinez, IC
+AF Martinez, Isabel-Cecilia
+TI Enactive cognition and embodied mind: The imaginative and metaphorical
+   component of music listening
+SO ESTUDIOS DE PSICOLOGIA
+AB Enactive cognition is a concept coined in the field of cognitive science to posit that mental processes are embodied in the sensory-motor activity of the organism interacting with the environment. Recently, several hypotheses have been put forth concerning the imaginative nature of music cognition based on the assumption that structural Metaphors might, to a certain extent, model musical experience, In this paper, the metaphorical component of music cognition is analysed and some results of how listeners use it to experience the underlying structure of tonal music are reported. The outcomes provide evidence that listeners experience the interruption of structural tension in metaphorical terms, According to the theory of enactive cognition, the systematic correlations that take place between different experiential domains are the bases of the idealised cognitive models that listeners activate in order to make sense of music.
+SN 0210-9395
+PD MAR
+PY 2008
+VL 29
+IS 1
+BP 31
+EP 48
+DI 10.1174/021093908783781419
+UT WOS:000256746300003
+ER
+
+PT J
+AU Kyselo, M
+AF Kyselo, Miriam
+TI The enactive approach and disorders of the self - the case of
+   schizophrenia
+SO PHENOMENOLOGY AND THE COGNITIVE SCIENCES
+AB The paper discusses two recent approaches to schizophrenia, a phenomenological and a neuroscientific approach, illustrating how new directions in philosophy and cognitive science can elaborate accounts of psychopathologies of the self. It is argued that the notion of the minimal and bodily self underlying these approaches is still limited since it downplays the relevance of social interactions and relations for the formation of a coherent sense of self. These approaches also illustrate that we still lack an account of how 1st and 3rd person observations can fruitfully go together in an embodied account of disorders of the self. Two concepts from enactive cognitive science are introduced, the notions of autonomy and sense-making. Based on these, a new proposal for an enactive approach to psychopathologies of the self is outlined that integrates 1st and 3rd person perspectives, while strongly emphasising the role of social interactions in the formation of self. It is shown how the enactive framework might serve as a basis for an alternative understanding of disorders of the self such as schizophrenia, as a particular form of socially constituted self-organisation.
+SN 1568-7759
+EI 1572-8676
+PD DEC
+PY 2016
+VL 15
+IS 4
+BP 591
+EP 616
+DI 10.1007/s11097-015-9441-z
+UT WOS:000387395800005
+ER
+
+PT J
+AU Loaiza, JM
+AF Loaiza, Juan M.
+TI Musicking, embodiment and participatory enaction of music: outline and
+   key points
+SO CONNECTION SCIENCE
+AB This paper proposes a way of understanding the confluence of the enactive approach to cognition and musicology in a wider sense. The implication is that existing socio-cultural approaches to meaning in music - whereby music is seen as a total social phenomenon, and the naturalistic view of music cognition may be articulated via the life-mind continuum proposed by enactivism. On the one hand, discussions on embodied music cognition are presented with the opportunity to overcome their de facto individualism in a principled, naturalistic way. On the other hand, for the socio-cultural-historical approaches the opportunity seems to be to move beyond the biology-culture divide without submitting to reductionism. A wider explanatory unit is presented. The explanatory utility of embodiment is examined in relation to the wider frame of social-life in dialectical fashion. A definition of musicking is sketched considering it as an instance of processes of social-life. This paper signals a direction to take, yet methodologies, results, and homologies with other disciplines are left open to further discussion.
+SN 0954-0091
+EI 1360-0494
+PD DEC
+PY 2016
+VL 28
+IS 4
+BP 410
+EP 422
+DI 10.1080/09540091.2016.1236366
+UT WOS:000390697600005
+ER
+
+PT J
+AU Rodriguez, S
+AF Rodriguez, Sergio
+TI Recurrences and Human Agential Meaning Grounding: Laying a Path in
+   Walking
+SO BIOSEMIOTICS
+AB This article addresses the semiotic problem of how meaning is agentially grounded: how actual meaning is possible and is justifiably supported by agents' capabilities and purposes. This article is particularly focused on human agential grounding; however, to a great degree, insights presented here can be extended to other living beings. Specifically, agential meaning is examined here inside the framework of agentive semiotics and embodied, situated and enactive cognition theories, in line with the mind-life continuity general thesis (which intends to naturalize mind and experience). To offer clarity and methodological precision about agential grounding, three explanation categories (called recurrences) are proposed: phylogenetic recurrence, the evolutionary basis for corporal/embodied grounding; ontogenetic recurrence, the developmental basis for individual meaning grounding; and collective recurrence, the basis for meaning recognized, attributed and assigned inside social contexts. These recurrences are conceived as three types of general processes that constantly enclose possibilities for purpose and meaning emergence in humans. As a result of these types of recurrences, two categories of human agendas or purposes are also proposed: individual and collective. Finally, remarks about how these categories can be useful for semiotic analysis and further research are suggested.
+OI Rodriguez, Sergio/0000-0002-1631-4747
+SN 1875-1342
+EI 1875-1350
+PD AUG
+PY 2016
+VL 9
+IS 2
+BP 169
+EP 184
+DI 10.1007/s12304-016-9267-2
+UT WOS:000384750200002
+ER
+
+PT J
+AU Deschamps, L
+   Lenay, C
+   Rovira, K
+   Le Bihan, G
+   Aubert, D
+AF Deschamps, Loic
+   Lenay, Charles
+   Rovira, Katia
+   Le Bihan, Gabrielle
+   Aubert, Dominique
+TI Joint Perception of a Shared Object: A Minimalist Perceptual Crossing
+   Experiment
+SO FRONTIERS IN PSYCHOLOGY
+AB The minimalist perceptual crossing paradigm has emphasized the essential role of interpersonal dynamics on social understanding. Within the particular case of minimalist interaction, it has been argued that interpersonal processes can constitute social cognition, at least partially, which calls for a paradigm shift in social cognition studies. In this paper, we review several perceptual crossing experiments and their theoretical implications, and propose an original experiment to go beyond strictly dyadic interactions. Whereas past experiments have used objects as distracters of dyadic interaction, our experiment aims at integrating objects themselves as the goal of interpersonal coordination. We asked 24 subjects to participate in a minimalist perceptual crossing experiment where they had to decide, based on their on-line interaction in a one-dimensional digital space, which of the objects they perceived was also perceptible by their partner. The main results suggest that the mutual awareness of a shared object (SO) arises from the quality of sensorimotor coordination between the partners. Indeed, the presence of a SO acts as a simultaneous affordance that attracts and structures individual perceptive activities, giving both partners the opportunity to co-construct a shared world where their respective actions make sense. We discuss our results by way of an enactive account of social cognition, taking the joint perception of a SO as a first step to account for joint attention.
+SN 1664-1078
+PD JUL 12
+PY 2016
+VL 7
+AR 1059
+DI 10.3389/fpsyg.2016.01059
+UT WOS:000379419100001
+PM 27462295
+ER
+
+PT J
+AU Foglia, L
+   O'Regan, JK
+AF Foglia, Lucia
+   O'Regan, J. Kevin
+TI A New Imagery Debate: Enactive and Sensorimotor Accounts
+SO REVIEW OF PHILOSOPHY AND PSYCHOLOGY
+AB Traditionally, the "Imagery Debate" has opposed two main camps: depictivism and descriptivism. This debate has essentially focused on the nature of the internal representations thought to be involved in imagery, without addressing at all the question of action. More recently, a third, "embodied" view is moving the debate into a new phase. The embodied approach focuses on the interdependence of perception, cognition and action, and in its more radical line this approach promotes the idea that perception is not a process involving internal world-models (representations). The anti-representationalist version of the embodied paradigm covers, among others that we shall not discuss here, two quite different positions, namely the enactive approach and sensorimotor theory. Up to now these two anti-representationalist accounts have generally been confounded. In this paper we will argue that despite some important commonalities, enactive and sensorimotor accounts come with distinctive theoretical traits with regard to their approach to imagery. These become manifest when critically examining the role they assign to sensorimotor engagements with the world. We shall argue that enactive and sensorimotor approaches are different in their understanding of the role of embodied action, and these different notions of embodiment lead to different explanatory accounts of perception and imagery. We propose that, due to existing ambiguities in enactivism, the sensorimotor theory is a better framework for a skill-based approach to imagery.
+SN 1878-5158
+EI 1878-5166
+PD MAR
+PY 2016
+VL 7
+IS 1
+BP 181
+EP 196
+DI 10.1007/s13164-015-0269-9
+UT WOS:000410310200011
+ER
+
+PT J
+AU Harvey, MI
+   Gahrn-Andersen, R
+   Steffensen, SV
+AF Harvey, Matthew Isaac
+   Gahrn-Andersen, Rasmus
+   Steffensen, Sune Vork
+TI Interactivity and Enaction in Human Cognition
+SO CONSTRUCTIVIST FOUNDATIONS
+AB > Context Distributed language and interactivity are central members of a set of concepts that are rapidly developing into rigorous, exciting additions to 4E cognitive science. Because they share certain assumptions and methodological commitments with enactivism, the two have sometimes been confused; additionally, while enactivism is a well-developed paradigm, interactivity has relied more on methodological development and on a set of focal examples. > Problem The goal of this article is to clarify the core conceptual commitments of both interactivity-based and enactive approaches to cognitive science by contrasting the two and highlighting their differences in assumptions, focus, and explanatory strategies. > Method We begin with the shared commitments of interactivity and enactivism-e.g., antirepresentationalism, naturalism, interdisciplinarity, the importance of biology, etc. We then give an overview of several important varieties of enactivism, including sensorimotor and anti-representationalist enactivism, and then walk through the history of the "core" varieties, taking care to contrast Maturana's approach with that of Varela and the current researchers following in Varela's footsteps. We then describe the differences between this latter group and interactivity-based approaches to cognitive science. > Results We argue that enactivism's core concepts are explanatorily inadequate in two ways. First, they mis-portray the organization of many living systems, which are not operationally closed. Second, they fail to realize that most epistemic activity (i.e., "sense-making") depends on engagement with non-local resources. Both problems can be dealt with by adopting an interactivity-based perspective, in which agency and cognition are fundamentally distributed and involve integration of non-local resources into the local coupling of organism and environment. > Implications The article's primary goal is theoretical clarification and exposition; its primary implication is that enactive concepts need to be modified or extended in some way in order to explain fully many aspects of cognition and directed biological activity. Or, read another way, the article's primary implication is that interactivity already provides a rich set of concepts for doing just that, which, while closely allied with enactivism in several ways, are not enactivist concepts. > Constructivist content The article consists entirely of a comparison between two constructivist fields of theory.
+OI Steffensen, Sune Vork/0000-0002-7937-4579
+SN 1782-348X
+PD MAR
+PY 2016
+VL 11
+IS 2
+SI SI
+BP 234
+EP 245
+UT WOS:000379839000012
+ER
+
+PT J
+AU Matyja, JR
+   Dolega, K
+AF Matyja, Jakub R.
+   Dolega, Krzysztof
+TI Commentary: The embodied brain: towards a radical embodied cognitive
+   neuroscience
+SO FRONTIERS IN HUMAN NEUROSCIENCE
+OI Matyja, Jakub/0000-0003-2872-1590
+SN 1662-5161
+PD DEC 21
+PY 2015
+VL 9
+AR 669
+DI 10.3389/fnhum.2015.00669
+UT WOS:000367050500001
+PM 26733845
+ER
+
+PT J
+AU Beer, RD
+AF Beer, Randall D.
+TI Characterizing Autopoiesis in the Game of Life
+SO ARTIFICIAL LIFE
+AB Maturana and Varela's concept of autopoiesis defines the essential organization of living systems and serves as a foundation for their biology of cognition and the enactive approach to cognitive science. As an initial step toward a more formal analysis of autopoiesis, this article investigates its application to the compact, recurrent spatiotemporal patterns that arise in Conway's Game-of-Life cellular automaton. In particular, we demonstrate how such entities can be formulated as self-constructing networks of interdependent processes that maintain their own boundaries. We then characterize the specific organizations of several such entities, suggest a way to simplify the descriptions of these organizations, and briefly consider the transformation of such organizations over time.
+SN 1064-5462
+EI 1530-9185
+PD WIN
+PY 2015
+VL 21
+IS 1
+BP 1
+EP 19
+DI 10.1162/ARTL_a_00143
+UT WOS:000349672200001
+PM 25148547
+ER
+
+PT J
+AU Urban, P
+AF Urban, Petr
+TI ENACTIVISM AND CARE ETHICS: MERGING PERSPECTIVES
+SO FILOZOFIA
+AB Enactivism can be seen as a non-reductive, naturalistic theory of mind and agency that emerged from a set of biological and phenomenological ideas, inspired also by the Buddhist mindfulness tradition. The ethics of care, on the other hand, has established itself as a normative moral theory inspired by feminist moral philosophy and psychology as well as by some more traditional currents in ethics, such as moral sentimentalism, which it developed further in a novel and innovative manner. This paper aims to show that, despite the prima facie differences and separate developmental trajectories, both approaches have put forward, at about the same period of time, a powerful criticism of traditional individualistic and rationalistic accounts of autonomy, cognition, and agency, and have suggested a revision of these notions in terms of a relational ontology with an emphasis on the embodied and situated nature of cognition and agency. The first part of the paper provides a picture of an enactive research program. Its implications for an enactive ethics are discussed as well. In the second part some striking affinities between the enactive approach and the ethics of care are explored.
+SN 0046-385X
+PD FEB
+PY 2015
+VL 70
+IS 2
+BP 119
+EP 129
+UT WOS:000350533700004
+ER
+
+PT J
+AU Froese, T
+AF Froese, Tom
+TI Enactive neuroscience, the direct perception hypothesis, and the
+   socially extended mind
+SO BEHAVIORAL AND BRAIN SCIENCES
+AB Pessoa's The Cognitive-Emotional Brain (2013) is an integrative approach to neuroscience that complements other developments in cognitive science, especially enactivism. Both accept complexity as essential to mind; both tightly integrate perception, cognition, and emotion, which enactivism unifies in its foundational concept of sense-making; and both emphasize that the spatial extension of mental processes is not reducible to specific brain regions and neuroanatomical connectivity. An enactive neuroscience is emerging.
+RI Froese, Tom/B-3301-2012
+OI Froese, Tom/0000-0002-9899-5274
+SN 0140-525X
+EI 1469-1825
+PY 2015
+VL 38
+AR e75
+DI 10.1017/S0140525X14000892
+UT WOS:000370070900075
+PM 26787072
+ER
+
+PT S
+AU Pugliese, R
+   Forger, K
+   Takala, T
+AF Pugliese, Roberto
+   Forger, Klaus
+   Takala, Tapio
+BE Brinkman, WP
+   Broekens, J
+   Heylen, D
+TI Game Experience When Controlling a Weak Avatar in Full-Body Enaction
+SO INTELLIGENT VIRTUAL AGENTS, IVA 2015
+SE Lecture Notes in Artificial Intelligence
+CT 15th International Conference on Intelligent Virtual Agents (IVA)
+CY AUG 26-28, 2015
+CL Delft, NETHERLANDS
+SP UnivTwente, Delft Univ Technol
+AB In this paper we describe a motion-controlled game based on a paradigm of a player enacting the character, rather than a character mimicking the player's action. Our hypothesis is that a controlling scheme based on the adaptation of a player to the way the avatar is able to perform actions, can result in a stronger presence and psychological bond to the character. The approach is based on previous studies showing that features, attitudes and behaviors of the digital representation of players in a virtual reality setting, alter the players self-perception in the virtual environment (Proteus effect). The interaction mechanism is inspired by enactive approach to cognition and embodied action. In a mini-game we explore effects of controlling a weak character on self-presence and identification with the avatar. We show that increasing degrees of effort in the controlled bodies resulted in different impressions of the physical state of the character. Additionally, we provide our interpretation of relation between game experience and the kinetic parameters and adaptation indicators extracted from the motion of the player and avatar. Finally, we address scenarios where this enaction-based approach to motion controlled avatar can find application.
+RI Takala, Tapio/G-2446-2013; Forger, Klaus/F-5265-2012
+OI Takala, Tapio/0000-0002-7704-5800; Forger, Klaus/0000-0002-8826-9981
+SN 0302-9743
+BN 978-3-319-21996-7; 978-3-319-21995-0
+PY 2015
+VL 9238
+BP 418
+EP 431
+DI 10.1007/978-3-319-21996-7_45
+UT WOS:000363485400045
+ER
+
+PT S
+AU Majumdar, R
+   Kothiyal, A
+   Pande, P
+   Agarwal, H
+   Ranka, A
+   Murthy, S
+   Chandrasekharan, S
+AF Majumdar, Rwitajit
+   Kothiyal, Aditi
+   Pande, Prajakt
+   Agarwal, Harshit
+   Ranka, Ajit
+   Murthy, Sahana
+   Chandrasekharan, Sanjay
+BE Murthy, K
+   Murthy, S
+TI The enactive equation: exploring how multiple external representations
+   are integrated, using a fully controllable interface and eye-tracking
+SO 2014 IEEE SIXTH INTERNATIONAL CONFERENCE ON TECHNOLOGY FOR EDUCATION
+   (T4E)
+SE IEEE International Conference on Technology for Education
+CT 6th IEEE International Conference on Technology for Education (T4E)
+CY DEC 18-21, 2014
+CL Amrita Univ, Amritapuri, INDIA
+SP IEEE, IEEE Comp Soc
+HO Amrita Univ
+AB Representational competence (RC), defined as "the ability to simultaneously process and integrate multiple external representations (MERs) in a domain", is a marker of expertise in science and engineering. However, the cognitive mechanisms underlying this ability and how this ability develops in learners, is poorly understood. In this paper, we report a fully controllable interface, designed to help school students develop RC. Further, as the design emerged from the application of distributed and embodied cognition theory to the RC problem, the design also seeks to shed light on the cognitive mechanisms underlying the integration of MERs. Here we report a preliminary eye and mouse tracking study, which sought to develop a detailed understanding of how students interacted with our interface, under self and text-guided exploration conditions. We also examined how the interaction process related to students' ability to integrate the representations in the interface. Results highlighted several desirable student behaviors, and potential points of modification of the interface to improve integration of MERs.
+OI Agrawal, Harshit/0000-0002-6991-2281
+SN 2372-7217
+BN 978-1-4799-6489-5
+PY 2014
+BP 233
+EP 240
+DI 10.1109/T4E.2014.31
+UT WOS:000366328100054
+ER
+
+PT B
+AU Short, WM
+   Shearin, WH
+   Welchman, A
+AF Short, William Michael
+   Shearin, Wilson H.
+   Welchman, Alistair
+BE Cappuccio, M
+   Froese, T
+TI Deleuze and the Enaction of Non-Sense
+SO ENACTIVE COGNITION AT THE EDGE OF SENSE-MAKING: MAKING SENSE OF
+   NON-SENSE
+SE New Directions in Philosophy and Cognitive Science
+AB This chapter examines the ways in which French philosopher Gilles Deleuze offers conceptual resources for an enactive account of language, in particular his extensive consideration of language in The Logic of Sense. Specifically, Deleuze's distinction between the nonsense of Lewis Carroll's portmanteau creations and that of Antonin Artaud's "translation" of Carroll's Jabberwocky highlights the need for an enactive, rather than merely embodied, approach to sense-making, particularly with regard to the general category of what Jakobson and Halle (1956) call "sound symbolism".
+BN 978-1-137-36336-7; 978-1-137-36335-0
+PY 2014
+BP 238
+EP 265
+D2 10.1057/9781137363367
+UT WOS:000370697400011
+ER
+
+PT J
+AU Lavelle, JS
+AF Lavelle, Jane Suilin
+TI Two Challenges to Hutto's Enactive Account of Pre-linguistic Social
+   Cognition
+SO PHILOSOPHIA
+AB Daniel Hutto's Enactive account of social cognition maintains that pre- and non-linguistic interactions do not require that the participants represent the psychological states of the other. This goes against traditional 'cognitivist' accounts of these social phenomena. This essay examines Hutto's Enactive account, and proposes two challenges. The account maintains that organisms respond to the behaviours of others, and in doing so respond to the 'intentional attitude' which the other has. The first challenge argues that there is no adequate account of how the organisms respond to the correct aspect of the behaviour in each situation. The second challenge argues that the Enactive account cannot account for the flexibility of pre- and non-linguistic responses to others. The essay concludes that these challenges provide more than sufficient reason to doubt the viability of Hutto's account as an alternative to cogntivist approaches to social cognition.
+SN 0048-3893
+PD SEP
+PY 2012
+VL 40
+IS 3
+BP 459
+EP 472
+DI 10.1007/s11406-011-9356-z
+UT WOS:000307312400005
+ER
+
+PT J
+AU Miyahara, K
+AF Miyahara, Katsunori
+TI Neo-pragmatic intentionality and enactive perception: a compromise
+   between extended and enactive minds
+SO PHENOMENOLOGY AND THE COGNITIVE SCIENCES
+AB The general idea of enactive perception is that actual and potential embodied activities determine perceptual experience. Some extended mind theorists, such as Andy Clark, refute this claim despite their general emphasis on the importance of the body. I propose a compromise to this opposition. The extended mind thesis is allegedly a consequence of our commonsense understanding of the mind. Furthermore, extended mind theorists assume the existence of non-human minds. I explore the precise nature of the commonsense understanding of the mind, which accepts both extended minds and non-human minds. In the area of philosophy of mind, there are two theories of intentionality based on such commonsense understandings: neo-behaviorism defended, e.g., by Daniel Dennett, and neo-pragmatism advocated, e.g., by Robert Brandom. Neither account is in full agreement with how people ordinarily use their commonsense understanding. Neo-pragmatism, however, can overcome its problem-its inability to explain why people routinely find intentionality in non-humans-by incorporating the phenomenological suggestion that interactional bodily skills determine how we perceive others' intentionality. I call this integrative position embodied neo-pragmatism. I conclude that the extended view of the mind makes sense, without denying the existence of non-human minds, only by assuming embodied neo-pragmatism and hence the general idea of enactive perception.
+SN 1568-7759
+EI 1572-8676
+PD DEC
+PY 2011
+VL 10
+IS 4
+BP 499
+EP 519
+DI 10.1007/s11097-011-9212-4
+UT WOS:000295680900005
+ER
+
+PT J
+AU Vaz, NM
+   Ramos, GC
+   de Castro, AB
+AF Vaz, Nelson M.
+   Ramos, Gustavo C.
+   de Castro, Archimedes B., Jr.
+TI The Enactive Paradigm 33 Years Later Response to Alfred Tauber
+SO CONSTRUCTIVIST FOUNDATIONS
+AB Upshot According to the biology of cognition and language (Maturana's approach), the immune system is not a cognitive system and the defining of a cognitive paradigm is not what we understand as a Maturanian approach to immunology. The true cognitive actions in immunology are performed by immunologists acting as observers, not by body organs or systems. Stimuli and responses are not adequate concepts in the description of systems. As a closed network of cellular/molecular interactions, the immune system yields patterns of activity, as is transparent in robust conserved profiles of reactivity of natural immunoglobulins, as investigated by Nobrega et al. and Cohen et al., which offer the opportunity to unravel its natural, spontaneous activity. Dietary materials, products of the commensal microbiome, are the most abundant and common elements continuously incorporated into the network activity and, thus, also represent an important avenue of investigation.
+RI Castro-Junior, Archimedes/F-3697-2012
+OI Castro-Junior, Archimedes/0000-0002-0161-7200
+SN 1782-348X
+PD JUL 15
+PY 2011
+VL 6
+IS 3
+SI SI
+BP 345
+EP 351
+UT WOS:000292766000008
+ER
+
+PT S
+AU Di Donato, P
+AF Di Donato, Pasquale
+BE Taniar, D
+   Gervasi, O
+   Murgante, B
+   Pardede, E
+   Apduhan, BO
+TI Geospatial Semantics: A Critical Review
+SO COMPUTATIONAL SCIENCE AND ITS APPLICATIONS - ICCSA 2010, PT 1,
+   PROCEEDINGS
+SE Lecture Notes in Computer Science
+CT International Conference on Computational Science and Its Applications
+CY MAR 20-28, 2010
+CL Fukuoka, JAPAN
+SP Univ Perugia, Monash Univ, La Trobe Univ, Univ Basilicata, Kyushu Sangyo Univ
+AB Current approaches to semantics in the geospatial domain are mainly based on ontologies, but ontologies, since continue to build entirely on the symbolic methodology, suffers from the classical problems, e.g. the symbol grounding problem, affecting representational theories. We claim for an enactive approach to semantics, where meaning is considered to be an emergent feature arising context-dependently in action. Since representational theories are unable to deal with context and emergence, a new formalism is required toward a contextual theory of concepts. SCOP is considered a promising formalism in this sense and is briefly described.
+SN 0302-9743
+BN 978-3-642-12155-5
+PY 2010
+VL 6016
+BP 528
+EP 544
+UT WOS:000279383400040
+ER
+
+PT J
+AU Petters, D
+AF Petters, Dean
+TI An encounter between 4e cognition and attachment theory
+SO CONNECTION SCIENCE
+AB This paper explores a constructive revision of the conceptual underpinnings of Attachment Theory through an encounter with the diverse elements of 4e cognition. Attachment relationships involve the development of preference for one or a few carers and expectations about their availability and responsiveness as a haven of safety and a base from which to explore. In attachment theory, mental representations have been assigned a central organising role in explaining attachment phenomena. The 4e cognition approaches in cognitive science raise a number of questions about the development and interplay of attachment and cognition. These include: (1) the nature of what Bowlby called internal working models of attachment'; (2) the extent to which the infant-carer dyad functions as an extension of the infant's mind; and (3) whether Bowlby's attachment control system concept can be usefully re-framed in enactive terms where traditional cognitivist representations are: (3i) substituted for sensorimotor skill-focused mediating representations; (3ii) viewed as arising from autopoietic living organisms; and/or (3iii) mostly composed from the non-contentful mechanisms of basic minds? A theme that cross-cuts these research questions is how representations for capturing meaning, and structures for adaptive control, are both required to explain the full range of behaviour of interest to Attachment Theory researchers.
+SN 0954-0091
+EI 1360-0494
+PD DEC
+PY 2016
+VL 28
+IS 4
+BP 387
+EP 409
+DI 10.1080/09540091.2016.1214947
+UT WOS:000390697600004
+ER
+
+PT J
+AU Martinez-Pernia, D
+   Huepe, D
+   Huepe-Artigas, D
+   Correia, R
+   Garcia, S
+   Beitia, M
+AF Martinez-Pernia, David
+   Huepe, David
+   Huepe-Artigas, Daniela
+   Correia, Rut
+   Garcia, Sergio
+   Beitia, Maria
+TI Enactive Approach and Dual-Tasks for the Treatment of Severe Behavioral
+   and Cognitive Impairment in a Person with Acquired Brain Injury: A Case
+   Study
+SO FRONTIERS IN PSYCHOLOGY
+AB One of the most important sequela in persons who suffer from acquired brain injury is a behavioral disorder. To date, the primary approaches for the rehabilitation of this sequela are Applied Behavior Analysis, Cognitive-Behavior Therapy, and Comprehensive-Holistic Rehabilitation Programs. Despite this theoretical plurality, none of these approaches focuses on rehabilitating behavioral disorders considering the relation between affordance and environmental adaptation. To introduce this therapeutic view to neurorehabilitation, we apply the theoretical tenets of the enactive paradigm to the rehabilitation of a woman with severe behavioral and cognitive impairment. Over seventeen sessions, her behavioral and cognitive performance was assessed in relation to two seated affordances (seated on a chair and seated on a ball 65 cm in diameter) and the environmental adaptation while she was working on various cognitive tasks. These two seated affordances allowed to incorporate the theoretical assumptions of the enactive approach and to know how the behavior and the cognition were modified based on these two postural settings and the environmental adaptation. The findings indicate that the subject exhibited better behavioral (physical and verbal) and cognitive (matching success and complex task) performances when the woman worked on the therapeutic ball than when the woman was on the chair. The enactive paradigm applied in neurorehabilitation introduces a level of treatment that precedes behavior and cognition. This theoretical consideration allowed the discovery of a better relation between a seated affordance and the environmental adaptation for the improvement behavioral and cognitive performance in our case study.
+SN 1664-1078
+PD NOV 1
+PY 2016
+VL 7
+AR 1712
+DI 10.3389/fpsyg.2016.01712
+UT WOS:000386626900001
+PM 27847494
+ER
+
+PT J
+AU Lo Presti, P
+AF Lo Presti, Patrizio
+TI Whose mind? Two interpretations of what it is to directly perceive other
+   minds
+SO THEORY & PSYCHOLOGY
+AB According to direct perception theory (DPT) people understand each other's minds by way of perceiving each other's behavioral engagements in the world. I argue that DPT admits of two interpretations. One interpretation is found in Searle's social ontology. The other interpretation departs from an enactivist account of social cognition. Both can make sense of what it is to perceive other minds, but in two different ways. The first claims that people can directly perceive states of mind shared in a community. In contrast, the second interpretation allows for direct perception of particular individuals' states of mind in the context of participation in social practices. The two interpretations are argued to be compatible. People can perceive communal states of mind in another's responsiveness to action possibilities in social environments, not only the particular other's states of mind.
+SN 0959-3543
+EI 1461-7447
+PD AUG
+PY 2016
+VL 26
+IS 4
+BP 419
+EP 437
+DI 10.1177/0959354316650943
+UT WOS:000382483300001
+ER
+
+PT J
+AU Di Paolo, E
+AF Di Paolo, Ezequiel
+TI Participatory Object Perception
+SO JOURNAL OF CONSCIOUSNESS STUDIES
+AB Social factors have so far been neglected in embodied theories of perception despite the wealth of phenomenological insights and empirical evidence indicating their importance. I examine evidence from developmental psychology and neuroscience and attempt an initial classification according to whether social factors play a contextual, enabling, or constitutive role in the ability to perceive objects in a detached manner, i.e. beyond their immediate instrumental use. While evidence of cross-cultural variations in perceptual styles and the influence of social cues on visual attention could not be said to play more than a contextual role, other factors such as the intricate developmental links between dyadic and triadic interactions in infancy, as well as episodes of peer-learning in children, play enabling roles. A common element in these factors is the presence and resolution of interpersonal conflict. Detached object perception could not develop without these social factors. I argue, in addition, that social skills such as managing partial social acts which are addressed to and completed by others, linguistic mediation, make-believe play, and the ability to control perspectival switches are constitutive - i.e. are of the essence - of the ability to see objects as present with a detached attitude. I discuss the prospects of incorporating such social elements into dynamical interpretations of the sensorimotor approach through the enactive notion of participatory sense-making.
+SN 1355-8250
+PD MAY-JUN
+PY 2016
+VL 23
+IS 5-6
+BP 228
+EP 258
+UT WOS:000377422700011
+ER
+
+PT J
+AU Moore, RK
+AF Moore, Roger K.
+TI Introducing a Pictographic Language for Envisioning a Rich Variety of
+   Enactive Systems with Different Degrees of Complexity
+SO INTERNATIONAL JOURNAL OF ADVANCED ROBOTIC SYSTEMS
+AB Notwithstanding the considerable amount of progress that has been made in recent years, the parallel fields of cognitive science and cognitive systems lack a unifying methodology for describing, understanding, simulating and implementing advanced cognitive behaviours. Growing interest in 'enactivism' - as pioneered by the Chilean biologists Humberto Maturana and Francisco Varela - may lead to new perspectives in these areas, but a common framework for expressing many of the key concepts is still missing. This paper attempts to lay a tentative foundation in that direction by extending Maturana and Varela's pictographic depictions of autopoietic unities to create a rich visual language for envisioning a wide range of enactive systems - natural or artificial - with different degrees of complexity. It is shown how such a diagrammatic taxonomy can help in the comprehension of important relationships between a variety of complex concepts from a pan- theoretic perspective. In conclusion, it is claimed that visual language is not only valuable for teaching and learning, but also offers important insights into the design and implementation of future advanced robotic systems.
+SN 1729-8814
+PD APR 21
+PY 2016
+VL 13
+AR 74
+DI 10.5772/62244
+UT WOS:000375719100001
+ER
+
+PT J
+AU Lazzeri, F
+AF Lazzeri, Filipe
+TI On some common objections to a behavioral approach to psychological
+   categories
+SO PHILOSOPHICAL PSYCHOLOGY
+AB This paper addresses several objections that have been leveled against a behavioral approach to psychological categories. It reconstructs and critically assesses (a) the so-called causal objection; (b) alleged counterexamples whereby one can exhibit the typical behaviors associated with a psychological phenomenon without exhibiting the latter, including Lewis' "perfect actor" case and Kirk's "zombie"; (c) alleged counterexamples whereby organisms can exemplify psychological phenomena without exhibiting any behavior associated with them, including Armstrong's imagined brain in a vat, Putnam's "super-super-spartans" scenario, and related cases; and (d) the holistic objection. Mistaken assumptions in each of these objections are pinpointed. The paper starts with a brief characterization of behaviorism about psychological categories and a summary of the particular version thereof supported here, which draws upon Ryle and Skinner, among others.
+SN 0951-5089
+EI 1465-394X
+PD APR 2
+PY 2016
+VL 29
+IS 3
+BP 405
+EP 418
+DI 10.1080/09515089.2015.1121540
+UT WOS:000370571600007
+ER
+
+PT J
+AU Solomonova, E
+   Wei, SX
+AF Solomonova, Elizaveta
+   Wei, Sha Xin
+TI Exploring the Depth of Dream Experience The Enactive Framework and
+   Methods for Neurophenomenological Research
+SO CONSTRUCTIVIST FOUNDATIONS
+AB > Context Phenomenology and the enactive approach pose a unique challenge to dream research: during sleep one seems to be relatively disconnected from both world and body. Movement and perception, prerequisites for sensorimotor subjectivity, are restricted; the dreamer's experience is turned inwards. In cognitive neurosciences, on the other hand, the generally accepted approach holds that dream formation is a direct result of neural activations in the absence of perception, and dreaming is often equated with "delusions." > Problem Can enactivism and phenomenology account for the variety of dream experiences? What kinds of experiential and empirical approaches are required in order to probe into dreaming subjectivity? Investigating qualities of perception, sensation, and embodiment in dreams, as well as the relationship between the dream-world and waking-world requires a step away from a delusional or altered-state framework of dream formation and a step toward an enactive integrative approach. > Method In this article, we will focus on the "depth" of dream experiences, i.e., what is possible in the dream state. Our article is divided into two parts: a theoretical framework for approaching dreaming from an enactive cognition standpoint; and discussion of the role and strategies for experimentation on dreaming. Based on phenomenology and theories of enactivism, we will argue for the primacy of subjectivity and imagination in the formation of lived experience. > Results We propose that neurophenomenology of dreaming is a nascent discipline that requires rethinking the relative role of third-, first-and second-person methodologies, and that a paradigm shift is required in order to investigate dreaming as a phenomenon on a continuum of conscious phenomena as opposed to a break from or an alteration of consciousness. > Implications Dream science, as part of the larger enterprise of consciousness and subjectivity studies, can be included in the enactive framework. This implies that dream experiences are neither passively lived nor functionally disconnected from dreamers' world and body. We propose the basis and some concrete strategies for an empirical enactive neurophenomenology of dreaming. We conclude that investigating dream experiences can illuminate qualities of subjective perception and relation to the world, and thus challenge the traditional subject-object juxtaposition. > Constructivist content This article argues for an interdisciplinary enactive cognitive science approach to dream studies.
+OI Solomonova, Elizaveta/0000-0002-3733-8676
+SN 1782-348X
+PD MAR
+PY 2016
+VL 11
+IS 2
+SI SI
+BP 407
+EP 416
+UT WOS:000379839000060
+ER
+
+PT J
+AU Malinin, LH
+AF Malinin, Laura H.
+TI Creative Practices Embodied, Embedded, and Enacted in Architectural
+   Settings: Toward an Ecological Model of Creativity
+SO FRONTIERS IN PSYCHOLOGY
+AB Memoires by eminently creative people often describe architectural spaces and qualities they believe instrumental for their creativity. However, places designed to encourage creativity have had mixed results, with some found to decrease creative productivity for users. This may be due, in part, to lack of suitable empirical theory or model to guide design strategies. Relationships between creative cognition and features of the physical environment remain largely uninvestigated in the scientific literature, despite general agreement among researchers that human cognition is physically and socially situated. This paper investigates what role architectural settings may play in creative processes by examining documented first person and biographical accounts of creativity with respect to three central theories of situated cognition. First, the embodied thesis argues that cognition encompasses both the mind and the body. Second, the embedded thesis maintains that people exploit features of the physical and social environment to increase their cognitive capabilities. Third, the enaction thesis describes cognition as dependent upon a person's interactions with the world. Common themes inform three propositions, illustrated in a new theoretical framework describing relationships between people and their architectural settings with respect to different cognitive processes of creativity. The framework is intended as a starting point toward an ecological model of creativity, which may be used to guide future creative process research and architectural design strategies to support user creative productivity.
+SN 1664-1078
+PD JAN 6
+PY 2016
+VL 6
+AR 1978
+DI 10.3389/fpsyg.2015.01978
+UT WOS:000367737900001
+ER
+
+PT J
+AU Bizzari, V
+   Hipolito, I
+AF Bizzari, Valeria
+   Hipolito, Ines
+TI PREDICTIVE ENGAGEMENT AND MOTOR INTENTIONALITY
+SO ESERCIZI FILOSOFICI
+AB In this paper we aim to show that motor intentionality, as the underlying ground for social cognition, can be explained through the predictive engagement model. Sensorimotor processes seem to play central roles in social interaction, cognition and language. We question the phenomenological role of the body in social cognition and further investigate a causal neural explanation. We will adopt a different perspective by linking the role of the body and intercorporeality with recent findings in philosophy of neuroscience under the predictive brain hypothesis. In fact, the living body seems to entertain a dialogical and enactive relationship with the surrounding context, as well as with neural circuits actively responding to external stimuli. The body is thus configured as a living organism, and not as a mere biological substratum, offering to phenomenology and empirical sciences further confirmations of the possibility-and need-for a cooperation.
+SN 1970-0164
+PY 2016
+VL 11
+IS 2
+UT WOS:000395320800006
+ER
+
+PT J
+AU Bizzari, V
+   Hipolito, I
+AF Bizzari, Valeria
+   Hipolito, Ines
+TI PREDICTIVE ENGAGEMENT AND MOTOR INTENTIONALITY
+SO ESERCIZI FILOSOFICI
+AB In this paper we aim to show that motor intentionality, as the underlying ground for social cognition, can be explained through the predictive engagement model. Sensorimotor processes seem to play central roles in social interaction, cognition and language. We question the phenomenological role of the body in social cognition and further investigate a causal neural explanation. We will adopt a different perspective by linking the role of the body and intercorporeality with recent findings in philosophy of neuroscience under the predictive brain hypothesis. In fact, the living body seems to entertain a dialogical and enactive relationship with the surrounding context, as well as with neural circuits actively responding to external stimuli. The body is thus configured as a living organism, and not as a mere biological substratum, offering to phenomenology and empirical sciences further confirmations of the possibility-and need-for a cooperation.
+SN 1970-0164
+PY 2016
+VL 11
+IS 2
+UT WOS:000395320800003
+ER
+
+PT S
+AU Brito, CF
+   Marques, VX
+AF Brito, Carlos F.
+   Marques, Victor X.
+BE Muller, VC
+TI Is There a Role for Computation in the Enactive Paradigm?
+SO FUNDAMENTAL ISSUES OF ARTIFICIAL INTELLIGENCE
+SE Synthese Library
+BS STUDIES IN EPISTEMOLOGY, LOGIC, METHODOLOGY, AND PHILOSOPHY OF SCIENCE
+AB The main contribution of this paper is a naturalized account of the phenomenon of computation. The key idea for the development of this account is the identification of the notion of syntactical processing (or information processing) with the dynamical evolution of a constrained physical process, based on the observation that both evolve according to an arbitrary set of rules. This identification, in turn, revealed that, from the physical point of view, computation could be understood in terms of the operation of a component subdivided into two parts, (a) the constrained process and (b) the constraints that control its dynamics, where the interactions with the rest of the system are mediated by configurational changes of the constrained process. The immediate consequence of this analysis is the observation that this notion of computation can be readily integrated into the enactive paradigm of cognition.
+SN 0166-6991
+BN 978-3-319-26485-1; 978-3-319-26483-7
+PY 2016
+VL 376
+BP 79
+EP 94
+DI 10.1007/978-3-319-26485-1_6
+D2 10.1007/978-3-319-26485-1
+UT WOS:000387139300007
+ER
+
+PT S
+AU Brody, J
+AF Brody, Justin
+BE Samsonovich, AV
+   Klimov, VV
+TI The Enacted KOAN - An Agent's Knowledge of Agency
+SO 7TH ANNUAL INTERNATIONAL CONFERENCE ON BIOLOGICALLY INSPIRED COGNITIVE
+   ARCHITECTURES, (BICA 2016)
+SE Procedia Computer Science
+CT 7th Annual International Conference on Biologically Inspired Cognitive
+   Architectures (BICA)
+CY JUL 16-19, 2016
+CL New York City, NY
+AB We present Knowledge Of Action Networks, which provide an enactive machine learning model for knowledge of agency in artificial intelligence. These networks, which are expected to be part of embodied intelligences existing in dynamic environments, learn to represent their environment while simultaneously learning to represent their own actions and bodies within that environment. Thus self and world are intricately coupled in their basic representations. We will also explore some of the (many) expected contributions of such networks for implementing minimal self-models, which are basic models of self-aware agents.
+SN 1877-0509
+PY 2016
+VL 88
+BP 211
+EP 216
+DI 10.1016/j.procs.2016.07.427
+UT WOS:000391723200030
+ER
+
+PT S
+AU Cappuccio, ML
+AF Cappuccio, Massimiliano L.
+BE Muller, VC
+TI The Seminal Speculation of a Precursor: Elements of Embodied Cognition
+   and Situated AI in Alan Turing
+SO FUNDAMENTAL ISSUES OF ARTIFICIAL INTELLIGENCE
+SE Synthese Library
+BS STUDIES IN EPISTEMOLOGY, LOGIC, METHODOLOGY, AND PHILOSOPHY OF SCIENCE
+AB Turing's visionary contribution to cognitive science is not limited to the foundation of the symbolist approach to cognition and to the exploration of the connectionist approach: it additionally anticipated the germinal disclosure of the embodied approach. Even if Turing never directly dealt with the foundational speculation on the conceptual premises of embodiment, in his theoretical papers we find traces of the idea that a cognitive agent must develop a history of coupling with its natural and social environment, and that primitive bodily stimuli like pain and pleasure drive this coupling and elevate it to real learning by setting its normative preconditions. Turing did not consistently defend the centrality of embodiment, and ended up confounding or deemphasizing in various occasions the critical importance that he had himself implicitly recognized to the body. In line with the anti-representationist, radically enactive approaches to basic cognition, I believe that if Turing eventually failed to fully value the cognitive-developmental role played by the body, this was not because he proposed a computational and functionalist model of the mind, but because he tacitly assumed the content/vehicle dichotomy as a primitive of that model: in fact, he still believed that intelligence is a realized by decontextualized contents that can be detached and transmitted regardless of their mode of physical implementation.
+SN 0166-6991
+BN 978-3-319-26485-1; 978-3-319-26483-7
+PY 2016
+VL 376
+BP 477
+EP 494
+DI 10.1007/978-3-319-26485-1_28
+D2 10.1007/978-3-319-26485-1
+UT WOS:000387139300029
+ER
+
+PT S
+AU Gallagher, S
+AF Gallagher, Shaun
+BE Madzia, R
+   Jung, M
+TI Pragmatic Interventions into Enactive and Extended Conceptions of
+   Cognition
+SO PRAGMATISM AND EMBODIED COGNITIVE SCIENCE: FROM BODILY INTERSUBJECTIVITY
+   TO SYMBOLIC ARTICULATION
+SE Humanprojekt-Interdisziplinare Anthropologie
+AB Clear statements of both extended and enactive conceptions of cognition can be found in John Dewey and other pragmatists. In this paper I'll argue that we can find resources in the pragmatists to address two ongoing debates: (1) in contrast to recent disagreements between proponents of extended vs enactive cognition, pragmatism supports a more integrative view-an enactive conception of extended cognition, and (2) pragmatist views suggest ways to answer the main objections raised against extended and enactive conceptions-specifically objections focused on constitution versus causal factors, and the mark of the mental.
+SN 1868-8144
+BN 978-3-11-048023-8; 978-3-11-047889-1
+PY 2016
+VL 14
+BP 17
+EP 34
+UT WOS:000401750900002
+ER
+
+PT S
+AU Jansen, J
+AF Jansen, Julia
+BE RinofnerKreidl, S
+   Wiltsche, H
+TI Imagination and 4E Cognition: An Analytic-Continental Exchange
+SO ANALYTIC AND CONTINENTAL PHILOSOPHY: METHODS AND PERSPECTIVES
+SE Publications of the Austrian Ludwig Wittgenstein Society-New Series
+CT 37th International Wittgenstein Symposium on Analytic and Continental
+   Philosophy - Methods and Perspectives
+CY AUG 10-16, 2014
+CL Kirchberg am Wechsel, AUSTRIA
+AB The interdisciplinary field of phenomenology and cognitive science is thriving. Recently, it has gained even further ground through the rise of a new cluster of paradigms in philosophy of mind and cognitive science, which can be collectively referred as the model of "4E cognition". This model takes cognitive processes to be Embodied, Enactive, Embedded, and/or Extended. Those 4 e's enable fertile crossovers between analytic and continental approaches in philosophy of mind, phenomenology, and cognitive science. All of this is very promising indeed. However, despite the irrefutable significance of these new developments, more work needs to be done to ease up constraints and limitations that attest to the lasting effects of "common sense" naturalist, or positivist biases in philosophy of mind and the cognitive sciences. These biases may have little effect on research focused on perceptual cognition, but they pose noticeable constraints on research focused on imagination. In this paper, I identify and then challenge some of these biases with a view to making the model of 4E cognition more obviously applicable to issues of imagination. However, I believe it is important to acknowledge that other obstacles also hamper imagination research in significant ways and for more than merely philosophical or scientific reasons.
+SN 2191-8449
+BN 978-3-11-045065-1; 978-3-11-044834-4
+PY 2016
+VL 23
+BP 143
+EP 155
+UT WOS:000391250600010
+ER
+
+PT S
+AU Lenartowicz, M
+   Weinbaum, D
+   Braathen, P
+AF Lenartowicz, Marta
+   Weinbaum (Weaver), David
+   Braathen, Petter
+BE Samsonovich, AV
+   Klimov, VV
+TI The Individuation of Social Systems: A Cognitive Framework
+SO 7TH ANNUAL INTERNATIONAL CONFERENCE ON BIOLOGICALLY INSPIRED COGNITIVE
+   ARCHITECTURES, (BICA 2016)
+SE Procedia Computer Science
+CT 7th Annual International Conference on Biologically Inspired Cognitive
+   Architectures (BICA)
+CY JUL 16-19, 2016
+CL New York City, NY
+AB We present a socio-human cognitive framework that radically deemphasizes the role of individual human agents required for both the formation of social systems and their ongoing operation thereafter. Our point of departure is Simondon's (1992) theory of individuation, which we integrate with the enactive theory of cognition (Di Paolo et al., 2010) and Luhmann's (1996) theory of social systems. This forges a novel view of social systems as complex, individuating sequences of communicative interactions that together constitute distributed yet distinct cognitive agencies, acquiring a capacity to exert influence over their human-constituted environment. We conclude that the resulting framework suggests several different paths of integrating AI agents into human society. One path suggests the emulation of a largely simplified version of the human mind, reduced in its functions to a specific triple selection-making which is necessary for sustaining social systems. Another one conceives AI systems that follow the distributed, autonomous architecture of social systems, instead that of humans.
+SN 1877-0509
+PY 2016
+VL 88
+BP 15
+EP 20
+DI 10.1016/j.procs.2016.07.400
+UT WOS:000391723200003
+ER
+
+PT J
+AU Rodriguez, DAL
+   Cardenas, F
+AF Leon Rodriguez, Diego A.
+   Cardenas, Fernando
+TI Neurodynamics Approach to Social Cognition
+SO UNIVERSITAS PSYCHOLOGICA
+AB In recent decades it has seen a growing interest to study the mechanisms involved in social behavior, much of these inquiries fall within social cognitive neuroscience approach, which is based on a representational model of information processing. However, this approach has been widely criticized for ignoring the body participation, emotional dynamics, social context, developmental changes and assuming an endogenous modular processing. In this regard, this article presents a neurodynamic model of social cognition, which understand social process from an enactive, embodied, situated, relational and systemic perspective. This model let us described the main expected changes in brain activity during ongoing social interactions and ontogeny. The conclusion highlights the challenges and opportunities that this kind of approach can provide for a coming neuroscience and social psychology.
+SN 1657-9267
+PY 2016
+VL 15
+IS 5
+DI 10.11144/Javeriana.upsy15-5.ancs
+UT WOS:000404625000011
+ER
+
+PT J
+AU Mottet, M
+   Eccles, DW
+   Saury, J
+AF Mottet, Martin
+   Eccles, David W.
+   Saury, Jacques
+TI Navigation in outdoor environments as an embodied, social, cultural, and
+   situated experience: An empirical study of orienteering
+SO SPATIAL COGNITION AND COMPUTATION
+AB This study investigated novices' lived experiences of navigation within the sport of orienteering from an enactive and phenomenological approach. The objective was to qualitatively characterize elements of task-related situations that were meaningful for orienteers. The results showed that the participants continuously made judgments about the reliability of their estimations about whether they were on the right route on the course. When the participants judged that they were only approximately on the right route or were unable to locate themselves, elements of the situation other than map and terrain features became meaningful for them. These results demonstrate that, for novice orienteers, navigation activity must extend beyond navigation as a logical, computational way-finding problem to include embodied, social, cultural and situated dimensions.
+SN 1387-5868
+EI 1542-7633
+PY 2016
+VL 16
+IS 3
+BP 220
+EP 243
+DI 10.1080/13875868.2016.1166229
+UT WOS:000377298700003
+ER
+
+PT S
+AU Turner, P
+AF Turner, Phil
+BA Turner, P
+BF Turner, P
+TI Enactive Cognition
+SO HCI REDUX: THE PROMISE OF POST-COGNITIVE INTERACTION
+SE Human-Computer Interaction Series
+SN 1571-5035
+BN 978-3-319-42235-0; 978-3-319-42233-6
+PY 2016
+BP 99
+EP 114
+DI 10.1007/978-3-319-42235-0_6
+D2 10.1007/978-3-319-42235-0
+UT WOS:000400265000007
+ER
+
+PT S
+AU Viola, T
+AF Viola, Tullio
+BE Madzia, R
+   Jung, M
+TI Peirce on Abduction and Embodiment
+SO PRAGMATISM AND EMBODIED COGNITIVE SCIENCE: FROM BODILY INTERSUBJECTIVITY
+   TO SYMBOLIC ARTICULATION
+SE Humanprojekt-Interdisziplinare Anthropologie
+AB The paper explores C. S. Peirce's relevance to embodied cognitive science, by discussing his notion of abduction, or hypothetical inference. It first maintains that the concept of abduction may be read as Peirce's anti-intuitionist attempt to explain the phenomenon of intellectual creativity. Then, it investigates the consequences of that concept for theories of enactive, embodied, and extended mind. Peirce is shown to rely on an enactive understanding of logical inference and to believe that our bodily constitution plays at least a minimal role in thought, as we need the cooperation of "the eyes and the hands" to bring about new cognitions. Yet the latter idea stops short of turning into a full-fledged commitment to embodiment, as Peirce also stresses the possibility for thought to undergo different material realizations. This may help us to recognize a difference between Peirce's account of cognition and phenomenologically oriented theories of embodiment. The paper suggests that this difference is related to pragmatism's and phenomenology's differing views as to whether we can have an intuitive grasp of reality.
+SN 1868-8144
+BN 978-3-11-048023-8; 978-3-11-047889-1
+PY 2016
+VL 14
+BP 251
+EP 268
+UT WOS:000401750900013
+ER
+
+PT J
+AU Vasterling, V
+AF Vasterling, Veronica
+TI Heidegger's hermeneutic account of cognition
+SO PHENOMENOLOGY AND THE COGNITIVE SCIENCES
+AB Hermeneutic phenomenology is absent in 4 EAC literature (embedded, embodied, enactive, extended and affective cognition). The aim of this article is to show that hermeneutic phenomenology as elaborated in the work of Heidegger is relevant to 4 EAC research. In the first part of the article I describe the hermeneutic turn Heidegger performs in tandem with his ontological turn of transcendental phenomenology, and the hermeneutic account of cognition resulting from it. I explicate the main thesis of the hermeneutic account, namely that cognition is interaction with the world, followed by a discussion of the modes of cognition distinguished in the hermeneutic account. In the second part of the article I discuss the implications of this account with respect to the status and meaning of first, second and third person perspective of cognition. The article concludes with the draft and discussion of an exploratory model of hermeneutic cognition.
+SN 1568-7759
+EI 1572-8676
+PD DEC
+PY 2015
+VL 14
+IS 4
+BP 1145
+EP 1163
+DI 10.1007/s11097-014-9409-4
+UT WOS:000365808200026
+ER
+
+PT J
+AU Stapleton, M
+AF Stapleton, Mog
+TI A Dynamic Expedition through the Affective Landscape
+SO CONSTRUCTIVIST FOUNDATIONS
+AB Colombetti's book is a contribution to the literature of at least three intellectual communities within philosophy and the cognitive sciences: affective science, embodiment, and enactivism. Despite the emphasis on embodiment over the past ten to fifteen years, and the resurgence of interest in emotion in the mid-to-late twentieth century, affect nevertheless remains underrepresented in the philosophy of mind and cognition, even in the embodiment and enactive communities. In her book, Colombetti helps to close this gap in the literature.
+SN 1782-348X
+PD MAR
+PY 2015
+VL 10
+IS 2
+BP 274
+EP 276
+UT WOS:000350980000034
+ER
+
+PT J
+AU Hadorn, B
+   Courant, M
+   Hirsbrunner, B
+AF Hadorn, Benjamin
+   Courant, Michele
+   Hirsbrunner, Beat
+BE Jedrzejowicz, P
+   Nguyen, NT
+   Hong, TP
+   Czarnowski, I
+TI Holistic Integration of Enactive Entities into Cyber Physical Systems
+SO 2015 IEEE 2ND INTERNATIONAL CONFERENCE ON CYBERNETICS (CYBCONF)
+CT IEEE 2nd International Conference on Cybernetics (CYBCONF)
+CY JUN 24-26, 2015
+CL Gdynia, POLAND
+SP IEEE, IEEE Poland Sect, Gdynia Maritime Univ, IEEE Syst, Man, & Cybernet Soc, Gdynia Maritime Univ Students & Alumni Fdn, IEEE SMC Tech Comm Computat Collect Intelligence, Polish Acad Sci, Comm Informat, Polish Soc Artificial Intelligence
+AB Cyber physical systems (CPSs) are built of physical components that are integrated into the cyber (virtual) world of computing. Whereas there are many open questions and challenges, such as time modeling, interaction between cyber and physical components, our research focuses on how humans can be holistically integrated. Our vision is to link human intelligence with CPS in order to get a smart partner for daily human activities. This will bring new system characteristics enabling to cope with self-awareness, cognition and creativity as well as the co-evolution of human-machine-symbiosis. In this sense, we state that drawing borders between virtual and physical or between users and technical artifacts is misleading. In contrast to that, we aim to treat the system as a whole. To achieve this, the paper presents a generic coordination model based on third-order cybernetics. In particular, the holistic integration of humans and other living systems into CPSs is presented, which leads toward human-centered CPSs.
+BN 978-1-4799-8322-3
+PY 2015
+BP 281
+EP 286
+UT WOS:000373207200050
+ER
+
+PT J
+AU Loughlin, V
+AF Loughlin, Victor
+TI Radical enactivism, Wittgenstein and the cognitive gap
+SO ADAPTIVE BEHAVIOR
+AB REC or radical enactive (or embodied) cognition involves the claim that certain forms of mentality do not involve informational content and are instead to be equated with temporally and spatially extended physical interactions between an agent and the environment. REC also claims however that other forms of mentality do involve informational content and are scaffolded by socially and linguistically enabled practices. This seems to raise what can be called a cognitive gap question, namely, how do non-contentful behaviours give rise to contentful behaviours? In this paper, I show how REC can tackle a certain understanding of this question. I argue that if REC were to endorse claims made by the later Wittgenstein, then REC could deny that there is any (synchronous) gap in our intelligent behaviour.
+SN 1059-7123
+EI 1741-2633
+PD OCT
+PY 2014
+VL 22
+IS 5
+BP 350
+EP 359
+DI 10.1177/1059712314547646
+UT WOS:000342977700004
+ER
+
+PT J
+AU Uithol, S
+   Maranesi, M
+AF Uithol, Sebo
+   Maranesi, Monica
+TI No need to match: a comment on Bach, Nicholson and Hudson's
+   "Affordance-Matching Hypothesis"
+SO FRONTIERS IN HUMAN NEUROSCIENCE
+SN 1662-5161
+PD SEP 10
+PY 2014
+VL 8
+UT WOS:000341414300001
+ER
+
+PT J
+AU De Jesus, P
+AF De Jesus, Paulo
+TI Can the revolution be optimised? Oh yes it can! But, maybe not. Report
+   on the one day symposium on "Varieties of Enactivism"
+SO CONNECTION SCIENCE
+AB The Varieties of Enactivism: A Conceptual Geography 4th April 2014, was a one day symposium which took place at Goldsmith University, London. The symposium had the explicit aim of clarifying the status of enactive cognitive science both as a unified paradigm for cognitive science and in relation to the broader embodied cognition framework. In what follows I offer a brief summery of the various talks followed by some thoughts on the current state of play within enactivism.
+SN 0954-0091
+EI 1360-0494
+PD SEP
+PY 2014
+VL 26
+IS 3
+BP 293
+EP 296
+DI 10.1080/09540091.2014.925267
+UT WOS:000340245700005
+ER
+
+PT J
+AU Troscianko, ET
+AF Troscianko, Emily T.
+TI First-Person and Second-Generation Perspectives on Starvation in Kafka's
+   "Ein Hungerkunstler"
+SO STYLE
+AB An important claim made for second-generation accounts of cognition is that they help solve the problem of dualism, which arguably remains unchallenged in much literary criticism. Kafka's short story "Ein Hungerkunstler" (A Hunger Artist) is about a profoundly embodied experience of (unsuccessfully) denying embodiment: fasting to death. With this text's cognitive realism as my focal point, I use insights from second-generation cognitive science (which acknowledges the embodied, embedded, enactive, and extended nature of human cognition), including research on eating disorders and starvation, to provide purchase on two traditional literary-critical concerns: thematic interpretation and paradox. I also suggest that a first-person perspective which acknowledges the complexities of individual real-world embodiment may sometimes enrich cognitive literary studies. This combined first-person and second-generation methodology can help us recognize that for the real people who read our scholarship and learn from us, the dangers of dualism are ethically as well as interpretively profound.
+SN 0039-4238
+EI 2374-6629
+PD FAL
+PY 2014
+VL 48
+IS 3
+BP 331
+EP +
+DI 10.5325/style.48.3.331
+UT WOS:000209745200005
+ER
+
+PT B
+AU Di Paolo, EA
+AF Di Paolo, Ezequiel A.
+BE Cappuccio, M
+   Froese, T
+TI Enactive Cognition at the Edge of Sense-Making Making Sense of Non-Sense
+   Foreword
+SO ENACTIVE COGNITION AT THE EDGE OF SENSE-MAKING: MAKING SENSE OF
+   NON-SENSE
+SE New Directions in Philosophy and Cognitive Science
+RI Froese, Tom/B-3301-2012
+OI Froese, Tom/0000-0002-9899-5274
+BN 978-1-137-36336-7; 978-1-137-36335-0
+PY 2014
+BP XI
+EP XV
+D2 10.1057/9781137363367
+UT WOS:000370697400001
+ER
+
+PT J
+AU Sato, Y
+   Iizuka, H
+   Ikegami, T
+AF Sato, Yuki
+   Iizuka, Hiroyuki
+   Ikegami, Takashi
+TI Investigating Extended Embodiment Using a Computational Model and Human
+   Experimentation
+SO CONSTRUCTIVIST FOUNDATIONS
+AB Context . Our body schema is not restricted to biological body boundaries (such as the skin), as can be seen in the use of a cane by a person who is visually impaired or the "rubber hands" experiment. The tool becomes a part of the body schema when the focus of our attention is shifted from the tool to the task to be performed. Problem . A body schema is formed through interactions among brain, body, tool, and environment. Nevertheless, the dynamic mechanisms underlying changes in the body schema are still not fully understood. Method . To study the changing conditions of the body schema (e.g., a shift of attention), a simulation model of object discrimination was extended to differentiate between two kinds of sensitivities - sensitivity to an object being directly manipulated and sensitivity to another object being manipulated by the first. The proposed model consisted of windmills with different numbers of vanes. A model agent was required to determine the number of vanes on a windmill by touching the vanes blindly with an arm controlled by a neural network. Placing a second windmill beside the first and gearing the two windmills to move associatively resulted in the agent using the first windmill as a tool with which to discern the number of vanes on the second windmill. In other words, an agent's body schema can shift from its arm tip to the boundary between the first and second windmills. We then introduced an experiment with a real windmill model to test the hypothesis demonstrated by the theoretical model. Results . We demonstrated that even simple computational agents can have two different sensitivities to the windmills. One agent becomes sensitive to the first windmill and insensitive to the second one. Another agent becomes insensitive to the first windmill and sensitive to the second one by using the first one as a tool. Therefore, we concluded that the boundary of the body schema was extended to the first windmill in the case of the latter agent because paying attention to the task to be performed instead of the tool itself is essential for the tool to be considered as part of the body schema. Analysis of the experiments using a computational model and human experimentation revealed that a shift from an irregular to a regular movement of a windmill is an indication of extension of the body schema. Constructivist content . Our insights are beneficial for enactive cognitive science. This is because an extended body schema questions the Cartesian separation between subject and object, and the self and the environment.
+SN 1782-348X
+PD NOV
+PY 2013
+VL 9
+IS 1
+SI SI
+BP 73
+EP +
+UT WOS:000327330900023
+ER
+
+PT J
+AU Bottineau, D
+AF Bottineau, Didier
+TI The marker 'en' in enactive instructional linguistics
+SO LANGUE FRANCAISE
+AB The question whether the marker en in the various categories in which it appears (as a preposition and as various types of pronouns) has been widely debated. The present study is conducted in the theoretical framework of instructional grammars, which define signifiers as the activators of interpretive processes rather than as symbolic markers encoding mental representations, and it refers more specifically to enactive grammar. It is shown that it is possible to envisage a transcategorial core value of dynamic, non-representational nature, which applies to the whole range of grammatical categories in which this marker is manifested (preposition, gerundive particle, various types of pronouns and "fuzzy" particles).
+SN 0023-8368
+EI 1957-7982
+PD JUN
+PY 2013
+IS 178
+BP 41
+EP +
+UT WOS:000325594000003
+ER
+
+PT J
+AU Mcclamrock, R
+AF Mcclamrock, Ron
+TI Visual Consciousness and The Phenomenology of Perception
+SO METAPHILOSOPHY
+AB Ideally, psychological and phenomenological studies of visual experience should be mutually informative. In that spirit, this article outlines parts of Maurice Merleau-Ponty's phenomenological view of visual experience as a kind of independently active opaque bodily synthesis, and uses those views to (a) help ground and extend Alva Noe's rejection of the snapshot theory of visual experience in favor of a more enactive view of visual content, (b) critique a failing of Noe's account, and (c) show how the assumptions underlying more internalist and Cartesian views of visual experience can illegitimately creep in even when they are being carefully criticized.
+SN 0026-1068
+PD JAN
+PY 2013
+VL 44
+IS 1-2
+BP 63
+EP 68
+DI 10.1111/meta.12010
+UT WOS:000313255200015
+ER
+
+PT J
+AU Matyja, JR
+AF Matyja, Jakub Ryszard
+TI Me, Music, and I: Embodied and Enactive Cognition meets Music
+SO CONSTRUCTIVIST FOUNDATIONS
+AB > Upshot . The fact that both "consciousness" and "music" are quite elusive terms makes the attempt to explain the nature (or even the existence of) "musical consciousness" a compelling quest. The papers in this book tackle these problems in an engaging way, ranging from sociology of music to drug altered music cognition. Some also apply enactive and ecological approaches to music cognition, which makes the book an interesting read for constructivists.
+SN 1782-348X
+PD NOV
+PY 2012
+VL 8
+IS 1
+BP 129
+EP 131
+UT WOS:000311100800030
+ER
+
+PT J
+AU Magalhaes, R
+AF Magalhaes, Rodrigo
+TI Re-interpreting Organization Design in the Light of Enacted Cognition
+   Theory
+SO SYSTEMS RESEARCH AND BEHAVIORAL SCIENCE
+AB This paper discusses how the concept of organization design can be made more relevant if treated as a process of social cognition. It is argued that Varela's enactive cognition approach throws new light on organization design given the way it views the relationship between the system and its environment. In highlighting that any cognitive entity develops its own internal perspective and that it is that perspective which mediates the relationship between the system and its environment, the notion of environmental contingency loses much of its sense. Using this approach as the main intellectual backdrop, as well as the principles behind the social construction of organization, a new systemic model of organization design is put forward. It features a cycle of four key organizational elements (strategic choice, domains of interaction, identity formation and shared meanings) shaped by two types of design rules (procedural/generative and practice based). These elements are interpreted in terms of the key features of enactivism (embodiment, sensemaking, experience, emergence and autonomy) and discussed in the light of extant literature on organization design. Copyright (C) 2011 John Wiley & Sons, Ltd.
+SN 1092-7026
+PD NOV-DEC
+PY 2011
+VL 28
+IS 6
+SI SI
+BP 663
+EP 679
+DI 10.1002/sres.1106
+UT WOS:000298298000010
+ER
+
+PT B
+AU Protevi, J
+   Wheeler, M
+AF Protevi, John
+   Wheeler, Michael
+BA Maiese, M
+BF Maiese, M
+TI Essentially Embodied, Emotive, Enactive Social Cognition
+SO EMBODIMENT, EMOTION, AND COGNITION
+SE New Directions in Philosophy and Cognitive Science
+BN 978-0-23029-771-5
+PY 2011
+BP 151
+EP +
+UT WOS:000291859100007
+ER
+
+PT S
+AU Vernon, D
+AF Vernon, David
+BE Samsonovich, AV
+   Johannsdottir, KR
+TI Reconciling Autonomy with Utility: A Roadmap and Architecture for
+   Cognitive Development
+SO BIOLOGICALLY INSPIRED COGNITIVE ARCHITECTURES 2011
+SE Frontiers in Artificial Intelligence and Applications
+CT 2nd Annual Meeting of the
+   Biologically-Inspired-Cognitive-Architectures-Society (BICA)
+CY NOV 04-06, 2011
+CL Arlington, VA
+SP Biologically Inspired Cognit Architectures Soc
+AB This paper focusses on a general issue which arises when one attempts to design a cognitive architecture for autonomous cognitive systems: the incompatibility of autonomy with external control and the consequent problem of getting these systems to perform prescribed tasks. In addressing this issue, we consider a specific endeavour to design and implement a biologically-inspired cognitive architecture for the iCub humanoid robot. This architecture is based on 43 guidelines arising from an extended study of the requirements imposed by developmental psychology, neuroscience, enactive cognition, and existing computational models.
+OI Vernon, David/0000-0002-9782-3788
+SN 0922-6389
+BN 978-1-60750-959-2; 978-1-60750-958-5
+PY 2011
+VL 233
+BP 412
+EP 418
+DI 10.3233/978-1-60750-959-2-412
+UT WOS:000348931200074
+ER
+
+PT J
+AU Kiverstein, J
+AF Kiverstein, Julian
+TI Consciousness and the feeling body
+SO PRAGMATICS & COGNITION
+AB In How the Mind Uses the Brain Ralph Ellis and Natika Newton develop a novel embodied, enactive theory of consciousness, according to which consciousness has its basis in neural systems that prepare the system to perform actions of emotional significance to the organism. Consciousness emerges out of self-organising processes which function in such a way as to contribute to, and maintain, the organism's overall wellbeing. I'll begin this review by reconstructing Ellis and Newton's view of consciousness as a self-organising process, and then go on to compare and contrast the enactive theory with the model of consciousness Chris Frith has outlined in his lectures.
+SN 0929-0907
+PY 2010
+VL 18
+IS 3
+SI SI
+BP 607
+EP 616
+DI 10.1075/pc.18.3.09kiv
+UT WOS:000290968000009
+ER
+
+PT J
+AU Schlicht, T
+AF Schlicht, Tobias
+BE Ohlsson, S
+   Catrambone, R
+TI Enactive Social Cognition
+SO COGNITION IN FLUX
+CT 32nd Annual Meeting of the Cognitive-Science-Society
+CY AUG 11-14, 2010
+CL Portland, OR
+SP Cognit Sci Soc, Air Force Off Sci Res, Natl Sci Fdn, Air Force Res Lab, Off Naval Res, Inst Educ Sci, Robert J Glushko & Pamela Samuelson Fdn
+AB In this talk, 1 extend the enactive approach to cognition to the social domain within a larger framework of varieties of intentionality and argue for a second-person approach to understanding others, emphasizing a difference in our understanding of others depending on whether we are directly engaged with them in interaction or merely observing them. The enactive account is especially persuasive in developmental respects, suggesting that sophisticated forms of cognitive intentionality (e.g. believing) are grounded in motor intentionality (e.g. perception and action): Our own sensorimotor skills are partly constitutive of cognition, and other people's expressions of their sensorimotor skills in turn modulate our cognition of objects and our social understanding. The enactive account explains how young infants acquire the capacities that allow them to move from dyadic to triadic intentional relations at around their first birthday, and it claims that our basic form of social understanding is neither based on theoretical inference nor a kind of simulation, but constituted by an embodied implicit know-how displayed in online interaction.
+PY 2010
+BP 272
+EP 277
+UT WOS:000392421700045
+ER
+
+PT J
+AU Keijzer, F
+AF Keijzer, Fred
+TI Trends in Embodied Cognition. Tensions Concerning Biology and Conscious
+   Experience
+SO TIJDSCHRIFT VOOR FILOSOFIE
+AB Embodied cognition has come of age and is now diversifying. In this paper, I discuss four different approaches within embodied cognition: a biogenic approach, an enactive approach, a sensorimotor approach and a scaffolding approach. The four approaches can be differentiated according to their commitments to either biology (biogenic and enactive approaches) and/or experience (enactive and sensorimotor approaches). I will argue that these differences are substantial, but that a reconciliation is possible and even desirable. Seen in this light, embodied cognition can remain a comparatively unified field, these diverging approaches notwithstanding.
+SN 0040-750X
+PD SEP
+PY 2009
+VL 71
+IS 3
+BP 499
+EP 527
+DI 10.2143/TVF.71.3.2042676
+UT WOS:000271485400004
+ER
+
+PT J
+AU Knyazeva, H
+AF Knyazeva, Helena
+TI Nonlinear Cobweb of Cognition
+SO FOUNDATIONS OF SCIENCE
+AB The modern conception of enactive cognition is under discussion from the standpoint concerning the notions of nonlinear dynamics and synergetics. The contribution of Francisco Varela and his precursors is considered. It is shown that the perceptual and mental processes are bound up with the "architecture" of human body and nonlinear and circular connecting links between the subject of cognition and the world constructed by him can be metaphorically called a nonlinear cobweb of cognition. Cognition is an autopoietic activity because it is directed to the search of elements that are missed; it serves to completing integral structures.
+RI Knyazeva, Helena/C-1902-2013
+OI Knyazeva, Helena/0000-0003-0577-0170
+SN 1233-1821
+PD AUG
+PY 2009
+VL 14
+IS 3
+BP 167
+EP 179
+DI 10.1007/s10699-008-9143-x
+UT WOS:000268006600002
+ER
+
+PT B
+AU Morse, AF
+AF Morse, Anthony F.
+BE Mayor, J
+   Ruh, N
+   Plunkett, K
+TI NEURAL MODELS OF PREDICTION AND SUSTAINED INATTENTIONAL BLINDNESS
+SO CONNECTIONIST MODELS OF BEHAVIOUR AND COGNITION II
+SE PROGRESS IN NEURAL PROCESSING
+CT 11h Neural Computational and Psychology Workshop
+CY JUL 16-18, 2008
+CL Univ Oxford, Oxford, ENGLAND
+SP Oxford Fdn Theoret Neurosci & Artificial Intelligence
+HO Univ Oxford
+AB Increasingly cognitive scientists view prediction as central to cognition, from philosophical and psychological theories such as the enactive approach and sensorimotor perception [1-3], to computational neuroscience and modelling e.g. [4-7]. Indeed, as our experiments show, prediction can significantly increase the recognition of task relevant input features in models of cortical micro-columns (Echo State Networks) [8-11]. Here, feedback into the cortical micro-column is simply the output activity of single layer perceptrons trained to identify input features from the activity of the cortical microcolumn. The surprising result is that while this feedback or prediction enhances recognition of features relevant to making that prediction, it consistently reduces performance at recognising non-prediction-task-relevant-features and hence provides a model of sustained inattentional blindness. This is confirmed in our computational model of a sustained inattentional blindness task demonstrating the role of feedback in successfully tracking the attended object, and how this can result in blindness to the presence of an unexpected object. The model therefore suggests that tuning input filters with predictions of what the sensory system should expect, may be the cause of inattentional blindness. While Simons and Chabris [12] note that "we perceive and remember only those objects and details that receive focused attention." p. 1059, our model suggests that the relevant information simply was not there to be attended.
+BN 978-981-283-422-5
+PY 2009
+VL 18
+BP 387
+EP 399
+DI 10.1142/9789812834232_0032
+UT WOS:000268630000032
+ER
+
+PT S
+AU Riva, G
+AF Riva, Giuseppe
+BE Riva, G
+   Anguera, MT
+   Wiederhold, BK
+   Mantovani, F
+TI Being-in-the-world-with: Presence Meets Social And Cognitive
+   Neuroscience
+SO FROM COMMUNICATION TO PRESENCE: COGNITION, EMOTIONS AND CULTURE TOWARDS
+   THE ULTIMATE COMMUNICATIVE EXPERIENCE: FESTSCHRIFT IN HONOR OF LUIGI
+   ANOLLI
+SE Emerging Communication-Studies on New Technologies and Practices in
+   Communication
+AB In this chapter we will discuss the concepts of "presence" (Inner Presence) and "social presence" (Co-presence) within a cognitive and ecological perspective. Specifically, we claim that the concepts of "presence" and "social presence" are the possible links between self, action, communication and culture. In the first section we will provide a capsule view of Heidegger's work by examining the two main features of the Heideggerian concept of "being": spatiality and " being with". We argue that different visions from social and cognitive sciences - Situated Cognition, Embodied Cognition, Enactive Approach, Situated Simulation, Covert Imitation - and discoveries from neuroscience - Mirror and Canonical Neurons - have many contact points with this view. In particular, these data suggest that our conceptual system dynamically produces contextualized representations (simulations) that support grounded action in different situations. This is allowed by a common coding the motor code - shared by perception, action and concepts. This common coding also allows the subject for natively recognizing actions done by other selves within the phenomenological contents. In this picture we argue that the role of presence and social presence is to allow the process of self-identification through the separation between "self" and "other," and between "internal" and "external". Finally, implications of this position for communication and media studies are discussed by way of conclusion.
+SN 1566-7677
+BN 978-1-58603-662-1
+PY 2009
+VL 9
+BP 46
+EP 79
+UT WOS:000271671900006
+ER
+
+PT J
+AU Moser, S
+AF Moser, Sibylle
+TI "Walking and Falling" Language as Media Embodiment
+SO CONSTRUCTIVIST FOUNDATIONS
+AB Purpose - This paper aims to mediate Josef Mitterer's non-dualistic philosophy with the claim that speaking is a process of embodied experience.
+   Approach - Key assumptions of enactive cognitive science, such as the crossmodal integration of speech and gesture and the perceptual grounding of linguistic concepts are illustrated through selected performance pieces of multimedia artist Laurie Anderson.
+   Findings - The analysis of Anderson's artistic work questions a number of dualisms that guide truth-oriented models of language. Her performance pieces demonstrate that language is both sensually enacted and conceptually reflected through the integration of iconic signing (e.g. sound play, dance) with symbolic communication. Moreover, Anderson's artistic practice demonstrates that media such as voice, gesture and recording technologies realize different forms of embodied language. Benefits - Media aesthetics in the vein of embodied cognition can overcome a number of the dualisms that inform analytical philosophy of language, linguistics, and communication studies, such as perceptual/conceptual meaning, iconicity/symbolicity, emotion/cognition, body/technology and voice/script.
+SN 1782-348X
+PD JUL 15
+PY 2008
+VL 3
+IS 3
+BP 260
+EP 268
+UT WOS:000207454200021
+ER
+
+PT B
+AU Vernon, D
+   Metta, G
+   Sandini, G
+AF Vernon, David
+   Metta, Giorgio
+   Sandini, Giulio
+GP IEEE
+TI The iCub cognitive architecture: Interactive development in a humanoid
+   robot
+SO 2007 IEEE 6TH INTERNATIONAL CONFERENCE ON DEVELOPMENT AND LEARNING
+SE IEEE International Conference on Development and Learning
+CT 6th IEEE International Conference on Development Learning
+CY JUL 11-13, 2007
+CL London, ENGLAND
+SP IEEE
+AB This paper describes the design of a cognitive architecture for the iCub : an open-systems 53 degree-of-freedom cognitive humanoid robot. At 94 cm tall, the iCub is the same size as a three year-old child and is designed to be able to crawl on all fours and sit up. Its hands will allow dexterous manipulation, its head and eyes are fully articulated, and it has visual, vestibular, auditory, and haptic sensory capabilities. We begin by reviewing briefly the enactive approach to cognition, highlighting the requirements for phylogenetic configuration, the necessity for ontogenetic development, and the importance of humanoid embodiment. After a short look at the the iCub's mechanical and electronic specifications, we detail the iCub cognitive architecture, addressing the iCub phylogeny, i.e. the robot's intended innate abilities, the modulation of these skills by circuits inspired by the functionality of the hippocampus, basal ganglia, and amygdala. The architecture also include a prospective ability whereby sensorimotor behaviours can be simulated and then used to influence the action selection in the basal ganglia. We conclude by outlining our scenario for ontogenesis based on human neo-natal development.
+BN 978-1-4244-1115-3
+PY 2007
+BP 93
+EP 98
+UT WOS:000253369100017
+ER
+
+PT J
+AU Goldspink, C
+AF Goldspink, C
+TI Modelling social systems as complex: Towards a social simulation
+   meta-model
+SO JASSS-THE JOURNAL OF ARTIFICIAL SOCIETIES AND SOCIAL SIMULATION
+AB There is growing interest in extending complex systems approaches to the social sciences. This is apparent in the increasingly widespread literature and journals that deal with the topic and is being facilitated by adoption of multi-agent simulation in research. Much of this research uses simple agents to explore limited aspects of social behaviour. Incorporation of higher order capabilities such as cognition into agents has proven problematic. Influenced by AI approaches, where cognitive capability has been sought, it has commonly been attempted based on a 'representational' theory of cognition. This has proven computationally expensive and difficult to implement. There would be some benefit: also in the development of a framework for social simulation research which provides a consistent set of assumptions applicable in different fields and which can be scaled to apply to simple and more complex simulation tasks. This paper sets out, as a basis for discussion, a meta-model incorporating an 'enactive' model of cognition drawing on both complex system insights and the theory of autopoiesis. It is intended to provide an ontology that avoids some of the limitation of more traditional approaches and at the same time providing a basis for simulation in a wide range of fields and pursuant of a wider range of human behaviours.
+RI Goldspink, Christopher/J-7621-2016
+OI Goldspink, Christopher/0000-0002-9869-560X
+SN 1460-7425
+PD MAR
+PY 2000
+VL 3
+IS 2
+BP U5
+EP +
+UT WOS:000088893800001
+ER
+
+PT B
+AU Mingers, J
+AF Mingers, J
+BE Khosrowpour, M
+TI Information systems: The case of the missing body
+SO CHALLENGES OF INFORMATION TECHNOLOGY MANAGEMENT IN THE 21ST CENTURY
+CT International Conference of the
+   Information-Resources-Management-Association
+CY MAY 21-24, 2000
+CL ANCHORAGE, AK
+SP Informat Resources Management Assoc
+AB This paper presents a case for embodying information systems. That is, for recognising the fundamental importance of the body in human cognition and social action, and for exploring the consequences in information systems. Current work within philosophy, biology cognitive science, and social theory demonstrates that the Cartesian dualism of mind and body is no longer tenable, and points to the embodied and enactive nature of thought and language. Three different approaches to cognition are identified and their underlying philosophies are exemplified by Husserl, Heidegger, and Merleau-Ponty respectively.
+BN 1-878289-84-5
+PY 2000
+BP 780
+EP 781
+UT WOS:000165161400204
+ER
+
+EF
