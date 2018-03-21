@@ -1,4 +1,5 @@
 #### libraries ####
+setwd(dir = 'GitHub/exploratory-mapping-draft/ExploratoryMapping/Scripts/')
 
 require("MASS") #used to calculate the projection of new data in old SVD space.
 
@@ -129,17 +130,34 @@ repCleanData[is.na(repCleanData)] <- 0
 
 #dimensionality reduction#
 
-wholeMacaroni = svd(cleanData, nu = 150, nv = 150) #partial SVD of 150 dimensions.
-row.names(wholeMacaroni$u) <- row.names(cleanData) #puts docIDS in the matrices resulting from SVD.
-row.names(wholeMacaroni$v) <- colnames(cleanData)
+wholeMacaroni = svd(cleanData) #partial SVD of 150 dimensions.
 
 #REPLICATION#
 
-repofWholeMacaroni = svd(repCleanData, nu = 150, nv = 150)
-row.names(repofWholeMacaroni$u) <- row.names(repCleanData)
-row.names(repofWholeMacaroni$v) <- colnames(repCleanData)
+repofWholeMacaroni = svd(repCleanData)
 
-  
+#ALLOCATE LOADING MATRICES#
+
+documentLoadings <- wholeMacaroni$u %*% diag(wholeMacaroni$d)
+termLoadings <- wholeMacaroni$v %*% diag(wholeMacaroni$d)
+row.names(documentLoadings) <- row.names(cleanData)
+row.names(termLoadings) <- colnames(cleanData)
+
+
+#REPLICATION#
+
+repDocumentLoadings <- repofWholeMacaroni$u %*% diag(repofWholeMacaroni$d)
+repTermLoadings <- repofWholeMacaroni$v %*% diag(repofWholeMacaroni$d)
+row.names(repDocumentLoadings) <- row.names(repCleanData)
+row.names(repTermLoadings) <- colnames(repCleanData)
+
+termLoadings <- termLoadings[,1:50] 
+documentLoadings <- documentLoadings[, 1:50]
+
+termVarimax <- varimax(termLoadings)
+termLoadings <- unclass(termVarimax$loadings)
+documentLoadings <- documentLoadings %*% termVarimax$rotmat
+
 ####GLM Models####
 
 # This part of the script has the GLM models of each theory that attempt to predict the theory belonging of each paper #
@@ -148,10 +166,10 @@ row.names(repofWholeMacaroni$v) <- colnames(repCleanData)
 
 # Set parameters for the prediction. Min and max number of dimensions are used to control the number of dimensions that are to be used in the construction of the models. The procedure loops through the dimensions resulting from the SVD. Starts at minNumberOfDimensions (default: 3), stops at maxNumberOfDimensions (default: 50). "Method" refers to the data used to build and train the models. With "free", dimensions are selected for how well they predict theory belonging against every theory. With "cluster", the training is stratified to the "most similar" theories; e.g. "computational" is built using the dimensions that best predict computational papers when compared to 'bayesian' and 'connectionist'. "Repeats" is the number of iterations of the predicting process. "Source" controls which data set is to be used: "original" uses the original dataset, "replication" uses the replication data, and "cross" uses the projection of the replication data into the SVD space of the original dataset to predict their theories with the models built with the original dataset. #
 
-minNumberOfDimensions <- 3 #lower boundary of D
+minNumberOfDimensions <- 2 #lower boundary of D. does not work if lower than 2.
 maxNumberOfDimensions <- 50 # upper boundary of D
-repeats <- 10000 # how many repetitions of prediction should be averaged?
-method <- "cluster" # "cluster" or "free".
+repeats <- 100 # how many repetitions of prediction should be averaged?
+method <- "free" # "cluster" or "free".
 source <- "original" #"original" or "replication", "cross".
 
 ##OBJECTS##
@@ -160,16 +178,16 @@ source <- "original" #"original" or "replication", "cross".
 
 if(source == "original"){
   my_catalog <- catalog
-  my_svd <- wholeMacaroni$u
+  my_svd <- documentLoadings
 }
 if(source == "replication"){
   my_catalog <- repCatalog
-  my_svd <- repofWholeMacaroni$u
+  my_svd <- repDocumentLoadings
 }
 if(source == "cross"){
   my_catalog <- catalog
   cross_catalog <- repCatalog
-  my_svd <- wholeMacaroni$u
+  my_svd <- documentLoadings
 
   replicationProjection <- matrix(0, nrow = nrow(repFreqMatrix), ncol = ncol(freqMatrix))   #create matrix for projection and populate#
   row.names(replicationProjection) <- row.names(repFreqMatrix) #set row names as wholeMacaroni
@@ -177,7 +195,7 @@ if(source == "cross"){
   sharedWords <- colnames(repFreqMatrix)[which(colnames(repFreqMatrix) %in% colnames(freqMatrix))] # obtain all the shared words between original data and replication data.
   replicationProjection[,sharedWords] <- repFreqMatrix[,sharedWords] #build a new DbT that has the documents in replication as rows and the shared words between both datasets as columns.
   
-  cross_svd <- replicationProjection %*% ginv(diag(wholeMacaroni$d[1:150]) %*% t(wholeMacaroni$v)) #projects the replication data into the SV  space of the original dataset..
+  cross_svd <- replicationProjection %*% ginv(termLoadings) #projects the replication data into the SV  space of the original dataset..
 }
 
 ### TOPIC BEST PREDICTORS ###
@@ -189,11 +207,14 @@ if(source == "cross"){
 #for each topic, fill the "best predictors" matrix with the dimensions that most differentiate that theory from the other 8 theories.
 
 bestPredictors <- c()
+predictorRatings <- c() #store ratings to compare positive versus negative in term loading inspection
 for (topic in topicList) { 
-  glmOutput = glm(my_catalog$topic==topic~.,data=data.frame(my_svd[,1:80]),family=binomial)
-  bestPredictors = rbind(bestPredictors,data.frame(topic,(t(sort(glmOutput$coefficients,ind=T,decreasing=T)$ix[1:maxNumberOfDimensions]))))
+  glmOutput = glm(my_catalog$topic==topic~.,data=data.frame(my_svd[,1:maxNumberOfDimensions]),family=binomial)
+  bestPredictors = rbind(bestPredictors,data.frame(t(sort(abs(glmOutput$coefficients[2:length(glmOutput$coefficients)]),ind=T,decreasing=T)$ix[1:maxNumberOfDimensions]))) #TODO: fix this. 2 is here to skip intercept.
+  predictorRatings <- rbind(predictorRatings, glmOutput$coefficients[2:length(glmOutput$coefficients)][sort(abs(glmOutput$coefficients[2:length(glmOutput$coefficients)]), ind = T, decreasing = T)$ix])
 }
 row.names(bestPredictors) <- topicList
+row.names(predictorRatings) <- topicList
 
 ##STRATIFIED SAMPLING##
 
@@ -207,16 +228,21 @@ catalogAlt <- my_catalog[which(my_catalog$topic %in% topicListAlt),] #catalog of
 #then, same procedure as above but using these clusters#
 
 bestPredictorsClusters <- c()
+predictorRatingsClusters <- c()
+
 for (topic in topicListClassic) {
-  glmOutput = glm(catalogClassic$topic==topic~.,data=data.frame(my_svd[which(my_catalog$topic %in% topicListClassic, arr.ind = T),1:80]),family=binomial)
-  bestPredictorsClusters = rbind(bestPredictorsClusters,data.frame(topic,(t(sort(glmOutput$coefficients,ind=T,decreasing=T)$ix[1:maxNumberOfDimensions]))))
-}
+  glmOutput = glm(catalogClassic$topic==topic~.,data=data.frame(my_svd[which(my_catalog$topic %in% topicListClassic, arr.ind = T),1:maxNumberOfDimensions]),family=binomial)
+  bestPredictorsClusters = rbind(bestPredictorsClusters,data.frame(t(sort(abs(glmOutput$coefficients[2:length(glmOutput$coefficients)]),ind=T,decreasing=T)$ix[1:maxNumberOfDimensions]))) #TODO: fix this. 2 is here to skip intercept.
+  predictorRatingsClusters <- rbind(predictorRatingsClusters, glmOutput$coefficients[2:length(glmOutput$coefficients)][sort(abs(glmOutput$coefficients[2:length(glmOutput$coefficients)]), ind = T, decreasing = T)$ix])
+  }
 
 for (topic in topicListAlt) {
-  glmOutput = glm(catalogAlt$topic==topic~.,data=data.frame(my_svd[which(my_catalog$topic %in% topicListAlt, arr.ind = T),1:80]),family=binomial)
-  bestPredictorsClusters = rbind(bestPredictorsClusters,data.frame(topic,(t(sort(glmOutput$coefficients,ind=T,decreasing=T)$ix[1:maxNumberOfDimensions]))))
+  glmOutput = glm(catalogAlt$topic==topic~.,data=data.frame(my_svd[which(my_catalog$topic %in% topicListAlt, arr.ind = T),1:maxNumberOfDimensions]),family=binomial)
+  bestPredictorsClusters = rbind(bestPredictorsClusters,data.frame(t(sort(abs(glmOutput$coefficients[2:length(glmOutput$coefficients)]),ind=T,decreasing=T)$ix[1:maxNumberOfDimensions]))) #TODO: fix this. 2 is here to skip intercept.
+  predictorRatingsClusters <- rbind(predictorRatingsClusters, glmOutput$coefficients[2:length(glmOutput$coefficients)][sort(abs(glmOutput$coefficients[2:length(glmOutput$coefficients)]), ind = T, decreasing = T)$ix])
 }
 row.names(bestPredictorsClusters) <- c(topicListClassic, topicListAlt)
+row.names(predictorRatingsClusters) <- c(topicListClassic, topicListAlt)
 
 ### EXECUTION OF MODEL ###
 
@@ -231,7 +257,7 @@ logfile(logger) = 'monitor.log'
 level(logger) = 'INFO'
 
 
-cl <- makeCluster(8)
+cl <- makeCluster(7)
 registerDoParallel(cl)
 
 
@@ -262,16 +288,16 @@ listResults <- foreach(dimension=dimensionVec, .verbose = T, .packages = "log4r"
     predictionResults = c()
     
     for (topic in topicList) { #loop through the models of each theory
-      trainingdata <- data.frame(my_svd[trainingSet,unlist(predictors[topic,2:dimension])]) # prepare training data of model by using the dimensions selected as the best predictors for each topic and the documents selected to be training.
+      trainingdata <- data.frame(my_svd[trainingSet,unlist(predictors[topic,1:dimension])]) # prepare training data of model by using the dimensions selected as the best predictors for each topic and the documents selected to be training.
       glmTopic = glm(my_catalog$topic[trainingSet]==topic~., data=trainingdata, family=binomial) #build the model of the topic.
 
       if(source == "original" | source == "replication"){ #if predicting inside the dataset
-      testdata = data.frame(my_svd[testSet,unlist(predictors[topic,2:dimension])]) #prepare the data to be predicted
+      testdata = data.frame(my_svd[testSet,unlist(predictors[topic,1:dimension])]) #prepare the data to be predicted
       predicted = predict.glm(glmTopic,newdata=testdata,type="response") #store the probability that the paper belongs to the theory being tested
       predictionResults = cbind(predictionResults,scale(predicted)) #add to a matrix and scale
       }
       if(source == "cross"){ #modify procedure above to account for original data being training and replication being test
-        predicted = predict.glm(glmTopic,newdata=data.frame(cross_svd[testSet,unlist(predictors[topic,2:dimension])]),type="response")
+        predicted = predict.glm(glmTopic,newdata=data.frame(cross_svd[testSet,unlist(predictors[topic,1:dimension])]),type="response")
         predictionResults = cbind(predictionResults,scale(predicted))
       }
     }
@@ -329,9 +355,9 @@ for(dimension in dimensionVec) { dimEvMat[as.character(dimension),] <- c(diag(li
 
 ## confusability matrix by dimension ##
 
-dimension = 20 # parameter for choosing the number of dimensions to be used in the plot
+dimension = 5 # parameter for choosing the number of dimensions to be used in the plot
 
-topicMatrix <- listResults[[as.character(dimension)]] #extract the matrix of the chosen value of D
+   topicMatrix <- listResults[[as.character(dimension)]] #extract the matrix of the chosen value of D
 meltedResults <- melt(topicMatrix, varnames = c("Topic1", "Topic2"), value.name = "Percentage.Predicted")
 heatmap <- ggplot(meltedResults, aes(y = Topic1, x = ordered(Topic2, levels = rev(sort(unique(Topic2)))))) + geom_tile(aes(fill = Percentage.Predicted)) + coord_equal() + scale_fill_gradient(limits = c(0, 100), low="white", high="seagreen", guide =  guide_colorbar(title = paste("% Predicted", "\n"))) + xlab("") + ylab("") + theme(axis.text = element_text(size = 14), axis.text.x = element_text(angle=330, hjust=0.4, vjust = 0.7, size = 14)) + geom_text(aes(label = paste(round(Percentage.Predicted, 1), "%", sep = "")), colour = "gray25", size = 5)
 print(heatmap)
@@ -343,7 +369,7 @@ heatmap <- ggplot(meltedDimEv, aes(y = topic, x = ordered(D))) + geom_tile(aes(f
 print(heatmap)
 
 
-# panel of effectiveness for each theory including mean #
+ # panel of effectiveness for each theory including mean #
 
 meanResultsTable <- meltedDimEv[which(meltedDimEv$topic != "mean"),] #get mean out of data to generate panel of 8 theories
 meanResultsTable <- as.data.frame(meanResultsTable) #long form for ggplot
@@ -362,9 +388,9 @@ print(plot)
 
 ## Cosine matrices ##
 
-originalCosines <- compareTheories(wholeMacaroni$u, catalog) # has two elements: [[1]] list of a 8 matrices, one for each theory, with mean distance of that theory with each other theory. (2) list of one matrix for each dimension with theories as rows and all papers as column. cells show the mean distance of that theory with that paper.
+originalCosines <- compareTheories(documentLoadings, catalog) # has two elements: [[1]] list of a 8 matrices, one for each theory, with mean distance of that theory with each other theory. (2) list of one matrix for each dimension with theories as rows and all papers as column. cells show the mean distance of that theory with that paper.
 originalAverages <- originalCosines[[2]] #extracts the average distance of theory by paper.
-replicationCosines <- compareTheories(repofWholeMacaroni$u, repCatalog) #same procedure for replication
+replicationCosines <- compareTheories(repDocumentLoadings, repCatalog) #same procedure for replication
 replicationAverages <- replicationCosines[[2]]
 
 #plots of mean distance of theories with other theories for dimension
@@ -449,7 +475,7 @@ print(boxplotMax)
 
 #parameters that control the value of D ("dimension") and the source of the data ("dendrogramMode")#
 
-dimension <- 32 #change dimension being considered
+dimension <- 20 #change dimension being considered
 dendrogramMode <- "original" #original or replication
 
 ##OBJECTS##
@@ -459,13 +485,13 @@ dendrogramMode <- "original" #original or replication
 if(dendrogramMode == "original"){
   avgMatrix <- originalCosines[[2]][[dimension]]
   my_cat <- catalog
-  my_svd <- wholeMacaroni$u
+  my_svd <- documentLoadings
 }
 
 if(dendrogramMode == "replication"){
   avgMatrix <- replicationCosines[[2]][[dimension]]
   my_cat <- repCatalog
-  my_svd <- repofWholeMacaroni$u
+  my_svd <- repDocumentLoadings
 }
 
 ## similarity matrix of theories. higher value is less distance. ##
@@ -499,4 +525,46 @@ topic_hclust <- hclust(dist(simMatrix, upper = T), method = "average" ) #applies
 
 par(lwd = 2, cex.axis = 1.2, las = 1) #graphical parameters for the axes and lines of dendrogram
 print(hclustplot(topic_hclust, colors = labels2colors(cutreeDynamic(topic_hclust, minClusterSize = 1, method = "hybrid", deepSplit = 0, distM = as.matrix(dist(simMatrix)), pamStage = T), colorSeq = c("#2E8B57", "#FF2052", "#8b2e62")), fillbox = T, las = 0, cex = 1.2, mar = c(3, 3, 2, 0.5), font = 2)) #produces a dendrogram and marks the clusters with dynamictreecut. the minimum cluster size is set to 1, the parameter controlling the stringency of the clustering is set to the default (0). we used the "hybrid" method which takes both the dendrogram and a distance matrix to generate clusters. PAM was not used. We provided the colors (colorSeq) of the fillbox marking the clusters for up to 3 clusters.   
+
+#rotation and dimension inspection#
+
+##building a matrix with dimensions selected based on prediction performance##
+
+dimensionsForMatrix <- bestPredictors[,1:15]
+dimensionsForMatrix <- unlist(dimensionsForMatrix)
+dimensionsForMatrix <- sort(dimensionsForMatrix, decreasing =  F)
+dimensionsForMatrix <- unique(dimensionsForMatrix)
+
+#newSemanticSpace <- termLoadings[, dimensionsForMatrix]
+#colnames(newSemanticSpace) <- as.character(dimensionsForMatrix)
+
+#termVarimax <- varimax(newSemanticSpace)
+#termLoadingsRotated <- unclass(termVarimax$loadings)
+#colnames(newSemanticSpace) <- as.character(dimensionsForMatrix)
+#documentLoadingsRotated <- documentLoadings[,dimensionsForMatrix] %*% termVarimax$rotmat
+
+#bestPredictorsRotated <- c()
+#predictorRatingsRotated <- c() #store ratings to compare positive versus negative in term loading inspection
+#for (topic in topicList) { 
+#  glmOutput = glm(my_catalog$topic==topic~.,data=data.frame(documentLoadingsRotated),family=binomial)
+#  bestPredictorsRotated = rbind(bestPredictorsRotated,data.frame(t(sort(abs(glmOutput$coefficients[2:length(glmOutput$coefficients)]),ind=T,decreasing=T)$ix))) #TODO: fix this. 2 is here to skip intercept.
+#  predictorRatingsRotated <- rbind(predictorRatingsRotated, glmOutput$coefficients[2:length(glmOutput$coefficients)][sort(abs(glmOutput$coefficients[2:length(glmOutput$coefficients)]), ind = T, decreasing = T)$ix])
+#}
+#row.names(bestPredictorsRotated) <- topicList
+#row.names(predictorRatingsRotated) <- topicList
+
+for(topic in topicList){ # generate a data frame for each theory
+  predictors <- unlist(bestPredictors[topic,])
+  ratings <- unlist(predictorRatings[topic,])
+  ratingsValence <- ratings > 0 # boolean for sign of the predictor. true if > 0, false if < 0
+  words <- c()
+  i = 1
+  for(i in c(1:length(predictors))){
+    dimension <- predictors[i]
+    words <- c(words, toString(head(names(sort(termLoadings[,dimension], decreasing = T)), 20)))
+  }
+  nameOfDF <- paste(topic, "Meanings", sep = "")
+  assign(nameOfDF, data.frame(predictors, ratings, ratingsValence, words))
+  write.csv(nameOfDF, paste(nameOfDF, length(predictors), "sol.csv", sep = ""))
+}
 
