@@ -76,9 +76,9 @@ plotTopicDiff <- function(topic, resultsList){
 
 #loads files and catalog for original#
 
-freqMatrix <- as.matrix(read.table('document_by_term.txt', sep='\t', header = T))[, -1] #loads the DBT minus one column, the identifier in the text file. 
+freqMatrix <- as.matrix(read.table('Data/Original/document_by_term_stemmed.txt', sep='\t', header = T))[, -1] #loads the DBT minus one column, the identifier in the text file. 
 row.names(freqMatrix) <- c(1:nrow(freqMatrix)) #row names with docID
-freqMatrix <- freqMatrix[, apply(freqMatrix, 2, function(x){sum(x==0) < 995})] #removes columns with words that appear in fewer than 5 documents.
+freqMatrix <- freqMatrix[, apply(freqMatrix, 2, function(x){sum(x==0) < (dim(freqMatrix)[1] - 5)})] #removes columns with words that appear in fewer than 5 documents.
 
 freqMatrix <- freqMatrix[which(rowSums(freqMatrix) > 0), ] #eliminates documents with 0 terms after cleanup of terminology
 catalog <- read.table('catalog.txt', stringsAsFactors = F, sep = '\t', fill = T, quote = "") #loads catalog
@@ -92,7 +92,7 @@ topicList <- unique(catalog$topic) #list of theories for analysis.
 
 repFreqMatrix <- as.matrix(read.table('rep_document_by_term.txt', sep='\t', header = T, quote = ""))[, -1] 
 row.names(repFreqMatrix) <- c(1:nrow(repFreqMatrix))
-repFreqMatrix <- repFreqMatrix[, apply(repFreqMatrix, 2, function(x){sum(x==0) < 962})] #removes columns with words that appear in fewer than 5 documents.
+repFreqMatrix <- repFreqMatrix[, apply(repFreqMatrix, 2, function(x){sum(x==0) < (dim(repFreqMatrix)[1] - 5)})] #removes columns with words that appear in fewer than 5 documents.
 repFreqMatrix <- repFreqMatrix[which(rowSums(repFreqMatrix) > 0), ]
 repCatalog <- read.table('rep_catalog.txt', stringsAsFactors = F, sep = '\t', fill = T, quote = "")
 repCatalog <- repCatalog[row.names(repFreqMatrix), ]
@@ -142,7 +142,8 @@ documentLoadings <- wholeMacaroni$u %*% diag(wholeMacaroni$d)
 termLoadings <- wholeMacaroni$v %*% diag(wholeMacaroni$d)
 row.names(documentLoadings) <- row.names(cleanData)
 row.names(termLoadings) <- colnames(cleanData)
-
+termLoadings <- termLoadings[,1:50] 
+documentLoadings <- documentLoadings[, 1:50]
 
 #REPLICATION#
 
@@ -151,12 +152,6 @@ repTermLoadings <- repofWholeMacaroni$v %*% diag(repofWholeMacaroni$d)
 row.names(repDocumentLoadings) <- row.names(repCleanData)
 row.names(repTermLoadings) <- colnames(repCleanData)
 
-termLoadings <- termLoadings[,1:50] 
-documentLoadings <- documentLoadings[, 1:50]
-
-termVarimax <- varimax(termLoadings)
-termLoadings <- unclass(termVarimax$loadings)
-documentLoadings <- documentLoadings %*% termVarimax$rotmat
 
 ####GLM Models####
 
@@ -257,7 +252,7 @@ logfile(logger) = 'monitor.log'
 level(logger) = 'INFO'
 
 
-cl <- makeCluster(7)
+cl <- makeCluster(3)
 registerDoParallel(cl)
 
 
@@ -349,13 +344,13 @@ row.names(dimEvMat) <- as.character(dimensionVec) # name rows by dimension
 colnames(dimEvMat) <- c(topicList, "mean") # name columns by each theory and designate a column to store the mean effectiveness
 for(dimension in dimensionVec) { dimEvMat[as.character(dimension),] <- c(diag(listResults[[as.character(dimension)]]), mean(diag(listResults[[as.character(dimension)]])))} #fill list with the values of the diagonal of confusability matrices and its mean effectiveness.
 
-###Plotting###
+  ###Plotting###
 
 # scripts for producing the prediction related plots using ggplot2 #
 
 ## confusability matrix by dimension ##
 
-dimension = 5 # parameter for choosing the number of dimensions to be used in the plot
+dimension = 20 # parameter for choosing the number of dimensions to be used in the plot
 
    topicMatrix <- listResults[[as.character(dimension)]] #extract the matrix of the chosen value of D
 meltedResults <- melt(topicMatrix, varnames = c("Topic1", "Topic2"), value.name = "Percentage.Predicted")
@@ -553,18 +548,49 @@ dimensionsForMatrix <- unique(dimensionsForMatrix)
 #row.names(bestPredictorsRotated) <- topicList
 #row.names(predictorRatingsRotated) <- topicList
 
+termVarimax <- varimax(termLoadings)
+termLoadingsVarimax <- unclass(termVarimax$loadings)
+documentLoadingsVarimax <- documentLoadings %*% termVarimax$rotmat
+
+bestPredictorsVarimax <- c()
+predictorRatingsVarimax <- c() #store ratings to compare positive versus negative in term loading inspection
+for (topic in topicList) { 
+  glmOutput = glm(my_catalog$topic==topic~.,data=data.frame(documentLoadingsVarimax[,1:maxNumberOfDimensions]),family=binomial)
+  bestPredictorsVarimax = rbind(bestPredictorsVarimax,data.frame(t(sort(abs(glmOutput$coefficients[2:length(glmOutput$coefficients)]),ind=T,decreasing=T)$ix[1:maxNumberOfDimensions]))) #TODO: fix this. 2 is here to skip intercept.
+  predictorRatingsVarimax <- rbind(predictorRatingsVarimax, glmOutput$coefficients[2:length(glmOutput$coefficients)][sort(abs(glmOutput$coefficients[2:length(glmOutput$coefficients)]), ind = T, decreasing = T)$ix])
+}
+row.names(bestPredictorsVarimax) <- topicList
+row.names(predictorRatingsVarimax) <- topicList
+
+wordList <- list()
+
 for(topic in topicList){ # generate a data frame for each theory
-  predictors <- unlist(bestPredictors[topic,])
-  ratings <- unlist(predictorRatings[topic,])
+  predictors <- unlist(bestPredictorsVarimax[topic,])
+  ratings <- unlist(predictorRatingsVarimax[topic,])
   ratingsValence <- ratings > 0 # boolean for sign of the predictor. true if > 0, false if < 0
   words <- c()
   i = 1
   for(i in c(1:length(predictors))){
     dimension <- predictors[i]
-    words <- c(words, toString(head(names(sort(termLoadings[,dimension], decreasing = T)), 20)))
+    words <- c(words, toString(head(names(sort(termLoadingsVarimax[,dimension], decreasing = T)), 150)))
   }
   nameOfDF <- paste(topic, "Meanings", sep = "")
   assign(nameOfDF, data.frame(predictors, ratings, ratingsValence, words))
   write.csv(nameOfDF, paste(nameOfDF, length(predictors), "sol.csv", sep = ""))
 }
 
+#wordclouds#
+positiveWords <- c()
+negativeWords <- c()
+for(i in 1:18){
+  if(connectionismMeanings$ratingsValence[i]){
+    positiveWords <- c(positiveWords, unlist(strsplit(as.character(connectionismMeanings$words[i]), ',')))
+  } else{
+    negativeWords <- c(negativeWords, unlist(strsplit(as.character(connectionismMeanings$words[i]), ',')))
+  }
+}
+
+positiveWords <- factor(positiveWords)
+negativeWords <- factor(negativeWords)
+
+ecologicalWords
