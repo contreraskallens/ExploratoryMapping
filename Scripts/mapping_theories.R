@@ -76,7 +76,7 @@ plotTopicDiff <- function(topic, resultsList){
 
 #loads files and catalog for original#
 
-freqMatrix <- as.matrix(read.table('Data/Original/document_by_term_stemmed.txt', sep='\t', header = T))[, -1] #loads the DBT minus one column, the identifier in the text file. 
+freqMatrix <- as.matrix(read.table('Data/Original/document_by_term.txt', sep='\t', header = T))[, -1] #loads the DBT minus one column, the identifier in the text file. 
 row.names(freqMatrix) <- c(1:nrow(freqMatrix)) #row names with docID
 freqMatrix <- freqMatrix[, apply(freqMatrix, 2, function(x){sum(x==0) < (dim(freqMatrix)[1] - 5)})] #removes columns with words that appear in fewer than 5 documents.
 
@@ -142,8 +142,8 @@ documentLoadings <- wholeMacaroni$u %*% diag(wholeMacaroni$d)
 termLoadings <- wholeMacaroni$v %*% diag(wholeMacaroni$d)
 row.names(documentLoadings) <- row.names(cleanData)
 row.names(termLoadings) <- colnames(cleanData)
-termLoadings <- termLoadings[,1:50] 
-documentLoadings <- documentLoadings[, 1:50]
+termLoadings <- termLoadings[,1:15] 
+documentLoadings <- documentLoadings[, 1:15]
 
 #REPLICATION#
 
@@ -151,7 +151,8 @@ repDocumentLoadings <- repofWholeMacaroni$u %*% diag(repofWholeMacaroni$d)
 repTermLoadings <- repofWholeMacaroni$v %*% diag(repofWholeMacaroni$d)
 row.names(repDocumentLoadings) <- row.names(repCleanData)
 row.names(repTermLoadings) <- colnames(repCleanData)
-
+repTermLoadings <- repTermLoadings[,1:80] 
+repDocumentLoadings <- repDocumentLoadings[, 1:80]
 
 ####GLM Models####
 
@@ -162,7 +163,7 @@ row.names(repTermLoadings) <- colnames(repCleanData)
 # Set parameters for the prediction. Min and max number of dimensions are used to control the number of dimensions that are to be used in the construction of the models. The procedure loops through the dimensions resulting from the SVD. Starts at minNumberOfDimensions (default: 3), stops at maxNumberOfDimensions (default: 50). "Method" refers to the data used to build and train the models. With "free", dimensions are selected for how well they predict theory belonging against every theory. With "cluster", the training is stratified to the "most similar" theories; e.g. "computational" is built using the dimensions that best predict computational papers when compared to 'bayesian' and 'connectionist'. "Repeats" is the number of iterations of the predicting process. "Source" controls which data set is to be used: "original" uses the original dataset, "replication" uses the replication data, and "cross" uses the projection of the replication data into the SVD space of the original dataset to predict their theories with the models built with the original dataset. #
 
 minNumberOfDimensions <- 2 #lower boundary of D. does not work if lower than 2.
-maxNumberOfDimensions <- 50 # upper boundary of D
+maxNumberOfDimensions <- 15 # upper boundary of D
 repeats <- 100 # how many repetitions of prediction should be averaged?
 method <- "free" # "cluster" or "free".
 source <- "original" #"original" or "replication", "cross".
@@ -252,7 +253,7 @@ logfile(logger) = 'monitor.log'
 level(logger) = 'INFO'
 
 
-cl <- makeCluster(3)
+cl <- makeCluster(7)
 registerDoParallel(cl)
 
 
@@ -352,7 +353,7 @@ for(dimension in dimensionVec) { dimEvMat[as.character(dimension),] <- c(diag(li
 
 dimension = 20 # parameter for choosing the number of dimensions to be used in the plot
 
-   topicMatrix <- listResults[[as.character(dimension)]] #extract the matrix of the chosen value of D
+topicMatrix <- listResults[[as.character(dimension)]] #extract the matrix of the chosen value of D
 meltedResults <- melt(topicMatrix, varnames = c("Topic1", "Topic2"), value.name = "Percentage.Predicted")
 heatmap <- ggplot(meltedResults, aes(y = Topic1, x = ordered(Topic2, levels = rev(sort(unique(Topic2)))))) + geom_tile(aes(fill = Percentage.Predicted)) + coord_equal() + scale_fill_gradient(limits = c(0, 100), low="white", high="seagreen", guide =  guide_colorbar(title = paste("% Predicted", "\n"))) + xlab("") + ylab("") + theme(axis.text = element_text(size = 14), axis.text.x = element_text(angle=330, hjust=0.4, vjust = 0.7, size = 14)) + geom_text(aes(label = paste(round(Percentage.Predicted, 1), "%", sep = "")), colour = "gray25", size = 5)
 print(heatmap)
@@ -525,29 +526,6 @@ print(hclustplot(topic_hclust, colors = labels2colors(cutreeDynamic(topic_hclust
 
 ##building a matrix with dimensions selected based on prediction performance##
 
-dimensionsForMatrix <- bestPredictors[,1:15]
-dimensionsForMatrix <- unlist(dimensionsForMatrix)
-dimensionsForMatrix <- sort(dimensionsForMatrix, decreasing =  F)
-dimensionsForMatrix <- unique(dimensionsForMatrix)
-
-#newSemanticSpace <- termLoadings[, dimensionsForMatrix]
-#colnames(newSemanticSpace) <- as.character(dimensionsForMatrix)
-
-#termVarimax <- varimax(newSemanticSpace)
-#termLoadingsRotated <- unclass(termVarimax$loadings)
-#colnames(newSemanticSpace) <- as.character(dimensionsForMatrix)
-#documentLoadingsRotated <- documentLoadings[,dimensionsForMatrix] %*% termVarimax$rotmat
-
-#bestPredictorsRotated <- c()
-#predictorRatingsRotated <- c() #store ratings to compare positive versus negative in term loading inspection
-#for (topic in topicList) { 
-#  glmOutput = glm(my_catalog$topic==topic~.,data=data.frame(documentLoadingsRotated),family=binomial)
-#  bestPredictorsRotated = rbind(bestPredictorsRotated,data.frame(t(sort(abs(glmOutput$coefficients[2:length(glmOutput$coefficients)]),ind=T,decreasing=T)$ix))) #TODO: fix this. 2 is here to skip intercept.
-#  predictorRatingsRotated <- rbind(predictorRatingsRotated, glmOutput$coefficients[2:length(glmOutput$coefficients)][sort(abs(glmOutput$coefficients[2:length(glmOutput$coefficients)]), ind = T, decreasing = T)$ix])
-#}
-#row.names(bestPredictorsRotated) <- topicList
-#row.names(predictorRatingsRotated) <- topicList
-
 termVarimax <- varimax(termLoadings)
 termLoadingsVarimax <- unclass(termVarimax$loadings)
 documentLoadingsVarimax <- documentLoadings %*% termVarimax$rotmat
@@ -564,7 +542,8 @@ row.names(predictorRatingsVarimax) <- topicList
 
 wordList <- list()
 
-for(topic in topicList){ # generate a data frame for each theory
+for(n in 1:length(topicList)){ # generate a data frame for each theory
+  topic <- topicList[n]
   predictors <- unlist(bestPredictorsVarimax[topic,])
   ratings <- unlist(predictorRatingsVarimax[topic,])
   ratingsValence <- ratings > 0 # boolean for sign of the predictor. true if > 0, false if < 0
@@ -576,21 +555,33 @@ for(topic in topicList){ # generate a data frame for each theory
   }
   nameOfDF <- paste(topic, "Meanings", sep = "")
   assign(nameOfDF, data.frame(predictors, ratings, ratingsValence, words))
-  write.csv(nameOfDF, paste(nameOfDF, length(predictors), "sol.csv", sep = ""))
+  wordList[[n]] <- get(x = nameOfDF)
 }
+
+names(wordList) <- topicList
 
 #wordclouds#
-positiveWords <- c()
-negativeWords <- c()
-for(i in 1:18){
-  if(connectionismMeanings$ratingsValence[i]){
-    positiveWords <- c(positiveWords, unlist(strsplit(as.character(connectionismMeanings$words[i]), ',')))
-  } else{
-    negativeWords <- c(negativeWords, unlist(strsplit(as.character(connectionismMeanings$words[i]), ',')))
-  }
+
+for(topic in topicList){
+  positiveWords <- c()
+  negativeWords <- c()
+  meanings <- wordList[[topic]]
+  for(i in 1:10){
+    if(meanings$ratingsValence[i]){
+    positiveWords <- c(positiveWords, unlist(strsplit(as.character(meanings$words[i]), ',')))
+    } else{
+      negativeWords <- c(negativeWords, unlist(strsplit(as.character(meanings$words[i]), ',')))
+      }
+    }
+  positivedf <- data.frame(names(sort(table(positiveWords), decreasing = T)), as.numeric(sort(table(positiveWords), decreasing = T)))
+  negativedf <- data.frame( names(sort(table(negativeWords), decreasing = T)), as.numeric(sort(table(negativeWords), decreasing = T)))
+  colnames(positivedf) <- c("word","freq")
+  colnames(negativedf) <- c("word", "freq")
+  png(filename = paste(topic, "PositiveCloud.png", sep = ""), units = "px", width = 3000, height = 2000)
+  wordcloud(positivedf$word, positivedf$freq, scale = c(7, .5), random.order = F, rot.per = 0, use.r.layout = F, min.freq = 2)
+  dev.off()
+  png(filename = paste(topic, "NegativeCloud.png", sep = ""), units = "px", width = 3000, height = 2000)
+  wordcloud(negativedf$word, negativedf$freq, scale = c(7, .5), random.order = F, rot.per = 0, use.r.layout = F, min.freq = 2)
+  dev.off()
 }
 
-positiveWords <- factor(positiveWords)
-negativeWords <- factor(negativeWords)
-
-ecologicalWords
