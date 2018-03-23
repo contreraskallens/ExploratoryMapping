@@ -130,7 +130,7 @@ repCleanData[is.na(repCleanData)] <- 0
 
 #dimensionality reduction#
 
-wholeMacaroni = svd(cleanData) #partial SVD of 150 dimensions.
+wholeMacaroni = svd(cleanData) #SVD
 
 #REPLICATION#
 
@@ -142,8 +142,8 @@ documentLoadings <- wholeMacaroni$u %*% diag(wholeMacaroni$d)
 termLoadings <- wholeMacaroni$v %*% diag(wholeMacaroni$d)
 row.names(documentLoadings) <- row.names(cleanData)
 row.names(termLoadings) <- colnames(cleanData)
-termLoadings <- termLoadings[,1:15] 
-documentLoadings <- documentLoadings[, 1:15]
+termLoadings <- termLoadings[,1:100] 
+documentLoadings <- documentLoadings[, 1:100]
 
 #REPLICATION#
 
@@ -163,7 +163,7 @@ repDocumentLoadings <- repDocumentLoadings[, 1:80]
 # Set parameters for the prediction. Min and max number of dimensions are used to control the number of dimensions that are to be used in the construction of the models. The procedure loops through the dimensions resulting from the SVD. Starts at minNumberOfDimensions (default: 3), stops at maxNumberOfDimensions (default: 50). "Method" refers to the data used to build and train the models. With "free", dimensions are selected for how well they predict theory belonging against every theory. With "cluster", the training is stratified to the "most similar" theories; e.g. "computational" is built using the dimensions that best predict computational papers when compared to 'bayesian' and 'connectionist'. "Repeats" is the number of iterations of the predicting process. "Source" controls which data set is to be used: "original" uses the original dataset, "replication" uses the replication data, and "cross" uses the projection of the replication data into the SVD space of the original dataset to predict their theories with the models built with the original dataset. #
 
 minNumberOfDimensions <- 2 #lower boundary of D. does not work if lower than 2.
-maxNumberOfDimensions <- 15 # upper boundary of D
+maxNumberOfDimensions <- 100 # upper boundary of D
 repeats <- 100 # how many repetitions of prediction should be averaged?
 method <- "free" # "cluster" or "free".
 source <- "original" #"original" or "replication", "cross".
@@ -524,7 +524,8 @@ print(hclustplot(topic_hclust, colors = labels2colors(cutreeDynamic(topic_hclust
 
 #rotation and dimension inspection#
 
-##building a matrix with dimensions selected based on prediction performance##
+
+####varimax####
 
 termVarimax <- varimax(termLoadings)
 termLoadingsVarimax <- unclass(termVarimax$loadings)
@@ -560,28 +561,45 @@ for(n in 1:length(topicList)){ # generate a data frame for each theory
 
 names(wordList) <- topicList
 
-#wordclouds#
+#extract words each theory$
 
 for(topic in topicList){
-  positiveWords <- c()
-  negativeWords <- c()
-  meanings <- wordList[[topic]]
-  for(i in 1:10){
-    if(meanings$ratingsValence[i]){
-    positiveWords <- c(positiveWords, unlist(strsplit(as.character(meanings$words[i]), ',')))
-    } else{
-      negativeWords <- c(negativeWords, unlist(strsplit(as.character(meanings$words[i]), ',')))
-      }
+  wordsAndFreq <- data.frame()
+
+  for(i in 1:30){
+    if(!wordList[[topic]]$ratingsValence[i]){
+      words <- unlist(strsplit(as.character(wordList[[topic]]$words[i]), ','))[1:50]
+      frequency <- rep(floor(abs(wordList[["distributed"]]$ratings[i])), each = 100)
+      wordsAndFreq <- rbind(wordsAndFreq, cbind(words, frequency))
     }
-  positivedf <- data.frame(names(sort(table(positiveWords), decreasing = T)), as.numeric(sort(table(positiveWords), decreasing = T)))
-  negativedf <- data.frame( names(sort(table(negativeWords), decreasing = T)), as.numeric(sort(table(negativeWords), decreasing = T)))
-  colnames(positivedf) <- c("word","freq")
-  colnames(negativedf) <- c("word", "freq")
-  png(filename = paste(topic, "PositiveCloud.png", sep = ""), units = "px", width = 3000, height = 2000)
-  wordcloud(positivedf$word, positivedf$freq, scale = c(7, .5), random.order = F, rot.per = 0, use.r.layout = F, min.freq = 2)
-  dev.off()
-  png(filename = paste(topic, "NegativeCloud.png", sep = ""), units = "px", width = 3000, height = 2000)
-  wordcloud(negativedf$word, negativedf$freq, scale = c(7, .5), random.order = F, rot.per = 0, use.r.layout = F, min.freq = 2)
+  }
+  colnames(wordsAndFreq) <- c("words", "freqScore")
+  wordsAndFreq$words <- as.character(wordsAndFreq$words)
+  wordsAndFreq$freqScore <- as.numeric(wordsAndFreq$freqScore)
+  
+  wordsWeighted <- aggregate(data = wordsAndFreq, freqScore ~ words, FUN = sum)
+  
+  png(filename = paste(topic, "Negative.png", sep = ""), units = "px", width = 3000, height = 2000)
+  wordcloud(wordsWeighted$words, wordsWeighted$freqScore, scale = c(10, 1), random.order = F, rot.per = 0, use.r.layout = F, min.freq = median(wordsWeighted$freqScore))
   dev.off()
 }
 
+
+
+##clean words##
+
+#cleanWords <- read.csv(file = 'allWords.csv', header = T, sep = ',')
+
+#cleanFreqMatrix <- as.data.frame(freqMatrix)
+#cleanFreqMatrix <- freqMatrix[, cleanWords$Include.]
+
+#for(i in 1:nrow(cleanWords)){
+#  if(cleanWords$Merges.[i] != 0){
+#    wordToBeMerged <- as.character(cleanWords$x[i])
+#    newWordForBoth <- as.character(cleanWords$Merges.[i])
+#    newTermVector <- cleanFreqMatrix[,wordToBeMerged] + cleanFreqMatrix[,newWordForBoth]
+#    cleanFreqMatrix <- cleanFreqMatrix[, (colnames(cleanFreqMatrix) != wordToBeMerged) & (colnames(cleanFreqMatrix) != newWordForBoth)]
+#    cleanFreqMatrix <- cbind(cleanFreqMatrix, newTermVector)
+#    colnames(cleanFreqMatrix)[length(colnames(cleanFreqMatrix))] <- newWordForBoth
+#  }
+#}
