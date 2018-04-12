@@ -81,13 +81,13 @@ row.names(freqMatrix) <- c(1:nrow(freqMatrix)) #row names with docID
 freqMatrix <- freqMatrix[, apply(freqMatrix, 2, function(x){sum(x==0) < (dim(freqMatrix)[1] - 5)})] #removes columns with words that appear in fewer than 5 documents.
 
 
-cleanWords <- read.csv(file = 'allWords.csv', header = T, sep = ',')
-freqMatrix <- freqMatrix[, cleanWords$Include.] #try with cleaner words
+cleanWords <- read.csv(file = 'allWords.csv', header = T, sep = ',') #hand-coded list of words to eliminate
+freqMatrix <- freqMatrix[, cleanWords$Include.] 
 
 
 freqMatrix <- freqMatrix[which(rowSums(freqMatrix) > 0), ] #eliminates documents with 0 terms after cleanup of terminology
 catalog <- read.table('catalog.txt', stringsAsFactors = F, sep = '\t', fill = T, quote = "") #loads catalog
-catalog <- catalog[row.names(freqMatrix), ] #catalog also has row names as docID
+catalog <- catalog[row.names(freqMatrix), ] #limit catalog to documents in freqMatrix after reduction
 colnames(catalog) = c('id','topic','year','authors','title','journal','abstract') #variable names for catalog
 topicList <- unique(catalog$topic) #list of theories for analysis.
 
@@ -168,7 +168,7 @@ repDocumentLoadings <- repDocumentLoadings[, 1:80]
 # Set parameters for the prediction. Min and max number of dimensions are used to control the number of dimensions that are to be used in the construction of the models. The procedure loops through the dimensions resulting from the SVD. Starts at minNumberOfDimensions (default: 3), stops at maxNumberOfDimensions (default: 50). "Method" refers to the data used to build and train the models. With "free", dimensions are selected for how well they predict theory belonging against every theory. With "cluster", the training is stratified to the "most similar" theories; e.g. "computational" is built using the dimensions that best predict computational papers when compared to 'bayesian' and 'connectionist'. "Repeats" is the number of iterations of the predicting process. "Source" controls which data set is to be used: "original" uses the original dataset, "replication" uses the replication data, and "cross" uses the projection of the replication data into the SVD space of the original dataset to predict their theories with the models built with the original dataset. #
 
 minNumberOfDimensions <- 2 #lower boundary of D. does not work if lower than 2.
-maxNumberOfDimensions <- 120 # upper boundary of D
+maxNumberOfDimensions <- 8 # upper boundary of D
 repeats <- 100 # how many repetitions of prediction should be averaged?
 method <- "free" # "cluster" or "free".
 source <- "original" #"original" or "replication", "cross".
@@ -258,7 +258,7 @@ logfile(logger) = 'monitor.log'
 level(logger) = 'INFO'
 
 
-cl <- makeCluster(7)
+cl <- makeCluster(3)
 registerDoParallel(cl)
 
 
@@ -356,7 +356,7 @@ for(dimension in dimensionVec) { dimEvMat[as.character(dimension),] <- c(diag(li
 
 ## confusability matrix by dimension ##
 
-dimension = 20 # parameter for choosing the number of dimensions to be used in the plot
+dimension = 8 # parameter for choosing the number of dimensions to be used in the plot
 
 topicMatrix <- listResults[[as.character(dimension)]] #extract the matrix of the chosen value of D
 meltedResults <- melt(topicMatrix, varnames = c("Topic1", "Topic2"), value.name = "Percentage.Predicted")
@@ -410,7 +410,7 @@ plotTopicDiff("ecological", originalCosines)
 # these parameters control the models of self-similarity and other-similarity. "testingSelf" defines the source to be used (original data or replication data). "dimensionToTest" controls the number of dimensions used in the analysis (D) #
 
 testingSelf <- "original" #original or replication
-dimension <- 5  #specify the dimension to be tested
+dimension <- 8  #specify the dimension to be tested
 
 ##OBJECTS##
 
@@ -476,7 +476,7 @@ print(boxplotMax)
 
 #parameters that control the value of D ("dimension") and the source of the data ("dendrogramMode")#
 
-dimension <- 20 #change dimension being considered
+dimension <- 8 #change dimension being considered
 dendrogramMode <- "original" #original or replication
 
 ##OBJECTS##
@@ -592,37 +592,42 @@ for(topic in topicList){
 
 #### Exploring meaning in dimensions using in-built rubric ####
 
-freqMatrixAllWords <- read.csv(file = 'document_by_term_all_words.txt', header = T, sep = ',')
+freqMatrixAllWords <- read.csv(file = 'document_by_term_all_words.txt', header = T, sep = '\t')
 row.names(freqMatrixAllWords) <- c(1:nrow(freqMatrixAllWords)) #row names with docID
 
+freqMatrixAllWords <- freqMatrixAllWords[, apply(freqMatrixAllWords, 2, function(x){sum(x==0) < (dim(freqMatrixAllWords)[1] - 5)})] #removes columns with words that appear in fewer than 5 documents.
+freqMatrixAllWords <- freqMatrixAllWords[which(rowSums(freqMatrixAllWords) > 0), ] #eliminates documents with 0 terms after cleanup of terminology
 
+cleanDataAllWords <- calcEnt(freqMatrixAllWords) #entropy
+cleanDataAllWords[is.na(cleanDataAllWords)] <- 0 #replace NA with 0.
 
+wholeMacaroniAllWords = svd(cleanDataAllWords) #SVD
+loadedTermsAllWords <- wholeMacaroniAllWords$v %*% diag(wholeMacaroniAllWords$d)
+loadedTermsAllWords <- loadedTermsAllWords[,1:80]
+row.names(loadedTermsAllWords) <- colnames(freqMatrixAllWords)
 
+bayesian <- loadedTermsAllWords["bayesian",]
+connectionism <- loadedTermsAllWords["connectionism",] + loadedTermsAllWords["connectionist",]
+distributed <- loadedTermsAllWords["distributed",]
+ecological <- loadedTermsAllWords["ecological",]
+embodied <- loadedTermsAllWords["embodied",] + loadedTermsAllWords["embodiment",]
+enactive <- loadedTermsAllWords["enactive",] + loadedTermsAllWords["enactivism",]
+symbolic <- loadedTermsAllWords["symbolic",] + loadedTermsAllWords["actr",]
+dynamical <- loadedTermsAllWords["dynamical",]
 
+termsOnNewBase <- c("bayesian", "connectionism", "connectionist", "distributed",
+                    "ecological", "embodied", "embodiment", "enactive", "enactivism", 
+                    "actr", "symbolic", "dynamical")
 
-#### hacky gallito ####
-
-loadedTerms <- wholeMacaroni$v %*% diag(wholeMacaroni$d)[1:150,1:150]
-
-bayesian <- loadedTerms["bayes",] + loadedTerms["bayesian",]
-connectionism <- loadedTerms["connectionism",] + loadedTerms["connectionist",]
-distributed <- loadedTerms["distributed",] + loadedTerms["cognition",]
-ecological <- loadedTerms["ecological",]
-embodied <- loadedTerms["embodied",] + loadedTerms["embodiment",]
-enactive <- loadedTerms["enactive",] + loadedTerms["enactivism",]
-symbolic <- loadedTerms["actr",] + loadedTerms["symbolic",] + loadedTerms["cognition",]
-dynamical <- loadedTerms["dynamical",] + loadedTerms["cognition",]
-termsOnNewBase <- c("bayes", "bayesian", "connectionism", "connectionist", "distributed", "cognition", 
-                    "ecological", "embodied", "embodiment", "enactive", "enactivism", "actr", "symbolic", "cognition", "dynamical")
 newBase <- rbind(bayesian, connectionism, distributed,ecological,embodied,enactive,symbolic,dynamical)
 
-additionToNewBase <- loadedTerms[which(!(row.names(loadedTerms) %in% termsOnNewBase), arr.ind = T),]
-additionToNewBase <- additionToNewBase[1:142,]
+additionToNewBase <- loadedTermsAllWords[which(!(row.names(loadedTermsAllWords) %in% termsOnNewBase), arr.ind = T),]
+additionToNewBase <- additionToNewBase[1:(ncol(loadedTermsAllWords) - nrow(newBase)),]
 newBase <- rbind(newBase, additionToNewBase)
 orthonormalBase <- orthonormalization(newBase) # correlation ok (0.66 - 0.78)
 inverseOrthoNormalBase <- solve(orthonormalBase)
-newspaceWithNewBase <- loadedTerms %*% inverseOrthoNormalBase
+newspaceWithNewBase <- loadedTermsAllWords %*% inverseOrthoNormalBase
 
 inverseOfSpace <- ginv(newspaceWithNewBase)
-documentMatrixInNewspace <- freqMatrix %*% t(inverseOfSpace)
-wholeMacaroni$u <- documentMatrixInNewspace[,1:8]
+documentMatrixInNewspace <- as.matrix(freqMatrixAllWords) %*% t(inverseOfSpace)
+newDocumentSpace <- documentMatrixInNewspace[,1:8]
