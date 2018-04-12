@@ -14,7 +14,7 @@ def flatten(mylist):  # flatten one level deep list
     return new_list
 
 
-database = open('stemmed_catalog.txt', 'r').read().split('\n')  # open lemmatized catalog
+database = open('lemmatized_catalog.txt', 'r').read().split('\n')  # open lemmatized catalog
 
 abstract_dictionary = {int(lista[0]): lista[6] for lista in
                        [line.split('\t') for line in database]}  # makes a dictionary with the data of the catalog
@@ -37,7 +37,7 @@ for i in range(len(abstract_dictionary.values())):
             term_index = term_list.index(word)
             dbt[i + 1][term_index] += 1
 
-with open('document_by_term_stemmed.txt', 'w') as output_file:
+with open('document_by_term_lemmatized.txt', 'w') as output_file:
     for term in term_list:
         output_file.writelines('\t' + term)
     output_file.writelines('\n')

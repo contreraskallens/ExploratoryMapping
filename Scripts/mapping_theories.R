@@ -1,5 +1,5 @@
 #### libraries ####
-setwd(dir = 'GitHub/exploratory-mapping-draft/ExploratoryMapping/Scripts/')
+setwd(dir = 'ExploratoryMapping/Scripts/')
 
 require("MASS") #used to calculate the projection of new data in old SVD space.
 
@@ -76,9 +76,14 @@ plotTopicDiff <- function(topic, resultsList){
 
 #loads files and catalog for original#
 
-freqMatrix <- as.matrix(read.table('Data/Original/document_by_term.txt', sep='\t', header = T))[, -1] #loads the DBT minus one column, the identifier in the text file. 
+freqMatrix <- as.matrix(read.table('document_by_term.txt', sep='\t', header = T))[, -1] #loads the DBT minus one column, the identifier in the text file. 
 row.names(freqMatrix) <- c(1:nrow(freqMatrix)) #row names with docID
 freqMatrix <- freqMatrix[, apply(freqMatrix, 2, function(x){sum(x==0) < (dim(freqMatrix)[1] - 5)})] #removes columns with words that appear in fewer than 5 documents.
+
+
+cleanWords <- read.csv(file = 'allWords.csv', header = T, sep = ',')
+freqMatrix <- freqMatrix[, cleanWords$Include.] #try with cleaner words
+
 
 freqMatrix <- freqMatrix[which(rowSums(freqMatrix) > 0), ] #eliminates documents with 0 terms after cleanup of terminology
 catalog <- read.table('catalog.txt', stringsAsFactors = F, sep = '\t', fill = T, quote = "") #loads catalog
@@ -142,8 +147,8 @@ documentLoadings <- wholeMacaroni$u %*% diag(wholeMacaroni$d)
 termLoadings <- wholeMacaroni$v %*% diag(wholeMacaroni$d)
 row.names(documentLoadings) <- row.names(cleanData)
 row.names(termLoadings) <- colnames(cleanData)
-termLoadings <- termLoadings[,1:100] 
-documentLoadings <- documentLoadings[, 1:100]
+termLoadings <- termLoadings[,1:120] 
+documentLoadings <- documentLoadings[, 1:120]
 
 #REPLICATION#
 
@@ -163,7 +168,7 @@ repDocumentLoadings <- repDocumentLoadings[, 1:80]
 # Set parameters for the prediction. Min and max number of dimensions are used to control the number of dimensions that are to be used in the construction of the models. The procedure loops through the dimensions resulting from the SVD. Starts at minNumberOfDimensions (default: 3), stops at maxNumberOfDimensions (default: 50). "Method" refers to the data used to build and train the models. With "free", dimensions are selected for how well they predict theory belonging against every theory. With "cluster", the training is stratified to the "most similar" theories; e.g. "computational" is built using the dimensions that best predict computational papers when compared to 'bayesian' and 'connectionist'. "Repeats" is the number of iterations of the predicting process. "Source" controls which data set is to be used: "original" uses the original dataset, "replication" uses the replication data, and "cross" uses the projection of the replication data into the SVD space of the original dataset to predict their theories with the models built with the original dataset. #
 
 minNumberOfDimensions <- 2 #lower boundary of D. does not work if lower than 2.
-maxNumberOfDimensions <- 100 # upper boundary of D
+maxNumberOfDimensions <- 120 # upper boundary of D
 repeats <- 100 # how many repetitions of prediction should be averaged?
 method <- "free" # "cluster" or "free".
 source <- "original" #"original" or "replication", "cross".
@@ -522,10 +527,9 @@ topic_hclust <- hclust(dist(simMatrix, upper = T), method = "average" ) #applies
 par(lwd = 2, cex.axis = 1.2, las = 1) #graphical parameters for the axes and lines of dendrogram
 print(hclustplot(topic_hclust, colors = labels2colors(cutreeDynamic(topic_hclust, minClusterSize = 1, method = "hybrid", deepSplit = 0, distM = as.matrix(dist(simMatrix)), pamStage = T), colorSeq = c("#2E8B57", "#FF2052", "#8b2e62")), fillbox = T, las = 0, cex = 1.2, mar = c(3, 3, 2, 0.5), font = 2)) #produces a dendrogram and marks the clusters with dynamictreecut. the minimum cluster size is set to 1, the parameter controlling the stringency of the clustering is set to the default (0). we used the "hybrid" method which takes both the dendrogram and a distance matrix to generate clusters. PAM was not used. We provided the colors (colorSeq) of the fillbox marking the clusters for up to 3 clusters.   
 
-#rotation and dimension inspection#
 
 
-####varimax####
+#### Exploration of dimension meanings using a varimax rotated matrix ####
 
 termVarimax <- varimax(termLoadings)
 termLoadingsVarimax <- unclass(termVarimax$loadings)
@@ -534,8 +538,8 @@ documentLoadingsVarimax <- documentLoadings %*% termVarimax$rotmat
 bestPredictorsVarimax <- c()
 predictorRatingsVarimax <- c() #store ratings to compare positive versus negative in term loading inspection
 for (topic in topicList) { 
-  glmOutput = glm(my_catalog$topic==topic~.,data=data.frame(documentLoadingsVarimax[,1:maxNumberOfDimensions]),family=binomial)
-  bestPredictorsVarimax = rbind(bestPredictorsVarimax,data.frame(t(sort(abs(glmOutput$coefficients[2:length(glmOutput$coefficients)]),ind=T,decreasing=T)$ix[1:maxNumberOfDimensions]))) #TODO: fix this. 2 is here to skip intercept.
+  glmOutput = glm(my_catalog$topic==topic~.,data=data.frame(documentLoadingsVarimax[,1:dim(documentLoadingsVarimax)[2]]),family=binomial)
+  bestPredictorsVarimax = rbind(bestPredictorsVarimax,data.frame(t(sort(abs(glmOutput$coefficients[2:length(glmOutput$coefficients)]),ind=T,decreasing=T)$ix[1:dim(documentLoadingsVarimax)[2]]))) #TODO: fix this. 2 is here to skip intercept.
   predictorRatingsVarimax <- rbind(predictorRatingsVarimax, glmOutput$coefficients[2:length(glmOutput$coefficients)][sort(abs(glmOutput$coefficients[2:length(glmOutput$coefficients)]), ind = T, decreasing = T)$ix])
 }
 row.names(bestPredictorsVarimax) <- topicList
@@ -552,7 +556,7 @@ for(n in 1:length(topicList)){ # generate a data frame for each theory
   i = 1
   for(i in c(1:length(predictors))){
     dimension <- predictors[i]
-    words <- c(words, toString(head(names(sort(termLoadingsVarimax[,dimension], decreasing = T)), 150)))
+    words <- c(words, toString(head(names(sort(termLoadingsVarimax[,dimension], decreasing = T)), 100)))
   }
   nameOfDF <- paste(topic, "Meanings", sep = "")
   assign(nameOfDF, data.frame(predictors, ratings, ratingsValence, words))
@@ -566,10 +570,10 @@ names(wordList) <- topicList
 for(topic in topicList){
   wordsAndFreq <- data.frame()
 
-  for(i in 1:30){
+  for(i in 1:37){
     if(!wordList[[topic]]$ratingsValence[i]){
       words <- unlist(strsplit(as.character(wordList[[topic]]$words[i]), ','))[1:50]
-      frequency <- rep(floor(abs(wordList[["distributed"]]$ratings[i])), each = 100)
+      frequency <- rep(floor(abs(wordList[[topic]]$ratings[i])), each = 50)
       wordsAndFreq <- rbind(wordsAndFreq, cbind(words, frequency))
     }
   }
@@ -586,20 +590,39 @@ for(topic in topicList){
 
 
 
-##clean words##
+#### Exploring meaning in dimensions using in-built rubric ####
 
-#cleanWords <- read.csv(file = 'allWords.csv', header = T, sep = ',')
+freqMatrixAllWords <- read.csv(file = 'document_by_term_all_words.txt', header = T, sep = ',')
+row.names(freqMatrixAllWords) <- c(1:nrow(freqMatrixAllWords)) #row names with docID
 
-#cleanFreqMatrix <- as.data.frame(freqMatrix)
-#cleanFreqMatrix <- freqMatrix[, cleanWords$Include.]
 
-#for(i in 1:nrow(cleanWords)){
-#  if(cleanWords$Merges.[i] != 0){
-#    wordToBeMerged <- as.character(cleanWords$x[i])
-#    newWordForBoth <- as.character(cleanWords$Merges.[i])
-#    newTermVector <- cleanFreqMatrix[,wordToBeMerged] + cleanFreqMatrix[,newWordForBoth]
-#    cleanFreqMatrix <- cleanFreqMatrix[, (colnames(cleanFreqMatrix) != wordToBeMerged) & (colnames(cleanFreqMatrix) != newWordForBoth)]
-#    cleanFreqMatrix <- cbind(cleanFreqMatrix, newTermVector)
-#    colnames(cleanFreqMatrix)[length(colnames(cleanFreqMatrix))] <- newWordForBoth
-#  }
-#}
+
+
+
+
+#### hacky gallito ####
+
+loadedTerms <- wholeMacaroni$v %*% diag(wholeMacaroni$d)[1:150,1:150]
+
+bayesian <- loadedTerms["bayes",] + loadedTerms["bayesian",]
+connectionism <- loadedTerms["connectionism",] + loadedTerms["connectionist",]
+distributed <- loadedTerms["distributed",] + loadedTerms["cognition",]
+ecological <- loadedTerms["ecological",]
+embodied <- loadedTerms["embodied",] + loadedTerms["embodiment",]
+enactive <- loadedTerms["enactive",] + loadedTerms["enactivism",]
+symbolic <- loadedTerms["actr",] + loadedTerms["symbolic",] + loadedTerms["cognition",]
+dynamical <- loadedTerms["dynamical",] + loadedTerms["cognition",]
+termsOnNewBase <- c("bayes", "bayesian", "connectionism", "connectionist", "distributed", "cognition", 
+                    "ecological", "embodied", "embodiment", "enactive", "enactivism", "actr", "symbolic", "cognition", "dynamical")
+newBase <- rbind(bayesian, connectionism, distributed,ecological,embodied,enactive,symbolic,dynamical)
+
+additionToNewBase <- loadedTerms[which(!(row.names(loadedTerms) %in% termsOnNewBase), arr.ind = T),]
+additionToNewBase <- additionToNewBase[1:142,]
+newBase <- rbind(newBase, additionToNewBase)
+orthonormalBase <- orthonormalization(newBase) # correlation ok (0.66 - 0.78)
+inverseOrthoNormalBase <- solve(orthonormalBase)
+newspaceWithNewBase <- loadedTerms %*% inverseOrthoNormalBase
+
+inverseOfSpace <- ginv(newspaceWithNewBase)
+documentMatrixInNewspace <- freqMatrix %*% t(inverseOfSpace)
+wholeMacaroni$u <- documentMatrixInNewspace[,1:8]

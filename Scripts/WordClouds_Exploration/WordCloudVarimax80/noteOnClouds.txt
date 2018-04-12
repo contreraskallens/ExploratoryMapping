@@ -1,1 +1,0 @@
-note: these wordclouds were made using the first 30 dimensions.

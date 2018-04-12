@@ -1,1 +1,3 @@
 note: these wordclouds were made using the first 30 dimensions.
+
+bayesian very weird in this one. connectionism plain bad. also distributed. dynamical looks much better than previous ones. ecological looks awesome, as does embodied, enactive. symbolic looks bad.
