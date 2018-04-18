@@ -38,3 +38,4 @@ vignettes/*.pdf
 
 # Don't synch monitor log
 *.log
+Scripts/monitor.log

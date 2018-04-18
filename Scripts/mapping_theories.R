@@ -1,48 +1,48 @@
-#### libraries ####
-setwd(dir = 'ExploratoryMapping/Scripts/')
+# Libraries ---------------------------------------------------------------
 
-require("MASS") #used to calculate the projection of new data in old SVD space.
-
-# plotting #
-
+  # Plotting 
 require("reshape2")
 require("ggplot2")
 require("ggthemes")
 require("scales")
 
-# dendrogram tree cutting from https://labs.genetics.ucla.edu/horvath/CoexpressionNetwork/BranchCutting/ #
+  # Pendrogram tree cutting from https://labs.genetics.ucla.edu/horvath/CoexpressionNetwork/BranchCutting/
 require("dynamicTreeCut")
 require("bio3d")
 require("moduleColor")
 
-# paralellization of prediction machine and UI #
+  # Paralellization of prediction machine and logging of silent parallel cores.
 require("log4r")
 require("foreach")
 require("doParallel")
 
-####FUNCTIONS####
+  # Linear algebra (inverse matrices and orthonormalization)
+require('MASS')
+require('far')
 
-cosineGen <- function(matrix) {
-  lengthVec <- sqrt(rowSums(matrix * matrix))
-  tcrossprod(matrix) / (lengthVec %o% lengthVec)
+# Functions ---------------------------------------------------------------
+
+generateCosineMatrix <- function(matrix) {
+  lengthOfVector <- sqrt(rowSums(matrix * matrix))
+  tcrossprod(matrix) / (lengthVec %o% lengthOfVector)
 }  #Function that generates the cosine between each row of a matrix.
 
-calcEnt <- function(matrix) {
-  workMatrix <- t(matrix) #transposes for division
+calculateEntropy <- function(matrix) {
+  temporaryMatrix <- t(matrix) #transposes for division
   a <-
-    workMatrix / rowSums(workMatrix) #generates a probability matrix
+    temporaryMatrix / rowSums(temporaryMatrix) #generates a probability matrix
   b <-
     1 + ((rowSums(a * log2(a), na.rm = T)) / log2(dim(matrix)[1])) #calculate entropy (1 + (sum of probability times log2 probability, divided by the total number of documents)).
-  workMatrix <-
-    log(workMatrix[which(b > 0, arr.ind = T),] + 1) #log normalizes frequency matrix and deletes 0 entropy ones.
-  workMatrix <-
-    workMatrix * b[b > 0] #weight log normalized matrix by multiplying terms with entropy higher than 0 by its entropy.
-  return(t(workMatrix)) #returns original, non-transposed matrix.
+  temporaryMatrix <-
+    log(temporaryMatrix[which(b > 0, arr.ind = T),] + 1) #log normalizes frequency matrix and deletes 0 entropy ones.
+  temporaryMatrix <-
+    temporaryMatrix * b[b > 0] #weight log normalized matrix by multiplying terms with entropy higher than 0 by its entropy.
+  return(t(temporaryMatrix)) #returns original, non-transposed matrix.
 } #calculates the entropy of each term of a matrix. Uses formula in Martin & Berry, 2007, "Mathematical foundations behind latent semantic analysis".
 
 compareTheories <- function(matrix, cat) {
-  ##doc: takes matrix as the result of an svd(u). populates a pre-allocated list of every topic in external topicList (not generalized yet) with matrices of an "index" of similarity using each dimension (column) in matrix for each topic.
-  resultList <-
+  ##doc: takes matrix as the result of an svd(u). populates a pre-allocated list of every theory in external theoryList (not generalized yet) with matrices of an "index" of similarity using each dimension (column) in matrix for each theory.
+  listOfResults <-
     lapply(lapply(
       1:8,
       matrix,
@@ -50,7 +50,7 @@ compareTheories <- function(matrix, cat) {
       nrow = 8,
       ncol = dim(matrix)[2]
     ), function(x) {
-      row.names(x) <- topicList
+      row.names(x) <- theoryList
       return(x)
     }) #pre-allocation of list
   cosineAvgsList <-
@@ -61,20 +61,20 @@ compareTheories <- function(matrix, cat) {
       nrow = 8,
       ncol = dim(matrix)[1]
     ) #pre-allocation of second list
-  names(resultList) <- topicList #name for easy accessing theories
-  indexMatrix <-
+  names(listOfResults) <- theoryList #name for easy accessing theories
+  logicalMatrixTheories <-
     matrix(
       FALSE,
       nrow = dim(matrix)[1],
       ncol = 8,
-      dimnames = list(1:dim(matrix)[1], topicList)
+      dimnames = list(1:dim(matrix)[1], theoryList)
     ) #pre-allocates logical matrix
-  for (topic in topicList) {
-    indexMatrix[, topic] <-
-      cat[, 2] == topic
+  for (theory in theoryList) {
+    logicalMatrixTheories[, theory] <-
+      cat[, 2] == theory
   } #populates logical matrix with a logical mask reflecting catalog$id
   docsByTop <-
-    colSums(indexMatrix) #number of documents for each topic
+    colSums(logicalMatrixTheories) #number of documents for each theory
   n <- 1 #counter for each dimension
   while (n <= dim(matrix)[2]) {
     #loops through dimensions
@@ -84,74 +84,78 @@ compareTheories <- function(matrix, cat) {
         cbind(database, 0)
     } #if it has only one dimension, then add a column of 0s to make cosineGen work
     database <-
-      cosineGen(database) #produces a x by x matrix of cosines between each paper.
+      generateCosineMatrix(database) #produces a x by x matrix of cosines between each paper.
     database[is.na(database)] <- 0 #replaces NA with 0.
     meanMatrix <-
-      crossprod(indexMatrix, database) #produces a matrix with the sum of cosines of each paper with each of the topics
+      crossprod(logicalMatrixTheories, database) #produces a matrix with the sum of cosines of each paper with each of the theorys
     meanMatrix <-
-      meanMatrix / docsByTop #produces a matrix with the mean cosine of each paper with each of the topics
+      meanMatrix / docsByTop #produces a matrix with the mean cosine of each paper with each of the theorys
     cosineAvgsList[[n]] <-
       meanMatrix #stores the matrix of means in a list with n as index for dimensions used.
     meanMatrix <-
-      meanMatrix %*% indexMatrix #produces a vector with the sum of mean cosines for each topic against each topic in dimension n
+      meanMatrix %*% logicalMatrixTheories #produces a vector with the sum of mean cosines for each theory against each theory in dimension n
     meanMatrix <-
-      t(meanMatrix) / docsByTop #produces a vector of the means of sums of mean cosines for each topic against each topic in dimension n.
-    for (topic in topicList) {
-      #loops through topics to populate results of all cosines.
-      resultList[[topic]][, n] <- meanMatrix[topic, ]
+      t(meanMatrix) / docsByTop #produces a vector of the means of sums of mean cosines for each theory against each theory in dimension n.
+    for (theory in theoryList) {
+      #loops through theorys to populate results of all cosines.
+      listOfResults[[theory]][, n] <- meanMatrix[theory, ]
     }
     n = n + 1
   }
-  returnList = list(resultList, cosineAvgsList) #makes list of lists with results and mean cosines
+  returnList = list(listOfResults, cosineAvgsList) #makes list of lists with results and mean cosines
   return(returnList) #returns everything
-} #function for calculating cosines of the whole matrix. "matrix" is the result of an SVD; "cat" is the catalog to obtain topic information (in this case, catalog$id). Returns a list of two lists: [[1]] is all cosines by paper, [[2]] is a list of matrices of mean distance of each paper with each of the other topics. [[1]][n] and [[2]][n] are the different dimensions resulting from SVD.
+} #function for calculating cosines of the whole matrix. "matrix" is the result of an SVD; "cat" is the catalog to obtain theory information (in this case, catalog$id). Returns a list of two lists: [[1]] is all cosines by paper, [[2]] is a list of matrices of mean distance of each paper with each of the other theorys. [[1]][n] and [[2]][n] are the different dimensions resulting from SVD.
 
-plotTopicDiff <- function(topic, resultsList) {
-  workTable <-
+plotTheoryDistances <- function(theory, resultsList) {
+  temporaryMatrix <-
     as.data.frame(melt(
-      resultsList[[1]][[topic]],
-      varnames = c("topic", "dimension"),
+      resultsList[[1]][[theory]],
+      varnames = c("theory", "dimension"),
       value.name = "cosine"
     )) #long form for ggplot
   plot <-
-    ggplot(data = workTable, aes(
+    ggplot(data = temporaryMatrix, aes(
       x = dimension,
       y = cosine,
-      color = topic,
-      group = topic
+      color = theory,
+      group = theory
     )) + theme_solarized(base_size = 14) + theme(axis.text = element_text(colour = "#586e75")) + labs(
       title = paste(
         "Mean cosine of",
-        topic,
+        theory,
         "papers with other theories and itself across dimensions"
       )
     ) + geom_line() + scale_colour_solarized("red") + geom_point(size = 0.7, shape = 3) + guides(colour = guide_legend(override.aes = list(size =
                                                                                                                                              3)))
   print(plot)
-} #function for plotting the mean distance of every topic with all other topics. "topic" is one of the topics of topicList; "resultsList" is the object that compareTheories() returns.
-
-####DATA AND BASIC CLEANUP####
-
-##ORIGINAL##
-
-#loads files and catalog for original#
-
-freqMatrix <-
-  as.matrix(read.table('document_by_term.txt', sep = '\t', header = T))[,-1] #loads the DBT minus one column, the identifier in the text file.
-row.names(freqMatrix) <- c(1:nrow(freqMatrix)) #row names with docID
-freqMatrix <-
-  freqMatrix[, apply(freqMatrix, 2, function(x) {
-    sum(x == 0) < (dim(freqMatrix)[1] - 5)
-  })] #removes columns with words that appear in fewer than 5 documents.
+} #function for plotting the mean distance of every theory with all other theorys. "theory" is one of the theorys of theoryList; "resultsList" is the object that compareTheories() returns.
 
 
+# Loading and cleaning data -----------------------------------------------
+
+  ## Original Data
+
+# Load document by term matrix and catalog for original data. Assigns ID. 
+  
+frequencyMatrix <- as.matrix(read.table('document_by_term.txt', sep = '\t', header = T))[,-1] # Minus one column, the identifier in the text file. 
+row.names(frequencyMatrix) <- c(1:nrow(frequencyMatrix)) # DocID assignment.
+
+# Remove columns with words that appear in fewer than 5 documents.
+frequencyMatrix <-
+  frequencyMatrix[, apply(frequencyMatrix, 2, function(x) {
+    sum(x == 0) < (dim(frequencyMatrix)[1] - 5)
+  })] 
+
+# Eliminate hand-coded list of words encoded in allWords.csv
 cleanWords <-
-  read.csv(file = 'allWords.csv', header = T, sep = ',') #hand-coded list of words to eliminate
-freqMatrix <- freqMatrix[, cleanWords$Include.]
+  read.csv(file = 'allWords.csv', header = T, sep = ',') 
+frequencyMatrix <- frequencyMatrix[, cleanWords$Include.]
 
+# Eliminates documents with 0 terms after cleanup of terminology
+frequencyMatrix <-
+  frequencyMatrix[which(rowSums(frequencyMatrix) > 0),]
 
-freqMatrix <-
-  freqMatrix[which(rowSums(freqMatrix) > 0),] #eliminates documents with 0 terms after cleanup of terminology
+# Load catalog, assign column names to type of data, extract the different theories being tested.
 catalog <-
   read.table(
     'catalog.txt',
@@ -159,29 +163,31 @@ catalog <-
     sep = '\t',
     fill = T,
     quote = ""
-  ) #loads catalog
-catalog <-
-  catalog[row.names(freqMatrix),] #limit catalog to documents in freqMatrix after reduction
-colnames(catalog) = c('id', 'topic', 'year', 'authors', 'title', 'journal', 'abstract') #variable names for catalog
-topicList <- unique(catalog$topic) #list of theories for analysis.
+  )
+catalog <- catalog[row.names(frequencyMatrix),] #limit catalog to documents in frequencyMatrix
+colnames(catalog) = c('id', 'theory', 'year', 'authors', 'title', 'journal', 'abstract')
+theoryList <- unique(catalog$theory) #list of theories for analysis.
 
-##REPLICATION##
+  ## Replication Data
 
-#the same, but for replication documents#
+# Same procedure, but for the replication data. 
+# Loads frequency matrix, modifies terminology and loads catalog
 
-repFreqMatrix <-
+repFrequencyMatrix <-
   as.matrix(read.table(
     'rep_document_by_term.txt',
     sep = '\t',
     header = T,
     quote = ""
   ))[,-1]
-row.names(repFreqMatrix) <- c(1:nrow(repFreqMatrix))
-repFreqMatrix <-
-  repFreqMatrix[, apply(repFreqMatrix, 2, function(x) {
-    sum(x == 0) < (dim(repFreqMatrix)[1] - 5)
-  })] #removes columns with words that appear in fewer than 5 documents.
-repFreqMatrix <- repFreqMatrix[which(rowSums(repFreqMatrix) > 0),]
+row.names(repFrequencyMatrix) <- c(1:nrow(repFrequencyMatrix))
+
+repFrequencyMatrix <-
+  repFrequencyMatrix[, apply(repFrequencyMatrix, 2, function(x) {
+    sum(x == 0) < (dim(repFrequencyMatrix)[1] - 5)
+  })]
+repFrequencyMatrix <- repFrequencyMatrix[which(rowSums(repFrequencyMatrix) > 0),]
+
 repCatalog <-
   read.table(
     'rep_catalog.txt',
@@ -190,371 +196,335 @@ repCatalog <-
     fill = T,
     quote = ""
   )
-repCatalog <- repCatalog[row.names(repFreqMatrix),]
-colnames(repCatalog) = c('id', 'topic', 'year', 'authors', 'title', 'journal', 'abstract')
-topicList <- unique(repCatalog$topic)
+repCatalog <- repCatalog[row.names(repFrequencyMatrix),]
+colnames(repCatalog) = c('id', 'theory', 'year', 'authors', 'title', 'journal', 'abstract')
 
-#NULL HYPOTHESIS#
+  ## Null Hypothesis
 
-#If you want to test the null hypothesis, change the parameter to T. It randomizes the theory of the papers in the databases.#
+# If nullHypothesis = T, catalog$topic is randomized. 
 
-nullHyp <- F
-if (nullHyp == T) {
-  catalog$topic <- sample(catalog$topic, length(catalog$topic))
-  repCatalog$topic <-
-    sample(repCatalog$topic, length(repCatalog$topic))
+nullHypothesis <- F
+if (nullHypothesis == T) {
+  catalog$theory <- sample(catalog$theory, length(catalog$theory))
+  repCatalog$theory <-
+    sample(repCatalog$theory, length(repCatalog$theory))
 }
 
-####DATA PROCESSING (Latent Semantic Analysis)####
 
-##ENTROPY##
+# Data weighting and dimensionality reduction -----------------------------
 
-#this uses the entropy function in calcEnt to weight the matrices with a log-entropy function#
+  ## Weighting
 
-#ORIGINAL#
+# Use entropy function calculateEntropy() to weight matrices using log-entropy.
 
-cleanData <- calcEnt(freqMatrix) #entropy
-cleanData[is.na(cleanData)] <- 0 #replace NA with 0.
+# Original Data
+weightedFrequencyMatrix <- calculateEntropy(frequencyMatrix) #entropy
+weightedFrequencyMatrix[is.na(weightedFrequencyMatrix)] <- 0 #replace NA with 0.
 
-#REPLICATION#
-repCleanData <- calcEnt(repFreqMatrix)
-repCleanData[is.na(repCleanData)] <- 0
+# Replication
+repWeightedFrequencyMatrix <- calculateEntropy(repFrequencyMatrix)
+repWeightedFrequencyMatrix[is.na(repWeightedFrequencyMatrix)] <- 0
 
-##SVD##
+  ## Singular Value Decomposition
 
-#ORIGINAL#
+# Original Data
+reducedMatrixSVD = svd(weightedFrequencyMatrix) #SVD
 
-#dimensionality reduction#
+# Replication Data
+repReducedMatrixSVD = svd(repWeightedFrequencyMatrix)
 
-wholeMacaroni = svd(cleanData) #SVD
+  ## Generate document and term loadings using SVD matrices
 
-#REPLICATION#
+# Multiply matrices and then assign row/column names to coincide with original matrices.
 
-repofWholeMacaroni = svd(repCleanData)
+# Original Data
+documentLoadings <- reducedMatrixSVD$u %*% diag(reducedMatrixSVD$d)
+termLoadings <- reducedMatrixSVD$v %*% diag(reducedMatrixSVD$d)
+row.names(documentLoadings) <- row.names(weightedFrequencyMatrix)
+row.names(termLoadings) <- colnames(weightedFrequencyMatrix)
 
-#ALLOCATE LOADING MATRICES#
+# Replication Data
+repDocumentLoadings <- repReducedMatrixSVD$u %*% diag(repReducedMatrixSVD$d)
+repTermLoadings <- repReducedMatrixSVD$v %*% diag(repReducedMatrixSVD$d)
+row.names(repDocumentLoadings) <- row.names(repWeightedFrequencyMatrix)
+row.names(repTermLoadings) <- colnames(repWeightedFrequencyMatrix)
 
-documentLoadings <- wholeMacaroni$u %*% diag(wholeMacaroni$d)
-termLoadings <- wholeMacaroni$v %*% diag(wholeMacaroni$d)
-row.names(documentLoadings) <- row.names(cleanData)
-row.names(termLoadings) <- colnames(cleanData)
+# Reduce the dimensionality of the document loading matrices
 termLoadings <- termLoadings[, 1:120]
 documentLoadings <- documentLoadings[, 1:120]
-
-#REPLICATION#
-
-repDocumentLoadings <-
-  repofWholeMacaroni$u %*% diag(repofWholeMacaroni$d)
-repTermLoadings <-
-  repofWholeMacaroni$v %*% diag(repofWholeMacaroni$d)
-row.names(repDocumentLoadings) <- row.names(repCleanData)
-row.names(repTermLoadings) <- colnames(repCleanData)
 repTermLoadings <- repTermLoadings[, 1:80]
 repDocumentLoadings <- repDocumentLoadings[, 1:80]
 
-####GLM Models####
+# Predict theory using Generalized Linear Models --------------------------
 
-# This part of the script has the GLM models of each theory that attempt to predict the theory belonging of each paper #
+  ## Parameters of the prediction
 
-## PARAMETERS ##
+# Min and max number of dimensions are used to control the number of 
+# dimensions that are to be used in the construction of the models. 
+# The procedure loops through the dimensions resulting from the SVD. 
+# Starts at minNumberOfDimensions, stops at maxNumberOfDimensions. 
+minNumberOfDimensions <- 2 # does not work if lower than 2.
+maxNumberOfDimensions <- 20
 
-# Set parameters for the prediction. Min and max number of dimensions are used to control the number of dimensions that are to be used in the construction of the models. The procedure loops through the dimensions resulting from the SVD. Starts at minNumberOfDimensions (default: 3), stops at maxNumberOfDimensions (default: 50). "Method" refers to the data used to build and train the models. With "free", dimensions are selected for how well they predict theory belonging against every theory. With "cluster", the training is stratified to the "most similar" theories; e.g. "computational" is built using the dimensions that best predict computational papers when compared to 'bayesian' and 'connectionist'. "Repeats" is the number of iterations of the predicting process. "Source" controls which data set is to be used: "original" uses the original dataset, "replication" uses the replication data, and "cross" uses the projection of the replication data into the SVD space of the original dataset to predict their theories with the models built with the original dataset. #
+# "Repeats" is the number of iterations of the predicting process to be aggregated. 
+iterations <- 1000
 
-minNumberOfDimensions <-
-  2 #lower boundary of D. does not work if lower than 2.
-maxNumberOfDimensions <- 8 # upper boundary of D
-repeats <-
-  100 # how many repetitions of prediction should be averaged?
-method <- "free" # "cluster" or "free".
-source <- "original" #"original" or "replication", "cross".
+# "Source" controls which data set is to be used: "original" uses the original dataset, 
+# "replication" uses the replication data, and "cross" uses the projection of the 
+# replication data into the semantic space of the original dataset to predict their 
+# theories with the models built with the original dataset.\
+source <- "original"
 
-##OBJECTS##
-
-# Loads the different objects depending on the parameter "source" on line 155.
+  ## Load objects based on parameters
 
 if (source == "original") {
-  my_catalog <- catalog
-  my_svd <- documentLoadings
+  theCatalog <- catalog
+  theSVD <- documentLoadings
 }
 if (source == "replication") {
-  my_catalog <- repCatalog
-  my_svd <- repDocumentLoadings
+  theCatalog <- repCatalog
+  theSVD <- repDocumentLoadings
 }
 if (source == "cross") {
-  my_catalog <- catalog
-  cross_catalog <- repCatalog
-  my_svd <- documentLoadings
+  theCatalog <- catalog
+  crossCatalog <- repCatalog
+  theSVD <- documentLoadings
   
+# Project the replication data on the space generated by the original data.
   replicationProjection <-
     matrix(0,
-           nrow = nrow(repFreqMatrix),
-           ncol = ncol(freqMatrix))   #create matrix for projection and populate#
-  row.names(replicationProjection) <-
-    row.names(repFreqMatrix) #set row names as wholeMacaroni
-  colnames(replicationProjection) <- colnames(freqMatrix)
-  sharedWords <-
-    colnames(repFreqMatrix)[which(colnames(repFreqMatrix) %in% colnames(freqMatrix))] # obtain all the shared words between original data and replication data.
-  replicationProjection[, sharedWords] <-
-    repFreqMatrix[, sharedWords] #build a new DbT that has the documents in replication as rows and the shared words between both datasets as columns.
+           nrow = nrow(repFrequencyMatrix),
+           ncol = ncol(frequencyMatrix))
   
-  cross_svd <-
-    replicationProjection %*% ginv(termLoadings) #projects the replication data into the SV  space of the original dataset..
+# Set names of columns and rows to access through previous matrices
+  row.names(replicationProjection) <- row.names(repFrequencyMatrix)
+  colnames(replicationProjection) <- colnames(frequencyMatrix)
+
+# Determine the words that appear in both original data and replication data.
+  sharedWords <-
+    colnames(repFrequencyMatrix)[which(colnames(repFrequencyMatrix) %in% colnames(frequencyMatrix))]
+  
+# Build a new DbT matrix that has the documents in replication as rows and the 
+# shared words between both datasets as columns.  
+  replicationProjection[, sharedWords] <-
+    repFrequencyMatrix[, sharedWords] 
+
+# Projects the replication data into the SV space of the original dataset.
+  crossSVD <-
+    replicationProjection %*% ginv(termLoadings) # Moore-Penrose Generalized Inverse
 }
 
-### TOPIC BEST PREDICTORS ###
+  ## Best predicting dimensions for each theory
 
-## At first, the dimensions that differentiate the papers of a theory when compared to the other ones are selected. The first 80 of them are stored. #
-
-##FREE FOR ALL##
-
-#for each topic, fill the "best predictors" matrix with the dimensions that most differentiate that theory from the other 8 theories.
+# For each theory, fill the "best predictors" matrix with the dimensions that most 
+# differentiate that theory from the other 8 theories using GLMS.
 
 bestPredictors <- c()
 predictorRatings <-
-  c() #store ratings to compare positive versus negative in term loading inspection
-for (topic in topicList) {
-  glmOutput = glm(my_catalog$topic == topic ~ .,
-                  data = data.frame(my_svd[, 1:maxNumberOfDimensions]),
+  c() # Store the ratings of each dimension to use in evaluating dimension meaning afterwards.
+for (theory in theoryList) {
+  glmOutput = glm(theCatalog$theory == theory ~ .,
+                  data = data.frame(theSVD[, 1:maxNumberOfDimensions]),
                   family = binomial)
+  # Sort the dimensions according to the absolute value of their rating for each theory and store.
+  # Absolute value allows to use both positive and negative prediction for each theory.
   bestPredictors = rbind(bestPredictors, data.frame(t(sort(
-    abs(glmOutput$coefficients[2:length(glmOutput$coefficients)]),
+    abs(glmOutput$coefficients[2:length(glmOutput$coefficients)]), # 2 is here to skip intercept.
     ind = T,
     decreasing = T
-  )$ix[1:maxNumberOfDimensions]))) #TODO: fix this. 2 is here to skip intercept.
+  )$ix[1:maxNumberOfDimensions])))
+  
+  # Also store the sorted ratings
   predictorRatings <-
     rbind(predictorRatings, glmOutput$coefficients[2:length(glmOutput$coefficients)][sort(abs(glmOutput$coefficients[2:length(glmOutput$coefficients)]),
                                                                                           ind = T,
                                                                                           decreasing = T)$ix])
 }
-row.names(bestPredictors) <- topicList
-row.names(predictorRatings) <- topicList
+row.names(bestPredictors) <- theoryList
+row.names(predictorRatings) <- theoryList
 
-##STRATIFIED SAMPLING##
+  ## Prediction
 
-#for each topic, fill the "best predictors" matrix with the dimensions that most differentiate that theory from the other theories in the cluster. Cluster 1 is "Classic" with computational, bayesian and connectionist. Cluster 2 is "alt" with ecological, embodied, dynamical, distributed, enactive.
+# The prediction is parallelized using the "foreach" and "doparallel" packages. 
+# In each iteration, a random training set of 70% of the papers of each theory is selected.
+# The remaining papers are presented to each GLM model and the probability returned 
+# by the model that the paper belongs to that theory is collected. 
+# The highest prediction value is selected as the "predicted" theory and stored. 
+# The number of iterations to be aggregated for each dimension is controlled 
+# by parameter iterations. Iterations are averaged.
 
-topicListClassic <-
-  c(topicList[1], topicList[2], topicList[8]) # topic list of classical cluster.
-topicListAlt <-
-  setdiff(topicList, topicListClassic) #topic list of alt cluster.
-catalogClassic <-
-  my_catalog[which(my_catalog$topic %in% topicListClassic), ] #catalog of classic papers
-catalogAlt <-
-  my_catalog[which(my_catalog$topic %in% topicListAlt), ] #catalog of alt papers
+# Each parallel process uses a different dimension from the set of dimensions between 
+# minNumberOfDimensions and maxNumberOfDimensions.
+dimensionsForTesting <- c(minNumberOfDimensions:maxNumberOfDimensions)
 
-#then, same procedure as above but using these clusters#
-
-bestPredictorsClusters <- c()
-predictorRatingsClusters <- c()
-
-for (topic in topicListClassic) {
-  glmOutput = glm(catalogClassic$topic == topic ~ .,
-                  data = data.frame(my_svd[which(my_catalog$topic %in% topicListClassic, arr.ind = T), 1:maxNumberOfDimensions]),
-                  family = binomial)
-  bestPredictorsClusters = rbind(bestPredictorsClusters, data.frame(t(sort(
-    abs(glmOutput$coefficients[2:length(glmOutput$coefficients)]),
-    ind = T,
-    decreasing = T
-  )$ix[1:maxNumberOfDimensions]))) #TODO: fix this. 2 is here to skip intercept.
-  predictorRatingsClusters <-
-    rbind(predictorRatingsClusters, glmOutput$coefficients[2:length(glmOutput$coefficients)][sort(abs(glmOutput$coefficients[2:length(glmOutput$coefficients)]),
-                                                                                                  ind = T,
-                                                                                                  decreasing = T)$ix])
-}
-
-for (topic in topicListAlt) {
-  glmOutput = glm(catalogAlt$topic == topic ~ .,
-                  data = data.frame(my_svd[which(my_catalog$topic %in% topicListAlt, arr.ind = T), 1:maxNumberOfDimensions]),
-                  family = binomial)
-  bestPredictorsClusters = rbind(bestPredictorsClusters, data.frame(t(sort(
-    abs(glmOutput$coefficients[2:length(glmOutput$coefficients)]),
-    ind = T,
-    decreasing = T
-  )$ix[1:maxNumberOfDimensions]))) #TODO: fix this. 2 is here to skip intercept.
-  predictorRatingsClusters <-
-    rbind(predictorRatingsClusters, glmOutput$coefficients[2:length(glmOutput$coefficients)][sort(abs(glmOutput$coefficients[2:length(glmOutput$coefficients)]),
-                                                                                                  ind = T,
-                                                                                                  decreasing = T)$ix])
-}
-row.names(bestPredictorsClusters) <-
-  c(topicListClassic, topicListAlt)
-row.names(predictorRatingsClusters) <-
-  c(topicListClassic, topicListAlt)
-
-### EXECUTION OF MODEL ###
-
-# Each theory has a model built and trained using the dimensions specified in minNumberOfDimensions and maxNumberOfDimensions. Each model is of the theories is a GLM. In each iteration, a random training set of 600 papers is selected i (random theory belonging if "free", 60 per theory if "cluster"). The remaining papers are presented to each GLM model and the probability returned by the model that the paper belongs to that theory is collected. The highest prediction value is selected as the "predicted" theory and stored. The results of this prediction are collected in each iteration. The number of iterations is specified in parameters above. The function is parallelized using the "foreach" and "doparallel" packages. "cl" controls the number of parallel processes; change to fit the number of cores in CPU. Each parallel iteration is one of the dimensions between minNumberOfDimensions and maxNumberOfDimensions #
-
-dimensionVec <- c(minNumberOfDimensions:maxNumberOfDimensions)
-
-# text file to monitor the parallel foreach #
-
+# Parallel process monitored by a logger object (log4r).
 logger = create.logger()
 logfile(logger) = 'monitor.log'
 level(logger) = 'INFO'
 
+# clusters controls the number of parallel processes; change to fit the number of cores in CPU.
+clusters <- makeCluster(detectCores() - 1) # default: number of cores in CPU - 1.
+registerDoParallel(clusters)
 
-cl <- makeCluster(7)
-registerDoParallel(cl)
-
-
-listResults <-
-  foreach(dimension = dimensionVec,
-          .verbose = T,
+# The results of this prediction are collected for each dimension in listOfResults.
+listOfResults <-
+  foreach(dimension = dimensionsForTesting,
           .packages = "log4r") %dopar% {
-            #parallelized foreach loop with each dimension. Stored in a list object containing the aggregate matrices of iterations controlled in repeat, for each number of dimensions used.
-            
+            # Pre-allocate the result list for this dimension.
             resultsListModel <-
-              lapply(c(1:repeats), matrix, nrow = 8, ncol = 8) #pre allocate the result list with the number of iterations selected in parameters.
-            s = 1 #controller for the number of iterations.
+              lapply(c(1:iterations), matrix, nrow = 8, ncol = 8)
             
-            while (s <= repeats) {
-              # repeats the process of training-prediction as specified in parameters.
-              if (method == "free") {
-                trainingSet = sample(1:nrow(my_svd), 600) #not controlled training
-                predictors <- bestPredictors
-              }
-              if (method == "cluster") {
-                trainingSet <-
-                  c() # controlled training set for equal representation of each topic.
-                for (topic in topicList) {
+            # Repeats the process of training-prediction a number of times specified by parameter "iterations".
+            iteration <- 1
+            while (iteration <= iterations) {
+              trainingSet <- c()
+                for (theory in theoryList) {
                   trainingSet <-
-                    c(trainingSet, sample(which(my_catalog$topic == topic), round(length(
-                      which(my_catalog$topic == topic)
+                    c(trainingSet, sample(which(theCatalog$theory == theory), round(length(
+                      which(theCatalog$theory == theory)
                     ) * 0.7)))
-                }
-                predictors <- bestPredictorsClusters
-              }
+                  }
+              
+              # If the procedure is either predicting original for predicting original, or replication for predicting replication, set the trainingset as the rest of the papers.
               if (source == "original" |
                   source == "replication") {
-                #if the procedure is either predicting original for predicting original, or replication for predicting replication, set the trainingset as the rest of the papers.
-                testSet = setdiff(1:nrow(my_svd), trainingSet)
-              }
-              if (source == "cross") {
-                #if using original to predict replication, trainingset is original dataset, and testset is replication set.
-                trainingSet <- c(1:(nrow(my_svd)))
-                testSet <- c(1:(nrow(cross_svd)))
+                testSet = setdiff(1:nrow(theSVD), trainingSet)
               }
               
+              # If using original to predict replication, trainingset is original dataset, and testset is replication set.
+              if (source == "cross") {
+                trainingSet <- c(1:(nrow(theSVD)))
+                testSet <- c(1:(nrow(crossSVD)))
+              }
               predictionResults = c()
               
-              for (topic in topicList) {
-                #loop through the models of each theory
+              # Loop through the models of each theory
+              for (theory in theoryList) {
+                # Take only the dimensions in bestPredictors from the document vector.
                 trainingdata <-
-                  data.frame(my_svd[trainingSet, unlist(predictors[topic, 1:dimension])]) # prepare training data of model by using the dimensions selected as the best predictors for each topic and the documents selected to be training.
-                glmTopic = glm(my_catalog$topic[trainingSet] == topic ~ .,
-                               data = trainingdata,
-                               family = binomial) #build the model of the topic.
+                  data.frame(theSVD[trainingSet, unlist(bestPredictors[theory, 1:dimension])]) # prepare training data of model by using the dimensions selected as the best predictors for each theory and the documents selected to be training.
                 
+                # Build the GLM of the theory trained on trainingSet
+                glmOfTheory = glm(theCatalog$theory[trainingSet] == theory ~ .,
+                               data = trainingdata,
+                               family = binomial)
+                
+                # If predicting inside the dataset
                 if (source == "original" |
                     source == "replication") {
-                  #if predicting inside the dataset
-                  testdata = data.frame(my_svd[testSet, unlist(predictors[topic, 1:dimension])]) #prepare the data to be predicted
-                  predicted = predict.glm(glmTopic, newdata = testdata, type = "response") #store the probability that the paper belongs to the theory being tested
-                  predictionResults = cbind(predictionResults, scale(predicted)) #add to a matrix and scale
+                  testdata = data.frame(theSVD[testSet, unlist(bestPredictors[theory, 1:dimension])])
+                  
+                  # Store the probability that the paper belongs to the theory being tested
+                  predicted = predict.glm(glmOfTheory, newdata = testdata, type = "response")
+                  predictionResults = cbind(predictionResults, scale(predicted)) # Add to a matrix and scale
                 }
+                
+                # If cross-predicting, original data is training and replication is test
                 if (source == "cross") {
-                  #modify procedure above to account for original data being training and replication being test
-                  predicted = predict.glm(glmTopic,
-                                          newdata = data.frame(cross_svd[testSet, unlist(predictors[topic, 1:dimension])]),
+                  predicted = predict.glm(glmOfTheory,
+                                          newdata = data.frame(crossSVD[testSet, unlist(bestPredictors[theory, 1:dimension])]),
                                           type = "response")
                   predictionResults = cbind(predictionResults, scale(predicted))
                 }
               }
-              # the predictions of each theory are aggregated in a matrix. each row of matrix is a document, each column is the probability that it belongs to that theory.
               
+              # Aggregate predictions for each theory in a dataframe.
+              # Rows are documents, columns are the probability that doc belongs to that theory.
               predictionResults = data.frame(predictionResults)
-              colnames(predictionResults) = topicList
+              colnames(predictionResults) = theoryList 
               
+              # Evalute if the predicted theory is correct.
               if (source == "original" | source == "replication") {
-                predictionResults$topic = my_catalog$topic[testSet] #add a column with the correct theory of each of the papers in the testset
-                predictionResults$predicted_topic = topicList[max.col(predictionResults[, 1:8])] #add a column with the highest prediction of the models for that paper.
+                predictionResults$theory = theCatalog$theory[testSet]  # Add a column with the correct theory
+                predictionResults$predicted_theory = theoryList[max.col(predictionResults[, 1:8])] # Add a column with the predicted theory
+                
+                # Determine how many times each theory was predicted as each other theory in percentages.
                 resultTable <-
                   (
                     table(
-                      predictionResults$topic,
-                      predictionResults$predicted_topic
-                    ) / as.vector(table(my_catalog$topic[testSet]))
-                  ) * 100 #generates a frequency table of how many times each topic was predicted as each other topic. then, transforms into percentages.
+                      predictionResults$theory,
+                      predictionResults$predicted_theory
+                    ) / as.vector(table(theCatalog$theory[testSet]))
+                  ) * 100
                 
               }
               
+              # Same procedure, modified for cross prediction.
               if (source == "cross") {
-                #same procedure, but for cross prediction.
-                predictionResults$topic = cross_catalog$topic[testSet]
-                predictionResults$predicted_topic = topicList[max.col(predictionResults[, 1:8])]
+                predictionResults$theory = crossCatalog$theory[testSet]
+                predictionResults$predicted_theory = theoryList[max.col(predictionResults[, 1:8])]
                 resultTable <-
                   (
                     table(
-                      predictionResults$topic,
-                      predictionResults$predicted_topic
-                    ) / as.vector(table(cross_catalog$topic[testSet]))
+                      predictionResults$theory,
+                      predictionResults$predicted_theory
+                    ) / as.vector(table(crossCatalog$theory[testSet]))
                   ) * 100
               }
               
-              resultsListModel[[s]] <-
-                resultTable # store this iteration for final aggregation in list.
-              s = s + 1
-              if (s %% (round(repeats * 0.2)) == 0) {
+              # Store this iteration for final aggregation.
+              resultsListModel[[iteration]] <-
+                resultTable
+              iteration = iteration + 1
+              
+              # Periodically output to log file to monitor process.
+              if (iteration %% (round(iterations * 0.2)) == 0) {
                 info(logger,
-                     paste("dimension ", dimension, ", ", "iteration number", s))
+                     paste("dimension ", dimension, ", ", "iteration number", iteration))
               }
             }
             
-            #aggregate the results of the iterations#
-            
+            # Average the results of the tables generated by each iteration.
             finalPredictionTable <-
-              matrix(0, nrow = 8, ncol = 8) #pre-allocate final table
-            
-            #iterate through list of predictions to aggregate the results#
-            
+              matrix(0, nrow = 8, ncol = 8) 
             for (matrix in resultsListModel) {
-              # sums every result table resulting from the iterations.
               finalPredictionTable <- finalPredictionTable + matrix
             }
             finalPredictionTable <-
-              finalPredictionTable / length(resultsListModel) #divide by total number of iterations to aggregate
-            return(finalPredictionTable) #return this table to be added to the list that foreach is constructing,
+              finalPredictionTable / length(resultsListModel)
+            
+            # Return averaged table. This table is then returned in a list by foreach.
+            return(finalPredictionTable)
           }
 
-stopCluster(cl)
+stopCluster(clusters) # Stop the parallel clusters
 
-names(listResults) <-
-  dimensionVec #name the objects in the list with the dimensions used in calculating them
+# Name the objects in the list with the dimensions used
+names(listOfResults) <-
+  dimensionsForTesting 
 
-dimEvMat <-
-  matrix (0, nrow = length(dimensionVec), ncol = 9) # pre-allocate matrix for the evaluation of the effectiveness of models for each dimension
-row.names(dimEvMat) <-
-  as.character(dimensionVec) # name rows by dimension
-colnames(dimEvMat) <-
-  c(topicList, "mean") # name columns by each theory and designate a column to store the mean effectiveness
-for (dimension in dimensionVec) {
-  dimEvMat[as.character(dimension), ] <-
-    c(diag(listResults[[as.character(dimension)]]), mean(diag(listResults[[as.character(dimension)]])))
-} #fill list with the values of the diagonal of confusability matrices and its mean effectiveness.
+# Allocate results to evaluate the performance of each dimension
+performanceMatrix <-
+  matrix (0, nrow = length(dimensionsForTesting), ncol = 9) 
+row.names(performanceMatrix) <-
+  as.character(dimensionsForTesting)
+colnames(performanceMatrix) <-
+  c(theoryList, "mean") # Add a column for average performance
+for (dimension in dimensionsForTesting) {
+  performanceMatrix[as.character(dimension), ] <-
+    c(diag(listOfResults[[as.character(dimension)]]), mean(diag(listOfResults[[as.character(dimension)]])))
+} # Fill list with the percentage of correct predictions for each theory
 
-###Plotting###
+  ## Plotting prediction results
 
-# scripts for producing the prediction related plots using ggplot2 #
-
-## confusability matrix by dimension ##
-
-dimension = 8 # parameter for choosing the number of dimensions to be used in the plot
-
-topicMatrix <-
-  listResults[[as.character(dimension)]] #extract the matrix of the chosen value of D
+# Confusion matrix for each dimension
+dimension = 8 # Specify the dimension to use for producing the confusion matrix
+predictionMatrix <-
+  listOfResults[[as.character(dimension)]]
 meltedResults <-
-  melt(topicMatrix,
-       varnames = c("Topic1", "Topic2"),
+  melt(predictionMatrix,
+       varnames = c("theory1", "theory2"),
        value.name = "Percentage.Predicted")
+
+# Confusion matrix for chosen dimension as a heatmap
 heatmap <-
-  ggplot(meltedResults, aes(y = Topic1, x = ordered(Topic2, levels = rev(sort(
-    unique(Topic2)
+  ggplot(meltedResults, aes(y = theory1, x = ordered(theory2, levels = rev(sort(
+    unique(theory2)
   ))))) + geom_tile(aes(fill = Percentage.Predicted)) + coord_equal() + scale_fill_gradient(
     limits = c(0, 100),
     low = "white",
     high = "seagreen",
-    guide =  guide_colorbar(title = paste("% Predicted", "\n"))
+    guide =  guide_colorbar(title = paste("Performance (%)", "\n"))
   ) + xlab("") + ylab("") + theme(
     axis.text = element_text(size = 14),
     axis.text.x = element_text(
@@ -568,44 +538,67 @@ heatmap <-
   ), "%", sep = "")), colour = "gray25", size = 5)
 print(heatmap)
 
-## horizontal heatmap of effectiveness of each dimension by topic and mean #
+# Barplot of performance for each theory at the chosen dimension.
+# Includes solid line for mean performance, dotdashed line for chance.
+dimensionDataFrame <- performanceMatrix[dimension, ]
+meanPerfromanceDimension <- dimensionDataFrame["mean"]
+dimensionDataFrame <-
+  dimensionDataFrame[which(names(dimensionDataFrame) != "mean")]
+dimensionDataFrame <-
+  cbind(melt(dimensionDataFrame), names(dimensionDataFrame))
+colnames(dimensionDataFrame) <- c("Performance", "Theory")
+barplot <-
+  ggplot(data = dimensionDataFrame, aes(
+    x = Theory,
+    y = Performance,
+    fill = Theory,
+    guide = F
+  )) +
+  geom_bar(stat = "identity") +
+  scale_colour_brewer(type = "qual",
+                      palette = "Paired",
+                      guide = F) +
+  geom_hline(yintercept = meanPerfromanceDimension, linetype = "solid") +
+  geom_hline(yintercept = 12.5, linetype = "dotdash") +
+  ylim(c(0, 100)) + guides(fill = F) +
+  theme(axis.text = element_text(size = 12),
+        axis.title = element_text(size = 14))
+print(barplot)
 
-meltedDimEv <-
-  melt(dimEvMat[, 1:9],
-       varnames = c("D", "topic"),
-       value.name = "Effectiveness") #melted effectiveness for ggplot2
+# Performance of each theory for each dimension used, including mean. As heatmap.
+meltedResults <-
+  melt(performanceMatrix[, 1:9],
+       varnames = c("D", "theory"),
+       value.name = "Performance")
 heatmap <-
-  ggplot(meltedDimEv, aes(y = topic, x = ordered(D))) + geom_tile(aes(fill = Effectiveness), color = "white") + coord_equal() + scale_fill_gradient(limits = c(0, 100),
-                                                                                                                                                    low = "white",
-                                                                                                                                                    high = "seagreen") + xlab("") + ylab("") + theme(axis.text = element_text(size = 12)) + geom_text(aes(label = paste(round(Effectiveness, 0))), size = 4, colour = "gray25")
+  ggplot(meltedResults, aes(y = theory, x = ordered(D))) + 
+  geom_tile(aes(fill = Performance), color = "white") + coord_equal() + 
+  scale_fill_gradient(limits = c(0, 100), low = "white", high = "seagreen") + 
+  xlab("") + ylab("") + theme(axis.text = element_text(size = 12)) + 
+  geom_text(aes(label = paste(round(Performance, 0))), size = 4, colour = "gray25")
 print(heatmap)
 
 
-# panel of effectiveness for each theory #
+# Panel of line plots for each theory across all dimensions used
 
 meanResultsTable <-
-  meltedDimEv[which(meltedDimEv$topic != "mean"), ] #get mean out of data to generate panel of 8 theories
-meanResultsTable <-
-  as.data.frame(meanResultsTable) #long form for ggplot
+  as.data.frame(meltedResults[which(meltedResults$theory != "mean"), ]) # Don't show mean on this plot
 plot <-
-  ggplot(data = meanResultsTable, aes(
-    x = D,
-    y = Effectiveness,
-    color = topic,
-    group = topic
-  )) + ylim (0, 100) + theme_gray() + geom_line(size = 1) + ylab("Mean Performance") + scale_colour_brewer(type = "qual",
-                                                                                                           palette = "Paired",
-                                                                                                           guide = F) + geom_point(size = 1, shape = 3) + facet_wrap( ~ topic, ncol = 2, nrow = 5)
+  ggplot(data = meanResultsTable, aes(x = D, y = Performance, color = theory, group = theory)) + 
+  ylim (0, 100) + theme_gray() + geom_line(size = 1) + ylab("Performance") +  xlab("Dimensions") + 
+  scale_colour_brewer(type = "qual", palette = "Paired", guide = F) + 
+  geom_point(size = 1, shape = 3) + facet_wrap( ~ theory, ncol = 2, nrow = 5)
 print(plot)
 
-# line plot of only mean effectiveness #
+# Line plot of mean performance
 
-meanPerf <-
-  data.frame("Mean.Effectiveness" = rowMeans(dimEvMat), "D" = dimensionVec) #mean performance melted dataframe
+meanPerformance <-
+  data.frame("Mean.Performance" = rowMeans(performanceMatrix), "D" = dimensionsForTesting)
 plot <-
-  ggplot(data = meanPerf, aes(y = Mean.Effectiveness, x = D)) + theme_gray() + geom_line(size = 1.5, color = "seagreen") + geom_point(size = 1.5,
-                                                                                                                                      shape = 3,
-                                                                                                                                      color = "seagreen") + scale_y_continuous(limits = c(0, 100)) + labs(y = "Mean Performance (%)")
+  ggplot(data = meanPerformance, aes(y = Mean.Performance, x = D)) + 
+  theme_gray() + geom_line(size = 1.5, color = "seagreen") + 
+  geom_point(size = 1.5, shape = 3, color = "seagreen") + scale_y_continuous(limits = c(0, 100)) + 
+  labs(y = "Mean Performance (%)")
 print(plot)
 
 ####LINEAR MODELS WITH COSINE MATRICES####
@@ -624,14 +617,14 @@ replicationAverages <- replicationCosines[[2]]
 
 #plots of mean distance of theories with other theories for dimension
 
-plotTopicDiff("bayesian", originalCosines)
-plotTopicDiff("symbolic", originalCosines)
-plotTopicDiff("connectionism", originalCosines)
-plotTopicDiff("embodied", originalCosines)
-plotTopicDiff("distributed", originalCosines)
-plotTopicDiff("enactive", originalCosines)
-plotTopicDiff("dynamical", originalCosines)
-plotTopicDiff("ecological", originalCosines)
+plotTheoryDistances("bayesian", originalCosines)
+plotTheoryDistances("symbolic", originalCosines)
+plotTheoryDistances("connectionism", originalCosines)
+plotTheoryDistances("embodied", originalCosines)
+plotTheoryDistances("distributed", originalCosines)
+plotTheoryDistances("enactive", originalCosines)
+plotTheoryDistances("dynamical", originalCosines)
+plotTheoryDistances("ecological", originalCosines)
 
 ##PARAMETERS##
 
@@ -659,21 +652,21 @@ if (testingSelf == "replication") {
 
 allDat = c()
 
-for (topic in topicList) {
+for (theory in theoryList) {
   #populate the mean cosine of theory with papers of that theory data
-  dat = avgList[[dimension]][which(topic == topicList), my_cat$topic == topic]
-  allDat = rbind(allDat, data.frame(topic = topic, cosine = dat))
+  dat = avgList[[dimension]][which(theory == theoryList), my_cat$theory == theory]
+  allDat = rbind(allDat, data.frame(theory = theory, cosine = dat))
 }
 
 #build a linear model of mean distance of theory with papers of that theory and the theory#
 
-lmObject = lm(cosine ~ topic, data = allDat)
+lmObject = lm(cosine ~ theory, data = allDat)
 summary(lmObject)
 
 #visualize with boxplot#
 
 boxplot <-
-  ggplot(allDat, aes(x = topic, y = cosine)) + geom_boxplot(fill = "#fdf6e3",
+  ggplot(allDat, aes(x = theory, y = cosine)) + geom_boxplot(fill = "#fdf6e3",
                                                             colour = "#2aa198",
                                                             outlier.color = "#2aa198") + scale_x_discrete(name = "Theory") + scale_y_continuous(
                                                               name = "Mean self-cosine",
@@ -694,25 +687,25 @@ boxplot
 
 allDatMax = c() # data of similarity with closest neighbor
 
-for (topic in topicList) {
-  selfdat = avgList[[dimension]][which(topic == topicList), my_cat$topic ==
-                                   topic] #collect the data of similarity with its own papers
-  otherdat = avgList[[dimension]][which(topic != topicList), my_cat$topic ==
-                                    topic] #collect the mean distance of other theories with each of the papers of the theory being looped in the for loop
+for (theory in theoryList) {
+  selfdat = avgList[[dimension]][which(theory == theoryList), my_cat$theory ==
+                                   theory] #collect the data of similarity with its own papers
+  otherdat = avgList[[dimension]][which(theory != theoryList), my_cat$theory ==
+                                    theory] #collect the mean distance of other theories with each of the papers of the theory being looped in the for loop
   maxdat = apply(otherdat, 2, function(x) {
     return(max(x))
   }) #collect the highest value
   maxdat = selfdat - maxdat #store the difference between the theory the paper belongs to and the most similar other theory
-  allDatMax = rbind(allDatMax, data.frame(topic = topic, cosine = maxdat)) #matrix with the differences for each theory.
+  allDatMax = rbind(allDatMax, data.frame(theory = theory, cosine = maxdat)) #matrix with the differences for each theory.
 }
 
-lmObjectMax = lm(cosine ~ topic, data = allDatMax) #linear model for other-similarity
+lmObjectMax = lm(cosine ~ theory, data = allDatMax) #linear model for other-similarity
 summary(lmObjectMax) #summary
 
 #visualize with boxplot#
 
 boxplotMax <-
-  ggplot(allDatMax, aes(x = topic, y = cosine)) + geom_boxplot(fill = "#fdf6e3",
+  ggplot(allDatMax, aes(x = theory, y = cosine)) + geom_boxplot(fill = "#fdf6e3",
                                                                colour = "#2aa198",
                                                                outlier.color = "#2aa198") + scale_x_discrete(name = "Theory") + scale_y_continuous(name = "Mean distance") + labs(
                                                                  title = paste("Distance from nearest theory of different theories", testingSelf),
@@ -754,7 +747,7 @@ if (dendrogramMode == "replication") {
 
 #generates a similarity matrix of cosine data to visualize in a heatmap #
 
-topicListReordered = c(
+theoryListReordered = c(
   "bayesian",
   "connectionism",
   "symbolic",
@@ -763,18 +756,18 @@ topicListReordered = c(
   "enactive",
   "ecological",
   "embodied"
-) #reorder topics to better visualize if intuitive cluster shows
+) #reorder theorys to better visualize if intuitive cluster shows
 
 simMatrix = matrix(0, nrow = 8, ncol = 8) #allocates similarity matrix
-row.names(simMatrix) = topicListReordered #name dimensions of similarity matrix (theory x theory)
-colnames(simMatrix) = topicListReordered
+row.names(simMatrix) = theoryListReordered #name dimensions of similarity matrix (theory x theory)
+colnames(simMatrix) = theoryListReordered
 
-for (topic in topicListReordered) {
-  #loops through first topic (row)
+for (theory in theoryListReordered) {
+  #loops through first theory (row)
   for (i in 1:8) {
-    #loops through second topic (column)
-    simMatrix[topic, topicListReordered[i]] = mean(avgMatrix[topic, which(my_cat$topic ==
-                                                                            topicListReordered[i])]) #gather the mean similarity between theory 1 and the papers of theory 2
+    #loops through second theory (column)
+    simMatrix[theory, theoryListReordered[i]] = mean(avgMatrix[theory, which(my_cat$theory ==
+                                                                            theoryListReordered[i])]) #gather the mean similarity between theory 1 and the papers of theory 2
   }
 }
 
@@ -783,11 +776,11 @@ for (topic in topicListReordered) {
 
 meltedDistMatrix <-
   melt(simMatrix,
-       varnames = c("Topic1", "Topic2"),
+       varnames = c("theory1", "theory2"),
        value.name = "Closeness") #long form of simMatrix for ggplot
 heatmap <-
-  ggplot(meltedDistMatrix, aes(x = Topic1, y = ordered(Topic2, levels = rev(sort(
-    unique(Topic2)
+  ggplot(meltedDistMatrix, aes(x = theory1, y = ordered(theory2, levels = rev(sort(
+    unique(theory2)
   ))))) + geom_tile(aes(fill = Closeness), colour = "white") + coord_equal() +  scale_fill_gradient(
     low = "white",
     high = "seagreen",
@@ -805,20 +798,20 @@ print(heatmap)
 
 # hierarchical cluster analysis of the distance matrix #
 
-topic_hclust <-
+theory_hclust <-
   hclust(dist(simMatrix, upper = T), method = "average") #applies hclust algorithm to the similarity matrix
 
-#visualize topic_hclust with a dendrogram and mark clusters using cutreedynamic package (https://www.rdocumentation.org/packages/dynamicTreeCut/versions/1.63-1/topics/cutreeDynamic)#
+#visualize theory_hclust with a dendrogram and mark clusters using cutreedynamic package (https://www.rdocumentation.org/packages/dynamicTreeCut/versions/1.63-1/theorys/cutreeDynamic)#
 
 par(lwd = 2,
     cex.axis = 1.2,
     las = 1) #graphical parameters for the axes and lines of dendrogram
 print(
   hclustplot(
-    topic_hclust,
+    theory_hclust,
     colors = labels2colors(
       cutreeDynamic(
-        topic_hclust,
+        theory_hclust,
         minClusterSize = 1,
         method = "hybrid",
         deepSplit = 0,
@@ -846,9 +839,9 @@ documentLoadingsVarimax <- documentLoadings %*% termVarimax$rotmat
 bestPredictorsVarimax <- c()
 predictorRatingsVarimax <-
   c() #store ratings to compare positive versus negative in term loading inspection
-for (topic in topicList) {
+for (theory in theoryList) {
   glmOutput = glm(
-    my_catalog$topic == topic ~ .,
+    my_catalog$theory == theory ~ .,
     data = data.frame(documentLoadingsVarimax[, 1:dim(documentLoadingsVarimax)[2]]),
     family = binomial
   )
@@ -862,16 +855,16 @@ for (topic in topicList) {
                                                                                                  ind = T,
                                                                                                  decreasing = T)$ix])
 }
-row.names(bestPredictorsVarimax) <- topicList
-row.names(predictorRatingsVarimax) <- topicList
+row.names(bestPredictorsVarimax) <- theoryList
+row.names(predictorRatingsVarimax) <- theoryList
 
 wordList <- list()
 
-for (n in 1:length(topicList)) {
+for (n in 1:length(theoryList)) {
   # generate a data frame for each theory
-  topic <- topicList[n]
-  predictors <- unlist(bestPredictorsVarimax[topic, ])
-  ratings <- unlist(predictorRatingsVarimax[topic, ])
+  theory <- theoryList[n]
+  predictors <- unlist(bestPredictorsVarimax[theory, ])
+  ratings <- unlist(predictorRatingsVarimax[theory, ])
   ratingsValence <-
     ratings > 0 # boolean for sign of the predictor. true if > 0, false if < 0
   words <- c()
@@ -883,25 +876,25 @@ for (n in 1:length(topicList)) {
         sort(termLoadingsVarimax[, dimension], decreasing = T)
       ), 100)))
   }
-  nameOfDF <- paste(topic, "Meanings", sep = "")
+  nameOfDF <- paste(theory, "Meanings", sep = "")
   assign(nameOfDF,
          data.frame(predictors, ratings, ratingsValence, words))
   wordList[[n]] <- get(x = nameOfDF)
 }
 
-names(wordList) <- topicList
+names(wordList) <- theoryList
 
 #extract words each theory$
 
-for (topic in topicList) {
+for (theory in theoryList) {
   wordsAndFreq <- data.frame()
   
   for (i in 1:37) {
-    if (!wordList[[topic]]$ratingsValence[i]) {
+    if (!wordList[[theory]]$ratingsValence[i]) {
       words <-
-        unlist(strsplit(as.character(wordList[[topic]]$words[i]), ','))[1:50]
+        unlist(strsplit(as.character(wordList[[theory]]$words[i]), ','))[1:50]
       frequency <-
-        rep(floor(abs(wordList[[topic]]$ratings[i])), each = 50)
+        rep(floor(abs(wordList[[theory]]$ratings[i])), each = 50)
       wordsAndFreq <- rbind(wordsAndFreq, cbind(words, frequency))
     }
   }
@@ -913,7 +906,7 @@ for (topic in topicList) {
     aggregate(data = wordsAndFreq, freqScore ~ words, FUN = sum)
   
   png(
-    filename = paste(topic, "Negative.png", sep = ""),
+    filename = paste(theory, "Negative.png", sep = ""),
     units = "px",
     width = 3000,
     height = 2000
@@ -934,26 +927,26 @@ for (topic in topicList) {
 
 #### Exploring meaning in dimensions using in-built rubric ####
 
-freqMatrixAllWords <-
+frequencyMatrixAllWords <-
   read.csv(file = 'document_by_term_all_words.txt', header = T, sep = '\t')
-row.names(freqMatrixAllWords) <-
-  c(1:nrow(freqMatrixAllWords)) #row names with docID
+row.names(frequencyMatrixAllWords) <-
+  c(1:nrow(frequencyMatrixAllWords)) #row names with docID
 
-freqMatrixAllWords <-
-  freqMatrixAllWords[, apply(freqMatrixAllWords, 2, function(x) {
-    sum(x == 0) < (dim(freqMatrixAllWords)[1] - 5)
+frequencyMatrixAllWords <-
+  frequencyMatrixAllWords[, apply(frequencyMatrixAllWords, 2, function(x) {
+    sum(x == 0) < (dim(frequencyMatrixAllWords)[1] - 5)
   })] #removes columns with words that appear in fewer than 5 documents.
-freqMatrixAllWords <-
-  freqMatrixAllWords[which(rowSums(freqMatrixAllWords) > 0),] #eliminates documents with 0 terms after cleanup of terminology
+frequencyMatrixAllWords <-
+  frequencyMatrixAllWords[which(rowSums(frequencyMatrixAllWords) > 0),] #eliminates documents with 0 terms after cleanup of terminology
 
-cleanDataAllWords <- calcEnt(freqMatrixAllWords) #entropy
-cleanDataAllWords[is.na(cleanDataAllWords)] <- 0 #replace NA with 0.
+weightedFrequencyMatrixAllWords <- calcEnt(frequencyMatrixAllWords) #entropy
+weightedFrequencyMatrixAllWords[is.na(weightedFrequencyMatrixAllWords)] <- 0 #replace NA with 0.
 
-wholeMacaroniAllWords = svd(cleanDataAllWords) #SVD
+wholeMacaroniAllWords = svd(weightedFrequencyMatrixAllWords) #SVD
 loadedTermsAllWords <-
   wholeMacaroniAllWords$v %*% diag(wholeMacaroniAllWords$d)
 loadedTermsAllWords <- loadedTermsAllWords[, 1:90]
-row.names(loadedTermsAllWords) <- colnames(freqMatrixAllWords)
+row.names(loadedTermsAllWords) <- colnames(frequencyMatrixAllWords)
 
 bayesian <- loadedTermsAllWords["bayesian", ]
 connectionism <-
@@ -1006,7 +999,7 @@ orthonormalBase <-
 
 # examine correlation between original vectors and orthonormal vectors
 
-for (name in topicList) {
+for (name in theoryList) {
   print(cor(loadedTermsAllWords[name, ], orthonormalBase[name, ]))
 }
 
