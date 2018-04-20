@@ -1,1 +1,0 @@
-note: using 33 dimensions, based on performance (see plot).

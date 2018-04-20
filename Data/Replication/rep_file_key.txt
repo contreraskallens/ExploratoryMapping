@@ -1,0 +1,10 @@
+bayesian	Bayesian-Rep.txt
+connectionism	Connectionism-Rep.txt
+connectionism	PDP-Rep.txt
+distributed	Distributed-Rep.txt
+dynamical	Dynamical-Rep.txt
+ecological	Ecological-Rep.txt
+embodied	Embodied-Rep.txt
+enactive	Enactive-Rep.txt
+symbolic	ACTR-Rep.txt
+symbolic	Computational-Rep.txt

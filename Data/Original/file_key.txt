@@ -1,0 +1,10 @@
+bayesian	Bayesian.txt
+connectionism	Connectionism.txt
+connectionism	PDP.txt
+distributed	Distributed.txt
+dynamical	Dynamical.txt
+ecological	Ecological.txt
+embodied	Embodied.txt
+enactive	Enactive.txt
+symbolic	ACTR.txt
+symbolic	Computational.txt
