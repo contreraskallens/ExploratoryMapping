@@ -224,7 +224,7 @@ colnames(repCatalog) = c('id',
 
 # If nullHypothesis = T, catalog$topic is randomized.
 
-nullHypothesis <- T
+nullHypothesis <- F
 if (nullHypothesis == T) {
   catalog$theory <- sample(catalog$theory, length(catalog$theory))
   repCatalog$theory <-
@@ -331,10 +331,10 @@ row.names(repDocumentLoadings) <-
 row.names(repTermLoadings) <- colnames(repWeightedFrequencyMatrix)
 
 # Reduce the dimensionality of the document loading matrices
-termLoadings <- termLoadings[, 1:200]
-documentLoadings <- documentLoadings[, 1:200]
-repTermLoadings <- repTermLoadings[, 1:200]
-repDocumentLoadings <- repDocumentLoadings[, 1:200]
+termLoadings <- termLoadings[, 1:140]
+documentLoadings <- documentLoadings[, 1:140]
+repTermLoadings <- repTermLoadings[, 1:150]
+repDocumentLoadings <- repDocumentLoadings[, 1:150]
 
 # Predict theory using Generalized Linear Models --------------------------
 
@@ -912,7 +912,7 @@ predictorRatingsVarimax <-
   c() # Store ratings to compare positive versus negative in term loading inspection
 for (theory in theoryList) {
   glmOutput = glm(
-    paperCatalog$theory == theory ~ .,
+    catalog$theory == theory ~ .,
     data = data.frame(documentLoadingsVarimax[, 1:dim(documentLoadingsVarimax)[2]]),
     family = binomial
   )
@@ -943,9 +943,9 @@ for (n in 1:length(theoryList)) {
   for (i in c(1:length(predictors))) {
     dimension <- predictors[i]
     words <-
-      c(words, toString(head(names(
+      c(words, toString(names(
         sort(termLoadingsVarimax[, dimension], decreasing = T)
-      ), 100))) # Extract 100 top words
+      )))
   }
   nameOfDF <-
     paste(theory, "Meanings", sep = "") # Generate the name of the object
@@ -961,11 +961,12 @@ names(listOfDimensionTerms) <- theoryList
 # The code saves one wordcloud for each theory, either positive or negatives.
 # To produce positive wordclouds, comment line 968 and 1005 through 1010.
 # To produce negative wordclouds, comment line 967 and 999 through 1004.
+wordList <- listOfDimensionTerms
 for (theory in theoryList) {
   wordsAndRating <- data.frame()
   for (i in 1:dim(wordList[[theory]][1])) {
     if (wordList[[theory]]$ratingsValence[i]) {
-      # if (!wordList[[theory]]$ratingsValence[i]){
+    # if (!wordList[[theory]]$ratingsValence[i]){
       words <-
         unlist(strsplit(as.character(wordList[[theory]]$words[i]), ', '))
       dimRating <-
@@ -997,17 +998,17 @@ for (theory in theoryList) {
   wordsAndRatingForWordCloud$Weight <-
     round(wordsAndRatingForWordCloud$Weight)
   pdf(
-    file = paste(theory, "Positive.pdf", sep = ""),
-    width = 20,
-    height = 20,
-    onefile = F
+   file = paste(theory, "Positive.pdf", sep = ""),
+   width = 20,
+   height = 20,
+   onefile = F
   )
-  #pdf(
-  #  file = paste(theory, "Negative.pdf", sep = ""),
-  #  width = 20,
-  #  height = 20,
-  #  onefile = F
-  #)
+  # pdf(
+  #   file = paste(theory, "Negative.pdf", sep = ""),
+  #   width = 20,
+  #   height = 20,
+  #   onefile = F
+  # )
   wordcloud(
     wordsAndRatingForWordCloud$words,
     wordsAndRatingForWordCloud$Weight,
